@@ -1,0 +1,17 @@
+The bearing file is a CSV file with the following columns
+
+1 - tag_id
+2 - parent file from which bearing was calculated
+3 - bearing from N in degrees [0, 360)
+4 - tau value for the bearing
+5 - Latitude where bearing was measured
+6 - Longitude where bearing was measured
+7 - Altitude (above ground level) where bearing was measured
+8 - Altitude (above sea level) where bearing was measured
+9 - Start time of bearing scan
+10 - End time of bearing scan
+
+Example is below. 
+
+2,'Rot1.csv',45,0.5,35.177870,-111.656956,10,2050,0,30
+2,'Rot2.csv',315,0.5,35.177964,-111.656224,10,2050,30,60
