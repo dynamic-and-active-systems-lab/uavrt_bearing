@@ -5,7 +5,7 @@
 // File: doapca.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 13:13:27
+// C/C++ source code generated on  : 30-Jun-2023 15:05:26
 //
 
 // Include Files
@@ -246,14 +246,14 @@ static void q_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
 {
   static rtBoundsCheckInfo b_emlrtBCI{
-      -1,          // iFirst
-      -1,          // iLast
-      17,          // lineNo
-      5,           // colNo
-      "",          // aName
-      "wrapTo360", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/shared/maputils/wrapTo360.m", // pName
-      0 // checkKind
+      -1,                                                      // iFirst
+      -1,                                                      // iLast
+      17,                                                      // lineNo
+      5,                                                       // colNo
+      "",                                                      // aName
+      "wrapTo360",                                             // fName
+      "/home/dasl/matlab/toolbox/shared/maputils/wrapTo360.m", // pName
+      0                                                        // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,       // iFirst
@@ -262,10 +262,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       24,       // colNo
       "angs",   // aName
       "doapca", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m", // pName
-      0         // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m", // pName
+      0 // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,       // iFirst
@@ -274,10 +272,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       17,       // colNo
       "SdB",    // aName
       "doapca", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m", // pName
-      0         // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m", // pName
+      0 // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,       // iFirst
@@ -286,53 +282,43 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       28,       // colNo
       "SdB",    // aName
       "doapca", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m", // pName
-      0         // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m", // pName
+      0 // checkKind
   };
   static rtEqualityCheckInfo b_emlrtECI{
-      1,           // nDims
-      17,          // lineNo
-      5,           // colNo
-      "wrapTo360", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/shared/maputils/wrapTo360.m" // pName
+      1,                                                      // nDims
+      17,                                                     // lineNo
+      5,                                                      // colNo
+      "wrapTo360",                                            // fName
+      "/home/dasl/matlab/toolbox/shared/maputils/wrapTo360.m" // pName
   };
   static rtEqualityCheckInfo c_emlrtECI{
       1,        // nDims
       107,      // lineNo
       19,       // colNo
       "doapca", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m" // pName
   };
   static rtEqualityCheckInfo d_emlrtECI{
       1,        // nDims
       107,      // lineNo
       40,       // colNo
       "doapca", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m" // pName
   };
   static rtEqualityCheckInfo e_emlrtECI{
       2,        // nDims
       109,      // lineNo
       14,       // colNo
       "doapca", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m" // pName
   };
   static rtEqualityCheckInfo emlrtECI{
       1,        // nDims
       109,      // lineNo
       14,       // colNo
       "doapca", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m" // pName
   };
   static rtRunTimeErrorInfo r_emlrtRTEI{
       74,                 // lineNo
@@ -370,7 +356,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
   int k;
   int n;
   int nx;
-  boolean_T guard1{false};
+  boolean_T guard1;
   boolean_T y;
   n = pulseList.size(0);
   if (pulseList.size(0) == 0) {

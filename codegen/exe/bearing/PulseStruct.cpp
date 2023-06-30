@@ -5,7 +5,7 @@
 // File: PulseStruct.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 13:13:27
+// C/C++ source code generated on  : 30-Jun-2023 15:05:26
 //
 
 // Include Files
@@ -49,150 +49,150 @@ void PulseStruct(const coder::array<struct_T, 2U> &pos,
                  const coder::array<double, 1U> &tagID,
                  coder::array<e_struct_T, 2U> &pulse)
 {
-  static rtBoundsCheckInfo b_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      71,            // lineNo
-      19,            // colNo
-      "pulse",       // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo c_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      71,            // lineNo
-      13,            // colNo
-      "pos",         // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo d_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      72,            // lineNo
-      19,            // colNo
-      "pulse",       // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo e_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      72,            // lineNo
-      13,            // colNo
-      "euler",       // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo f_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      73,            // lineNo
-      19,            // colNo
-      "pulse",       // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo g_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      73,            // lineNo
-      40,            // colNo
-      "time",        // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo h_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      74,            // lineNo
-      19,            // colNo
-      "pulse",       // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo i_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      74,            // lineNo
-      44,            // colNo
-      "strength",    // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo j_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      75,            // lineNo
-      19,            // colNo
-      "pulse",       // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo k_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      75,            // lineNo
-      43,            // colNo
-      "freqMHz",     // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo l_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      76,            // lineNo
-      19,            // colNo
-      "pulse",       // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
-  static rtBoundsCheckInfo m_emlrtBCI{
-      -1,            // iFirst
-      -1,            // iLast
-      76,            // lineNo
-      39,            // colNo
-      "tagID",       // aName
-      "PulseStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
-  };
+  static rtBoundsCheckInfo
+      b_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          71,            // lineNo
+          19,            // colNo
+          "pulse",       // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      c_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          71,            // lineNo
+          13,            // colNo
+          "pos",         // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      d_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          72,            // lineNo
+          19,            // colNo
+          "pulse",       // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      e_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          72,            // lineNo
+          13,            // colNo
+          "euler",       // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      f_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          73,            // lineNo
+          19,            // colNo
+          "pulse",       // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      g_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          73,            // lineNo
+          40,            // colNo
+          "time",        // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      h_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          74,            // lineNo
+          19,            // colNo
+          "pulse",       // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      i_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          74,            // lineNo
+          44,            // colNo
+          "strength",    // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      j_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          75,            // lineNo
+          19,            // colNo
+          "pulse",       // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      k_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          75,            // lineNo
+          43,            // colNo
+          "freqMHz",     // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      l_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          76,            // lineNo
+          19,            // colNo
+          "pulse",       // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
+  static rtBoundsCheckInfo
+      m_emlrtBCI{
+          -1,            // iFirst
+          -1,            // iLast
+          76,            // lineNo
+          39,            // colNo
+          "tagID",       // aName
+          "PulseStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "PulseStruct.m", // pName
+          0                // checkKind
+      };
   d_struct_T eulInit;
   e_struct_T pulseInit;
   struct_T posInit;

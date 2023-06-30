@@ -204,15 +204,26 @@ if bearingFileAlreadyExists
         %status1 = coder.ceval('remove', coder.ref(originalBearingPathStringinQuotes));
         
         msg1 = 'UAV-RT: Unable to delete original bearing file. System reported: ';
+
+        %Print out bearing file name to new variable. This is a patch to
+        %fix problems in generated code where the rename operation was
+        %producing filenames like bearing.csvmpl.csv, which was garble of
+        %the bearing.csv and the rotation_example.csv filenames. I couldn't
+        %figure out why this was happening (only occured on Linux - not
+        %Mac), but assumed it was related to the intermittent rename errors
+        %I was getting on the Mac with the rename operation.
+        newbearingFilePath = sprintf('%s',bearingFilePath);
+
+
         %fprintf('attempting to delete original bearing file...\n')
-        status1 = coder.ceval('remove', coder.ref(bearingFilePath));
+        status1 = coder.ceval('remove', coder.ref(newbearingFilePath));
         if status1 ~= 0
             coder.ceval('perror',coder.ref(msg1));
         end
 
         %Debugging code for intermittent rename errors
-        % fprintf('%s\n', tempBearingFilePath)
-        % fprintf('%s\n', bearingFilePath)
+        %fprintf('%s\n', tempBearingFilePath)
+        %fprintf('%s\n', bearingFilePath)
         % fprintf('PAUSING.....\n')
         % pause(10);
         % if isfile(bearingFilePath)
@@ -244,14 +255,12 @@ if bearingFileAlreadyExists
         newTempFilePath_2 = sprintf('%s',tempBearingFilePath);
         %fprintf('%s\n', tempBearingFilePath) %To show these contain the same string
         %fprintf('%s\n', newTempFilePath)
-        
         %Line below will intermittently cause a runtime error. 
         %status2 = coder.ceval('rename', coder.ref(tempBearingFilePath) , coder.ref(bearingFilePath));
-        status2 = coder.ceval('rename', coder.ref(newTempFilePath_2) , coder.ref(bearingFilePath));
+        status2 = coder.ceval('rename', coder.ref(newTempFilePath_2) , coder.ref(newbearingFilePath));
         if status2~=0
             coder.ceval('perror',coder.ref(msg2));
         end
-
 
         cmdout1 = sprintf('%d',status1);
         cmdout2 = sprintf('%d',status2);

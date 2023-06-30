@@ -5,7 +5,7 @@
 // File: _coder_bearing_api.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 13:13:27
+// C/C++ source code generated on  : 30-Jun-2023 15:05:26
 //
 
 #ifndef _CODER_BEARING_API_H

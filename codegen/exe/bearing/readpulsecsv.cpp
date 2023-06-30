@@ -5,7 +5,7 @@
 // File: readpulsecsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 13:13:27
+// C/C++ source code generated on  : 30-Jun-2023 15:05:26
 //
 
 // Include Files
@@ -103,90 +103,90 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
                   coder::array<e_struct_T, 2U> &pulses,
                   coder::array<empty, 2U> &commands)
 {
-  static rtBoundsCheckInfo b_emlrtBCI{
-      -1,               // iFirst
-      -1,               // iLast
-      101,              // lineNo
-      57,               // colNo
-      "commaLocations", // aName
-      "readpulsecsv",   // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
-  };
-  static rtBoundsCheckInfo c_emlrtBCI{
-      -1,             // iFirst
-      -1,             // iLast
-      115,            // lineNo
-      24,             // colNo
-      "pulseArray",   // aName
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
-  };
-  static rtBoundsCheckInfo d_emlrtBCI{
-      -1,             // iFirst
-      -1,             // iLast
-      119,            // lineNo
-      26,             // colNo
-      "commandArray", // aName
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
-  };
-  static rtBoundsCheckInfo e_emlrtBCI{
-      -1,             // iFirst
-      -1,             // iLast
-      101,            // lineNo
-      37,             // colNo
-      "lineStr",      // aName
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
-  };
-  static rtBoundsCheckInfo f_emlrtBCI{
-      -1,             // iFirst
-      -1,             // iLast
-      101,            // lineNo
-      42,             // colNo
-      "lineStr",      // aName
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
-  };
-  static rtBoundsCheckInfo g_emlrtBCI{
-      -1,             // iFirst
-      -1,             // iLast
-      171,            // lineNo
-      35,             // colNo
-      "commandArray", // aName
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
-  };
-  static rtBoundsCheckInfo h_emlrtBCI{
-      -1,             // iFirst
-      -1,             // iLast
-      204,            // lineNo
-      53,             // colNo
-      "pos_AGL_m",    // aName
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
-  };
+  static rtBoundsCheckInfo
+      b_emlrtBCI{
+          -1,               // iFirst
+          -1,               // iLast
+          101,              // lineNo
+          57,               // colNo
+          "commaLocations", // aName
+          "readpulsecsv",   // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          0                 // checkKind
+      };
+  static rtBoundsCheckInfo
+      c_emlrtBCI{
+          -1,             // iFirst
+          -1,             // iLast
+          115,            // lineNo
+          24,             // colNo
+          "pulseArray",   // aName
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          0                 // checkKind
+      };
+  static rtBoundsCheckInfo
+      d_emlrtBCI{
+          -1,             // iFirst
+          -1,             // iLast
+          119,            // lineNo
+          26,             // colNo
+          "commandArray", // aName
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          0                 // checkKind
+      };
+  static rtBoundsCheckInfo
+      e_emlrtBCI{
+          -1,             // iFirst
+          -1,             // iLast
+          101,            // lineNo
+          37,             // colNo
+          "lineStr",      // aName
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          0                 // checkKind
+      };
+  static rtBoundsCheckInfo
+      f_emlrtBCI{
+          -1,             // iFirst
+          -1,             // iLast
+          101,            // lineNo
+          42,             // colNo
+          "lineStr",      // aName
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          0                 // checkKind
+      };
+  static rtBoundsCheckInfo
+      g_emlrtBCI{
+          -1,             // iFirst
+          -1,             // iLast
+          171,            // lineNo
+          35,             // colNo
+          "commandArray", // aName
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          0                 // checkKind
+      };
+  static rtBoundsCheckInfo
+      h_emlrtBCI{
+          -1,             // iFirst
+          -1,             // iLast
+          204,            // lineNo
+          53,             // colNo
+          "pos_AGL_m",    // aName
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          0                 // checkKind
+      };
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
@@ -194,10 +194,9 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       39,                 // colNo
       "roll",             // aName
       "EulerAngleStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+      "EulerAngleStruct.m", // pName
+      0                     // checkKind
   };
   static rtBoundsCheckInfo j_emlrtBCI{
       -1,                 // iFirst
@@ -206,10 +205,9 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       17,                 // colNo
       "eul",              // aName
       "EulerAngleStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+      "EulerAngleStruct.m", // pName
+      0                     // checkKind
   };
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,                 // iFirst
@@ -218,10 +216,9 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       40,                 // colNo
       "pitch",            // aName
       "EulerAngleStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+      "EulerAngleStruct.m", // pName
+      0                     // checkKind
   };
   static rtBoundsCheckInfo l_emlrtBCI{
       -1,                 // iFirst
@@ -230,10 +227,9 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       17,                 // colNo
       "eul",              // aName
       "EulerAngleStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+      "EulerAngleStruct.m", // pName
+      0                     // checkKind
   };
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,                 // iFirst
@@ -242,10 +238,9 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       38,                 // colNo
       "yaw",              // aName
       "EulerAngleStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+      "EulerAngleStruct.m", // pName
+      0                     // checkKind
   };
   static rtBoundsCheckInfo n_emlrtBCI{
       -1,                 // iFirst
@@ -254,140 +249,139 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       17,                 // colNo
       "eul",              // aName
       "EulerAngleStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+      "EulerAngleStruct.m", // pName
+      0                     // checkKind
   };
-  static rtBoundsCheckInfo o_emlrtBCI{
-      -1,              // iFirst
-      -1,              // iLast
-      54,              // lineNo
-      21,              // colNo
-      "command",       // aName
-      "CommandStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Co"
-      "mmandStruct.m", // pName
-      0                // checkKind
-  };
-  static rtBoundsCheckInfo p_emlrtBCI{
-      -1,              // iFirst
-      -1,              // iLast
-      54,              // lineNo
-      13,              // colNo
-      "pos",           // aName
-      "CommandStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Co"
-      "mmandStruct.m", // pName
-      0                // checkKind
-  };
-  static rtBoundsCheckInfo q_emlrtBCI{
-      -1,              // iFirst
-      -1,              // iLast
-      56,              // lineNo
-      21,              // colNo
-      "command",       // aName
-      "CommandStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Co"
-      "mmandStruct.m", // pName
-      0                // checkKind
-  };
-  static rtBoundsCheckInfo r_emlrtBCI{
-      -1,              // iFirst
-      -1,              // iLast
-      56,              // lineNo
-      48,              // colNo
-      "commandID",     // aName
-      "CommandStruct", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Co"
-      "mmandStruct.m", // pName
-      0                // checkKind
-  };
-  static rtDoubleCheckInfo b_emlrtDCI{
-      87,             // lineNo
-      25,             // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      4               // checkKind
-  };
-  static rtDoubleCheckInfo c_emlrtDCI{
-      87,             // lineNo
-      25,             // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
-  };
-  static rtDoubleCheckInfo d_emlrtDCI{
-      87,             // lineNo
-      1,              // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
-  };
-  static rtDoubleCheckInfo e_emlrtDCI{
-      88,             // lineNo
-      1,              // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
-  };
-  static rtDoubleCheckInfo f_emlrtDCI{
-      89,             // lineNo
-      25,             // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
-  };
-  static rtDoubleCheckInfo g_emlrtDCI{
-      89,             // lineNo
-      1,              // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
-  };
-  static rtDoubleCheckInfo h_emlrtDCI{
-      90,             // lineNo
-      1,              // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
-  };
-  static rtEqualityCheckInfo b_emlrtECI{
-      -1,             // nDims
-      119,            // lineNo
-      13,             // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m" // pName
-  };
-  static rtEqualityCheckInfo emlrtECI{
-      -1,             // nDims
-      115,            // lineNo
-      13,             // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m" // pName
-  };
+  static rtBoundsCheckInfo
+      o_emlrtBCI{
+          -1,              // iFirst
+          -1,              // iLast
+          54,              // lineNo
+          21,              // colNo
+          "command",       // aName
+          "CommandStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "CommandStruct.m", // pName
+          0                  // checkKind
+      };
+  static rtBoundsCheckInfo
+      p_emlrtBCI{
+          -1,              // iFirst
+          -1,              // iLast
+          54,              // lineNo
+          13,              // colNo
+          "pos",           // aName
+          "CommandStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "CommandStruct.m", // pName
+          0                  // checkKind
+      };
+  static rtBoundsCheckInfo
+      q_emlrtBCI{
+          -1,              // iFirst
+          -1,              // iLast
+          56,              // lineNo
+          21,              // colNo
+          "command",       // aName
+          "CommandStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "CommandStruct.m", // pName
+          0                  // checkKind
+      };
+  static rtBoundsCheckInfo
+      r_emlrtBCI{
+          -1,              // iFirst
+          -1,              // iLast
+          56,              // lineNo
+          48,              // colNo
+          "commandID",     // aName
+          "CommandStruct", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "CommandStruct.m", // pName
+          0                  // checkKind
+      };
+  static rtDoubleCheckInfo
+      b_emlrtDCI{
+          87,             // lineNo
+          25,             // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          4                 // checkKind
+      };
+  static rtDoubleCheckInfo
+      c_emlrtDCI{
+          87,             // lineNo
+          25,             // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          1                 // checkKind
+      };
+  static rtDoubleCheckInfo
+      d_emlrtDCI{
+          87,             // lineNo
+          1,              // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          1                 // checkKind
+      };
+  static rtDoubleCheckInfo
+      e_emlrtDCI{
+          88,             // lineNo
+          1,              // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          1                 // checkKind
+      };
+  static rtDoubleCheckInfo
+      f_emlrtDCI{
+          89,             // lineNo
+          25,             // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          1                 // checkKind
+      };
+  static rtDoubleCheckInfo
+      g_emlrtDCI{
+          89,             // lineNo
+          1,              // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          1                 // checkKind
+      };
+  static rtDoubleCheckInfo
+      h_emlrtDCI{
+          90,             // lineNo
+          1,              // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m", // pName
+          1                 // checkKind
+      };
+  static rtEqualityCheckInfo
+      b_emlrtECI{
+          -1,             // nDims
+          119,            // lineNo
+          13,             // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m" // pName
+      };
+  static rtEqualityCheckInfo
+      emlrtECI{
+          -1,             // nDims
+          115,            // lineNo
+          13,             // colNo
+          "readpulsecsv", // fName
+          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
+          "readpulsecsv.m" // pName
+      };
   static rtRunTimeErrorInfo r_emlrtRTEI{
       37,     // lineNo
       "fopen" // fName
