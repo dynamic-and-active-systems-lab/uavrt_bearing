@@ -5,7 +5,7 @@
 // File: readpulsecsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 27-Jun-2023 16:44:57
+// C/C++ source code generated on  : 30-Jun-2023 13:13:27
 //
 
 // Include Files
@@ -314,11 +314,11 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
       "adpulsecsv.m", // pName
-      1               // checkKind
+      4               // checkKind
   };
   static rtDoubleCheckInfo c_emlrtDCI{
       87,             // lineNo
-      1,              // colNo
+      25,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
@@ -326,7 +326,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       1               // checkKind
   };
   static rtDoubleCheckInfo d_emlrtDCI{
-      88,             // lineNo
+      87,             // lineNo
       1,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -335,6 +335,15 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       1               // checkKind
   };
   static rtDoubleCheckInfo e_emlrtDCI{
+      88,             // lineNo
+      1,              // colNo
+      "readpulsecsv", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
+      "adpulsecsv.m", // pName
+      1               // checkKind
+  };
+  static rtDoubleCheckInfo f_emlrtDCI{
       89,             // lineNo
       25,             // colNo
       "readpulsecsv", // fName
@@ -343,16 +352,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "adpulsecsv.m", // pName
       1               // checkKind
   };
-  static rtDoubleCheckInfo emlrtDCI{
-      87,             // lineNo
-      25,             // colNo
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      4               // checkKind
-  };
-  static rtDoubleCheckInfo f_emlrtDCI{
+  static rtDoubleCheckInfo g_emlrtDCI{
       89,             // lineNo
       1,              // colNo
       "readpulsecsv", // fName
@@ -361,7 +361,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "adpulsecsv.m", // pName
       1               // checkKind
   };
-  static rtDoubleCheckInfo g_emlrtDCI{
+  static rtDoubleCheckInfo h_emlrtDCI{
       90,             // lineNo
       1,              // colNo
       "readpulsecsv", // fName
@@ -660,47 +660,47 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   //  lineLocs = gettextfilelinelocs(filepath);
   //  nLines = numel(lineLocs);
   if (!(numOfLines >= 0.0)) {
-    rtNonNegativeError(numOfLines, emlrtDCI);
+    rtNonNegativeError(numOfLines, b_emlrtDCI);
   }
   if (numOfLines != static_cast<int>(numOfLines)) {
-    rtIntegerError(numOfLines, b_emlrtDCI);
+    rtIntegerError(numOfLines, c_emlrtDCI);
   }
   match_idx = static_cast<int>(numOfLines);
   pulseArray.set_size(static_cast<int>(numOfLines), 19);
   if (numOfLines != static_cast<int>(numOfLines)) {
-    rtIntegerError(numOfLines, c_emlrtDCI);
+    rtIntegerError(numOfLines, d_emlrtDCI);
   }
   text_len = static_cast<int>(numOfLines) * 19;
   for (i = 0; i < text_len; i++) {
     pulseArray[i] = 0.0;
   }
   if (numOfLines != static_cast<int>(numOfLines)) {
-    rtIntegerError(numOfLines, d_emlrtDCI);
+    rtIntegerError(numOfLines, e_emlrtDCI);
   }
   pulseLineNums.set_size(static_cast<int>(numOfLines));
   if (numOfLines != static_cast<int>(numOfLines)) {
-    rtIntegerError(numOfLines, d_emlrtDCI);
+    rtIntegerError(numOfLines, e_emlrtDCI);
   }
   for (i = 0; i < match_idx; i++) {
     pulseLineNums[i] = 0.0;
   }
   if (numOfLines != static_cast<int>(numOfLines)) {
-    rtIntegerError(numOfLines, e_emlrtDCI);
+    rtIntegerError(numOfLines, f_emlrtDCI);
   }
   commandArray.set_size(static_cast<int>(numOfLines), 4);
   if (numOfLines != static_cast<int>(numOfLines)) {
-    rtIntegerError(numOfLines, f_emlrtDCI);
+    rtIntegerError(numOfLines, g_emlrtDCI);
   }
   text_len = static_cast<int>(numOfLines) << 2;
   for (i = 0; i < text_len; i++) {
     commandArray[i] = 0.0;
   }
   if (numOfLines != static_cast<int>(numOfLines)) {
-    rtIntegerError(numOfLines, g_emlrtDCI);
+    rtIntegerError(numOfLines, h_emlrtDCI);
   }
   commandLineNums.set_size(static_cast<int>(numOfLines));
   if (numOfLines != static_cast<int>(numOfLines)) {
-    rtIntegerError(numOfLines, g_emlrtDCI);
+    rtIntegerError(numOfLines, h_emlrtDCI);
   }
   for (i = 0; i < match_idx; i++) {
     commandLineNums[i] = 0.0;

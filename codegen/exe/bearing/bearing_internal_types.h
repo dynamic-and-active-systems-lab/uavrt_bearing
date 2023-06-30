@@ -5,7 +5,7 @@
 // File: bearing_internal_types.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 27-Jun-2023 16:44:57
+// C/C++ source code generated on  : 30-Jun-2023 13:13:27
 //
 
 #ifndef BEARING_INTERNAL_TYPES_H

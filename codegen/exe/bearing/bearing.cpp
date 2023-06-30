@@ -5,7 +5,7 @@
 // File: bearing.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 27-Jun-2023 16:44:57
+// C/C++ source code generated on  : 30-Jun-2023 13:13:27
 //
 
 // Include Files
@@ -27,12 +27,14 @@
 #include "readpulsecsv.h"
 #include "rt_nonfinite.h"
 #include "sort.h"
+#include "sprintf.h"
 #include "table.h"
 #include "varNamesDim.h"
 #include "coder_array.h"
 #include "coder_bounded_array.h"
 #include "coder_platform.h"
-#include "stdio.h"
+#include "cstdio"
+#include <algorithm>
 #include <cmath>
 #include <cstddef>
 #include <cstdio>
@@ -70,7 +72,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      34,               // lineNo
+      36,               // lineNo
       33,               // colNo
       "pulseStructVec", // aName
       "bearing",        // fName
@@ -81,7 +83,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,        // iFirst
       -1,        // iLast
-      58,        // lineNo
+      60,        // lineNo
       29,        // colNo
       "sepInds", // aName
       "bearing", // fName
@@ -92,7 +94,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,                       // iFirst
       -1,                       // iLast
-      107,                      // lineNo
+      134,                      // lineNo
       85,                       // colNo
       "tableIn.parentFileName", // aName
       "bearing",                // fName
@@ -103,7 +105,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,                     // iFirst
       -1,                     // iLast
-      107,                    // lineNo
+      134,                    // lineNo
       30,                     // colNo
       "alreadyInBearingList", // aName
       "bearing",              // fName
@@ -114,7 +116,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      142,              // lineNo
+      169,              // lineNo
       50,               // colNo
       "tableOut.tagID", // aName
       "bearing",        // fName
@@ -125,7 +127,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,                        // iFirst
       -1,                        // iLast
-      143,                       // lineNo
+      170,                       // lineNo
       59,                        // colNo
       "tableOut.parentFileName", // aName
       "bearing",                 // fName
@@ -136,7 +138,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
-      144,                // lineNo
+      171,                // lineNo
       52,                 // colNo
       "tableOut.bearing", // aName
       "bearing",          // fName
@@ -147,7 +149,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      145,            // lineNo
+      172,            // lineNo
       48,             // colNo
       "tableOut.tau", // aName
       "bearing",      // fName
@@ -158,7 +160,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo j_emlrtBCI{
       -1,                      // iFirst
       -1,                      // iLast
-      146,                     // lineNo
+      173,                     // lineNo
       57,                      // colNo
       "tableOut.latitude_deg", // aName
       "bearing",               // fName
@@ -169,7 +171,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,                       // iFirst
       -1,                       // iLast
-      147,                      // lineNo
+      174,                      // lineNo
       58,                       // colNo
       "tableOut.longitude_deg", // aName
       "bearing",                // fName
@@ -180,7 +182,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo l_emlrtBCI{
       -1,                   // iFirst
       -1,                   // iLast
-      148,                  // lineNo
+      175,                  // lineNo
       54,                   // colNo
       "tableOut.alt_AGL_m", // aName
       "bearing",            // fName
@@ -191,7 +193,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,                   // iFirst
       -1,                   // iLast
-      149,                  // lineNo
+      176,                  // lineNo
       54,                   // colNo
       "tableOut.alt_ASL_m", // aName
       "bearing",            // fName
@@ -202,7 +204,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo n_emlrtBCI{
       -1,                      // iFirst
       -1,                      // iLast
-      150,                     // lineNo
+      177,                     // lineNo
       57,                      // colNo
       "tableOut.time_start_s", // aName
       "bearing",               // fName
@@ -213,7 +215,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo o_emlrtBCI{
       -1,                    // iFirst
       -1,                    // iLast
-      151,                   // lineNo
+      178,                   // lineNo
       55,                    // colNo
       "tableOut.time_end_s", // aName
       "bearing",             // fName
@@ -224,7 +226,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo p_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      60,         // lineNo
+      62,         // lineNo
       26,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -235,7 +237,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo q_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      60,         // lineNo
+      62,         // lineNo
       28,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -246,7 +248,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo r_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      58,         // lineNo
+      60,         // lineNo
       21,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -257,7 +259,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo s_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      58,         // lineNo
+      60,         // lineNo
       36,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -265,15 +267,6 @@ double bearing(const coder::array<char, 2U> &filePath)
       "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
       0                                          // checkKind
   };
-  static rtDoubleCheckInfo
-      emlrtDCI{
-          12,       // lineNo
-          20,       // colNo
-          "blanks", // fName
-          "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/strfun/"
-          "blanks.m", // pName
-          4           // checkKind
-      };
   static rtRunTimeErrorInfo r_emlrtRTEI{
       48,       // lineNo
       "fprintf" // fName
@@ -282,6 +275,38 @@ double bearing(const coder::array<char, 2U> &filePath)
       125,       // lineNo
       "cfprintf" // fName
   };
+  static const char b_msg2[85]{
+      'U', 'A', 'V', '-', 'R', 'T', ':', ' ', 'U', 'n', 'a', 'b', 'l', 'e', ' ',
+      't', 'o', ' ', 'r', 'e', 'n', 'a', 'm', 'e', ' ', 't', 'e', 'm', 'p', ' ',
+      'b', 'e', 'a', 'r', 'i', 'n', 'g', ' ', 'f', 'i', 'l', 'e', ' ', 'a', 's',
+      ' ', 'p', 'r', 'i', 'm', 'a', 'r', 'y', ' ', 'b', 'e', 'a', 'r', 'i', 'n',
+      'g', ' ', 'f', 'i', 'l', 'e', '.', ' ', 'S', 'y', 's', 't', 'e', 'm', ' ',
+      'r', 'e', 'p', 'o', 'r', 't', 'e', 'd', ':', ' '};
+  static const char b_msg3[80]{
+      'U', 'A', 'V', '-', 'R', 'T', ':', ' ', 'E', 'r', 'r', 'o', 'r', ' ',
+      'o', 'p', 'e', 'n', 'i', 'n', 'g', ' ', 'o', 'r', ' ', 'c', 'l', 'o',
+      's', 'i', 'n', 'g', ' ', 't', 'e', 'm', 'p', 'o', 'r', 'a', 'r', 'y',
+      ' ', 'b', 'e', 'a', 'r', 'i', 'n', 'g', ' ', 'f', 'i', 'l', 'e', ' ',
+      'd', 'u', 'r', 'i', 'n', 'g', ' ', 'w', 'r', 'i', 't', 'e', ' ', 'o',
+      'p', 'e', 'r', 'a', 't', 'i', 'o', 'n', '.', ' '};
+  static const char b_msg4[71]{
+      'U', 'A', 'V', '-', 'R', 'T', ':', ' ', 'E', 'r', 'r', 'o', 'r', ' ', 'c',
+      'r', 'e', 'a', 't', 'i', 'n', 'g', ' ', 'o', 'r', ' ', 'c', 'l', 'o', 's',
+      'i', 'n', 'g', ' ', 'b', 'e', 'a', 'r', 'i', 'n', 'g', ' ', 'f', 'i', 'l',
+      'e', ' ', 'd', 'u', 'r', 'i', 'n', 'g', ' ', 'w', 'r', 'i', 't', 'e', ' ',
+      'o', 'p', 'e', 'r', 'a', 't', 'i', 'o', 'n', '.', ' '};
+  static const char b_msg0[68]{
+      'U', 'A', 'V', '-', 'R', 'T', ':', ' ', 'U', 'n', 'a', 'b', 'l', 'e',
+      ' ', 't', 'o', ' ', 'd', 'e', 'l', 'e', 't', 'e', ' ', 'e', 'x', 'i',
+      's', 't', 'i', 'n', 'g', ' ', 't', 'e', 'm', 'p', ' ', 'b', 'e', 'a',
+      'r', 'i', 'n', 'g', ' ', 'f', 'i', 'l', 'e', '.', ' ', 'S', 'y', 's',
+      't', 'e', 'm', ' ', 'r', 'e', 'p', 'o', 'r', 't', 'e', 'd'};
+  static const char b_msg1[65]{
+      'U', 'A', 'V', '-', 'R', 'T', ':', ' ', 'U', 'n', 'a', 'b', 'l',
+      'e', ' ', 't', 'o', ' ', 'd', 'e', 'l', 'e', 't', 'e', ' ', 'o',
+      'r', 'i', 'g', 'i', 'n', 'a', 'l', ' ', 'b', 'e', 'a', 'r', 'i',
+      'n', 'g', ' ', 'f', 'i', 'l', 'e', '.', ' ', 'S', 'y', 's', 't',
+      'e', 'm', ' ', 'r', 'e', 'p', 'o', 'r', 't', 'e', 'd', ':', ' '};
   static const char cv1[17]{'b', 'e', 'a', 'r', 'i', 'n', 'g', 's', '_',
                             't', 'e', 'm', 'p', '.', 'c', 's', 'v'};
   static const char cv[12]{'b', 'e', 'a', 'r', 'i', 'n',
@@ -300,9 +325,11 @@ double bearing(const coder::array<char, 2U> &filePath)
   coder::array<double, 1U> x;
   coder::array<int, 2U> match_out;
   coder::array<int, 2U> matches;
+  coder::array<char, 2U> b_status2;
   coder::array<char, 2U> bearingFilePath;
+  coder::array<char, 2U> newTempFilePath_1;
+  coder::array<char, 2U> status1;
   coder::array<char, 2U> tempBearingFilePath;
-  coder::array<char, 2U> varargin_2;
   coder::array<boolean_T, 1U> alreadyInBearingList;
   coder::array<boolean_T, 1U> b_alreadyInBearingList;
   double M;
@@ -322,11 +349,20 @@ double bearing(const coder::array<char, 2U> &filePath)
   int k;
   int n;
   unsigned int u;
+  char msg2[85];
+  char msg3[80];
+  char msg4[71];
+  char msg0[68];
+  char msg1[65];
   char pattern;
+  signed char status0;
   boolean_T bearingFileAlreadyExists;
+  boolean_T tempbearingFileAlreadyExists;
   if (!isInitialized_bearing) {
     bearing_initialize();
   }
+  // When using C code generation
+  // coder.cinclude('stdio.h');%Needed for remove and move file commands
   // Needed for remove and move file commands
   readpulsecsv(filePath, pulseStructVec, a__1);
   n = pulseStructVec.size(0);
@@ -588,8 +624,23 @@ double bearing(const coder::array<char, 2U> &filePath)
     tempBearingFilePath[(k + n) + 1] = cv1[k];
   }
   bearingFileAlreadyExists = coder::isfile(bearingFilePath);
+  tempbearingFileAlreadyExists = coder::isfile(tempBearingFilePath);
+  // Remove old temp bearing file if it wasn't deleted properly previously
+  std::copy(&b_msg0[0], &b_msg0[68], &msg0[0]);
+  // See note below near the rename command for why this sprintf command is
+  // needed. The intermittent error described there would occasionally occur
+  // here as well.
+  coder::b_sprintf(tempBearingFilePath, newTempFilePath_1);
+  if (tempbearingFileAlreadyExists) {
+    // Assigned so coder knowns expected data type.
+    // Causes intermittent error.
+    // status0 = coder.ceval('remove', coder.ref(tempBearingFilePath));
+    status0 = remove(&newTempFilePath_1[0]);
+    if (status0 != 0) {
+      perror(&msg0[0]);
+    }
+  }
   if (bearingFileAlreadyExists) {
-    signed char fileid;
     signed char status2;
     // Read bearing file and see if a bearing for this parent file has already
     // been written If so, append new estimate and remove the old ones - then
@@ -679,7 +730,7 @@ double bearing(const coder::array<char, 2U> &filePath)
     // Write out the table to the temp bearing file.
     // We use a temp file so that if there is an error or system shutdown
     // during the write, we don't lose the original file.
-    fileid = coder::internal::cfopen(tempBearingFilePath, "wb");
+    status0 = coder::internal::cfopen(tempBearingFilePath, "wb");
     i = tableIn.data.f1.size(0);
     for (int b_i{0}; b_i < i; b_i++) {
       if (b_i + 1 > tableIn.data.f1.size(0)) {
@@ -712,108 +763,144 @@ double bearing(const coder::array<char, 2U> &filePath)
       if (b_i + 1 > tableIn.data.f10.size(0)) {
         rtDynamicBoundsError(b_i + 1, 1, tableIn.data.f10.size(0), o_emlrtBCI);
       }
-      if (fileid == 0) {
+      if (status0 == 0) {
         b_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
       }
-      varargin_2.set_size(1, tableIn.data.f2[b_i].f1.size(1) + 1);
+      newTempFilePath_1.set_size(1, tableIn.data.f2[b_i].f1.size(1) + 1);
       n = tableIn.data.f2[b_i].f1.size(1);
       for (i1 = 0; i1 < n; i1++) {
-        varargin_2[i1] = tableIn.data.f2[b_i].f1[i1];
+        newTempFilePath_1[i1] = tableIn.data.f2[b_i].f1[i1];
       }
-      varargin_2[tableIn.data.f2[b_i].f1.size(1)] = '\x00';
-      f = coder::internal::getfilestar(static_cast<double>(fileid),
+      newTempFilePath_1[tableIn.data.f2[b_i].f1.size(1)] = '\x00';
+      f = coder::internal::getfilestar(static_cast<double>(status0),
                                        bearingFileAlreadyExists);
       if (f == nullptr) {
         rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
       } else {
-        std::fprintf(f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", tableIn.data.f1[b_i],
-                     &varargin_2[0], tableIn.data.f3[b_i], tableIn.data.f4[b_i],
-                     tableIn.data.f5[b_i], tableIn.data.f6[b_i],
-                     tableIn.data.f7[b_i], tableIn.data.f8[b_i],
-                     tableIn.data.f9[b_i], tableIn.data.f10[b_i]);
+        std::fprintf(
+            f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", tableIn.data.f1[b_i],
+            &newTempFilePath_1[0], tableIn.data.f3[b_i], tableIn.data.f4[b_i],
+            tableIn.data.f5[b_i], tableIn.data.f6[b_i], tableIn.data.f7[b_i],
+            tableIn.data.f8[b_i], tableIn.data.f9[b_i], tableIn.data.f10[b_i]);
         if (bearingFileAlreadyExists) {
           std::fflush(f);
         }
       }
     }
-    coder::internal::cfclose(static_cast<double>(fileid));
+    n = coder::internal::cfclose(static_cast<double>(status0));
+    std::copy(&b_msg3[0], &b_msg3[80], &msg3[0]);
+    if ((status0 == -1) || (n == -1)) {
+      perror(&msg3[0]);
+    }
     // Delete the original bearing file, then rename the temp as the primary
     // file
     // retVal = coder.ceval('getcwd', coder.ref(untokenizedDir), 200);
-    //  ['"', bearingFilePath,'"'];
-    // ['"', tempBearingFilePath,'"'];
     // Assigned so coder knowns expected data type.
-    fileid = remove(&bearingFilePath[0]);
-    status2 = rename(&tempBearingFilePath[0], &bearingFilePath[0]);
-    n = std::snprintf(nullptr, 0, "%d", fileid);
+    // status1 = coder.ceval('remove',
+    // coder.ref(originalBearingPathStringinQuotes));
+    std::copy(&b_msg1[0], &b_msg1[65], &msg1[0]);
+    // fprintf('attempting to delete original bearing file...\n')
+    status0 = remove(&bearingFilePath[0]);
+    if (status0 != 0) {
+      perror(&msg1[0]);
+    }
+    // Debugging code for intermittent rename errors
+    //  fprintf('%s\n', tempBearingFilePath)
+    //  fprintf('%s\n', bearingFilePath)
+    //  fprintf('PAUSING.....\n')
+    //  pause(10);
+    //  if isfile(bearingFilePath)
+    //      fprintf('Bearing file path is valid\n')
+    //  else
+    //      fprintf('Bearing file path is NOT valid\n')
+    //  end
+    //
+    //  if isfile(tempBearingFilePath)
+    //      fprintf('Temp bearing file path is valid\n')
+    //  else
+    //      fprintf('Temp bearing file path is NOT valid\n')
+    //  end
+    std::copy(&b_msg2[0], &b_msg2[85], &msg2[0]);
+    // For reasons I can't determine, using tempBearingFilePath in the
+    // rename commands below would occasionally fail at run time with the
+    // error 'No such file or directory'. I excluded issues with
+    // temporary write access by looping the rename command if it failed.
+    // I also showed that a static path with the same data held in
+    // tempBearingFilePath did not reproduce the error. I was unable to
+    // determine the cause after looking through bearing.cpp after code
+    // gen. Running the sprintf command extracts the text of
+    // tempBearingFilePath and the error doesn't reoccur. I don't know
+    // why this happen.
+    // newTempFilePath =
+    // '/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/CODE_PLAYGROUND/uavrt_bearing/bearings_temp.csv';
+    coder::b_sprintf(tempBearingFilePath, newTempFilePath_1);
+    // fprintf('%s\n', tempBearingFilePath) %To show these contain the same
+    // string fprintf('%s\n', newTempFilePath) Line below will intermittently
+    // cause a runtime error. status2 = coder.ceval('rename',
+    // coder.ref(tempBearingFilePath) , coder.ref(bearingFilePath));
+    status2 = rename(&newTempFilePath_1[0], &bearingFilePath[0]);
+    if (status2 != 0) {
+      perror(&msg2[0]);
+    }
+    n = std::snprintf(nullptr, 0, "%d", status0);
     if (n + 1 < 0) {
       rtNonNegativeError(static_cast<double>(n + 1), emlrtDCI);
     }
-    bearingFilePath.set_size(1, n + 1);
-    std::snprintf(&bearingFilePath[0], (size_t)(n + 1), "%d", fileid);
+    status1.set_size(1, n + 1);
+    std::snprintf(&status1[0], (size_t)(n + 1), "%d", status0);
     if (n < 1) {
       n = 0;
     }
-    bearingFilePath.set_size(bearingFilePath.size(0), n);
+    status1.set_size(status1.size(0), n);
     n = std::snprintf(nullptr, 0, "%d", status2);
     if (n + 1 < 0) {
       rtNonNegativeError(static_cast<double>(n + 1), emlrtDCI);
     }
-    tempBearingFilePath.set_size(1, n + 1);
-    std::snprintf(&tempBearingFilePath[0], (size_t)(n + 1), "%d", status2);
+    b_status2.set_size(1, n + 1);
+    std::snprintf(&b_status2[0], (size_t)(n + 1), "%d", status2);
     if (n < 1) {
       n = 0;
     }
-    tempBearingFilePath.set_size(tempBearingFilePath.size(0), n);
-    if (fileid != 0) {
-      varargin_2.set_size(1, bearingFilePath.size(1) + 1);
-      n = bearingFilePath.size(1);
-      for (i = 0; i < n; i++) {
-        varargin_2[i] = bearingFilePath[i];
-      }
-      varargin_2[bearingFilePath.size(1)] = '\x00';
-      std::printf("UAV-RT: Unable to delete original bearing file. System "
-                  "reported: %s ",
-                  &varargin_2[0]);
-      std::fflush(stdout);
-    } else if (status2 != 0) {
-      varargin_2.set_size(1, tempBearingFilePath.size(1) + 1);
-      n = tempBearingFilePath.size(1);
-      for (i = 0; i < n; i++) {
-        varargin_2[i] = tempBearingFilePath[i];
-      }
-      varargin_2[tempBearingFilePath.size(1)] = '\x00';
-      std::printf("UAV-RT: Unable to rename temp bearing file as primary "
-                  "bearing file. System reported: %s ",
-                  &varargin_2[0]);
-      std::fflush(stdout);
-    }
+    b_status2.set_size(b_status2.size(0), n);
+    //  if status1~=0 | status2~=0
+    //      if status1~=0
+    //          fprintf('UAV-RT: Unable to delete original bearing file. System
+    //          reported: %s \n ', cmdout1);
+    //      end
+    //      if status2~=0
+    //          fprintf('UAV-RT: Unable to rename temp bearing file as primary
+    //          bearing file. System reported: %s \n', cmdout2);
+    //      end
+    //  end
   } else {
-    signed char fileid;
     // Create the bearing file and print the data
-    fileid = coder::internal::cfopen(bearingFilePath, "ab");
-    if (fileid == 0) {
+    status0 = coder::internal::cfopen(bearingFilePath, "ab");
+    if (status0 == 0) {
       b_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
     }
     n = i1 - i;
-    varargin_2.set_size(1, n + 1);
+    newTempFilePath_1.set_size(1, n + 1);
     for (i1 = 0; i1 < n; i1++) {
-      varargin_2[i1] = filePath[i + i1];
+      newTempFilePath_1[i1] = filePath[i + i1];
     }
-    varargin_2[n] = '\x00';
-    f = coder::internal::getfilestar(static_cast<double>(fileid),
+    newTempFilePath_1[n] = '\x00';
+    f = coder::internal::getfilestar(static_cast<double>(status0),
                                      bearingFileAlreadyExists);
     if (f == nullptr) {
       rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
     } else {
-      std::fprintf(f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", u, &varargin_2[0],
-                   b_bearing, M, mtmp, longitude_deg, alt_AGL_m, alt_ASL_m,
-                   time_start_s, time_end_s);
+      std::fprintf(f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", u,
+                   &newTempFilePath_1[0], b_bearing, M, mtmp, longitude_deg,
+                   alt_AGL_m, alt_ASL_m, time_start_s, time_end_s);
       if (bearingFileAlreadyExists) {
         std::fflush(f);
       }
     }
-    coder::internal::cfclose(static_cast<double>(fileid));
+    n = coder::internal::cfclose(static_cast<double>(status0));
+    std::copy(&b_msg4[0], &b_msg4[71], &msg4[0]);
+    if ((status0 == -1) || (n == -1)) {
+      perror(&msg4[0]);
+    }
   }
   return b_bearing;
 }

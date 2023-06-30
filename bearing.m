@@ -22,7 +22,9 @@ function [bearing] = bearing(filePath)
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 
-coder.cinclude('stdio.h');%Needed for remove and move file commands
+%When using C code generation
+%coder.cinclude('stdio.h');%Needed for remove and move file commands
+coder.cinclude('cstdio');%Needed for remove and move file commands
 
 [pulseStructVec, ~] = readpulsecsv(filePath);
 
@@ -64,6 +66,31 @@ bearingFilePath = [fileDirectory, filesep, 'bearings.csv'];
 tempBearingFilePath = [fileDirectory, filesep, 'bearings_temp.csv'];
 
 bearingFileAlreadyExists = isfile(bearingFilePath);
+tempbearingFileAlreadyExists = isfile(tempBearingFilePath);
+
+%Remove old temp bearing file if it wasn't deleted properly previously
+msg0 = 'UAV-RT: Unable to delete existing temp bearing file. System reported';
+
+%See note below near the rename command for why this sprintf command is
+%needed. The intermittent error described there would occasionally occur
+%here as well. 
+newTempFilePath_1 = sprintf('%s',tempBearingFilePath);
+
+if tempbearingFileAlreadyExists
+     if coder.target('MATLAB')
+        [status0, ~] = system(['rm "', tempBearingFilePath,'"']);
+     else
+        status0 = int8(-1);%Assigned so coder knowns expected data type. 
+        %Causes intermittent error. 
+        %status0 = coder.ceval('remove', coder.ref(tempBearingFilePath));
+        status0 = coder.ceval('remove', coder.ref(newTempFilePath_1));
+        if status0~=0
+            coder.ceval('perror',coder.ref(msg0));
+        end
+     end
+
+end
+
 
 tag_id_fspec = '%u';
 parentFileName_fspec = '%s';
@@ -151,34 +178,94 @@ if bearingFileAlreadyExists
                                   tableOut.time_end_s(i));
     end
 
-    fclose(fid);
+    closeStatus = fclose(fid);
+
+    msg3 = 'UAV-RT: Error opening or closing temporary bearing file during write operation. ';
+
+    if fid == -1 | closeStatus == -1
+        if coder.target('MATLAB')
+            error(msg3)
+        else
+            coder.ceval('perror',coder.ref(msg3));
+        end
+    end
+
+
     %Delete the original bearing file, then rename the temp as the primary
     %file
     if coder.target('MATLAB')
         [status1, cmdout1] = system(['rm "', bearingFilePath,'"']);
         [status2, cmdout2] = system(['mv "', tempBearingFilePath,'" "', bearingFilePath, '"']);
     else
-        
+
         %retVal = coder.ceval('getcwd', coder.ref(untokenizedDir), 200);
-        originalBearingPathStringinQuotes = bearingFilePath;% ['"', bearingFilePath,'"'];
-        tempBearingPathStringinQuotes = tempBearingFilePath;%['"', tempBearingFilePath,'"'];
-        status1 = int8(0);%Assigned so coder knowns expected data type. 
-        status2 = int8(0);        
-        status1 = coder.ceval('remove', coder.ref(originalBearingPathStringinQuotes));
-        status2 = coder.ceval('rename', coder.ref(tempBearingPathStringinQuotes) , coder.ref(originalBearingPathStringinQuotes));
+        status1 = int8(-1);%Assigned so coder knowns expected data type. 
+        status2 = int8(-1);        
+        %status1 = coder.ceval('remove', coder.ref(originalBearingPathStringinQuotes));
+        
+        msg1 = 'UAV-RT: Unable to delete original bearing file. System reported: ';
+        %fprintf('attempting to delete original bearing file...\n')
+        status1 = coder.ceval('remove', coder.ref(bearingFilePath));
+        if status1 ~= 0
+            coder.ceval('perror',coder.ref(msg1));
+        end
+
+        %Debugging code for intermittent rename errors
+        % fprintf('%s\n', tempBearingFilePath)
+        % fprintf('%s\n', bearingFilePath)
+        % fprintf('PAUSING.....\n')
+        % pause(10);
+        % if isfile(bearingFilePath)
+        %     fprintf('Bearing file path is valid\n')
+        % else
+        %     fprintf('Bearing file path is NOT valid\n')
+        % end
+        % 
+        % if isfile(tempBearingFilePath)
+        %     fprintf('Temp bearing file path is valid\n')
+        % else
+        %     fprintf('Temp bearing file path is NOT valid\n')
+        % end
+
+
+        msg2 = 'UAV-RT: Unable to rename temp bearing file as primary bearing file. System reported: ';
+
+        %For reasons I can't determine, using tempBearingFilePath in the
+        %rename commands below would occasionally fail at run time with the
+        %error 'No such file or directory'. I excluded issues with
+        %temporary write access by looping the rename command if it failed.
+        %I also showed that a static path with the same data held in
+        %tempBearingFilePath did not reproduce the error. I was unable to
+        %determine the cause after looking through bearing.cpp after code
+        %gen. Running the sprintf command extracts the text of
+        %tempBearingFilePath and the error doesn't reoccur. I don't know
+        %why this happen. 
+        %newTempFilePath = '/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/CODE_PLAYGROUND/uavrt_bearing/bearings_temp.csv';
+        newTempFilePath_2 = sprintf('%s',tempBearingFilePath);
+        %fprintf('%s\n', tempBearingFilePath) %To show these contain the same string
+        %fprintf('%s\n', newTempFilePath)
+        
+        %Line below will intermittently cause a runtime error. 
+        %status2 = coder.ceval('rename', coder.ref(tempBearingFilePath) , coder.ref(bearingFilePath));
+        status2 = coder.ceval('rename', coder.ref(newTempFilePath_2) , coder.ref(bearingFilePath));
+        if status2~=0
+            coder.ceval('perror',coder.ref(msg2));
+        end
+
+
         cmdout1 = sprintf('%d',status1);
         cmdout2 = sprintf('%d',status2);
     end
     
+    % if status1~=0 | status2~=0
+    %     if status1~=0
+    %         fprintf('UAV-RT: Unable to delete original bearing file. System reported: %s \n ', cmdout1);
+    %     end
+    %     if status2~=0
+    %         fprintf('UAV-RT: Unable to rename temp bearing file as primary bearing file. System reported: %s \n', cmdout2);
+    %     end
+    % end
 
-    if status1~=0
-        fprintf('UAV-RT: Unable to delete original bearing file. System reported: %s ', cmdout1);
-        return
-    end
-    if status2~=0
-        fprintf('UAV-RT: Unable to rename temp bearing file as primary bearing file. System reported: %s ', cmdout2);
-        return
-    end
 else
     %Create the bearing file and print the data
     fid = fopen(bearingFilePath,'a');
@@ -186,7 +273,17 @@ else
                               latitude_deg, longitude_deg, ...
                               alt_AGL_m, alt_ASL_m, ...
                               time_start_s, time_end_s);
-    fclose(fid);
+    closeStatus = fclose(fid);
+
+    msg4 = 'UAV-RT: Error creating or closing bearing file during write operation. ';
+
+    if fid == -1 | closeStatus == -1
+        if coder.target('MATLAB')
+            error(msg4)
+        else
+            coder.ceval('perror',coder.ref(msg4));
+        end
+    end
 
 end
 

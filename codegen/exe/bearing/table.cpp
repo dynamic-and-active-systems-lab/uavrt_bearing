@@ -5,7 +5,7 @@
 // File: table.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 27-Jun-2023 16:44:57
+// C/C++ source code generated on  : 30-Jun-2023 13:13:27
 //
 
 // Include Files
@@ -627,13 +627,21 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   };
   static rtDoubleCheckInfo b_emlrtDCI{
       364,               // lineNo
-      25,                // colNo
+      35,                // colNo
       "tabular/vertcat", // fName
       "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
       1                                                      // checkKind
   };
   static rtDoubleCheckInfo c_emlrtDCI{
+      364,               // lineNo
+      25,                // colNo
+      "tabular/vertcat", // fName
+      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
+      1                                                      // checkKind
+  };
+  static rtDoubleCheckInfo d_emlrtDCI{
       229,                          // lineNo
       35,                           // colNo
       "tabularDimension/setLabels", // fName
@@ -641,14 +649,6 @@ void table::vertcat(const b_table &varargin_2, table &t) const
       "tabular/+matlab/+internal/+coder/+tabular/+private/tabularDimen"
       "sion.m", // pName
       1         // checkKind
-  };
-  static rtDoubleCheckInfo emlrtDCI{
-      364,               // lineNo
-      35,                // colNo
-      "tabular/vertcat", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
-      "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
-      1                                                      // checkKind
   };
   static rtRunTimeErrorInfo r_emlrtRTEI{
       377,              // lineNo
@@ -711,7 +711,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   }
   d = static_cast<double>(data.f2.size(0)) + 1.0;
   if (static_cast<double>(data.f2.size(0)) + 1.0 != data.f2.size(0) + 1) {
-    rtIntegerError(static_cast<double>(data.f2.size(0)) + 1.0, emlrtDCI);
+    rtIntegerError(static_cast<double>(data.f2.size(0)) + 1.0, b_emlrtDCI);
   }
   if ((data.f2.size(0) < 0) || (data.f2.size(0) > t.data.f2.size(0) - 1)) {
     rtDynamicBoundsError(data.f2.size(0), 0, t.data.f2.size(0) - 1, b_emlrtBCI);
@@ -719,7 +719,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f2[data.f2.size(0)].f1.set_size(1,
                                          t.data.f2[data.f2.size(0)].f1.size(1));
   if (static_cast<double>(data.f2.size(0)) + 1.0 != data.f2.size(0) + 1) {
-    rtIntegerError(static_cast<double>(data.f2.size(0)) + 1.0, emlrtDCI);
+    rtIntegerError(static_cast<double>(data.f2.size(0)) + 1.0, b_emlrtDCI);
   }
   if ((data.f2.size(0) < 0) || (data.f2.size(0) > t.data.f2.size(0) - 1)) {
     rtDynamicBoundsError(data.f2.size(0), 0, t.data.f2.size(0) - 1, b_emlrtBCI);
@@ -727,19 +727,19 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f2[data.f2.size(0)].f1.set_size(t.data.f2[data.f2.size(0)].f1.size(0),
                                          varargin_2.data.f2[0].f1.size(1));
   if (static_cast<double>(data.f2.size(0)) + 1.0 != data.f2.size(0) + 1) {
-    rtIntegerError(static_cast<double>(data.f2.size(0)) + 1.0, emlrtDCI);
+    rtIntegerError(static_cast<double>(data.f2.size(0)) + 1.0, b_emlrtDCI);
   }
   b = ((data.f2.size(0) < 0) || (data.f2.size(0) > t.data.f2.size(0) - 1));
   if (b) {
     rtDynamicBoundsError(data.f2.size(0), 0, t.data.f2.size(0) - 1, b_emlrtBCI);
   }
   if (static_cast<double>(data.f2.size(0)) + 1.0 != data.f2.size(0) + 1) {
-    rtIntegerError(static_cast<double>(data.f2.size(0)) + 1.0, emlrtDCI);
+    rtIntegerError(static_cast<double>(data.f2.size(0)) + 1.0, b_emlrtDCI);
   }
   loop_ub = varargin_2.data.f2[0].f1.size(1);
   for (i = 0; i < loop_ub; i++) {
     if (d != static_cast<int>(d)) {
-      rtIntegerError(d, b_emlrtDCI);
+      rtIntegerError(d, c_emlrtDCI);
     }
     if ((static_cast<int>(d) - 1 < 0) ||
         (static_cast<int>(d) - 1 > t.data.f2.size(0) - 1)) {
@@ -835,7 +835,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.rowDim.length = static_cast<double>(data.f1.size(0)) + 1.0;
   indices.set_size(1, indices.size(1));
   if (static_cast<double>(data.f1.size(0)) + 1.0 != data.f1.size(0) + 1) {
-    rtIntegerError(static_cast<double>(data.f1.size(0)) + 1.0, c_emlrtDCI);
+    rtIntegerError(static_cast<double>(data.f1.size(0)) + 1.0, d_emlrtDCI);
   }
   indices.set_size(indices.size(0), data.f1.size(0) + 1);
   i = data.f1.size(0);

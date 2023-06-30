@@ -5,7 +5,7 @@
 // File: readbearingcsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 27-Jun-2023 16:44:57
+// C/C++ source code generated on  : 30-Jun-2023 13:13:27
 //
 
 // Include Files
@@ -80,7 +80,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      86,               // lineNo
+      87,               // lineNo
       22,               // colNo
       "parentFileName", // aName
       "readbearingcsv", // fName
@@ -570,42 +570,6 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       0                 // checkKind
   };
   static rtDoubleCheckInfo b_emlrtDCI{
-      73,               // lineNo
-      53,               // colNo
-      "readbearingcsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
-  };
-  static rtDoubleCheckInfo c_emlrtDCI{
-      74,               // lineNo
-      53,               // colNo
-      "readbearingcsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
-  };
-  static rtDoubleCheckInfo d_emlrtDCI{
-      75,               // lineNo
-      53,               // colNo
-      "readbearingcsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
-  };
-  static rtDoubleCheckInfo e_emlrtDCI{
-      76,               // lineNo
-      53,               // colNo
-      "readbearingcsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
-  };
-  static rtDoubleCheckInfo emlrtDCI{
       72,               // lineNo
       37,               // colNo
       "readbearingcsv", // fName
@@ -614,8 +578,35 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "adbearingcsv.m", // pName
       1                 // checkKind
   };
+  static rtDoubleCheckInfo c_emlrtDCI{
+      73,               // lineNo
+      53,               // colNo
+      "readbearingcsv", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
+      "adbearingcsv.m", // pName
+      1                 // checkKind
+  };
+  static rtDoubleCheckInfo d_emlrtDCI{
+      74,               // lineNo
+      53,               // colNo
+      "readbearingcsv", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
+      "adbearingcsv.m", // pName
+      1                 // checkKind
+  };
+  static rtDoubleCheckInfo e_emlrtDCI{
+      75,               // lineNo
+      53,               // colNo
+      "readbearingcsv", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
+      "adbearingcsv.m", // pName
+      1                 // checkKind
+  };
   static rtDoubleCheckInfo f_emlrtDCI{
-      77,               // lineNo
+      76,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -624,7 +615,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       1                 // checkKind
   };
   static rtDoubleCheckInfo g_emlrtDCI{
-      78,               // lineNo
+      77,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -633,7 +624,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       1                 // checkKind
   };
   static rtDoubleCheckInfo h_emlrtDCI{
-      79,               // lineNo
+      78,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -642,6 +633,15 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       1                 // checkKind
   };
   static rtDoubleCheckInfo i_emlrtDCI{
+      79,               // lineNo
+      53,               // colNo
+      "readbearingcsv", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
+      "adbearingcsv.m", // pName
+      1                 // checkKind
+  };
+  static rtDoubleCheckInfo j_emlrtDCI{
       80,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
@@ -1041,7 +1041,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (i1 = 0; i1 < text_len; i1++) {
         match_idx = static_cast<int>(parentFileName_inds[i1]);
         if (parentFileName_inds[i1] != match_idx) {
-          rtIntegerError(parentFileName_inds[i1], emlrtDCI);
+          rtIntegerError(parentFileName_inds[i1], b_emlrtDCI);
         }
         if ((match_idx < 1) || (match_idx > lineStr.size(1))) {
           rtDynamicBoundsError(match_idx, 1, lineStr.size(1), ab_emlrtBCI);
@@ -1055,7 +1055,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (c_i = 0; c_i < text_len; c_i++) {
         i1 = static_cast<int>(bearing_inds[c_i]);
         if (bearing_inds[c_i] != i1) {
-          rtIntegerError(bearing_inds[c_i], b_emlrtDCI);
+          rtIntegerError(bearing_inds[c_i], c_emlrtDCI);
         }
         if ((i1 < 1) || (i1 > lineStr.size(1))) {
           rtDynamicBoundsError(i1, 1, lineStr.size(1), cb_emlrtBCI);
@@ -1075,7 +1075,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (c_i = 0; c_i < text_len; c_i++) {
         i1 = static_cast<int>(tau_inds[c_i]);
         if (tau_inds[c_i] != i1) {
-          rtIntegerError(tau_inds[c_i], c_emlrtDCI);
+          rtIntegerError(tau_inds[c_i], d_emlrtDCI);
         }
         if ((i1 < 1) || (i1 > lineStr.size(1))) {
           rtDynamicBoundsError(i1, 1, lineStr.size(1), eb_emlrtBCI);
@@ -1095,7 +1095,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (c_i = 0; c_i < text_len; c_i++) {
         i1 = static_cast<int>(lat_inds[c_i]);
         if (lat_inds[c_i] != i1) {
-          rtIntegerError(lat_inds[c_i], d_emlrtDCI);
+          rtIntegerError(lat_inds[c_i], e_emlrtDCI);
         }
         if ((i1 < 1) || (i1 > lineStr.size(1))) {
           rtDynamicBoundsError(i1, 1, lineStr.size(1), gb_emlrtBCI);
@@ -1115,7 +1115,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (c_i = 0; c_i < text_len; c_i++) {
         i1 = static_cast<int>(lon_inds[c_i]);
         if (lon_inds[c_i] != i1) {
-          rtIntegerError(lon_inds[c_i], e_emlrtDCI);
+          rtIntegerError(lon_inds[c_i], f_emlrtDCI);
         }
         if ((i1 < 1) || (i1 > lineStr.size(1))) {
           rtDynamicBoundsError(i1, 1, lineStr.size(1), ib_emlrtBCI);
@@ -1135,7 +1135,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (c_i = 0; c_i < text_len; c_i++) {
         i1 = static_cast<int>(alt_AGL_inds[c_i]);
         if (alt_AGL_inds[c_i] != i1) {
-          rtIntegerError(alt_AGL_inds[c_i], f_emlrtDCI);
+          rtIntegerError(alt_AGL_inds[c_i], g_emlrtDCI);
         }
         if ((i1 < 1) || (i1 > lineStr.size(1))) {
           rtDynamicBoundsError(i1, 1, lineStr.size(1), kb_emlrtBCI);
@@ -1155,7 +1155,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (c_i = 0; c_i < text_len; c_i++) {
         i1 = static_cast<int>(alt_ASL_inds[c_i]);
         if (alt_ASL_inds[c_i] != i1) {
-          rtIntegerError(alt_ASL_inds[c_i], g_emlrtDCI);
+          rtIntegerError(alt_ASL_inds[c_i], h_emlrtDCI);
         }
         if ((i1 < 1) || (i1 > lineStr.size(1))) {
           rtDynamicBoundsError(i1, 1, lineStr.size(1), mb_emlrtBCI);
@@ -1175,7 +1175,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (c_i = 0; c_i < text_len; c_i++) {
         i1 = static_cast<int>(time_start_inds[c_i]);
         if (time_start_inds[c_i] != i1) {
-          rtIntegerError(time_start_inds[c_i], h_emlrtDCI);
+          rtIntegerError(time_start_inds[c_i], i_emlrtDCI);
         }
         if ((i1 < 1) || (i1 > lineStr.size(1))) {
           rtDynamicBoundsError(i1, 1, lineStr.size(1), ob_emlrtBCI);
@@ -1195,7 +1195,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       for (c_i = 0; c_i < text_len; c_i++) {
         i1 = static_cast<int>(time_end_inds[c_i]);
         if (time_end_inds[c_i] != i1) {
-          rtIntegerError(time_end_inds[c_i], i_emlrtDCI);
+          rtIntegerError(time_end_inds[c_i], j_emlrtDCI);
         }
         if ((i1 < 1) || (i1 > lineStr.size(1))) {
           rtDynamicBoundsError(i1, 1, lineStr.size(1), qb_emlrtBCI);
@@ -1214,6 +1214,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       // i = i+1;
     }
   } else {
+    std::printf("UAV-RT: Error opening the bearing csv file.");
+    std::fflush(stdout);
     tagID.set_size(1);
     tagID[0] = 0U;
     r.f1.set_size(1, 14);

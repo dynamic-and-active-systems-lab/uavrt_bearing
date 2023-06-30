@@ -1,15 +1,15 @@
-/*
- * Academic License - for use in teaching, academic research, and meeting
- * course requirements at degree granting institutions only.  Not for
- * government, commercial, or other organizational use.
- * File: main.h
- *
- * MATLAB Coder version            : 5.6
- * C/C++ source code generated on  : 24-May-2023 12:11:41
- */
+//
+// Academic License - for use in teaching, academic research, and meeting
+// course requirements at degree granting institutions only.  Not for
+// government, commercial, or other organizational use.
+// File: main.h
+//
+// MATLAB Coder version            : 5.6
+// C/C++ source code generated on  : 28-Jun-2023 15:11:34
+//
 
 /*************************************************************************/
-/* This automatically generated example C main file shows how to call    */
+/* This automatically generated example C++ main file shows how to call  */
 /* entry-point functions that MATLAB Coder generated. You must customize */
 /* this file for your application. Do not modify this file directly.     */
 /* Instead, make a copy of this file, modify it, and integrate it into   */
@@ -36,27 +36,19 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/* Include Files */
+// Include Files
 #include "rtwtypes.h"
-#include <stddef.h>
-#include <stdlib.h>
+#include <cstddef>
+#include <cstdlib>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/* Function Declarations */
+// Function Declarations
 extern int main(int argc, char **argv);
 
 extern void main_bearing(char *inStr);
 
-#ifdef __cplusplus
-}
 #endif
-
-#endif
-/*
- * File trailer for main.h
- *
- * [EOF]
- */
+//
+// File trailer for main.h
+//
+// [EOF]
+//
