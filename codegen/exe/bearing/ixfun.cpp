@@ -5,7 +5,7 @@
 // File: ixfun.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -48,7 +48,7 @@ void expand_atan2(const ::coder::array<double, 1U> &a,
                   const ::coder::array<double, 1U> &b,
                   ::coder::array<double, 1U> &c)
 {
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       225,           // lineNo
       "expand_atan2" // fName
   };
@@ -65,7 +65,7 @@ void expand_atan2(const ::coder::array<double, 1U> &a,
       csz_idx_0 = u0;
     }
     if (a.size(0) != b.size(0)) {
-      k_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+      k_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
     }
   }
   c.set_size(csz_idx_0);

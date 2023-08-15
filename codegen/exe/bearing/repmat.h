@@ -5,7 +5,7 @@
 // File: repmat.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 #ifndef REPMAT_H
@@ -23,9 +23,7 @@ namespace coder {
 void repmat(const d_struct_T a_data[], double varargin_1,
             ::coder::array<d_struct_T, 2U> &b);
 
-void repmat(double varargin_1, ::coder::array<empty, 2U> &b);
-
-} // namespace coder
+}
 
 #endif
 //

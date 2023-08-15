@@ -5,7 +5,7 @@
 // File: bearing_data.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 #ifndef BEARING_DATA_H
@@ -20,12 +20,18 @@
 
 // Variable Declarations
 extern rtRunTimeErrorInfo emlrtRTEI;
-extern rtRunTimeErrorInfo e_emlrtRTEI;
+extern rtRunTimeErrorInfo b_emlrtRTEI;
+extern rtRunTimeErrorInfo c_emlrtRTEI;
+extern rtRunTimeErrorInfo d_emlrtRTEI;
 extern rtRunTimeErrorInfo h_emlrtRTEI;
 extern rtRunTimeErrorInfo i_emlrtRTEI;
-extern rtRunTimeErrorInfo j_emlrtRTEI;
 extern rtDoubleCheckInfo emlrtDCI;
+extern rtRunTimeErrorInfo j_emlrtRTEI;
+extern rtRunTimeErrorInfo k_emlrtRTEI;
+extern rtRunTimeErrorInfo n_emlrtRTEI;
 extern rtRunTimeErrorInfo o_emlrtRTEI;
+extern rtRunTimeErrorInfo p_emlrtRTEI;
+extern rtRunTimeErrorInfo u_emlrtRTEI;
 extern boolean_T isInitialized_bearing;
 
 #endif

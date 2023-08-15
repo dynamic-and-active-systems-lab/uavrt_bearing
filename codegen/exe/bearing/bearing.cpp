@@ -5,7 +5,7 @@
 // File: bearing.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -70,192 +70,202 @@
 double bearing(const coder::array<char, 2U> &filePath)
 {
   static rtBoundsCheckInfo b_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      36,                                         // lineNo
-      33,                                         // colNo
-      "pulseStructVec",                           // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,               // iFirst
+      -1,               // iLast
+      36,               // lineNo
+      33,               // colNo
+      "pulseStructVec", // aName
+      "bearing",        // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      60,                                         // lineNo
-      29,                                         // colNo
-      "sepInds",                                  // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,        // iFirst
+      -1,        // iLast
+      61,        // lineNo
+      29,        // colNo
+      "sepInds", // aName
+      "bearing", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      134,                                        // lineNo
-      85,                                         // colNo
-      "tableIn.parentFileName",                   // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                       // iFirst
+      -1,                       // iLast
+      136,                      // lineNo
+      85,                       // colNo
+      "tableIn.parentFileName", // aName
+      "bearing",                // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      134,                                        // lineNo
-      30,                                         // colNo
-      "alreadyInBearingList",                     // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                     // iFirst
+      -1,                     // iLast
+      136,                    // lineNo
+      30,                     // colNo
+      "alreadyInBearingList", // aName
+      "bearing",              // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      169,                                        // lineNo
-      50,                                         // colNo
-      "tableOut.tagID",                           // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,               // iFirst
+      -1,               // iLast
+      171,              // lineNo
+      50,               // colNo
+      "tableOut.tagID", // aName
+      "bearing",        // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo g_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      170,                                        // lineNo
-      59,                                         // colNo
-      "tableOut.parentFileName",                  // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                        // iFirst
+      -1,                        // iLast
+      172,                       // lineNo
+      59,                        // colNo
+      "tableOut.parentFileName", // aName
+      "bearing",                 // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo h_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      171,                                        // lineNo
-      52,                                         // colNo
-      "tableOut.bearing",                         // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                 // iFirst
+      -1,                 // iLast
+      173,                // lineNo
+      52,                 // colNo
+      "tableOut.bearing", // aName
+      "bearing",          // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo i_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      172,                                        // lineNo
-      48,                                         // colNo
-      "tableOut.tau",                             // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,             // iFirst
+      -1,             // iLast
+      174,            // lineNo
+      48,             // colNo
+      "tableOut.tau", // aName
+      "bearing",      // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo j_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      173,                                        // lineNo
-      57,                                         // colNo
-      "tableOut.latitude_deg",                    // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                      // iFirst
+      -1,                      // iLast
+      175,                     // lineNo
+      57,                      // colNo
+      "tableOut.latitude_deg", // aName
+      "bearing",               // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo k_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      174,                                        // lineNo
-      58,                                         // colNo
-      "tableOut.longitude_deg",                   // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                       // iFirst
+      -1,                       // iLast
+      176,                      // lineNo
+      58,                       // colNo
+      "tableOut.longitude_deg", // aName
+      "bearing",                // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo l_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      175,                                        // lineNo
-      54,                                         // colNo
-      "tableOut.alt_AGL_m",                       // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                   // iFirst
+      -1,                   // iLast
+      177,                  // lineNo
+      54,                   // colNo
+      "tableOut.alt_AGL_m", // aName
+      "bearing",            // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo m_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      176,                                        // lineNo
-      54,                                         // colNo
-      "tableOut.alt_ASL_m",                       // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                   // iFirst
+      -1,                   // iLast
+      178,                  // lineNo
+      54,                   // colNo
+      "tableOut.alt_ASL_m", // aName
+      "bearing",            // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo n_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      177,                                        // lineNo
-      57,                                         // colNo
-      "tableOut.time_start_s",                    // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                      // iFirst
+      -1,                      // iLast
+      179,                     // lineNo
+      57,                      // colNo
+      "tableOut.time_start_s", // aName
+      "bearing",               // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo o_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      178,                                        // lineNo
-      55,                                         // colNo
-      "tableOut.time_end_s",                      // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,                    // iFirst
+      -1,                    // iLast
+      180,                   // lineNo
+      55,                    // colNo
+      "tableOut.time_end_s", // aName
+      "bearing",             // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo p_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      62,                                         // lineNo
-      26,                                         // colNo
-      "filePath",                                 // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,         // iFirst
+      -1,         // iLast
+      63,         // lineNo
+      26,         // colNo
+      "filePath", // aName
+      "bearing",  // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo q_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      62,                                         // lineNo
-      28,                                         // colNo
-      "filePath",                                 // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,         // iFirst
+      -1,         // iLast
+      63,         // lineNo
+      28,         // colNo
+      "filePath", // aName
+      "bearing",  // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo r_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      60,                                         // lineNo
-      21,                                         // colNo
-      "filePath",                                 // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
+      -1,         // iFirst
+      -1,         // iLast
+      61,         // lineNo
+      21,         // colNo
+      "filePath", // aName
+      "bearing",  // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static rtBoundsCheckInfo s_emlrtBCI{
-      -1,                                         // iFirst
-      -1,                                         // iLast
-      60,                                         // lineNo
-      36,                                         // colNo
-      "filePath",                                 // aName
-      "bearing",                                  // fName
-      "/home/dasl/repos/uavrt_bearing/bearing.m", // pName
-      0                                           // checkKind
-  };
-  static rtRunTimeErrorInfo r_emlrtRTEI{
-      48,       // lineNo
-      "fprintf" // fName
-  };
-  static rtRunTimeErrorInfo s_emlrtRTEI{
-      125,       // lineNo
-      "cfprintf" // fName
+      -1,         // iFirst
+      -1,         // iLast
+      61,         // lineNo
+      36,         // colNo
+      "filePath", // aName
+      "bearing",  // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
+      0                                          // checkKind
   };
   static const char b_msg2[85]{
       'U', 'A', 'V', '-', 'R', 'T', ':', ' ', 'U', 'n', 'a', 'b', 'l', 'e', ' ',
@@ -747,7 +757,7 @@ double bearing(const coder::array<char, 2U> &filePath)
         rtDynamicBoundsError(b_i + 1, 1, tableIn.data.f10.size(0), o_emlrtBCI);
       }
       if (status0 == 0) {
-        b_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+        b_rtErrorWithMessageID(b_emlrtRTEI.fName, b_emlrtRTEI.lineNo);
       }
       newTempFilePath_1.set_size(1, tableIn.data.f2[b_i].f1.size(1) + 1);
       n = tableIn.data.f2[b_i].f1.size(1);
@@ -758,7 +768,7 @@ double bearing(const coder::array<char, 2U> &filePath)
       f = coder::internal::getfilestar(static_cast<double>(status0),
                                        bearingFileAlreadyExists);
       if (f == nullptr) {
-        rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
+        rtErrorWithMessageID(emlrtRTEI.fName, emlrtRTEI.lineNo);
       } else {
         std::fprintf(
             f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", tableIn.data.f1[b_i],
@@ -867,7 +877,7 @@ double bearing(const coder::array<char, 2U> &filePath)
     // Create the bearing file and print the data
     status0 = coder::internal::cfopen(bearingFilePath, "ab");
     if (status0 == 0) {
-      b_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+      b_rtErrorWithMessageID(b_emlrtRTEI.fName, b_emlrtRTEI.lineNo);
     }
     n = i1 - i;
     newTempFilePath_1.set_size(1, n + 1);
@@ -878,7 +888,7 @@ double bearing(const coder::array<char, 2U> &filePath)
     f = coder::internal::getfilestar(static_cast<double>(status0),
                                      bearingFileAlreadyExists);
     if (f == nullptr) {
-      rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
+      rtErrorWithMessageID(emlrtRTEI.fName, emlrtRTEI.lineNo);
     } else {
       std::fprintf(f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", u,
                    &newTempFilePath_1[0], b_bearing, M, mtmp, longitude_deg,

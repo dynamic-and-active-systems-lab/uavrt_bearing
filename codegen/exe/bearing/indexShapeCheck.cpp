@@ -5,7 +5,7 @@
 // File: indexShapeCheck.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -17,7 +17,7 @@
 #include <string>
 
 // Variable Definitions
-static rtRunTimeErrorInfo g_emlrtRTEI{
+static rtRunTimeErrorInfo m_emlrtRTEI{
     122,          // lineNo
     "errOrWarnIf" // fName
 };
@@ -105,7 +105,7 @@ void indexShapeCheck(const int matrixSize[2], const int indexSize[2])
       nonSingletonDimFound = true;
     }
     if (nonSingletonDimFound) {
-      l_rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
+      l_rtErrorWithMessageID(m_emlrtRTEI.fName, m_emlrtRTEI.lineNo);
     }
   } else {
     nonSingletonDimFound = (indexSize[0] != 1);
@@ -122,7 +122,7 @@ void indexShapeCheck(const int matrixSize[2], const int indexSize[2])
         nonSingletonDimFound = true;
       }
       if (nonSingletonDimFound) {
-        m_rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
+        m_rtErrorWithMessageID(m_emlrtRTEI.fName, m_emlrtRTEI.lineNo);
       }
     }
   }
@@ -136,7 +136,7 @@ void indexShapeCheck(const int matrixSize[2], const int indexSize[2])
 void indexShapeCheck(int matrixSize, const int indexSize[2])
 {
   if ((matrixSize == 1) && (indexSize[1] != 1)) {
-    h_rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
+    h_rtErrorWithMessageID(m_emlrtRTEI.fName, m_emlrtRTEI.lineNo);
   }
 }
 

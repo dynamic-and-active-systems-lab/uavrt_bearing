@@ -5,7 +5,7 @@
 // File: unique.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -28,7 +28,7 @@ namespace coder {
 void unique_vector(const ::coder::array<double, 1U> &a,
                    ::coder::array<double, 1U> &b)
 {
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       241,            // lineNo
       "unique_vector" // fName
   };
@@ -163,7 +163,7 @@ void unique_vector(const ::coder::array<double, 1U> &a,
   }
   nb += pEnd;
   if (nb > a.size(0)) {
-    g_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   }
   if (nb < 1) {
     b_i = 0;

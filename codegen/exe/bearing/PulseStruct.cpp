@@ -5,11 +5,12 @@
 // File: PulseStruct.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
 #include "PulseStruct.h"
+#include "bearing_data.h"
 #include "bearing_internal_types.h"
 #include "bearing_rtwutil.h"
 #include "bearing_types.h"
@@ -17,6 +18,7 @@
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include "coder_bounded_array.h"
+#include <cmath>
 #include <cstdio>
 
 // Function Definitions
@@ -28,171 +30,380 @@
 //    position   Position as a PositionStruct
 //    euler      Euler angles as a EulerAngleStruct
 //    time       Time of received pulse in seconds
-//    strength   Strength metric of received pulse
+//    time_next  Expected time of next pulse
+//    snrdB        Pulse signal to noise ratio in dB
 //    freqMHz    Frequency of received pulse in MHz
 //    tagID      Tag ID number of received pulse
 //
-// Arguments    : const coder::array<struct_T, 2U> &pos
+// Arguments    : const coder::array<double, 1U> &tagID
+//                const coder::array<double, 1U> &freqMHz
+//                const coder::array<struct_T, 2U> &pos
 //                const coder::array<d_struct_T, 2U> &euler
 //                const coder::array<double, 1U> &b_time
-//                const coder::array<double, 1U> &strength
-//                const coder::array<double, 1U> &freqMHz
-//                const coder::array<double, 1U> &tagID
+//                const coder::array<double, 1U> &timeNext
+//                const coder::array<double, 1U> &snrdB
+//                const coder::array<double, 1U> &stftMag2
+//                const coder::array<double, 1U> &groupSeqCount
+//                const coder::array<double, 1U> &groupIndex
+//                const coder::array<double, 1U> &groupsnrdB
+//                const coder::array<double, 1U> &noisePSD
+//                const coder::array<double, 1U> &detectStatus
+//                const coder::array<double, 1U> &confirmStatus
 //                coder::array<e_struct_T, 2U> &pulse
 // Return Type  : void
 //
-void PulseStruct(const coder::array<struct_T, 2U> &pos,
+void PulseStruct(const coder::array<double, 1U> &tagID,
+                 const coder::array<double, 1U> &freqMHz,
+                 const coder::array<struct_T, 2U> &pos,
                  const coder::array<d_struct_T, 2U> &euler,
                  const coder::array<double, 1U> &b_time,
-                 const coder::array<double, 1U> &strength,
-                 const coder::array<double, 1U> &freqMHz,
-                 const coder::array<double, 1U> &tagID,
+                 const coder::array<double, 1U> &timeNext,
+                 const coder::array<double, 1U> &snrdB,
+                 const coder::array<double, 1U> &stftMag2,
+                 const coder::array<double, 1U> &groupSeqCount,
+                 const coder::array<double, 1U> &groupIndex,
+                 const coder::array<double, 1U> &groupsnrdB,
+                 const coder::array<double, 1U> &noisePSD,
+                 const coder::array<double, 1U> &detectStatus,
+                 const coder::array<double, 1U> &confirmStatus,
                  coder::array<e_struct_T, 2U> &pulse)
 {
-  static rtBoundsCheckInfo
-      b_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          71,            // lineNo
-          19,            // colNo
-          "pulse",       // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      c_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          71,            // lineNo
-          13,            // colNo
-          "pos",         // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      d_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          72,            // lineNo
-          19,            // colNo
-          "pulse",       // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      e_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          72,            // lineNo
-          13,            // colNo
-          "euler",       // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      f_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          73,            // lineNo
-          19,            // colNo
-          "pulse",       // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      g_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          73,            // lineNo
-          40,            // colNo
-          "time",        // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      h_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          74,            // lineNo
-          19,            // colNo
-          "pulse",       // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      i_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          74,            // lineNo
-          44,            // colNo
-          "strength",    // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      j_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          75,            // lineNo
-          19,            // colNo
-          "pulse",       // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      k_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          75,            // lineNo
-          43,            // colNo
-          "freqMHz",     // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      l_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          76,            // lineNo
-          19,            // colNo
-          "pulse",       // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
-  static rtBoundsCheckInfo
-      m_emlrtBCI{
-          -1,            // iFirst
-          -1,            // iLast
-          76,            // lineNo
-          39,            // colNo
-          "tagID",       // aName
-          "PulseStruct", // fName
-          "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/"
-          "PulseStruct.m", // pName
-          0                // checkKind
-      };
+  static rtBoundsCheckInfo ab_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      113,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo b_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      111,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo bb_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      113,           // lineNo
+      13,            // colNo
+      "pos",         // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo c_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      101,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo cb_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      114,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo d_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      101,           // lineNo
+      39,            // colNo
+      "tagID",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo db_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      114,           // lineNo
+      13,            // colNo
+      "euler",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo e_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      102,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo f_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      102,           // lineNo
+      43,            // colNo
+      "freqMHz",     // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo g_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      103,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo h_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      103,           // lineNo
+      40,            // colNo
+      "time",        // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo i_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      104,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo j_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      104,           // lineNo
+      44,            // colNo
+      "timeNext",    // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo k_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      105,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo l_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      105,           // lineNo
+      41,            // colNo
+      "snrdB",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo m_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      106,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo n_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      106,           // lineNo
+      47,            // colNo
+      "stftMag2",    // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo o_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      107,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo p_emlrtBCI{
+      -1,              // iFirst
+      -1,              // iLast
+      107,             // lineNo
+      57,              // colNo
+      "groupSeqCount", // aName
+      "PulseStruct",   // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo q_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      108,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo r_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      108,           // lineNo
+      51,            // colNo
+      "groupIndex",  // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo s_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      109,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo t_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      109,           // lineNo
+      51,            // colNo
+      "groupsnrdB",  // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo u_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      110,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo v_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      110,           // lineNo
+      47,            // colNo
+      "noisePSD",    // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo w_emlrtBCI{
+      -1,             // iFirst
+      -1,             // iLast
+      111,            // lineNo
+      61,             // colNo
+      "detectStatus", // aName
+      "PulseStruct",  // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo x_emlrtBCI{
+      -1,              // iFirst
+      -1,              // iLast
+      112,             // lineNo
+      62,              // colNo
+      "confirmStatus", // aName
+      "PulseStruct",   // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
+  static rtBoundsCheckInfo y_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      112,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
+      "lseStruct.m", // pName
+      0              // checkKind
+  };
   d_struct_T eulInit;
   e_struct_T pulseInit;
   struct_T posInit;
@@ -204,9 +415,11 @@ void PulseStruct(const coder::array<struct_T, 2U> &pos,
   //    case, the output is a vector of structures.
   //
   // INPUTS:
-  //    position  -   n x 1 vector of positions (as PulseStructs)
+  //    pos       -   n x 1 vector of positions (as PulseStructs)
   //    euler     -   n x 1 vector of eulerangles (as EulerAngleStructs)
-  //    strength  -   n x 1 vector of pulse strength metrics (doubles)
+  //    time      -   n x 1 vector of time of arrival of pulse
+  //    timeNext  -   n x 1 vector of predicted time of arrival of next pulse
+  //    snrdB     -   n x 1 vector of pulse snr  (doubles)
   //    freqMHz   -   n x 1 vector of pulse frequencies in MHz (doubles)
   //    tagID     -   n x 1 vector of pulse tag IDs (doubles)
   //
@@ -277,14 +490,22 @@ void PulseStruct(const coder::array<struct_T, 2U> &pos,
   pulseInit.euler.size[0] = 1;
   pulseInit.euler.size[1] = 1;
   pulseInit.euler.data[0] = eulInit;
-  pulseInit.time = 0.0;
-  pulseInit.strength = 0.0;
   pulseInit.tagID = 0.0;
+  pulseInit.time = 0.0;
+  pulseInit.snrdB = 0.0;
   pulse.set_size(1, 1);
   pulse[0] = pulseInit;
-  x[0] = ((pos.size(0) == euler.size(0)) || (pos.size(0) == b_time.size(0)) ||
-          (pos.size(0) == strength.size(0)) ||
-          (pos.size(0) == b_time.size(0)) || (pos.size(0) == tagID.size(0)));
+  x[0] = ((pos.size(0) == freqMHz.size(0)) || (pos.size(0) == tagID.size(0)) ||
+          (pos.size(0) == euler.size(0)) || (pos.size(0) == b_time.size(0)) ||
+          (pos.size(0) == timeNext.size(0)) || (pos.size(0) == snrdB.size(0)) ||
+          (pos.size(0) == stftMag2.size(0)) ||
+          (pos.size(0) == groupSeqCount.size(0)) ||
+          (pos.size(0) == groupIndex.size(0)) ||
+          (pos.size(0) == groupsnrdB.size(0)) ||
+          (pos.size(0) == noisePSD.size(0)) ||
+          (pos.size(0) == detectStatus.size(0)) ||
+          (pos.size(0) == detectStatus.size(0)) ||
+          (pos.size(0) == confirmStatus.size(0)));
   x[1] = true;
   y = true;
   ntilerows = 0;
@@ -313,68 +534,119 @@ void PulseStruct(const coder::array<struct_T, 2U> &pos,
     ntilerows = pos.size(0);
     for (int itilerow{0}; itilerow < ntilerows; itilerow++) {
       if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), b_emlrtBCI);
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), c_emlrtBCI);
       }
-      pulse[itilerow].position.size[0] = 1;
+      if (itilerow + 1 > tagID.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, tagID.size(0), d_emlrtBCI);
+      }
+      pulse[itilerow].tagID = tagID[itilerow];
       if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), b_emlrtBCI);
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), e_emlrtBCI);
       }
-      pulse[itilerow].position.size[1] = 1;
+      if (itilerow + 1 > freqMHz.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, freqMHz.size(0), f_emlrtBCI);
+      }
       if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), b_emlrtBCI);
-      }
-      if (itilerow + 1 > pos.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pos.size(0), c_emlrtBCI);
-      }
-      pulse[itilerow].position.data[0] = pos[itilerow];
-      if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), d_emlrtBCI);
-      }
-      pulse[itilerow].euler.size[0] = 1;
-      if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), d_emlrtBCI);
-      }
-      pulse[itilerow].euler.size[1] = 1;
-      if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), d_emlrtBCI);
-      }
-      if (itilerow + 1 > euler.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, euler.size(0), e_emlrtBCI);
-      }
-      pulse[itilerow].euler.data[0] = euler[itilerow];
-      if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), f_emlrtBCI);
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), g_emlrtBCI);
       }
       if (itilerow + 1 > b_time.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, b_time.size(0), g_emlrtBCI);
+        rtDynamicBoundsError(itilerow + 1, 1, b_time.size(0), h_emlrtBCI);
       }
       pulse[itilerow].time = b_time[itilerow];
       if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), h_emlrtBCI);
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), i_emlrtBCI);
       }
-      if (itilerow + 1 > strength.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, strength.size(0), i_emlrtBCI);
-      }
-      pulse[itilerow].strength = strength[itilerow];
-      if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), j_emlrtBCI);
-      }
-      if (itilerow + 1 > freqMHz.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, freqMHz.size(0), k_emlrtBCI);
+      if (itilerow + 1 > timeNext.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, timeNext.size(0), j_emlrtBCI);
       }
       if (itilerow + 1 > pulse.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), l_emlrtBCI);
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), k_emlrtBCI);
       }
-      if (itilerow + 1 > tagID.size(0)) {
-        rtDynamicBoundsError(itilerow + 1, 1, tagID.size(0), m_emlrtBCI);
+      if (itilerow + 1 > snrdB.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, snrdB.size(0), l_emlrtBCI);
       }
-      pulse[itilerow].tagID = tagID[itilerow];
+      pulse[itilerow].snrdB = snrdB[itilerow];
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), m_emlrtBCI);
+      }
+      if (itilerow + 1 > stftMag2.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, stftMag2.size(0), n_emlrtBCI);
+      }
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), o_emlrtBCI);
+      }
+      if (itilerow + 1 > groupSeqCount.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, groupSeqCount.size(0),
+                             p_emlrtBCI);
+      }
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), q_emlrtBCI);
+      }
+      if (itilerow + 1 > groupIndex.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, groupIndex.size(0), r_emlrtBCI);
+      }
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), s_emlrtBCI);
+      }
+      if (itilerow + 1 > groupsnrdB.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, groupsnrdB.size(0), t_emlrtBCI);
+      }
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), u_emlrtBCI);
+      }
+      if (itilerow + 1 > noisePSD.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, noisePSD.size(0), v_emlrtBCI);
+      }
+      if (itilerow + 1 > detectStatus.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, detectStatus.size(0), w_emlrtBCI);
+      }
+      if (std::isnan(detectStatus[itilerow])) {
+        c_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+      }
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), b_emlrtBCI);
+      }
+      if (itilerow + 1 > confirmStatus.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, confirmStatus.size(0),
+                             x_emlrtBCI);
+      }
+      if (std::isnan(confirmStatus[itilerow])) {
+        c_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+      }
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), y_emlrtBCI);
+      }
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), ab_emlrtBCI);
+      }
+      pulse[itilerow].position.size[0] = 1;
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), ab_emlrtBCI);
+      }
+      pulse[itilerow].position.size[1] = 1;
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), ab_emlrtBCI);
+      }
+      if (itilerow + 1 > pos.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pos.size(0), bb_emlrtBCI);
+      }
+      pulse[itilerow].position.data[0] = pos[itilerow];
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), cb_emlrtBCI);
+      }
+      pulse[itilerow].euler.size[0] = 1;
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), cb_emlrtBCI);
+      }
+      pulse[itilerow].euler.size[1] = 1;
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), cb_emlrtBCI);
+      }
+      if (itilerow + 1 > euler.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, euler.size(0), db_emlrtBCI);
+      }
+      pulse[itilerow].euler.data[0] = euler[itilerow];
     }
-    //  pulse.position = pos;
-    //  pulse.euler    = euler;
-    //  pulse.time     = time;
-    //  pulse.strength = strength;
-    //  pulse.freqMHz  = freqMHz;
   }
 }
 

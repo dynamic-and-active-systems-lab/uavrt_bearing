@@ -5,7 +5,7 @@
 // File: bearing_data.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -15,39 +15,71 @@
 
 // Variable Definitions
 rtRunTimeErrorInfo emlrtRTEI{
+    125,       // lineNo
+    "cfprintf" // fName
+};
+
+rtRunTimeErrorInfo b_emlrtRTEI{
+    48,       // lineNo
+    "fprintf" // fName
+};
+
+rtRunTimeErrorInfo c_emlrtRTEI{
+    13,              // lineNo
+    "toLogicalCheck" // fName
+};
+
+rtRunTimeErrorInfo d_emlrtRTEI{
+    37,     // lineNo
+    "fopen" // fName
+};
+
+rtRunTimeErrorInfo h_emlrtRTEI{
+    72,     // lineNo
+    "fread" // fName
+};
+
+rtRunTimeErrorInfo i_emlrtRTEI{
+    494,          // lineNo
+    "getFileStar" // fName
+};
+
+rtDoubleCheckInfo
+    emlrtDCI{
+        12,       // lineNo
+        20,       // colNo
+        "blanks", // fName
+        "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/strfun/"
+        "blanks.m", // pName
+        4           // checkKind
+    };
+
+rtRunTimeErrorInfo j_emlrtRTEI{
     24,    // lineNo
     "feof" // fName
 };
 
-rtRunTimeErrorInfo e_emlrtRTEI{
+rtRunTimeErrorInfo k_emlrtRTEI{
     86,           // lineNo
     "getFileStar" // fName
 };
 
-rtRunTimeErrorInfo h_emlrtRTEI{
+rtRunTimeErrorInfo n_emlrtRTEI{
     288,                  // lineNo
     "check_non_axis_size" // fName
 };
 
-rtRunTimeErrorInfo i_emlrtRTEI{
+rtRunTimeErrorInfo o_emlrtRTEI{
     13,    // lineNo
     "sqrt" // fName
 };
 
-rtRunTimeErrorInfo j_emlrtRTEI{
+rtRunTimeErrorInfo p_emlrtRTEI{
     58,                  // lineNo
     "assertValidSizeArg" // fName
 };
 
-rtDoubleCheckInfo emlrtDCI{
-    12,                                                         // lineNo
-    20,                                                         // colNo
-    "blanks",                                                   // fName
-    "/home/dasl/matlab/toolbox/eml/lib/matlab/strfun/blanks.m", // pName
-    4                                                           // checkKind
-};
-
-rtRunTimeErrorInfo o_emlrtRTEI{
+rtRunTimeErrorInfo u_emlrtRTEI{
     85,               // lineNo
     "validate_inputs" // fName
 };

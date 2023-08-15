@@ -5,7 +5,7 @@
 // File: diff.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -48,7 +48,7 @@ static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 namespace coder {
 void diff(const ::coder::array<double, 1U> &x, ::coder::array<double, 1U> &y)
 {
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       51,    // lineNo
       "diff" // fName
   };
@@ -67,7 +67,7 @@ void diff(const ::coder::array<double, 1U> &x, ::coder::array<double, 1U> &y)
     } else {
       double work_data;
       if (x.size(0) == 1) {
-        s_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+        s_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
       }
       y.set_size(x.size(0) - 1);
       work_data = x[0];

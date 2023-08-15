@@ -5,7 +5,7 @@
 // File: doapca.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -48,6 +48,8 @@ static void o_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 static void p_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 static void q_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+
+static double rt_powd_snf(double u0, double u1);
 
 // Function Definitions
 //
@@ -190,35 +192,68 @@ static void q_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 }
 
 //
+// Arguments    : double u0
+//                double u1
+// Return Type  : double
+//
+static double rt_powd_snf(double u0, double u1)
+{
+  double y;
+  if (std::isnan(u0) || std::isnan(u1)) {
+    y = rtNaN;
+  } else {
+    double d;
+    double d1;
+    d = std::abs(u0);
+    d1 = std::abs(u1);
+    if (std::isinf(u1)) {
+      if (d == 1.0) {
+        y = 1.0;
+      } else if (d > 1.0) {
+        if (u1 > 0.0) {
+          y = rtInf;
+        } else {
+          y = 0.0;
+        }
+      } else if (u1 > 0.0) {
+        y = 0.0;
+      } else {
+        y = rtInf;
+      }
+    } else if (d1 == 0.0) {
+      y = 1.0;
+    } else if (d1 == 1.0) {
+      if (u1 > 0.0) {
+        y = u0;
+      } else {
+        y = 1.0 / u0;
+      }
+    } else if (u1 == 2.0) {
+      y = u0 * u0;
+    } else if ((u1 == 0.5) && (u0 >= 0.0)) {
+      y = std::sqrt(u0);
+    } else if ((u0 < 0.0) && (u1 > std::floor(u1))) {
+      y = rtNaN;
+    } else {
+      y = std::pow(u0, u1);
+    }
+  }
+  return y;
+}
+
+//
 // DOAPCA developes a bearing estimate for a series of received radio pulses
 // based on the principle component analysis method.
 //    This function conducts a principle component analysis type bearing
 //    estimate on signal pulses in the pulseList vector. Each pulse signal
-//    corresponds to a given heading (pulse_yaw). The function assumes the
-//    output of the PCA method to be the mean of a vonMises distribution
-//    and then finds the associated kappa value for that distribution that
-//    best fits the data.
-//
+//    corresponds to a given heading (pulse_yaw). The program uses the SNR in
+//    dB for the pulses in the list and does the PCA on those pulses using a
+//    the original log scaling or a linear scaling depending on the 'scale'
+//    input
 //
 //
 // INPUTS
 //    pulseList           a (px1) vector of ReceivedPulse objects
-//    strengthtype        a char array of 'power' or 'amplitude' indicating
-//                        the strength used in the PCA method should use the
-//                        signal amplitude or power. If power is used, the
-//                        square of the inputs pulse signal is used. If
-//                        amplitude if fed as pulse_sig and power is
-//                        selected, the inputs to the PCA is power. If power
-//                        is fed as pulse_sig and amplitude is selected as
-//                        strength type, the input to the PCA is power. See
-//                        table below
-//                             pulse_sig           strengthtype        PCA input
-//                        ------------------------------------------------------
-//                             pulse amplitudes    amplitude           signal
-//                             amplitude pulse amplitudes    power signal power
-//                             pulse power         amplitude           signal
-//                             power pulse power         power power of signal
-//                             power (power^2) -  this shouldn't likely be used.
 //
 //    scale               a char array of 'log' or 'linear' to indicate if
 //                        the scaling used in the PCA method should be log or
@@ -230,8 +265,6 @@ static void q_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                        the same as the yaw origin (typically N).
 //    tau                 a (1x1) double containing the tau value for
 //                        each bearing estimate.
-//    kappa               a (1x1) double containing the kappa value fitted
-//                        vonMises distribution
 //
 // --------------------------------------------------------------------------
 //  Author: Michael Shafer
@@ -246,273 +279,286 @@ static void q_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
 {
   static rtBoundsCheckInfo b_emlrtBCI{
-      -1,                                                      // iFirst
-      -1,                                                      // iLast
-      17,                                                      // lineNo
-      5,                                                       // colNo
-      "",                                                      // aName
-      "wrapTo360",                                             // fName
-      "/home/dasl/matlab/toolbox/shared/maputils/wrapTo360.m", // pName
-      0                                                        // checkKind
+      -1,          // iFirst
+      -1,          // iLast
+      17,          // lineNo
+      5,           // colNo
+      "",          // aName
+      "wrapTo360", // fName
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/maputils/wrapTo360.m", // pName
+      0 // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,       // iFirst
       -1,       // iLast
-      102,      // lineNo
+      77,       // lineNo
       24,       // colNo
       "angs",   // aName
       "doapca", // fName
-      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m", // pName
-      0 // checkKind
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
+      "apca.m", // pName
+      0         // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,       // iFirst
       -1,       // iLast
-      116,      // lineNo
+      91,       // lineNo
       17,       // colNo
       "SdB",    // aName
       "doapca", // fName
-      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m", // pName
-      0 // checkKind
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
+      "apca.m", // pName
+      0         // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,       // iFirst
       -1,       // iLast
-      116,      // lineNo
+      91,       // lineNo
       28,       // colNo
       "SdB",    // aName
       "doapca", // fName
-      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m", // pName
-      0 // checkKind
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
+      "apca.m", // pName
+      0         // checkKind
   };
   static rtEqualityCheckInfo b_emlrtECI{
-      1,                                                      // nDims
-      17,                                                     // lineNo
-      5,                                                      // colNo
-      "wrapTo360",                                            // fName
-      "/home/dasl/matlab/toolbox/shared/maputils/wrapTo360.m" // pName
+      1,           // nDims
+      17,          // lineNo
+      5,           // colNo
+      "wrapTo360", // fName
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/maputils/wrapTo360.m" // pName
   };
   static rtEqualityCheckInfo c_emlrtECI{
       1,        // nDims
-      107,      // lineNo
+      82,       // lineNo
       19,       // colNo
       "doapca", // fName
-      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m" // pName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
+      "apca.m" // pName
   };
   static rtEqualityCheckInfo d_emlrtECI{
       1,        // nDims
-      107,      // lineNo
+      82,       // lineNo
       40,       // colNo
       "doapca", // fName
-      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m" // pName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
+      "apca.m" // pName
   };
   static rtEqualityCheckInfo e_emlrtECI{
       2,        // nDims
-      109,      // lineNo
+      84,       // lineNo
       14,       // colNo
       "doapca", // fName
-      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m" // pName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
+      "apca.m" // pName
   };
   static rtEqualityCheckInfo emlrtECI{
       1,        // nDims
-      109,      // lineNo
+      84,       // lineNo
       14,       // colNo
       "doapca", // fName
-      "/home/dasl/repos/uavrt_bearing/uavrt_localization_utils/doapca.m" // pName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
+      "apca.m" // pName
   };
-  static rtRunTimeErrorInfo r_emlrtRTEI{
-      74,                 // lineNo
-      "reshapeSizeChecks" // fName
-  };
-  static rtRunTimeErrorInfo s_emlrtRTEI{
-      81,                 // lineNo
-      "reshapeSizeChecks" // fName
-  };
-  static rtRunTimeErrorInfo t_emlrtRTEI{
+  static rtRunTimeErrorInfo ab_emlrtRTEI{
       133,                  // lineNo
       "dynamic_size_checks" // fName
   };
-  static rtRunTimeErrorInfo u_emlrtRTEI{
+  static rtRunTimeErrorInfo bb_emlrtRTEI{
       138,                  // lineNo
       "dynamic_size_checks" // fName
+  };
+  static rtRunTimeErrorInfo x_emlrtRTEI{
+      74,                 // lineNo
+      "reshapeSizeChecks" // fName
+  };
+  static rtRunTimeErrorInfo y_emlrtRTEI{
+      81,                 // lineNo
+      "reshapeSizeChecks" // fName
   };
   coder::array<d_struct_T, 2U> r1;
   coder::array<double, 2U> Pe_dB;
   coder::array<double, 2U> Pe_star_dB;
   coder::array<double, 2U> a;
-  coder::array<double, 2U> c_y;
+  coder::array<double, 2U> b_y;
   coder::array<double, 2U> r;
   coder::array<double, 2U> r2;
-  coder::array<double, 1U> P_all_ang_unscaled;
   coder::array<double, 1U> angs;
-  coder::array<double, 1U> b_curr_yaws;
+  coder::array<double, 1U> curr_pulses_snrLin;
+  coder::array<double, 1U> curr_yaws;
   coder::array<double, 1U> diffAngsDeg;
-  coder::array<double, 1U> r3;
-  coder::array<boolean_T, 1U> curr_yaws;
   coder::array<boolean_T, 1U> positiveInput;
+  coder::array<boolean_T, 1U> r3;
   coder::array<boolean_T, 1U> r4;
   double VdB[4];
   double DOA;
-  int k;
+  double totalSweptAngle;
+  int i;
+  int maxdimlen;
   int n;
-  int nx;
-  boolean_T guard1;
+  boolean_T guard1{false};
   boolean_T y;
   n = pulseList.size(0);
   if (pulseList.size(0) == 0) {
-    k = 0;
+    i = 0;
   } else {
-    k = pulseList.size(0);
+    i = pulseList.size(0);
   }
-  r.set_size(1, k);
+  r.set_size(1, i);
   if (pulseList.size(0) > 2147483646) {
     coder::check_forloop_overflow_error();
   }
-  for (nx = 0; nx < n; nx++) {
-    r[nx] = pulseList[nx].strength;
+  for (int b_i{0}; b_i < n; b_i++) {
+    r[b_i] = pulseList[b_i].snrdB;
   }
-  n = 1;
+  maxdimlen = 1;
   if (r.size(1) > 1) {
-    n = r.size(1);
+    maxdimlen = r.size(1);
   }
-  nx = r.size(1);
-  if (nx >= n) {
-    n = nx;
+  n = r.size(1);
+  if (n >= maxdimlen) {
+    maxdimlen = n;
   }
-  if (pulseList.size(0) > n) {
-    o_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+  if (pulseList.size(0) > maxdimlen) {
+    o_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   }
   if (pulseList.size(0) != r.size(1)) {
-    n_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
+    n_rtErrorWithMessageID(y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
+  }
+  curr_pulses_snrLin.set_size(pulseList.size(0));
+  maxdimlen = pulseList.size(0);
+  for (n = 0; n < maxdimlen; n++) {
+    totalSweptAngle = r[n] / 10.0;
+    curr_pulses_snrLin[n] = rt_powd_snf(10.0, totalSweptAngle);
   }
   coder::internal::horzcatStructList(pulseList, r1);
-  nx = r1.size(0) * r1.size(1);
-  n = r1.size(0);
+  n = r1.size(0) * r1.size(1);
+  maxdimlen = r1.size(0);
   if (r1.size(1) > r1.size(0)) {
-    n = r1.size(1);
+    maxdimlen = r1.size(1);
   }
-  if (nx >= n) {
-    n = nx;
+  if (n >= maxdimlen) {
+    maxdimlen = n;
   }
-  if (pulseList.size(0) > n) {
-    o_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+  if (pulseList.size(0) > maxdimlen) {
+    o_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   }
-  if (n < 1) {
-    o_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+  if (maxdimlen < 1) {
+    o_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   }
-  if (pulseList.size(0) != nx) {
-    n_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
+  if (pulseList.size(0) != n) {
+    n_rtErrorWithMessageID(y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
   }
   n = pulseList.size(0);
-  r2.set_size(1, k);
-  for (nx = 0; nx < n; nx++) {
-    r2[nx] = r1[nx].yaw_deg;
+  r2.set_size(1, i);
+  for (int b_i{0}; b_i < n; b_i++) {
+    r2[b_i] = r1[b_i].yaw_deg;
   }
-  n = 1;
+  maxdimlen = 1;
   if (r2.size(1) > 1) {
-    n = r2.size(1);
+    maxdimlen = r2.size(1);
   }
-  nx = r2.size(1);
-  if (nx >= n) {
-    n = nx;
+  n = r2.size(1);
+  if (n >= maxdimlen) {
+    maxdimlen = n;
   }
-  if (pulseList.size(0) > n) {
-    o_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+  if (pulseList.size(0) > maxdimlen) {
+    o_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   }
   if (pulseList.size(0) != r2.size(1)) {
-    n_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
+    n_rtErrorWithMessageID(y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
   }
   // Define for Coder so DOA is defined for all execution paths
   DOA = rtNaN;
   tau = rtNaN;
-  curr_yaws.set_size(pulseList.size(0));
-  nx = pulseList.size(0);
-  for (k = 0; k < nx; k++) {
-    curr_yaws[k] = (r[k] < 0.0);
+  positiveInput.set_size(curr_pulses_snrLin.size(0));
+  maxdimlen = curr_pulses_snrLin.size(0);
+  for (i = 0; i < maxdimlen; i++) {
+    positiveInput[i] = (curr_pulses_snrLin[i] < 0.0);
   }
-  y = coder::any(curr_yaws);
+  y = coder::any(positiveInput);
   guard1 = false;
   if (y) {
     guard1 = true;
   } else {
-    nx = pulseList.size(0);
-    b_curr_yaws.set_size(pulseList.size(0));
-    for (k = 0; k < nx; k++) {
-      b_curr_yaws[k] = std::abs(r[k]);
+    n = curr_pulses_snrLin.size(0);
+    curr_yaws.set_size(curr_pulses_snrLin.size(0));
+    for (int b_i{0}; b_i < n; b_i++) {
+      curr_yaws[b_i] = std::abs(curr_pulses_snrLin[b_i]);
     }
-    curr_yaws.set_size(b_curr_yaws.size(0));
-    nx = b_curr_yaws.size(0);
-    for (k = 0; k < nx; k++) {
-      curr_yaws[k] = (b_curr_yaws[k] == rtInf);
+    positiveInput.set_size(curr_yaws.size(0));
+    maxdimlen = curr_yaws.size(0);
+    for (i = 0; i < maxdimlen; i++) {
+      positiveInput[i] = (curr_yaws[i] == rtInf);
     }
-    y = coder::any(curr_yaws);
+    y = coder::any(positiveInput);
     if (y) {
       guard1 = true;
     } else {
       double Pavg_idx_1;
-      double b_y;
       double scale;
-      double totalSweptAngle;
-      n = pulseList.size(0);
-      r3 = r.reshape(n);
-      Pavg_idx_1 = coder::internal::minimum(r3);
-      b_y = Pavg_idx_1 * Pavg_idx_1;
-      P_all_ang_unscaled.set_size(pulseList.size(0));
-      nx = pulseList.size(0);
+      totalSweptAngle = coder::internal::minimum(curr_pulses_snrLin);
+      maxdimlen = curr_pulses_snrLin.size(0);
       angs.set_size(pulseList.size(0));
       positiveInput.set_size(pulseList.size(0));
-      b_curr_yaws.set_size(pulseList.size(0));
-      for (k = 0; k < nx; k++) {
-        totalSweptAngle = r[k];
-        P_all_ang_unscaled[k] = totalSweptAngle * totalSweptAngle / b_y;
-        totalSweptAngle = r2[k];
-        angs[k] = totalSweptAngle * 3.1415926535897931 / 180.0;
-        positiveInput[k] = (totalSweptAngle > 0.0);
-        if (std::isnan(totalSweptAngle) || std::isinf(totalSweptAngle)) {
+      curr_yaws.set_size(pulseList.size(0));
+      for (i = 0; i < maxdimlen; i++) {
+        curr_pulses_snrLin[i] = curr_pulses_snrLin[i] / totalSweptAngle;
+        Pavg_idx_1 = r2[i];
+        angs[i] = Pavg_idx_1 * 3.1415926535897931 / 180.0;
+        positiveInput[i] = (Pavg_idx_1 > 0.0);
+        if (std::isnan(Pavg_idx_1) || std::isinf(Pavg_idx_1)) {
           scale = rtNaN;
-        } else if (totalSweptAngle == 0.0) {
+        } else if (Pavg_idx_1 == 0.0) {
           scale = 0.0;
         } else {
-          scale = std::fmod(totalSweptAngle, 360.0);
+          scale = std::fmod(Pavg_idx_1, 360.0);
           if (scale == 0.0) {
             scale = 0.0;
-          } else if (totalSweptAngle < 0.0) {
+          } else if (Pavg_idx_1 < 0.0) {
             scale += 360.0;
           }
         }
-        b_curr_yaws[k] = scale;
+        curr_yaws[i] = scale;
       }
-      curr_yaws.set_size(b_curr_yaws.size(0));
-      nx = b_curr_yaws.size(0);
-      for (k = 0; k < nx; k++) {
-        curr_yaws[k] = (b_curr_yaws[k] == 0.0);
+      r3.set_size(curr_yaws.size(0));
+      maxdimlen = curr_yaws.size(0);
+      for (i = 0; i < maxdimlen; i++) {
+        r3[i] = (curr_yaws[i] == 0.0);
       }
-      y = ((curr_yaws.size(0) != positiveInput.size(0)) &&
-           ((curr_yaws.size(0) != 1) && (positiveInput.size(0) != 1)));
+      y = ((r3.size(0) != positiveInput.size(0)) &&
+           ((r3.size(0) != 1) && (positiveInput.size(0) != 1)));
       if (y) {
-        emlrtDimSizeImpxCheckR2021b(curr_yaws.size(0), positiveInput.size(0),
+        emlrtDimSizeImpxCheckR2021b(r3.size(0), positiveInput.size(0),
                                     b_emlrtECI);
       }
-      if (curr_yaws.size(0) == positiveInput.size(0)) {
-        r4.set_size(curr_yaws.size(0));
-        nx = curr_yaws.size(0);
-        for (k = 0; k < nx; k++) {
-          r4[k] = (curr_yaws[k] && positiveInput[k]);
+      if (r3.size(0) == positiveInput.size(0)) {
+        r4.set_size(r3.size(0));
+        maxdimlen = r3.size(0);
+        for (i = 0; i < maxdimlen; i++) {
+          r4[i] = (r3[i] && positiveInput[i]);
         }
       } else {
-        b_and(r4, curr_yaws, positiveInput);
+        b_and(r4, r3, positiveInput);
       }
-      n = r4.size(0) - 1;
-      for (nx = 0; nx <= n; nx++) {
-        if (r4[nx]) {
-          if (nx > b_curr_yaws.size(0) - 1) {
-            rtDynamicBoundsError(nx, 0, b_curr_yaws.size(0) - 1, b_emlrtBCI);
+      maxdimlen = r4.size(0) - 1;
+      for (int b_i{0}; b_i <= maxdimlen; b_i++) {
+        if (r4[b_i]) {
+          if (b_i > curr_yaws.size(0) - 1) {
+            rtDynamicBoundsError(b_i, 0, curr_yaws.size(0) - 1, b_emlrtBCI);
           }
-          b_curr_yaws[nx] = 360.0;
+          curr_yaws[b_i] = 360.0;
         }
       }
-      coder::internal::sort(b_curr_yaws);
-      coder::diff(b_curr_yaws, diffAngsDeg);
+      coder::internal::sort(curr_yaws);
+      coder::diff(curr_yaws, diffAngsDeg);
       totalSweptAngle = coder::sum(diffAngsDeg);
       if ((pulseList.size(0) < 4) || (totalSweptAngle < 270.0)) {
         std::printf("Only %f pulse(s) detected over swept angle %f degrees. "
@@ -523,74 +569,73 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
                     static_cast<double>(pulseList.size(0)), totalSweptAngle);
         std::fflush(stdout);
         // wp(2) = NaN; wp(1) = NaN;tau = NaN; line_scale = 0;
-        coder::internal::maximum(P_all_ang_unscaled, n);
-        if ((n < 1) || (n > angs.size(0))) {
-          rtDynamicBoundsError(n, 1, angs.size(0), c_emlrtBCI);
+        coder::internal::maximum(curr_pulses_snrLin, maxdimlen);
+        if ((maxdimlen < 1) || (maxdimlen > angs.size(0))) {
+          rtDynamicBoundsError(maxdimlen, 1, angs.size(0), c_emlrtBCI);
         }
-        totalSweptAngle = angs[n - 1];
+        totalSweptAngle = angs[maxdimlen - 1];
       } else {
         double absxk;
         double b_scale;
+        double c_y;
         double d_y;
         double t;
-        b_curr_yaws.set_size(angs.size(0));
-        nx = angs.size(0);
-        for (k = 0; k < nx; k++) {
-          b_curr_yaws[k] = angs[k];
+        curr_yaws.set_size(angs.size(0));
+        maxdimlen = angs.size(0);
+        for (i = 0; i < maxdimlen; i++) {
+          curr_yaws[i] = angs[i];
         }
-        nx = angs.size(0);
-        for (k = 0; k < nx; k++) {
-          b_curr_yaws[k] = std::cos(b_curr_yaws[k]);
-        }
-        if (y) {
-          emlrtDimSizeImpxCheckR2021b(P_all_ang_unscaled.size(0),
-                                      b_curr_yaws.size(0), c_emlrtECI);
-        }
-        nx = angs.size(0);
-        for (k = 0; k < nx; k++) {
-          angs[k] = std::sin(angs[k]);
+        n = angs.size(0);
+        for (int b_i{0}; b_i < n; b_i++) {
+          curr_yaws[b_i] = std::cos(curr_yaws[b_i]);
         }
         if (y) {
-          emlrtDimSizeImpxCheckR2021b(P_all_ang_unscaled.size(0), angs.size(0),
+          emlrtDimSizeImpxCheckR2021b(curr_pulses_snrLin.size(0),
+                                      curr_yaws.size(0), c_emlrtECI);
+        }
+        n = angs.size(0);
+        for (int b_i{0}; b_i < n; b_i++) {
+          angs[b_i] = std::sin(angs[b_i]);
+        }
+        if (y) {
+          emlrtDimSizeImpxCheckR2021b(curr_pulses_snrLin.size(0), angs.size(0),
                                       d_emlrtECI);
         }
-        if (P_all_ang_unscaled.size(0) == b_curr_yaws.size(0)) {
-          b_curr_yaws.set_size(P_all_ang_unscaled.size(0));
-          nx = P_all_ang_unscaled.size(0);
-          for (k = 0; k < nx; k++) {
-            b_curr_yaws[k] = P_all_ang_unscaled[k] * b_curr_yaws[k];
+        if (curr_pulses_snrLin.size(0) == curr_yaws.size(0)) {
+          curr_yaws.set_size(curr_pulses_snrLin.size(0));
+          maxdimlen = curr_pulses_snrLin.size(0);
+          for (i = 0; i < maxdimlen; i++) {
+            curr_yaws[i] = curr_pulses_snrLin[i] * curr_yaws[i];
           }
         } else {
-          b_times(b_curr_yaws, P_all_ang_unscaled);
+          b_times(curr_yaws, curr_pulses_snrLin);
         }
-        if (P_all_ang_unscaled.size(0) == angs.size(0)) {
-          nx = P_all_ang_unscaled.size(0);
-          for (k = 0; k < nx; k++) {
-            P_all_ang_unscaled[k] = P_all_ang_unscaled[k] * angs[k];
+        if (curr_pulses_snrLin.size(0) == angs.size(0)) {
+          maxdimlen = curr_pulses_snrLin.size(0);
+          for (i = 0; i < maxdimlen; i++) {
+            curr_pulses_snrLin[i] = curr_pulses_snrLin[i] * angs[i];
           }
         } else {
-          times(P_all_ang_unscaled, angs);
+          times(curr_pulses_snrLin, angs);
         }
-        if (P_all_ang_unscaled.size(0) != b_curr_yaws.size(0)) {
-          i_rtErrorWithMessageID(h_emlrtRTEI.fName, h_emlrtRTEI.lineNo);
+        if (curr_pulses_snrLin.size(0) != curr_yaws.size(0)) {
+          i_rtErrorWithMessageID(n_emlrtRTEI.fName, n_emlrtRTEI.lineNo);
         }
-        Pe_star_dB.set_size(b_curr_yaws.size(0), 2);
-        nx = b_curr_yaws.size(0);
-        for (k = 0; k < nx; k++) {
-          Pe_star_dB[k] = b_curr_yaws[k];
+        Pe_star_dB.set_size(curr_yaws.size(0), 2);
+        maxdimlen = curr_yaws.size(0);
+        for (i = 0; i < maxdimlen; i++) {
+          Pe_star_dB[i] = curr_yaws[i];
         }
-        nx = P_all_ang_unscaled.size(0);
-        for (k = 0; k < nx; k++) {
-          Pe_star_dB[k + Pe_star_dB.size(0)] = P_all_ang_unscaled[k];
+        maxdimlen = curr_pulses_snrLin.size(0);
+        for (i = 0; i < maxdimlen; i++) {
+          Pe_star_dB[i + Pe_star_dB.size(0)] = curr_pulses_snrLin[i];
         }
-        nx = Pe_star_dB.size(0);
-        if (nx < 2) {
-          nx = 2;
+        n = Pe_star_dB.size(0);
+        if (n < 2) {
+          n = 2;
         }
         if (Pe_star_dB.size(0) == 0) {
           n = 0;
-        } else {
-          n = nx;
         }
         coder::eye(static_cast<double>(n), a);
         totalSweptAngle = 1.0 / static_cast<double>(n);
@@ -601,44 +646,44 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
           emlrtDimSizeImpxCheckR2021b(a.size(1), n, e_emlrtECI);
         }
         if ((a.size(0) == n) && (a.size(1) == n)) {
-          nx = a.size(0) * a.size(1);
-          for (k = 0; k < nx; k++) {
-            a[k] = a[k] - totalSweptAngle;
+          maxdimlen = a.size(0) * a.size(1);
+          for (i = 0; i < maxdimlen; i++) {
+            a[i] = a[i] - totalSweptAngle;
           }
         } else {
           binary_expand_op(a, totalSweptAngle, n);
         }
         if (Pe_star_dB.size(0) != a.size(1)) {
           if ((a.size(0) == 1) && (a.size(1) == 1)) {
-            q_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
+            q_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);
           } else {
-            p_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
+            p_rtErrorWithMessageID(bb_emlrtRTEI.fName, bb_emlrtRTEI.lineNo);
           }
         }
         coder::internal::blas::mtimes(a, Pe_star_dB, Pe_dB);
-        c_y.set_size(2, Pe_star_dB.size(0));
-        nx = Pe_star_dB.size(0);
-        for (k = 0; k < nx; k++) {
-          c_y[2 * k] = totalSweptAngle * Pe_star_dB[k];
-          c_y[2 * k + 1] = totalSweptAngle * Pe_star_dB[k + Pe_star_dB.size(0)];
+        b_y.set_size(2, Pe_star_dB.size(0));
+        maxdimlen = Pe_star_dB.size(0);
+        for (i = 0; i < maxdimlen; i++) {
+          b_y[2 * i] = totalSweptAngle * Pe_star_dB[i];
+          b_y[2 * i + 1] = totalSweptAngle * Pe_star_dB[i + Pe_star_dB.size(0)];
         }
-        if (c_y.size(1) != n) {
+        if (b_y.size(1) != n) {
           if (n == 1) {
-            q_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
+            q_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);
           } else {
-            p_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
+            p_rtErrorWithMessageID(bb_emlrtRTEI.fName, bb_emlrtRTEI.lineNo);
           }
         }
-        nx = c_y.size(1);
+        n = b_y.size(1);
         totalSweptAngle = 0.0;
         Pavg_idx_1 = 0.0;
-        if (c_y.size(1) > 2147483646) {
+        if (b_y.size(1) > 2147483646) {
           coder::check_forloop_overflow_error();
         }
-        for (k = 0; k < nx; k++) {
-          n = k << 1;
-          totalSweptAngle += c_y[n];
-          Pavg_idx_1 += c_y[n + 1];
+        for (int b_i{0}; b_i < n; b_i++) {
+          maxdimlen = b_i << 1;
+          totalSweptAngle += b_y[maxdimlen];
+          Pavg_idx_1 += b_y[maxdimlen + 1];
         }
         coder::svd(Pe_dB, a, Pe_star_dB, VdB);
         // w2 = VdB(:,2);
@@ -646,11 +691,11 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
         b_scale = 3.3121686421112381E-170;
         absxk = std::abs(totalSweptAngle);
         if (absxk > 3.3121686421112381E-170) {
-          b_y = 1.0;
+          c_y = 1.0;
           scale = absxk;
         } else {
           t = absxk / 3.3121686421112381E-170;
-          b_y = t * t;
+          c_y = t * t;
         }
         absxk = std::abs(VdB[0]);
         if (absxk > 3.3121686421112381E-170) {
@@ -663,11 +708,11 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
         absxk = std::abs(Pavg_idx_1);
         if (absxk > scale) {
           t = scale / absxk;
-          b_y = b_y * t * t + 1.0;
+          c_y = c_y * t * t + 1.0;
           scale = absxk;
         } else {
           t = absxk / scale;
-          b_y += t * t;
+          c_y += t * t;
         }
         absxk = std::abs(VdB[1]);
         if (absxk > b_scale) {
@@ -678,10 +723,9 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
           t = absxk / b_scale;
           d_y += t * t;
         }
-        b_y = scale * std::sqrt(b_y);
+        c_y = scale * std::sqrt(c_y);
         d_y = b_scale * std::sqrt(d_y);
-        Pavg_idx_1 =
-            (totalSweptAngle * VdB[0] + Pavg_idx_1 * VdB[1]) / (b_y * d_y);
+        scale = (totalSweptAngle * VdB[0] + Pavg_idx_1 * VdB[1]) / (c_y * d_y);
         // beta = norm(Pavg)^2/SdB(1,1)^2;
         if (Pe_star_dB.size(0) < 2) {
           rtDynamicBoundsError(2, 1, Pe_star_dB.size(0), d_emlrtBCI);
@@ -690,11 +734,11 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
           rtDynamicBoundsError(1, 1, Pe_star_dB.size(0), e_emlrtBCI);
         }
         totalSweptAngle = Pe_star_dB[Pe_star_dB.size(0) + 1];
-        scale = Pe_star_dB[0];
-        tau = 1.0 - totalSweptAngle * totalSweptAngle / (scale * scale);
+        Pavg_idx_1 = Pe_star_dB[0];
+        tau =
+            1.0 - totalSweptAngle * totalSweptAngle / (Pavg_idx_1 * Pavg_idx_1);
         // line_scale = max(P_all_ang)/norm(wp);%the wp size changes if w1
-        totalSweptAngle =
-            rt_atan2d_snf(Pavg_idx_1 * VdB[1], Pavg_idx_1 * VdB[0]);
+        totalSweptAngle = rt_atan2d_snf(scale * VdB[1], scale * VdB[0]);
       }
       DOA = 57.295779513082323 * totalSweptAngle;
       //  %% Now fit the kappa value for the vonMises Distribution

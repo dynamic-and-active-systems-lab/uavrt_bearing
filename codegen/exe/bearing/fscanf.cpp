@@ -5,7 +5,7 @@
 // File: fscanf.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -26,18 +26,19 @@
 namespace coder {
 void b_fscanf(double fileID, double A_data[], int A_size[2])
 {
-  static const char b_cfmt[72]{"%d,%d,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%d,%d,%lf,"
-                               "%lf,%lf,%lf,%lf,%lf,%lf\n"};
+  static const char b_cfmt[76]{"%d,%d,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%d,%d,"
+                               "%lf,%lf,%lf,%lf,%lf,%lf,%lf\n"};
   std::FILE *f;
-  double bigA[19];
+  double bigA[20];
   double tmpOut_f10;
-  double tmpOut_f13;
+  double tmpOut_f11;
   double tmpOut_f14;
   double tmpOut_f15;
   double tmpOut_f16;
   double tmpOut_f17;
   double tmpOut_f18;
   double tmpOut_f19;
+  double tmpOut_f20;
   double tmpOut_f4;
   double tmpOut_f5;
   double tmpOut_f6;
@@ -47,12 +48,12 @@ void b_fscanf(double fileID, double A_data[], int A_size[2])
   int numRead;
   int numWrittenTotal;
   int tmpOut_f1;
-  int tmpOut_f11;
   int tmpOut_f12;
+  int tmpOut_f13;
   int tmpOut_f2;
-  int tmpOut_f20;
+  int tmpOut_f21;
   int tmpOut_f3;
-  char cfmt[72];
+  char cfmt[76];
   boolean_T exitg1;
   boolean_T incompleteRead;
   tmpOut_f1 = 0;
@@ -65,31 +66,32 @@ void b_fscanf(double fileID, double A_data[], int A_size[2])
   tmpOut_f8 = 0.0;
   tmpOut_f9 = 0.0;
   tmpOut_f10 = 0.0;
-  tmpOut_f11 = 0;
+  tmpOut_f11 = 0.0;
   tmpOut_f12 = 0;
-  tmpOut_f13 = 0.0;
+  tmpOut_f13 = 0;
   tmpOut_f14 = 0.0;
   tmpOut_f15 = 0.0;
   tmpOut_f16 = 0.0;
   tmpOut_f17 = 0.0;
   tmpOut_f18 = 0.0;
   tmpOut_f19 = 0.0;
-  std::memset(&bigA[0], 0, 19U * sizeof(double));
+  tmpOut_f20 = 0.0;
+  std::memset(&bigA[0], 0, 20U * sizeof(double));
   numWrittenTotal = 0;
   f = internal::getfilestar(fileID, incompleteRead);
   numRead = 0;
   exitg1 = false;
   while ((!exitg1) && (numRead > 0)) {
-    tmpOut_f20 = -1;
-    numRead = std::fscanf(f,
-                          "%d,%d,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%d,%d,%lf,%lf,%"
-                          "lf,%lf,%lf,%lf,%lf\n%n",
-                          &tmpOut_f1, &tmpOut_f2, &tmpOut_f3, &tmpOut_f4,
-                          &tmpOut_f5, &tmpOut_f6, &tmpOut_f7, &tmpOut_f8,
-                          &tmpOut_f9, &tmpOut_f10, &tmpOut_f11, &tmpOut_f12,
-                          &tmpOut_f13, &tmpOut_f14, &tmpOut_f15, &tmpOut_f16,
-                          &tmpOut_f17, &tmpOut_f18, &tmpOut_f19, &tmpOut_f20);
-    if (tmpOut_f20 != -1) {
+    tmpOut_f21 = -1;
+    numRead = std::fscanf(
+        f,
+        "%d,%d,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%d,%d,%lf,%lf,%lf,%lf,%lf,%"
+        "lf,%lf\n%n",
+        &tmpOut_f1, &tmpOut_f2, &tmpOut_f3, &tmpOut_f4, &tmpOut_f5, &tmpOut_f6,
+        &tmpOut_f7, &tmpOut_f8, &tmpOut_f9, &tmpOut_f10, &tmpOut_f11,
+        &tmpOut_f12, &tmpOut_f13, &tmpOut_f14, &tmpOut_f15, &tmpOut_f16,
+        &tmpOut_f17, &tmpOut_f18, &tmpOut_f19, &tmpOut_f20, &tmpOut_f21);
+    if (tmpOut_f21 != -1) {
       numRead++;
     }
     incompleteRead = (numRead == 0);
@@ -204,21 +206,28 @@ void b_fscanf(double fileID, double A_data[], int A_size[2])
       } else {
         incompleteRead = true;
       }
-      incompleteRead = ((numRead < 20) || incompleteRead);
+      if (numRead >= 20) {
+        bigA[numWrittenTotal] = tmpOut_f20;
+        numWrittenTotal++;
+      } else {
+        incompleteRead = true;
+      }
+      incompleteRead = ((numRead < 21) || incompleteRead);
     }
-    if (incompleteRead || (19 - numWrittenTotal <= 19)) {
+    if (incompleteRead || (20 - numWrittenTotal <= 20)) {
       exitg1 = true;
     }
   }
-  if (numWrittenTotal < 19) {
-    tmpOut_f20 = -1;
-    std::copy(&b_cfmt[0], &b_cfmt[72], &cfmt[0]);
-    numRead = std::fscanf(
-        f, &cfmt[0], &tmpOut_f1, &tmpOut_f2, &tmpOut_f3, &tmpOut_f4, &tmpOut_f5,
-        &tmpOut_f6, &tmpOut_f7, &tmpOut_f8, &tmpOut_f9, &tmpOut_f10,
-        &tmpOut_f11, &tmpOut_f12, &tmpOut_f13, &tmpOut_f14, &tmpOut_f15,
-        &tmpOut_f16, &tmpOut_f17, &tmpOut_f18, &tmpOut_f19, &tmpOut_f20);
-    if (tmpOut_f20 != -1) {
+  if (numWrittenTotal < 20) {
+    tmpOut_f21 = -1;
+    std::copy(&b_cfmt[0], &b_cfmt[76], &cfmt[0]);
+    numRead =
+        std::fscanf(f, &cfmt[0], &tmpOut_f1, &tmpOut_f2, &tmpOut_f3, &tmpOut_f4,
+                    &tmpOut_f5, &tmpOut_f6, &tmpOut_f7, &tmpOut_f8, &tmpOut_f9,
+                    &tmpOut_f10, &tmpOut_f11, &tmpOut_f12, &tmpOut_f13,
+                    &tmpOut_f14, &tmpOut_f15, &tmpOut_f16, &tmpOut_f17,
+                    &tmpOut_f18, &tmpOut_f19, &tmpOut_f20, &tmpOut_f21);
+    if (tmpOut_f21 != -1) {
       numRead++;
     }
     if (numRead >= 1) {
@@ -297,11 +306,15 @@ void b_fscanf(double fileID, double A_data[], int A_size[2])
       bigA[numWrittenTotal] = tmpOut_f19;
       numWrittenTotal++;
     }
+    if (numRead >= 20) {
+      bigA[numWrittenTotal] = tmpOut_f20;
+      numWrittenTotal++;
+    }
   }
   if (numWrittenTotal > 0) {
     if (numWrittenTotal > 1) {
-      if (numWrittenTotal > 19) {
-        tmpOut_f1 = 19;
+      if (numWrittenTotal > 20) {
+        tmpOut_f1 = 20;
       } else {
         tmpOut_f1 = numWrittenTotal;
       }

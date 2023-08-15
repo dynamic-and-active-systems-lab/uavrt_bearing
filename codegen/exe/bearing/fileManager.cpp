@@ -5,7 +5,7 @@
 // File: fileManager.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -25,17 +25,17 @@ static std::FILE *eml_openfiles[20];
 
 static boolean_T eml_autoflush[20];
 
-static rtRunTimeErrorInfo b_emlrtRTEI{
-    147,          // lineNo
-    "getfilestar" // fName
-};
-
-static rtRunTimeErrorInfo c_emlrtRTEI{
+static rtRunTimeErrorInfo e_emlrtRTEI{
     293,                    // lineNo
     "cast_and_validate_fid" // fName
 };
 
-static rtRunTimeErrorInfo d_emlrtRTEI{
+static rtRunTimeErrorInfo f_emlrtRTEI{
+    147,          // lineNo
+    "getfilestar" // fName
+};
+
+static rtRunTimeErrorInfo g_emlrtRTEI{
     297,                    // lineNo
     "cast_and_validate_fid" // fName
 };
@@ -117,7 +117,7 @@ namespace coder {
 namespace internal {
 int cfclose(double fid)
 {
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       168,                // lineNo
       "conditionalAssert" // fName
   };
@@ -128,23 +128,23 @@ int cfclose(double fid)
   signed char fileid;
   st = -1;
   if ((fid < 0.0) || (fid > 22.0)) {
-    rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+    rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
   }
   fileid = static_cast<signed char>(fid);
   if (fid != static_cast<signed char>(fid)) {
-    rtErrorWithMessageID(d_emlrtRTEI.fName, d_emlrtRTEI.lineNo);
+    rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
   }
   if (static_cast<int>(fid) != static_cast<signed char>(fid)) {
     fileid = -1;
   }
   if (fileid < 0) {
-    rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+    rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
   }
   if (fileid >= 3) {
     f_tmp = eml_openfiles[fileid - 3];
     f = f_tmp;
     if (f_tmp == nullptr) {
-      e_rtErrorWithMessageID(b_emlrtRTEI.fName, b_emlrtRTEI.lineNo);
+      e_rtErrorWithMessageID(f_emlrtRTEI.fName, f_emlrtRTEI.lineNo);
     }
   } else if (fileid == 0) {
     f = stdin;
@@ -154,7 +154,7 @@ int cfclose(double fid)
     f = stderr;
   }
   if ((!(f != nullptr)) || (fileid < 3)) {
-    rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   }
   cst = std::fclose(f);
   if (cst == 0) {
@@ -173,7 +173,7 @@ int cfclose(double fid)
 signed char cfopen(const ::coder::array<char, 2U> &cfilename,
                    const char *cpermission)
 {
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       111,     // lineNo
       "cfopen" // fName
   };
@@ -184,7 +184,7 @@ signed char cfopen(const ::coder::array<char, 2U> &cfilename,
   fileid = -1;
   j = filedata();
   if (j < 1) {
-    y_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    y_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   } else {
     int i;
     int loop_ub;
@@ -219,11 +219,11 @@ std::FILE *getfilestar(double fid, boolean_T &autoflush)
   std::FILE *filestar_tmp;
   signed char fileid;
   if ((fid < 0.0) || (fid > 22.0)) {
-    rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+    rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
   }
   fileid = static_cast<signed char>(fid);
   if (fid != static_cast<signed char>(fid)) {
-    rtErrorWithMessageID(d_emlrtRTEI.fName, d_emlrtRTEI.lineNo);
+    rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
   }
   if (static_cast<int>(fid) != static_cast<signed char>(fid)) {
     fileid = -1;
@@ -233,7 +233,7 @@ std::FILE *getfilestar(double fid, boolean_T &autoflush)
     filestar_tmp = eml_openfiles[fileid - 3];
     filestar = filestar_tmp;
     if (filestar_tmp == nullptr) {
-      e_rtErrorWithMessageID(b_emlrtRTEI.fName, b_emlrtRTEI.lineNo);
+      e_rtErrorWithMessageID(f_emlrtRTEI.fName, f_emlrtRTEI.lineNo);
     }
   } else if (fileid == 0) {
     filestar = stdin;

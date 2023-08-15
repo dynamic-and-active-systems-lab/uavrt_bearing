@@ -5,7 +5,7 @@
 // File: bearing_internal_types.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 #ifndef BEARING_INTERNAL_TYPES_H
@@ -90,11 +90,11 @@ struct d_struct_T {
 };
 
 struct e_struct_T {
+  double tagID;
+  double time;
+  double snrdB;
   coder::bounded_array<struct_T, 1U, 2U> position;
   coder::bounded_array<d_struct_T, 1U, 2U> euler;
-  double time;
-  double strength;
-  double tagID;
 };
 
 class empty {};

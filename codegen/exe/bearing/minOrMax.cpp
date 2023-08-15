@@ -5,7 +5,7 @@
 // File: minOrMax.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -20,7 +20,7 @@
 #include <string>
 
 // Variable Definitions
-static rtRunTimeErrorInfo l_emlrtRTEI{
+static rtRunTimeErrorInfo r_emlrtRTEI{
     134,            // lineNo
     "unaryMinOrMax" // fName
 };
@@ -56,7 +56,7 @@ double maximum(const ::coder::array<double, 1U> &x, int &idx)
   double ex;
   int last;
   if (x.size(0) < 1) {
-    r_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+    r_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
   }
   last = x.size(0);
   if (x.size(0) <= 2) {
@@ -123,7 +123,7 @@ double maximum(const ::coder::array<double, 2U> &x)
   double ex;
   int last;
   if (x.size(1) < 1) {
-    r_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+    r_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
   }
   last = x.size(1);
   if (x.size(1) <= 2) {
@@ -186,7 +186,7 @@ double minimum(const ::coder::array<double, 1U> &x)
   double ex;
   int last;
   if (x.size(0) < 1) {
-    r_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+    r_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
   }
   last = x.size(0);
   if (x.size(0) <= 2) {
@@ -249,7 +249,7 @@ double minimum(const ::coder::array<double, 2U> &x)
   double ex;
   int last;
   if (x.size(1) < 1) {
-    r_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+    r_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
   }
   last = x.size(1);
   if (x.size(1) <= 2) {

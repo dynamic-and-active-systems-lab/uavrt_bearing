@@ -5,7 +5,7 @@
 // File: quat2eul.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -172,8 +172,9 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
       19,         // colNo
       "",         // aName
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m", // pName
-      0 // checkKind
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m", // pName
+      0             // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,         // iFirst
@@ -182,8 +183,9 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
       19,         // colNo
       "",         // aName
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m", // pName
-      0 // checkKind
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m", // pName
+      0             // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,         // iFirst
@@ -192,8 +194,9 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
       40,         // colNo
       "",         // aName
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m", // pName
-      0 // checkKind
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m", // pName
+      0             // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,         // iFirst
@@ -202,8 +205,9 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
       65,         // colNo
       "",         // aName
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m", // pName
-      0 // checkKind
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m", // pName
+      0             // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,         // iFirst
@@ -212,8 +216,9 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
       77,         // colNo
       "",         // aName
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m", // pName
-      0 // checkKind
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m", // pName
+      0             // checkKind
   };
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,         // iFirst
@@ -222,8 +227,9 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
       13,         // colNo
       "",         // aName
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m", // pName
-      0 // checkKind
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m", // pName
+      0             // checkKind
   };
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,         // iFirst
@@ -232,55 +238,61 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
       9,          // colNo
       "",         // aName
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m", // pName
-      0 // checkKind
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m", // pName
+      0             // checkKind
   };
   static rtEqualityCheckInfo b_emlrtECI{
       1,          // nDims
       75,         // lineNo
       43,         // colNo
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m" // pName
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m" // pName
   };
   static rtEqualityCheckInfo c_emlrtECI{
       1,          // nDims
       77,         // lineNo
       43,         // colNo
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m" // pName
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m" // pName
   };
   static rtEqualityCheckInfo d_emlrtECI{
       1,          // nDims
       78,         // lineNo
       24,         // colNo
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m" // pName
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m" // pName
   };
   static rtEqualityCheckInfo e_emlrtECI{
       -1,         // nDims
       78,         // lineNo
       9,          // colNo
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m" // pName
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m" // pName
   };
   static rtEqualityCheckInfo emlrtECI{
       1,          // nDims
       73,         // lineNo
       16,         // colNo
       "quat2eul", // fName
-      "/home/dasl/matlab/toolbox/shared/robotics/robotutils/quat2eul.m" // pName
+      "/Applications/MATLAB_R2023a.app/toolbox/shared/robotics/robotutils/"
+      "quat2eul.m" // pName
   };
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo ab_emlrtRTEI{
+      53,      // lineNo
+      "bsxfun" // fName
+  };
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       13,                // lineNo
       "validatenonempty" // fName
   };
-  static rtRunTimeErrorInfo s_emlrtRTEI{
+  static rtRunTimeErrorInfo y_emlrtRTEI{
       14,    // lineNo
       "asin" // fName
-  };
-  static rtRunTimeErrorInfo t_emlrtRTEI{
-      53,      // lineNo
-      "bsxfun" // fName
   };
   array<double, 2U> matrix;
   array<double, 2U> y;
@@ -305,7 +317,7 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
   int xoffset;
   boolean_T p;
   if (q.size(0) == 0) {
-    rtErrorWithMessageID("q", r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    rtErrorWithMessageID("q", x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   }
   matrix.set_size(q.size(0), 4);
   vstride = q.size(0) << 2;
@@ -339,7 +351,7 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
     }
   }
   if (p) {
-    b_rtErrorWithMessageID("sqrt", i_emlrtRTEI.fName, i_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("sqrt", o_emlrtRTEI.fName, o_emlrtRTEI.lineNo);
   }
   vstride = b_y.size(0);
   if (b_y.size(0) > 2147483646) {
@@ -359,7 +371,7 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
   } else if (q.size(0) == b_y.size(0)) {
     csz_idx_0 = q.size(0);
   } else {
-    j_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
+    j_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);
   }
   q.set_size(csz_idx_0, 4);
   vstride = (matrix.size(0) != 1);
@@ -561,7 +573,7 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
     }
   }
   if (p) {
-    b_rtErrorWithMessageID("asin", s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("asin", y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
   }
   vstride = aSinInput.size(0);
   if (aSinInput.size(0) > 2147483646) {
@@ -590,10 +602,10 @@ void quat2eul(::coder::array<double, 2U> &q, ::coder::array<double, 2U> &eul)
     internal::expand_atan2(c_y, b_x, varargin_3);
   }
   if (varargin_2.size(0) != b_varargin_1.size(0)) {
-    i_rtErrorWithMessageID(h_emlrtRTEI.fName, h_emlrtRTEI.lineNo);
+    i_rtErrorWithMessageID(n_emlrtRTEI.fName, n_emlrtRTEI.lineNo);
   }
   if (varargin_3.size(0) != b_varargin_1.size(0)) {
-    i_rtErrorWithMessageID(h_emlrtRTEI.fName, h_emlrtRTEI.lineNo);
+    i_rtErrorWithMessageID(n_emlrtRTEI.fName, n_emlrtRTEI.lineNo);
   }
   eul.set_size(b_varargin_1.size(0), 3);
   vstride = b_varargin_1.size(0);

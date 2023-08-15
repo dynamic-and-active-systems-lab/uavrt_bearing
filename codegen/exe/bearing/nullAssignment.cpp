@@ -5,7 +5,7 @@
 // File: nullAssignment.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -18,12 +18,12 @@
 #include "coder_array.h"
 
 // Variable Definitions
-static rtRunTimeErrorInfo p_emlrtRTEI{
+static rtRunTimeErrorInfo v_emlrtRTEI{
     81,               // lineNo
     "validate_inputs" // fName
 };
 
-static rtRunTimeErrorInfo q_emlrtRTEI{
+static rtRunTimeErrorInfo w_emlrtRTEI{
     296,          // lineNo
     "delete_rows" // fName
 };
@@ -58,7 +58,7 @@ void b_nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    v_rtErrorWithMessageID(p_emlrtRTEI.fName, p_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(1) == 1) {
@@ -107,7 +107,7 @@ void b_nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    g_rtErrorWithMessageID(q_emlrtRTEI.fName, q_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;
@@ -147,13 +147,13 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    v_rtErrorWithMessageID(p_emlrtRTEI.fName, p_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(1) == 1) {
     nrows = x.size(0) - 1;
     k = idx[0];
-    for (int j{0}; j < 19; j++) {
+    for (int j{0}; j < 20; j++) {
       for (i = k; i <= nrows; i++) {
         x[(i + x.size(0) * j) - 1] = x[i + x.size(0) * j];
       }
@@ -186,7 +186,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
     for (k = 0; k < nrowx; k++) {
       if ((k + 1 > b.size(1)) || (!b[k])) {
-        for (int j{0}; j < 19; j++) {
+        for (int j{0}; j < 20; j++) {
           x[i + x.size(0) * j] = x[k + x.size(0) * j];
         }
         i++;
@@ -194,17 +194,17 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    g_rtErrorWithMessageID(q_emlrtRTEI.fName, q_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;
   }
-  for (k = 0; k < 19; k++) {
+  for (k = 0; k < 20; k++) {
     for (i = 0; i < nrows; i++) {
       x[i + nrows * k] = x[i + x.size(0) * k];
     }
   }
-  x.set_size(nrows, 19);
+  x.set_size(nrows, 20);
 }
 
 //
@@ -215,7 +215,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
 void nullAssignment(::coder::array<double, 1U> &x,
                     const ::coder::array<int, 2U> &idx)
 {
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       181,                     // lineNo
       "onearg_null_assignment" // fName
   };
@@ -238,7 +238,7 @@ void nullAssignment(::coder::array<double, 1U> &x,
     }
   }
   if (!p) {
-    v_rtErrorWithMessageID(o_emlrtRTEI.fName, o_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
   }
   nxin = x.size(0);
   b.set_size(1, x.size(0));
@@ -273,7 +273,7 @@ void nullAssignment(::coder::array<double, 1U> &x,
     }
   }
   if (nxout > x.size(0)) {
-    g_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   }
   if (nxout < 1) {
     nxout = 0;
@@ -308,13 +308,13 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    v_rtErrorWithMessageID(p_emlrtRTEI.fName, p_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(0) == 1) {
     nrows = x.size(0) - 1;
     k = idx[0];
-    for (int j{0}; j < 19; j++) {
+    for (int j{0}; j < 20; j++) {
       for (i = k; i <= nrows; i++) {
         x[(i + x.size(0) * j) - 1] = x[i + x.size(0) * j];
       }
@@ -347,7 +347,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
     for (k = 0; k < nrowx; k++) {
       if ((k + 1 > b.size(1)) || (!b[k])) {
-        for (int j{0}; j < 19; j++) {
+        for (int j{0}; j < 20; j++) {
           x[i + x.size(0) * j] = x[k + x.size(0) * j];
         }
         i++;
@@ -355,17 +355,17 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    g_rtErrorWithMessageID(q_emlrtRTEI.fName, q_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;
   }
-  for (k = 0; k < 19; k++) {
+  for (k = 0; k < 20; k++) {
     for (i = 0; i < nrows; i++) {
       x[i + nrows * k] = x[i + x.size(0) * k];
     }
   }
-  x.set_size(nrows, 19);
+  x.set_size(nrows, 20);
 }
 
 } // namespace internal

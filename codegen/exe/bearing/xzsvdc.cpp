@@ -5,7 +5,7 @@
 // File: xzsvdc.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -61,7 +61,7 @@ namespace reflapack {
 int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
            double S_data[], double V[4])
 {
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       269,     // lineNo
       "xzsvdc" // fName
   };
@@ -262,7 +262,7 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
     exitg1 = false;
     while ((!exitg1) && (m > 0)) {
       if (nctp1 >= 75) {
-        t_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+        t_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
       } else {
         boolean_T exitg2;
         nmq = m - 1;
@@ -356,8 +356,8 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
           if ((b != 0.0) || (nrm != 0.0)) {
             rt = b * b + nrm;
             if (rt < 0.0) {
-              b_rtErrorWithMessageID("sqrt", i_emlrtRTEI.fName,
-                                     i_emlrtRTEI.lineNo);
+              b_rtErrorWithMessageID("sqrt", o_emlrtRTEI.fName,
+                                     o_emlrtRTEI.lineNo);
             }
             rt = std::sqrt(rt);
             if (b < 0.0) {

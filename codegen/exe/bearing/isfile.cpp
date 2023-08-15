@@ -5,7 +5,7 @@
 // File: isfile.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -44,7 +44,7 @@ static void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 namespace coder {
 boolean_T isfile(const ::coder::array<char, 2U> &fileName)
 {
-  static rtRunTimeErrorInfo r_emlrtRTEI{
+  static rtRunTimeErrorInfo x_emlrtRTEI{
       65,                                 // lineNo
       "CoderFileStatsAPI/hIsFileOrFolder" // fName
   };
@@ -61,7 +61,7 @@ boolean_T isfile(const ::coder::array<char, 2U> &fileName)
   if (cevalIsFileFolder == -1) {
     f = false;
   } else if (cevalIsFileFolder == 22) {
-    u_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
   } else {
     f = (cevalIsFileFolder != 0);
   }
@@ -99,7 +99,7 @@ boolean_T isfile(const ::coder::array<char, 2U> &fileName)
       cevalIsFileFolder = coderIsFileOrFolder(&cFileName[0], 1);
       if (cevalIsFileFolder != -1) {
         if (cevalIsFileFolder == 22) {
-          u_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+          u_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
         } else {
           f = (cevalIsFileFolder != 0);
         }

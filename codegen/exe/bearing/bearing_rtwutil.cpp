@@ -5,7 +5,7 @@
 // File: bearing_rtwutil.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 30-Jun-2023 15:05:26
+// C/C++ source code generated on  : 15-Aug-2023 14:31:29
 //
 
 // Include Files
@@ -69,6 +69,34 @@ void bb_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 }
 
 //
+// Arguments    : const char *aFcnName
+//                int aLineNum
+// Return Type  : void
+//
+void c_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+{
+  std::stringstream outStream;
+  outStream << "NaN values cannot be converted to logicals.";
+  outStream << "\n";
+  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
+  throw std::runtime_error(outStream.str());
+}
+
+//
+// Arguments    : const char *aFcnName
+//                int aLineNum
+// Return Type  : void
+//
+void d_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+{
+  std::stringstream outStream;
+  outStream << "fopen(\'all\') is not supported for code generation.";
+  outStream << "\n";
+  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
+  throw std::runtime_error(outStream.str());
+}
+
+//
 // Arguments    : const int aDim1
 //                const int aDim2
 //                const rtEqualityCheckInfo &aInfo
@@ -95,7 +123,7 @@ void emlrtDimSizeImpxCheckR2021b(const int aDim1, const int aDim2,
 //                int aLineNum
 // Return Type  : void
 //
-void g_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+void f_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "Assertion failed.";

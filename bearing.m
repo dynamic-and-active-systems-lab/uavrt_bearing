@@ -35,7 +35,7 @@ tagID = uint32(mode(tagIDs, 'all')); %In case some other tags' pulses got into t
 otherTagPulseInds = (tagIDs ~= tagID);
 pulseStructVec = pulseStructVec(~otherTagPulseInds);
 
-[bearing, tau] = doapca(pulseStructVec,'power','linear');
+[bearing, tau] = doapca(pulseStructVec,'linear');
 
 % if any(tagIDs ~= tagIDs(1))
 %     fprintf('UAV-RT: All tags in pulse list file path must have the same tag ID integer')
@@ -46,6 +46,7 @@ pulseStructVec = pulseStructVec(~otherTagPulseInds);
 % end
 
 posVec  = [pulseStructVec(:).position];
+
 timeVec = [pulseStructVec(:).time];
 
 latitude_deg  = median([posVec(:).latitude_deg],'all');
@@ -66,6 +67,7 @@ bearingFilePath = [fileDirectory, filesep, 'bearings.csv'];
 tempBearingFilePath = [fileDirectory, filesep, 'bearings_temp.csv'];
 
 bearingFileAlreadyExists = isfile(bearingFilePath);
+
 tempbearingFileAlreadyExists = isfile(tempBearingFilePath);
 
 %Remove old temp bearing file if it wasn't deleted properly previously
