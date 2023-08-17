@@ -5,7 +5,7 @@
 // File: find.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -27,7 +27,7 @@ namespace coder {
 void eml_find(const ::coder::array<boolean_T, 1U> &x,
               ::coder::array<int, 1U> &i)
 {
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       392,                 // lineNo
       "find_first_indices" // fName
   };
@@ -57,7 +57,7 @@ void eml_find(const ::coder::array<boolean_T, 1U> &x,
     }
   }
   if (idx > x.size(0)) {
-    f_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (x.size(0) == 1) {
     if (idx == 0) {

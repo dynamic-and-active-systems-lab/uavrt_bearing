@@ -5,7 +5,7 @@
 // File: readbearingcsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -730,7 +730,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
         if (lineStr.size(1) == 0) {
           text_len = static_cast<int>(b_i);
           if (static_cast<int>(b_i) > lineLocs.size(1)) {
-            v_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
+            t_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
           }
           match_idx = lineLocs.size(1) - 1;
           for (c_i = text_len; c_i <= match_idx; c_i++) {

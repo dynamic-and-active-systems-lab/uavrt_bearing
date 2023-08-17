@@ -5,7 +5,7 @@
 // File: minOrMax.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -20,13 +20,13 @@
 #include <string>
 
 // Variable Definitions
-static rtRunTimeErrorInfo r_emlrtRTEI{
+static rtRunTimeErrorInfo p_emlrtRTEI{
     134,            // lineNo
     "unaryMinOrMax" // fName
 };
 
 // Function Declarations
-static void r_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void p_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -34,7 +34,7 @@ static void r_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 //                int aLineNum
 // Return Type  : void
 //
-static void r_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void p_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "If the working dimension of MAX or MIN is variable in length, "
@@ -56,7 +56,7 @@ double maximum(const ::coder::array<double, 1U> &x, int &idx)
   double ex;
   int last;
   if (x.size(0) < 1) {
-    r_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    p_rtErrorWithMessageID(p_emlrtRTEI.fName, p_emlrtRTEI.lineNo);
   }
   last = x.size(0);
   if (x.size(0) <= 2) {
@@ -123,7 +123,7 @@ double maximum(const ::coder::array<double, 2U> &x)
   double ex;
   int last;
   if (x.size(1) < 1) {
-    r_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    p_rtErrorWithMessageID(p_emlrtRTEI.fName, p_emlrtRTEI.lineNo);
   }
   last = x.size(1);
   if (x.size(1) <= 2) {
@@ -186,7 +186,7 @@ double minimum(const ::coder::array<double, 1U> &x)
   double ex;
   int last;
   if (x.size(0) < 1) {
-    r_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    p_rtErrorWithMessageID(p_emlrtRTEI.fName, p_emlrtRTEI.lineNo);
   }
   last = x.size(0);
   if (x.size(0) <= 2) {
@@ -249,7 +249,7 @@ double minimum(const ::coder::array<double, 2U> &x)
   double ex;
   int last;
   if (x.size(1) < 1) {
-    r_rtErrorWithMessageID(r_emlrtRTEI.fName, r_emlrtRTEI.lineNo);
+    p_rtErrorWithMessageID(p_emlrtRTEI.fName, p_emlrtRTEI.lineNo);
   }
   last = x.size(1);
   if (x.size(1) <= 2) {

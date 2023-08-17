@@ -5,7 +5,7 @@
 // File: str2double.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -40,8 +40,6 @@ static const boolean_T bv[128]{
     false, false, false, false, false, false, false};
 
 // Function Declarations
-static void ab_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
-
 namespace coder {
 namespace internal {
 static boolean_T b_copysign(::coder::array<char, 2U> &s1, int &idx,
@@ -67,24 +65,9 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
 
 } // namespace internal
 } // namespace coder
+static void x_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
-//
-// Arguments    : const char *aFcnName
-//                int aLineNum
-// Return Type  : void
-//
-static void ab_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
-{
-  std::stringstream outStream;
-  ((outStream << "This input can only contain characters in the range 0 to ")
-   << 127)
-      << ".";
-  outStream << "\n";
-  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
-  throw std::runtime_error(outStream.str());
-}
-
 //
 // Arguments    : ::coder::array<char, 2U> &s1
 //                int &idx
@@ -120,7 +103,7 @@ static boolean_T b_copysign(::coder::array<char, 2U> &s1, int &idx,
       k++;
     } else {
       if (static_cast<unsigned char>(c) > 127) {
-        ab_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+        x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
       }
       if (!bv[static_cast<unsigned char>(c) & 127]) {
         exitg1 = true;
@@ -386,7 +369,7 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
       while ((!exitg4) && (k <= n)) {
         c = s[k - 1];
         if (static_cast<unsigned char>(c) > 127) {
-          ab_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+          x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
         }
         if (bv[static_cast<unsigned char>(c) & 127] || (c == '\x00') ||
             (c == ',')) {
@@ -418,7 +401,7 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
             while ((!exitg4) && (k <= n)) {
               c = s[k - 1];
               if (static_cast<unsigned char>(c) > 127) {
-                ab_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+                x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
               }
               if (bv[static_cast<unsigned char>(c) & 127] || (c == '\x00') ||
                   (c == ',')) {
@@ -433,8 +416,7 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
               while ((!exitg4) && (k <= n)) {
                 c = s[k - 1];
                 if (static_cast<unsigned char>(c) > 127) {
-                  ab_rtErrorWithMessageID(l_emlrtRTEI.fName,
-                                          l_emlrtRTEI.lineNo);
+                  x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
                 }
                 if (bv[static_cast<unsigned char>(c) & 127] || (c == '\x00') ||
                     (c == ',')) {
@@ -457,7 +439,7 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
             if (k <= n) {
               c = s[k - 1];
               if (static_cast<unsigned char>(c) > 127) {
-                ab_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+                x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
               }
               if (bv[static_cast<unsigned char>(c) & 127] || (c == '\x00') ||
                   (c == ',')) {
@@ -491,7 +473,7 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
       while ((!exitg4) && (k <= n)) {
         c = s[k - 1];
         if (static_cast<unsigned char>(c) > 127) {
-          ab_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+          x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
         }
         if (bv[static_cast<unsigned char>(c) & 127] || (c == '\x00') ||
             (c == ',')) {
@@ -506,7 +488,7 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
         while ((!exitg4) && (k <= n)) {
           c = s[k - 1];
           if (static_cast<unsigned char>(c) > 127) {
-            ab_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+            x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
           }
           if (bv[static_cast<unsigned char>(c) & 127] || (c == '\x00') ||
               (c == ',')) {
@@ -530,7 +512,7 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
       if (k <= n) {
         c = s[k - 1];
         if (static_cast<unsigned char>(c) > 127) {
-          ab_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+          x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
         }
         if (bv[static_cast<unsigned char>(c) & 127] || (c == '\x00') ||
             (c == ',')) {
@@ -547,9 +529,29 @@ static boolean_T readfloat(::coder::array<char, 2U> &s1, int &idx,
 }
 
 //
+// Arguments    : const char *aFcnName
+//                int aLineNum
+// Return Type  : void
+//
+} // namespace internal
+} // namespace coder
+static void x_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+{
+  std::stringstream outStream;
+  ((outStream << "This input can only contain characters in the range 0 to ")
+   << 127)
+      << ".";
+  outStream << "\n";
+  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
+  throw std::runtime_error(outStream.str());
+}
+
+//
 // Arguments    : const ::coder::array<char, 2U> &s
 // Return Type  : creal_T
 //
+namespace coder {
+namespace internal {
 creal_T str2double(const ::coder::array<char, 2U> &s)
 {
   array<char, 2U> s1;
@@ -579,7 +581,7 @@ creal_T str2double(const ::coder::array<char, 2U> &s)
     while ((!exitg1) && (k + 1 <= s.size(1))) {
       i = static_cast<unsigned char>(s[k]);
       if (i > 127) {
-        ab_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
+        x_rtErrorWithMessageID(l_emlrtRTEI.fName, l_emlrtRTEI.lineNo);
       }
       if (bv[i] || (s[k] == '\x00')) {
         k++;

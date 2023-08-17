@@ -5,7 +5,7 @@
 // File: nullAssignment.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -18,12 +18,12 @@
 #include "coder_array.h"
 
 // Variable Definitions
-static rtRunTimeErrorInfo v_emlrtRTEI{
+static rtRunTimeErrorInfo t_emlrtRTEI{
     81,               // lineNo
     "validate_inputs" // fName
 };
 
-static rtRunTimeErrorInfo w_emlrtRTEI{
+static rtRunTimeErrorInfo u_emlrtRTEI{
     296,          // lineNo
     "delete_rows" // fName
 };
@@ -58,7 +58,7 @@ void b_nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    t_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(1) == 1) {
@@ -107,7 +107,7 @@ void b_nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    f_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;
@@ -147,7 +147,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    t_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(1) == 1) {
@@ -194,7 +194,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    f_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;
@@ -215,7 +215,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
 void nullAssignment(::coder::array<double, 1U> &x,
                     const ::coder::array<int, 2U> &idx)
 {
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       181,                     // lineNo
       "onearg_null_assignment" // fName
   };
@@ -238,7 +238,7 @@ void nullAssignment(::coder::array<double, 1U> &x,
     }
   }
   if (!p) {
-    v_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
+    t_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
   }
   nxin = x.size(0);
   b.set_size(1, x.size(0));
@@ -273,7 +273,7 @@ void nullAssignment(::coder::array<double, 1U> &x,
     }
   }
   if (nxout > x.size(0)) {
-    f_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (nxout < 1) {
     nxout = 0;
@@ -308,7 +308,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    t_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(0) == 1) {
@@ -355,7 +355,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    f_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
+    f_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;

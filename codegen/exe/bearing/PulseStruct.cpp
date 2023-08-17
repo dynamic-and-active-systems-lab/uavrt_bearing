@@ -5,7 +5,7 @@
 // File: PulseStruct.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -493,6 +493,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   pulseInit.tagID = 0.0;
   pulseInit.time = 0.0;
   pulseInit.snrdB = 0.0;
+  pulseInit.noisePSD = 0.0;
   pulse.set_size(1, 1);
   pulse[0] = pulseInit;
   x[0] = ((pos.size(0) == freqMHz.size(0)) || (pos.size(0) == tagID.size(0)) ||
@@ -597,6 +598,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       if (itilerow + 1 > noisePSD.size(0)) {
         rtDynamicBoundsError(itilerow + 1, 1, noisePSD.size(0), v_emlrtBCI);
       }
+      pulse[itilerow].noisePSD = noisePSD[itilerow];
       if (itilerow + 1 > detectStatus.size(0)) {
         rtDynamicBoundsError(itilerow + 1, 1, detectStatus.size(0), w_emlrtBCI);
       }

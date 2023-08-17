@@ -5,7 +5,7 @@
 // File: bearing_types.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 #ifndef BEARING_TYPES_H
@@ -24,14 +24,6 @@ struct rtBoundsCheckInfo {
   const char *fName;
   const char *pName;
   int checkKind;
-};
-
-struct rtEqualityCheckInfo {
-  int nDims;
-  int lineNo;
-  int colNo;
-  const char *fName;
-  const char *pName;
 };
 
 struct rtDoubleCheckInfo {

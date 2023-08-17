@@ -2,7 +2,7 @@
 ## Makefile generated for component 'bearing'. 
 ## 
 ## Makefile     : bearing_rtw.mk
-## Generated on : Tue Aug 15 14:27:46 2023
+## Generated on : Thu Aug 17 13:15:02 2023
 ## Final product: $(START_DIR)/bearing
 ## Product type : executable
 ## 
@@ -170,7 +170,7 @@ DEFINES = $(DEFINES_CUSTOM) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/codegen/exe/bearing/coder_platform.c $(START_DIR)/codegen/exe/bearing/coder_filestats.c $(START_DIR)/main.cpp $(START_DIR)/codegen/exe/bearing/bearing_data.cpp $(START_DIR)/codegen/exe/bearing/rt_nonfinite.cpp $(START_DIR)/codegen/exe/bearing/rtGetNaN.cpp $(START_DIR)/codegen/exe/bearing/rtGetInf.cpp $(START_DIR)/codegen/exe/bearing/bearing_initialize.cpp $(START_DIR)/codegen/exe/bearing/bearing_terminate.cpp $(START_DIR)/codegen/exe/bearing/bearing.cpp $(START_DIR)/codegen/exe/bearing/readpulsecsv.cpp $(START_DIR)/codegen/exe/bearing/fileManager.cpp $(START_DIR)/codegen/exe/bearing/cleancsv.cpp $(START_DIR)/codegen/exe/bearing/feof.cpp $(START_DIR)/codegen/exe/bearing/fgetl.cpp $(START_DIR)/codegen/exe/bearing/fgets.cpp $(START_DIR)/codegen/exe/bearing/ftell.cpp $(START_DIR)/codegen/exe/bearing/str2double.cpp $(START_DIR)/codegen/exe/bearing/fseek.cpp $(START_DIR)/codegen/exe/bearing/fscanf.cpp $(START_DIR)/codegen/exe/bearing/find.cpp $(START_DIR)/codegen/exe/bearing/indexShapeCheck.cpp $(START_DIR)/codegen/exe/bearing/unique.cpp $(START_DIR)/codegen/exe/bearing/quat2eul.cpp $(START_DIR)/codegen/exe/bearing/ixfun.cpp $(START_DIR)/codegen/exe/bearing/PositionStruct.cpp $(START_DIR)/codegen/exe/bearing/repmat.cpp $(START_DIR)/codegen/exe/bearing/PulseStruct.cpp $(START_DIR)/codegen/exe/bearing/CommandStruct.cpp $(START_DIR)/codegen/exe/bearing/doapca.cpp $(START_DIR)/codegen/exe/bearing/horzcatStructList.cpp $(START_DIR)/codegen/exe/bearing/any1.cpp $(START_DIR)/codegen/exe/bearing/minOrMax.cpp $(START_DIR)/codegen/exe/bearing/diff.cpp $(START_DIR)/codegen/exe/bearing/sum.cpp $(START_DIR)/codegen/exe/bearing/eye.cpp $(START_DIR)/codegen/exe/bearing/mtimes.cpp $(START_DIR)/codegen/exe/bearing/svd.cpp $(START_DIR)/codegen/exe/bearing/svd1.cpp $(START_DIR)/codegen/exe/bearing/xzsvdc.cpp $(START_DIR)/codegen/exe/bearing/xnrm2.cpp $(START_DIR)/codegen/exe/bearing/xdotc.cpp $(START_DIR)/codegen/exe/bearing/median.cpp $(START_DIR)/codegen/exe/bearing/quickselect.cpp $(START_DIR)/codegen/exe/bearing/isfile.cpp $(START_DIR)/codegen/exe/bearing/sprintf.cpp $(START_DIR)/codegen/exe/bearing/readbearingcsv.cpp $(START_DIR)/codegen/exe/bearing/eml_int_forloop_overflow_check.cpp $(START_DIR)/codegen/exe/bearing/strcmp.cpp $(START_DIR)/codegen/exe/bearing/nullAssignment.cpp $(START_DIR)/codegen/exe/bearing/sort.cpp $(START_DIR)/codegen/exe/bearing/sortIdx.cpp $(START_DIR)/codegen/exe/bearing/xscal.cpp $(START_DIR)/codegen/exe/bearing/xaxpy.cpp $(START_DIR)/codegen/exe/bearing/xrotg.cpp $(START_DIR)/codegen/exe/bearing/xrot.cpp $(START_DIR)/codegen/exe/bearing/xswap.cpp $(START_DIR)/codegen/exe/bearing/eml_mtimes_helper.cpp $(START_DIR)/codegen/exe/bearing/wrapTo360.cpp $(START_DIR)/codegen/exe/bearing/varNamesDim.cpp $(START_DIR)/codegen/exe/bearing/onCleanup.cpp $(START_DIR)/codegen/exe/bearing/table.cpp $(START_DIR)/codegen/exe/bearing/bearing_rtwutil.cpp
+SRCS = $(START_DIR)/codegen/exe/bearing/coder_platform.c $(START_DIR)/codegen/exe/bearing/coder_filestats.c $(START_DIR)/main.cpp $(START_DIR)/codegen/exe/bearing/bearing_data.cpp $(START_DIR)/codegen/exe/bearing/rt_nonfinite.cpp $(START_DIR)/codegen/exe/bearing/rtGetNaN.cpp $(START_DIR)/codegen/exe/bearing/rtGetInf.cpp $(START_DIR)/codegen/exe/bearing/bearing_initialize.cpp $(START_DIR)/codegen/exe/bearing/bearing_terminate.cpp $(START_DIR)/codegen/exe/bearing/bearing.cpp $(START_DIR)/codegen/exe/bearing/readpulsecsv.cpp $(START_DIR)/codegen/exe/bearing/fileManager.cpp $(START_DIR)/codegen/exe/bearing/cleancsv.cpp $(START_DIR)/codegen/exe/bearing/feof.cpp $(START_DIR)/codegen/exe/bearing/fgetl.cpp $(START_DIR)/codegen/exe/bearing/fgets.cpp $(START_DIR)/codegen/exe/bearing/ftell.cpp $(START_DIR)/codegen/exe/bearing/str2double.cpp $(START_DIR)/codegen/exe/bearing/fseek.cpp $(START_DIR)/codegen/exe/bearing/fscanf.cpp $(START_DIR)/codegen/exe/bearing/find.cpp $(START_DIR)/codegen/exe/bearing/indexShapeCheck.cpp $(START_DIR)/codegen/exe/bearing/unique.cpp $(START_DIR)/codegen/exe/bearing/PositionStruct.cpp $(START_DIR)/codegen/exe/bearing/repmat.cpp $(START_DIR)/codegen/exe/bearing/PulseStruct.cpp $(START_DIR)/codegen/exe/bearing/CommandStruct.cpp $(START_DIR)/codegen/exe/bearing/doapca.cpp $(START_DIR)/codegen/exe/bearing/horzcatStructList.cpp $(START_DIR)/codegen/exe/bearing/any1.cpp $(START_DIR)/codegen/exe/bearing/minOrMax.cpp $(START_DIR)/codegen/exe/bearing/diff.cpp $(START_DIR)/codegen/exe/bearing/sum.cpp $(START_DIR)/codegen/exe/bearing/eye.cpp $(START_DIR)/codegen/exe/bearing/mtimes.cpp $(START_DIR)/codegen/exe/bearing/svd.cpp $(START_DIR)/codegen/exe/bearing/svd1.cpp $(START_DIR)/codegen/exe/bearing/xzsvdc.cpp $(START_DIR)/codegen/exe/bearing/xnrm2.cpp $(START_DIR)/codegen/exe/bearing/xdotc.cpp $(START_DIR)/codegen/exe/bearing/median.cpp $(START_DIR)/codegen/exe/bearing/quickselect.cpp $(START_DIR)/codegen/exe/bearing/isfile.cpp $(START_DIR)/codegen/exe/bearing/sprintf.cpp $(START_DIR)/codegen/exe/bearing/readbearingcsv.cpp $(START_DIR)/codegen/exe/bearing/eml_int_forloop_overflow_check.cpp $(START_DIR)/codegen/exe/bearing/strcmp.cpp $(START_DIR)/codegen/exe/bearing/nullAssignment.cpp $(START_DIR)/codegen/exe/bearing/sort.cpp $(START_DIR)/codegen/exe/bearing/sortIdx.cpp $(START_DIR)/codegen/exe/bearing/xscal.cpp $(START_DIR)/codegen/exe/bearing/xaxpy.cpp $(START_DIR)/codegen/exe/bearing/xrotg.cpp $(START_DIR)/codegen/exe/bearing/xrot.cpp $(START_DIR)/codegen/exe/bearing/xswap.cpp $(START_DIR)/codegen/exe/bearing/wrapTo360.cpp $(START_DIR)/codegen/exe/bearing/varNamesDim.cpp $(START_DIR)/codegen/exe/bearing/onCleanup.cpp $(START_DIR)/codegen/exe/bearing/table.cpp $(START_DIR)/codegen/exe/bearing/bearing_rtwutil.cpp
 
 ALL_SRCS = $(SRCS)
 
@@ -178,7 +178,7 @@ ALL_SRCS = $(SRCS)
 ## OBJECTS
 ###########################################################################
 
-OBJS = coder_platform.o coder_filestats.o main.o bearing_data.o rt_nonfinite.o rtGetNaN.o rtGetInf.o bearing_initialize.o bearing_terminate.o bearing.o readpulsecsv.o fileManager.o cleancsv.o feof.o fgetl.o fgets.o ftell.o str2double.o fseek.o fscanf.o find.o indexShapeCheck.o unique.o quat2eul.o ixfun.o PositionStruct.o repmat.o PulseStruct.o CommandStruct.o doapca.o horzcatStructList.o any1.o minOrMax.o diff.o sum.o eye.o mtimes.o svd.o svd1.o xzsvdc.o xnrm2.o xdotc.o median.o quickselect.o isfile.o sprintf.o readbearingcsv.o eml_int_forloop_overflow_check.o strcmp.o nullAssignment.o sort.o sortIdx.o xscal.o xaxpy.o xrotg.o xrot.o xswap.o eml_mtimes_helper.o wrapTo360.o varNamesDim.o onCleanup.o table.o bearing_rtwutil.o
+OBJS = coder_platform.o coder_filestats.o main.o bearing_data.o rt_nonfinite.o rtGetNaN.o rtGetInf.o bearing_initialize.o bearing_terminate.o bearing.o readpulsecsv.o fileManager.o cleancsv.o feof.o fgetl.o fgets.o ftell.o str2double.o fseek.o fscanf.o find.o indexShapeCheck.o unique.o PositionStruct.o repmat.o PulseStruct.o CommandStruct.o doapca.o horzcatStructList.o any1.o minOrMax.o diff.o sum.o eye.o mtimes.o svd.o svd1.o xzsvdc.o xnrm2.o xdotc.o median.o quickselect.o isfile.o sprintf.o readbearingcsv.o eml_int_forloop_overflow_check.o strcmp.o nullAssignment.o sort.o sortIdx.o xscal.o xaxpy.o xrotg.o xrot.o xswap.o wrapTo360.o varNamesDim.o onCleanup.o table.o bearing_rtwutil.o
 
 ALL_OBJS = $(OBJS)
 
@@ -400,14 +400,6 @@ unique.o : $(START_DIR)/codegen/exe/bearing/unique.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
-quat2eul.o : $(START_DIR)/codegen/exe/bearing/quat2eul.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-ixfun.o : $(START_DIR)/codegen/exe/bearing/ixfun.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
 PositionStruct.o : $(START_DIR)/codegen/exe/bearing/PositionStruct.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
@@ -533,10 +525,6 @@ xrot.o : $(START_DIR)/codegen/exe/bearing/xrot.cpp
 
 
 xswap.o : $(START_DIR)/codegen/exe/bearing/xswap.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-eml_mtimes_helper.o : $(START_DIR)/codegen/exe/bearing/eml_mtimes_helper.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 

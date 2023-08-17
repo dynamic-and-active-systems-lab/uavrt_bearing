@@ -5,7 +5,7 @@
 // File: fileManager.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -49,7 +49,7 @@ static signed char filedata();
 } // namespace coder
 static void e_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
-static void y_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -99,7 +99,7 @@ static void e_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void y_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   ((outStream << "For code generation, maximum number of open files is ") << 20)
@@ -117,7 +117,7 @@ namespace coder {
 namespace internal {
 int cfclose(double fid)
 {
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       168,                // lineNo
       "conditionalAssert" // fName
   };
@@ -154,7 +154,7 @@ int cfclose(double fid)
     f = stderr;
   }
   if ((!(f != nullptr)) || (fileid < 3)) {
-    rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   cst = std::fclose(f);
   if (cst == 0) {
@@ -173,7 +173,7 @@ int cfclose(double fid)
 signed char cfopen(const ::coder::array<char, 2U> &cfilename,
                    const char *cpermission)
 {
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       111,     // lineNo
       "cfopen" // fName
   };
@@ -184,7 +184,7 @@ signed char cfopen(const ::coder::array<char, 2U> &cfilename,
   fileid = -1;
   j = filedata();
   if (j < 1) {
-    y_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    w_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   } else {
     int i;
     int loop_ub;

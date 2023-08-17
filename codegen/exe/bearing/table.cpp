@@ -5,7 +5,7 @@
 // File: table.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -40,12 +40,12 @@ static rtBoundsCheckInfo emlrtBCI{
 };
 
 // Function Declarations
-static void c_rtErrorWithMessageID(const char *r, const char *aFcnName,
+static void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
                                    int aLineNum);
 
-static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
-static void x_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void v_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -54,7 +54,7 @@ static void x_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 //                int aLineNum
 // Return Type  : void
 //
-static void c_rtErrorWithMessageID(const char *r, const char *aFcnName,
+static void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
                                    int aLineNum)
 {
   std::stringstream outStream;
@@ -70,7 +70,7 @@ static void c_rtErrorWithMessageID(const char *r, const char *aFcnName,
 //                int aLineNum
 // Return Type  : void
 //
-static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "All table variables must have the same number of rows.";
@@ -84,7 +84,7 @@ static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void x_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void v_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "Row index exceeds table dimensions.";
@@ -118,7 +118,7 @@ void table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
                  const ::coder::array<double, 1U> &varargin_9,
                  const ::coder::array<double, 1U> &varargin_10)
 {
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       329,                     // lineNo
       "tabular/countVarInputs" // fName
   };
@@ -128,31 +128,31 @@ void table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
   arrayProps.Description.size[0] = 1;
   arrayProps.Description.size[1] = 0;
   if (varargin_2.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_3.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_4.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_5.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_6.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_7.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_8.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_9.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_10.size(0) != varargin_1.size(0)) {
-    w_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   rowDim.length = varargin_1.size(0);
   indices.set_size(1, varargin_1.size(0));
@@ -302,7 +302,7 @@ void table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       "tabular/+matlab/+internal/+coder/@tabular/parenReference.m", // pName
       0                                                             // checkKind
   };
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       316,                         // lineNo
       "tabularDimension/subs2inds" // fName
   };
@@ -334,7 +334,7 @@ void table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
     }
   }
   if (a__1 > rowDim.length) {
-    x_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   a__1 = varargin_1.size(0);
   nz = varargin_1[0];
@@ -650,7 +650,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
       "sion.m", // pName
       1         // checkKind
   };
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       377,              // lineNo
       "tabular/vertcat" // fName
   };
@@ -671,7 +671,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f1[data.f1.size(0)] = varargin_2.data.f1;
   if (static_cast<unsigned int>(t.data.f1.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("tagID", x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("tagID", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f2.set_size(data.f1.size(0) + 1);
   i = data.f2.size(0);
@@ -756,7 +756,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f3[data.f3.size(0)] = varargin_2.data.f3;
   if (static_cast<unsigned int>(t.data.f3.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("bearing", x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("bearing", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f4.set_size(data.f4.size(0) + 1);
   loop_ub = data.f4.size(0);
@@ -766,7 +766,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f4[data.f4.size(0)] = varargin_2.data.f4;
   if (static_cast<unsigned int>(t.data.f4.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("tau", x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("tau", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f5.set_size(data.f5.size(0) + 1);
   loop_ub = data.f5.size(0);
@@ -776,8 +776,8 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f5[data.f5.size(0)] = varargin_2.data.f5;
   if (static_cast<unsigned int>(t.data.f5.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("latitude_deg", x_emlrtRTEI.fName,
-                           x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("latitude_deg", v_emlrtRTEI.fName,
+                           v_emlrtRTEI.lineNo);
   }
   t.data.f6.set_size(data.f6.size(0) + 1);
   loop_ub = data.f6.size(0);
@@ -787,8 +787,8 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f6[data.f6.size(0)] = varargin_2.data.f6;
   if (static_cast<unsigned int>(t.data.f6.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("longitude_deg", x_emlrtRTEI.fName,
-                           x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("longitude_deg", v_emlrtRTEI.fName,
+                           v_emlrtRTEI.lineNo);
   }
   t.data.f7.set_size(data.f7.size(0) + 1);
   loop_ub = data.f7.size(0);
@@ -798,7 +798,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f7[data.f7.size(0)] = varargin_2.data.f7;
   if (static_cast<unsigned int>(t.data.f7.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("alt_AGL_m", x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("alt_AGL_m", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f8.set_size(data.f8.size(0) + 1);
   loop_ub = data.f8.size(0);
@@ -808,7 +808,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f8[data.f8.size(0)] = varargin_2.data.f8;
   if (static_cast<unsigned int>(t.data.f8.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("alt_ASL_m", x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("alt_ASL_m", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f9.set_size(data.f9.size(0) + 1);
   loop_ub = data.f9.size(0);
@@ -818,8 +818,8 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f9[data.f9.size(0)] = varargin_2.data.f9;
   if (static_cast<unsigned int>(t.data.f9.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("time_start_s", x_emlrtRTEI.fName,
-                           x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("time_start_s", v_emlrtRTEI.fName,
+                           v_emlrtRTEI.lineNo);
   }
   t.data.f10.set_size(data.f10.size(0) + 1);
   loop_ub = data.f10.size(0);
@@ -829,7 +829,7 @@ void table::vertcat(const b_table &varargin_2, table &t) const
   t.data.f10[data.f10.size(0)] = varargin_2.data.f10;
   if (static_cast<unsigned int>(t.data.f10.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    c_rtErrorWithMessageID("time_end_s", x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID("time_end_s", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.b_metaDim = b_metaDim;
   t.rowDim.length = static_cast<double>(data.f1.size(0)) + 1.0;

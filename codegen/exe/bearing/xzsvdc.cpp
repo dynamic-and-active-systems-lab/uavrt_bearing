@@ -5,13 +5,11 @@
 // File: xzsvdc.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
 #include "xzsvdc.h"
-#include "bearing_data.h"
-#include "bearing_rtwutil.h"
 #include "bearing_types.h"
 #include "eml_int_forloop_overflow_check.h"
 #include "rt_nonfinite.h"
@@ -31,7 +29,10 @@
 #include <string>
 
 // Function Declarations
-static void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void r_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+
+static void rtErrorWithMessageID(const char *r, const char *aFcnName,
+                                 int aLineNum);
 
 // Function Definitions
 //
@@ -39,10 +40,28 @@ static void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 //                int aLineNum
 // Return Type  : void
 //
-static void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void r_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "SVD fails to converge";
+  outStream << "\n";
+  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
+  throw std::runtime_error(outStream.str());
+}
+
+//
+// Arguments    : const char *r
+//                const char *aFcnName
+//                int aLineNum
+// Return Type  : void
+//
+static void rtErrorWithMessageID(const char *r, const char *aFcnName,
+                                 int aLineNum)
+{
+  std::stringstream outStream;
+  ((outStream << "Domain error. To compute complex results from real x, use \'")
+   << r)
+      << "(complex(x))\'.";
   outStream << "\n";
   ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
   throw std::runtime_error(outStream.str());
@@ -61,9 +80,13 @@ namespace reflapack {
 int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
            double S_data[], double V[4])
 {
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       269,     // lineNo
       "xzsvdc" // fName
+  };
+  static rtRunTimeErrorInfo w_emlrtRTEI{
+      13,    // lineNo
+      "sqrt" // fName
   };
   double e[2];
   double s_data[2];
@@ -262,7 +285,7 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
     exitg1 = false;
     while ((!exitg1) && (m > 0)) {
       if (nctp1 >= 75) {
-        t_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+        r_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
       } else {
         boolean_T exitg2;
         nmq = m - 1;
@@ -356,8 +379,8 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
           if ((b != 0.0) || (nrm != 0.0)) {
             rt = b * b + nrm;
             if (rt < 0.0) {
-              b_rtErrorWithMessageID("sqrt", o_emlrtRTEI.fName,
-                                     o_emlrtRTEI.lineNo);
+              rtErrorWithMessageID("sqrt", w_emlrtRTEI.fName,
+                                   w_emlrtRTEI.lineNo);
             }
             rt = std::sqrt(rt);
             if (b < 0.0) {

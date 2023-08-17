@@ -5,7 +5,7 @@
 // File: bearing_internal_types.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 #ifndef BEARING_INTERNAL_TYPES_H
@@ -47,6 +47,14 @@ enum class Continuity : int
 } // namespace internal
 } // namespace matlab
 } // namespace coder
+struct rtEqualityCheckInfo {
+  int nDims;
+  int lineNo;
+  int colNo;
+  const char *fName;
+  const char *pName;
+};
+
 struct cell_wrap_4 {
   coder::array<char, 2U> f1;
 };
@@ -93,6 +101,7 @@ struct e_struct_T {
   double tagID;
   double time;
   double snrdB;
+  double noisePSD;
   coder::bounded_array<struct_T, 1U, 2U> position;
   coder::bounded_array<d_struct_T, 1U, 2U> euler;
 };

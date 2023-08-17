@@ -5,7 +5,7 @@
 // File: bearing_data.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -65,21 +65,11 @@ rtRunTimeErrorInfo k_emlrtRTEI{
 };
 
 rtRunTimeErrorInfo n_emlrtRTEI{
-    288,                  // lineNo
-    "check_non_axis_size" // fName
-};
-
-rtRunTimeErrorInfo o_emlrtRTEI{
-    13,    // lineNo
-    "sqrt" // fName
-};
-
-rtRunTimeErrorInfo p_emlrtRTEI{
     58,                  // lineNo
     "assertValidSizeArg" // fName
 };
 
-rtRunTimeErrorInfo u_emlrtRTEI{
+rtRunTimeErrorInfo s_emlrtRTEI{
     85,               // lineNo
     "validate_inputs" // fName
 };

@@ -5,7 +5,7 @@
 // File: horzcatStructList.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -19,11 +19,36 @@
 // Function Definitions
 //
 // Arguments    : const ::coder::array<e_struct_T, 1U> &structure
-//                ::coder::array<d_struct_T, 2U> &result
+//                ::coder::array<double, 2U> &result
 // Return Type  : void
 //
 namespace coder {
 namespace internal {
+void horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
+                       ::coder::array<double, 2U> &result)
+{
+  int i;
+  int n;
+  n = structure.size(0);
+  if (structure.size(0) == 0) {
+    i = 0;
+  } else {
+    i = structure.size(0);
+  }
+  result.set_size(1, i);
+  if (structure.size(0) > 2147483646) {
+    check_forloop_overflow_error();
+  }
+  for (i = 0; i < n; i++) {
+    result[i] = structure[i].noisePSD;
+  }
+}
+
+//
+// Arguments    : const ::coder::array<e_struct_T, 1U> &structure
+//                ::coder::array<d_struct_T, 2U> &result
+// Return Type  : void
+//
 void horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
                        ::coder::array<d_struct_T, 2U> &result)
 {

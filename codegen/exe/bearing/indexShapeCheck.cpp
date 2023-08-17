@@ -5,7 +5,7 @@
 // File: indexShapeCheck.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -25,9 +25,9 @@ static rtRunTimeErrorInfo m_emlrtRTEI{
 // Function Declarations
 static void h_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
-static void l_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void i_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
-static void m_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void j_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -52,7 +52,7 @@ static void h_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void l_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void i_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream
@@ -69,7 +69,7 @@ static void l_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void m_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void j_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream
@@ -105,7 +105,7 @@ void indexShapeCheck(const int matrixSize[2], const int indexSize[2])
       nonSingletonDimFound = true;
     }
     if (nonSingletonDimFound) {
-      l_rtErrorWithMessageID(m_emlrtRTEI.fName, m_emlrtRTEI.lineNo);
+      i_rtErrorWithMessageID(m_emlrtRTEI.fName, m_emlrtRTEI.lineNo);
     }
   } else {
     nonSingletonDimFound = (indexSize[0] != 1);
@@ -122,7 +122,7 @@ void indexShapeCheck(const int matrixSize[2], const int indexSize[2])
         nonSingletonDimFound = true;
       }
       if (nonSingletonDimFound) {
-        m_rtErrorWithMessageID(m_emlrtRTEI.fName, m_emlrtRTEI.lineNo);
+        j_rtErrorWithMessageID(m_emlrtRTEI.fName, m_emlrtRTEI.lineNo);
       }
     }
   }

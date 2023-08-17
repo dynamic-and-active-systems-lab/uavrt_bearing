@@ -5,7 +5,7 @@
 // File: diff.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -19,7 +19,7 @@
 #include <string>
 
 // Function Declarations
-static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void q_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -27,7 +27,7 @@ static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 //                int aLineNum
 // Return Type  : void
 //
-static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void q_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream
@@ -48,7 +48,7 @@ static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 namespace coder {
 void diff(const ::coder::array<double, 1U> &x, ::coder::array<double, 1U> &y)
 {
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       51,    // lineNo
       "diff" // fName
   };
@@ -67,7 +67,7 @@ void diff(const ::coder::array<double, 1U> &x, ::coder::array<double, 1U> &y)
     } else {
       double work_data;
       if (x.size(0) == 1) {
-        s_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+        q_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
       }
       y.set_size(x.size(0) - 1);
       work_data = x[0];

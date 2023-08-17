@@ -5,7 +5,7 @@
 // File: bearing_rtwutil.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 #ifndef BEARING_RTWUTIL_H
@@ -15,40 +15,25 @@
 #include "rtwtypes.h"
 #include <cstddef>
 #include <cstdlib>
-#include <string>
 
 // Type Declarations
 struct rtBoundsCheckInfo;
 
-struct rtEqualityCheckInfo;
-
 struct rtDoubleCheckInfo;
 
 // Function Declarations
-extern void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
-                                   int aLineNum);
-
 extern void b_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
-
-extern void bb_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 extern void c_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 extern void d_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
-extern void emlrtDimSizeImpxCheckR2021b(const int aDim1, const int aDim2,
-                                        const rtEqualityCheckInfo &aInfo);
-
 extern void f_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
-
-extern void i_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 extern void rtDynamicBoundsError(int aIndexValue, int aLoBound, int aHiBound,
                                  const rtBoundsCheckInfo &aInfo);
 
 extern void rtErrorWithMessageID(const char *aFcnName, int aLineNum);
-
-extern std::string rtGenSizeString(const int aNDims, const int *aDims);
 
 extern void rtIntegerError(const double aInteger,
                            const rtDoubleCheckInfo &aInfo);
@@ -58,13 +43,9 @@ extern boolean_T rtIsNullOrEmptyString(const char *aString);
 extern void rtNonNegativeError(const double aPositive,
                                const rtDoubleCheckInfo &aInfo);
 
-extern void rtSubAssignSizeCheck(const int *aDims1, const int aNDims1,
-                                 const int *aDims2, const int aNDims2,
-                                 const rtEqualityCheckInfo &aInfo);
+extern void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
-extern double rt_atan2d_snf(double u0, double u1);
-
-extern void v_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+extern void y_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 #endif
 //

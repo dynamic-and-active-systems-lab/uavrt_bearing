@@ -5,7 +5,7 @@
 // File: fgets.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -72,16 +72,16 @@ static void rtErrorWithMessageID(const int i, const char *aFcnName,
 namespace coder {
 void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
 {
-  static rtRunTimeErrorInfo ab_emlrtRTEI{
-      106,     // lineNo
-      "cFgets" // fName
-  };
-  static rtRunTimeErrorInfo x_emlrtRTEI{
+  static rtRunTimeErrorInfo v_emlrtRTEI{
       124,     // lineNo
       "cFgets" // fName
   };
-  static rtRunTimeErrorInfo y_emlrtRTEI{
+  static rtRunTimeErrorInfo w_emlrtRTEI{
       145,     // lineNo
+      "cFgets" // fName
+  };
+  static rtRunTimeErrorInfo x_emlrtRTEI{
+      106,     // lineNo
       "cFgets" // fName
   };
   std::FILE *b_filestar;
@@ -119,7 +119,7 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
         reachedEndOfFile = ((int)st != 0);
       }
       if ((cOut == nullptr) && (b_line.size(1) == 0)) {
-        g_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);
+        g_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
       }
       if (cOut == nullptr) {
         exitg1 = 1;
@@ -143,8 +143,8 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
               if (carriageReturnAt == 0) {
                 i1 = static_cast<unsigned char>(ReadBuff[i]);
                 if (i1 > 127) {
-                  rtErrorWithMessageID(i1, x_emlrtRTEI.fName,
-                                       x_emlrtRTEI.lineNo);
+                  rtErrorWithMessageID(i1, v_emlrtRTEI.fName,
+                                       v_emlrtRTEI.lineNo);
                 }
               }
               if ((carriageReturnAt == 0) && (ReadBuff[i] == '\r')) {
@@ -171,8 +171,8 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
               if (carriageReturnAt == 0) {
                 i1 = static_cast<unsigned char>(ReadBuff[i]);
                 if (i1 > 127) {
-                  rtErrorWithMessageID(i1, y_emlrtRTEI.fName,
-                                       y_emlrtRTEI.lineNo);
+                  rtErrorWithMessageID(i1, w_emlrtRTEI.fName,
+                                       w_emlrtRTEI.lineNo);
                 }
               }
               if ((carriageReturnAt == 0) && (ReadBuff[i] == '\r')) {

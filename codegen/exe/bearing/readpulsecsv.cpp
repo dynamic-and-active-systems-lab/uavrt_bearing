@@ -5,7 +5,7 @@
 // File: readpulsecsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 15-Aug-2023 14:31:29
+// C/C++ source code generated on  : 17-Aug-2023 13:24:38
 //
 
 // Include Files
@@ -30,7 +30,6 @@
 #include "ftell.h"
 #include "nullAssignment.h"
 #include "onCleanup.h"
-#include "quat2eul.h"
 #include "repmat.h"
 #include "rt_nonfinite.h"
 #include "str2double.h"
@@ -40,8 +39,77 @@
 #include "coder_bounded_array.h"
 #include <cmath>
 #include <cstdio>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+
+// Function Declarations
+static std::string rtGenSizeString(const int &aDims);
+
+static void rtSubAssignSizeCheck(const int &aDims1, const int &aDims2,
+                                 const rtEqualityCheckInfo &aInfo);
 
 // Function Definitions
+//
+// Arguments    : const int &aDims
+// Return Type  : std::string
+//
+static std::string rtGenSizeString(const int &aDims)
+{
+  std::stringstream outStream;
+  for (int i{0}; i < 2; i++) {
+    outStream << "[";
+    outStream << (&aDims)[i];
+    outStream << "]";
+  }
+  return outStream.str();
+}
+
+//
+// Arguments    : const int &aDims1
+//                const int &aDims2
+//                const rtEqualityCheckInfo &aInfo
+// Return Type  : void
+//
+static void rtSubAssignSizeCheck(const int &aDims1, const int &aDims2,
+                                 const rtEqualityCheckInfo &aInfo)
+{
+  std::stringstream outStream;
+  int i;
+  int j;
+  i = 0;
+  j = 0;
+  while ((i < 2) && (j < 2)) {
+    while ((i < 2) && ((&aDims1)[i] == 1)) {
+      i++;
+    }
+    while ((j < 2) && ((&aDims2)[j] == 1)) {
+      j++;
+    }
+    if (((i < 2) || (j < 2)) &&
+        ((i == 2) || ((j == 2) || (((&aDims1)[i] != -1) &&
+                                   (((&aDims2)[j] != -1) &&
+                                    ((&aDims1)[i] != (&aDims2)[j])))))) {
+      std::string dims1Str;
+      std::string dims2Str;
+      dims1Str = rtGenSizeString(aDims1);
+      dims2Str = rtGenSizeString(aDims2);
+      ((((outStream << "Subscripted assignment dimension mismatch: ")
+         << dims1Str)
+        << " ~= ")
+       << dims2Str)
+          << ".";
+      outStream << "\n";
+      ((((outStream << "Error in ") << aInfo.fName) << " (line ")
+       << aInfo.lineNo)
+          << ")";
+      throw std::runtime_error(outStream.str());
+    }
+    i++;
+    j++;
+  }
+}
+
 //
 // READPULSECSV Reads in a pulse csv file and outputs a vector of pulses in
 // the file and any commands in the file.
@@ -134,7 +202,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      238,            // lineNo
+      243,            // lineNo
       57,             // colNo
       "pos_AGL_m",    // aName
       "readpulsecsv", // fName
@@ -296,14 +364,12 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
       "adpulsecsv.m" // pName
   };
-  static const signed char iv[4]{19, 16, 17, 18};
   coder::onCleanup x;
   coder::array<d_struct_T, 2U> eulers_deg;
   coder::array<struct_T, 2U> positions;
-  coder::array<double, 2U> c_pulseArray;
   coder::array<double, 2U> commandArray;
-  coder::array<double, 2U> eul_deg;
   coder::array<double, 2U> pulseArray;
+  coder::array<double, 1U> c_pulseArray;
   coder::array<double, 1U> commandLineNums;
   coder::array<double, 1U> d_pulseArray;
   coder::array<double, 1U> e_pulseArray;
@@ -314,7 +380,6 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   coder::array<double, 1U> j_pulseArray;
   coder::array<double, 1U> k_pulseArray;
   coder::array<double, 1U> l_pulseArray;
-  coder::array<double, 1U> m_pulseArray;
   coder::array<double, 1U> pulseLineNums;
   coder::array<unsigned int, 2U> commaLocations;
   coder::array<int, 2U> match_out;
@@ -332,8 +397,6 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   struct_T posInit;
   double tmp_data[20];
   double b_tmp_data[4];
-  int lineStr_size[2];
-  int tmp_size[2];
   int fid;
   signed char fileid;
   boolean_T b;
@@ -431,6 +494,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   pulseInit.tagID = 0.0;
   pulseInit.time = 0.0;
   pulseInit.snrdB = 0.0;
+  pulseInit.noisePSD = 0.0;
   pulses.set_size(1, 1);
   pulses[0] = pulseInit;
   // COMMANDSTRUCT Generates a command structure
@@ -564,13 +628,13 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
     if (numOfLines != static_cast<int>(numOfLines)) {
       rtIntegerError(numOfLines, c_emlrtDCI);
     }
-    match_idx = static_cast<int>(numOfLines);
+    fid = static_cast<int>(numOfLines);
     pulseArray.set_size(static_cast<int>(numOfLines), 20);
     if (numOfLines != static_cast<int>(numOfLines)) {
       rtIntegerError(numOfLines, d_emlrtDCI);
     }
-    fid = static_cast<int>(numOfLines) * 20;
-    for (i = 0; i < fid; i++) {
+    match_idx = static_cast<int>(numOfLines) * 20;
+    for (i = 0; i < match_idx; i++) {
       pulseArray[i] = 0.0;
     }
     if (numOfLines != static_cast<int>(numOfLines)) {
@@ -580,7 +644,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
     if (numOfLines != static_cast<int>(numOfLines)) {
       rtIntegerError(numOfLines, e_emlrtDCI);
     }
-    for (i = 0; i < match_idx; i++) {
+    for (i = 0; i < fid; i++) {
       pulseLineNums[i] = 0.0;
     }
     if (numOfLines != static_cast<int>(numOfLines)) {
@@ -590,8 +654,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
     if (numOfLines != static_cast<int>(numOfLines)) {
       rtIntegerError(numOfLines, g_emlrtDCI);
     }
-    fid = static_cast<int>(numOfLines) << 2;
-    for (i = 0; i < fid; i++) {
+    match_idx = static_cast<int>(numOfLines) << 2;
+    for (i = 0; i < match_idx; i++) {
       commandArray[i] = 0.0;
     }
     if (numOfLines != static_cast<int>(numOfLines)) {
@@ -601,7 +665,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
     if (numOfLines != static_cast<int>(numOfLines)) {
       rtIntegerError(numOfLines, h_emlrtDCI);
     }
-    for (i = 0; i < match_idx; i++) {
+    for (i = 0; i < fid; i++) {
       commandLineNums[i] = 0.0;
     }
     emptyLineCounter = 1.0;
@@ -640,27 +704,27 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
             match_out[b_i] = matches[b_i];
           }
           commaLocations.set_size(1, match_out.size(1));
-          match_idx = match_out.size(1);
-          for (i = 0; i < match_idx; i++) {
+          fid = match_out.size(1);
+          for (i = 0; i < fid; i++) {
             commaLocations[i] = static_cast<unsigned int>(match_out[i]);
           }
         }
         if (commaLocations.size(1) < 1) {
           rtDynamicBoundsError(1, 1, commaLocations.size(1), b_emlrtBCI);
         }
-        match_idx = static_cast<int>(commaLocations[0]) - 1;
-        if (match_idx < 1) {
-          match_idx = 0;
+        fid = static_cast<int>(commaLocations[0]) - 1;
+        if (fid < 1) {
+          fid = 0;
         } else {
           if (lineStr.size(1) < 1) {
             rtDynamicBoundsError(1, 1, lineStr.size(1), e_emlrtBCI);
           }
-          if (match_idx > lineStr.size(1)) {
-            rtDynamicBoundsError(match_idx, 1, lineStr.size(1), f_emlrtBCI);
+          if (fid > lineStr.size(1)) {
+            rtDynamicBoundsError(fid, 1, lineStr.size(1), f_emlrtBCI);
           }
         }
-        b_lineStr.set_size(1, match_idx);
-        for (i = 0; i < match_idx; i++) {
+        b_lineStr.set_size(1, fid);
+        for (i = 0; i < fid; i++) {
           b_lineStr[i] = lineStr[i];
         }
         commandID = coder::internal::str2double(b_lineStr);
@@ -670,6 +734,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         }
         if (!(numOfLines != 0.0)) {
           if ((commandID.re == 7.0) && (commandID.im == 0.0)) {
+            int lineStr_size[2];
+            int tmp_size[2];
             b = ((static_cast<int>(dataInd) < 1) ||
                  (static_cast<int>(dataInd) > pulseArray.size(0)));
             if (b) {
@@ -679,8 +745,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
             coder::b_fscanf(static_cast<double>(fileid), tmp_data, tmp_size);
             lineStr_size[0] = 1;
             lineStr_size[1] = 20;
-            rtSubAssignSizeCheck(&lineStr_size[0], 2, &tmp_size[0], 2,
-                                 emlrtECI);
+            rtSubAssignSizeCheck(lineStr_size[0], tmp_size[0], emlrtECI);
             for (i = 0; i < 20; i++) {
               pulseArray[(static_cast<int>(dataInd) + pulseArray.size(0) * i) -
                          1] = tmp_data[i];
@@ -690,6 +755,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
             dataInd++;
           } else if (((commandID.re == 10.0) && (commandID.im == 0.0)) ||
                      ((commandID.re == 11.0) && (commandID.im == 0.0))) {
+            int lineStr_size[2];
+            int tmp_size[2];
             b = ((static_cast<int>(commandInd) < 1) ||
                  (static_cast<int>(commandInd) > commandArray.size(0)));
             if (b) {
@@ -699,8 +766,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
             coder::c_fscanf(static_cast<double>(fileid), b_tmp_data, tmp_size);
             lineStr_size[0] = 1;
             lineStr_size[1] = 4;
-            rtSubAssignSizeCheck(&lineStr_size[0], 2, &tmp_size[0], 2,
-                                 b_emlrtECI);
+            rtSubAssignSizeCheck(lineStr_size[0], tmp_size[0], b_emlrtECI);
             commandArray[static_cast<int>(commandInd) - 1] = b_tmp_data[0];
             commandArray[(static_cast<int>(commandInd) + commandArray.size(0)) -
                          1] = b_tmp_data[1];
@@ -726,35 +792,35 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
           exitg1 = 1;
         }
       } else {
-        match_idx = static_cast<int>(static_cast<double>(pulseArray.size(0)) -
-                                     static_cast<double>(dataInd));
-        match_out.set_size(1, match_idx + 1);
-        for (i = 0; i <= match_idx; i++) {
+        fid = static_cast<int>(static_cast<double>(pulseArray.size(0)) -
+                               static_cast<double>(dataInd));
+        match_out.set_size(1, fid + 1);
+        for (i = 0; i <= fid; i++) {
           match_out[i] = static_cast<int>(static_cast<double>(dataInd) +
                                           static_cast<double>(i));
         }
         coder::internal::nullAssignment(pulseArray, match_out);
-        fid = static_cast<int>(static_cast<double>(commandArray.size(0)) -
-                               static_cast<double>(commandInd));
-        match_out.set_size(1, fid + 1);
-        for (i = 0; i <= fid; i++) {
+        match_idx = static_cast<int>(static_cast<double>(commandArray.size(0)) -
+                                     static_cast<double>(commandInd));
+        match_out.set_size(1, match_idx + 1);
+        for (i = 0; i <= match_idx; i++) {
           match_out[i] = static_cast<int>(static_cast<double>(commandInd) +
                                           static_cast<double>(i));
         }
         coder::internal::b_nullAssignment(commandArray, match_out);
-        match_out.set_size(1, match_idx + 1);
-        for (i = 0; i <= match_idx; i++) {
+        match_out.set_size(1, fid + 1);
+        for (i = 0; i <= fid; i++) {
           match_out[i] = static_cast<int>(static_cast<double>(dataInd) +
                                           static_cast<double>(i));
         }
         coder::internal::nullAssignment(pulseLineNums, match_out);
         pulseLineNums.set_size(commandLineNums.size(0));
-        match_idx = commandLineNums.size(0);
-        for (i = 0; i < match_idx; i++) {
+        fid = commandLineNums.size(0);
+        for (i = 0; i < fid; i++) {
           pulseLineNums[i] = commandLineNums[i];
         }
-        match_out.set_size(1, fid + 1);
-        for (i = 0; i <= fid; i++) {
+        match_out.set_size(1, match_idx + 1);
+        for (i = 0; i <= match_idx; i++) {
           match_out[i] = static_cast<int>(static_cast<double>(commandInd) +
                                           static_cast<double>(i));
         }
@@ -762,20 +828,20 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         coder::internal::cfclose(static_cast<double>(fileid));
         //     %% Now format for table output
         b_pulseArray.set_size(pulseArray.size(0));
-        match_idx = pulseArray.size(0);
-        for (i = 0; i < match_idx; i++) {
+        fid = pulseArray.size(0);
+        for (i = 0; i < fid; i++) {
           b_pulseArray[i] = (pulseArray[i + pulseArray.size(0) * 5] <= 0.0);
         }
         coder::eml_find(b_pulseArray, ii);
         b_pulseArray.set_size(pulseArray.size(0));
-        match_idx = pulseArray.size(0);
-        for (i = 0; i < match_idx; i++) {
+        fid = pulseArray.size(0);
+        for (i = 0; i < fid; i++) {
           b_pulseArray[i] = (pulseArray[i + pulseArray.size(0) * 5] == rtInf);
         }
         coder::eml_find(b_pulseArray, b_ii);
         b_pulseArray.set_size(pulseArray.size(0));
-        match_idx = pulseArray.size(0);
-        for (i = 0; i < match_idx; i++) {
+        fid = pulseArray.size(0);
+        for (i = 0; i < fid; i++) {
           b_pulseArray[i] =
               (pulseArray[i + pulseArray.size(0) * 5] == rtMinusInf);
         }
@@ -787,61 +853,53 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
           numOfLines = rtNaN;
         }
         commandLineNums.set_size((ii.size(0) + b_ii.size(0)) + c_ii.size(0));
-        match_idx = ii.size(0);
-        for (i = 0; i < match_idx; i++) {
+        fid = ii.size(0);
+        for (i = 0; i < fid; i++) {
           commandLineNums[i] = ii[i];
         }
-        match_idx = b_ii.size(0);
-        for (i = 0; i < match_idx; i++) {
+        fid = b_ii.size(0);
+        for (i = 0; i < fid; i++) {
           commandLineNums[i + ii.size(0)] = b_ii[i];
         }
-        match_idx = c_ii.size(0);
-        for (i = 0; i < match_idx; i++) {
+        fid = c_ii.size(0);
+        for (i = 0; i < fid; i++) {
           commandLineNums[(i + ii.size(0)) + b_ii.size(0)] = c_ii[i];
         }
         coder::unique_vector(commandLineNums, pulseLineNums);
         ii.set_size(pulseLineNums.size(0));
-        match_idx = pulseLineNums.size(0);
-        for (i = 0; i < match_idx; i++) {
+        fid = pulseLineNums.size(0);
+        for (i = 0; i < fid; i++) {
           ii[i] = static_cast<int>(pulseLineNums[i]);
         }
         coder::internal::nullAssignment(pulseArray, ii);
         // latMean = mean(lat);
         // lonMean = mean(lon);
         // origin = [latMean, lonMean];
-        c_pulseArray.set_size(pulseArray.size(0), 4);
-        match_idx = pulseArray.size(0);
-        for (i = 0; i < 4; i++) {
-          for (fid = 0; fid < match_idx; fid++) {
-            c_pulseArray[fid + c_pulseArray.size(0) * i] =
-                pulseArray[fid + pulseArray.size(0) * iv[i]];
-          }
-        }
-        coder::quat2eul(c_pulseArray, eul_deg);
-        match_idx = eul_deg.size(0) * 3;
-        eul_deg.set_size(eul_deg.size(0), 3);
-        for (i = 0; i < match_idx; i++) {
-          eul_deg[i] = 57.295779513082323 * eul_deg[i];
-        }
-        // Following the 3-2-1 rotation (z-y'-x'') rotation sequence
+        // quat = pulseArray(:,[orientation_w_col, orientation_x_col,
+        // orientation_y_col, orientation_z_col]); eul_deg = 180/pi *
+        // quat2eul(quat); Following the 3-2-1 rotation (z-y'-x'') rotation
+        // sequence
+        //  yaw_deg = eul_deg(:,1);
+        //  pitch_deg = eul_deg(:,2);
+        //  roll_deg = eul_deg(:,3);
         if (pulseArray.size(0) < 1) {
           rtDynamicBoundsError(1, 1, pulseArray.size(0), g_emlrtBCI);
         }
         numOfLines -= pulseArray[pulseArray.size(0) * 15];
         commandLineNums.set_size(pulseArray.size(0));
-        match_idx = pulseArray.size(0);
+        fid = pulseArray.size(0);
+        c_pulseArray.set_size(pulseArray.size(0));
         d_pulseArray.set_size(pulseArray.size(0));
         e_pulseArray.set_size(pulseArray.size(0));
-        f_pulseArray.set_size(pulseArray.size(0));
-        for (i = 0; i < match_idx; i++) {
+        for (i = 0; i < fid; i++) {
           commandLineNums[i] = pulseArray[i + pulseArray.size(0) * 13];
-          d_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 14];
+          c_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 14];
           emptyLineCounter = pulseArray[i + pulseArray.size(0) * 15];
-          e_pulseArray[i] = emptyLineCounter + numOfLines;
-          f_pulseArray[i] = emptyLineCounter;
+          d_pulseArray[i] = emptyLineCounter + numOfLines;
+          e_pulseArray[i] = emptyLineCounter;
         }
-        PositionStruct(commandLineNums, d_pulseArray, e_pulseArray,
-                       f_pulseArray, positions);
+        PositionStruct(commandLineNums, c_pulseArray, d_pulseArray,
+                       e_pulseArray, positions);
         // EULERANGLESTRUCT Generates a Euler Angle structure
         //    This function generates a standard Euler angle structure with the
         //    following fields:
@@ -867,82 +925,82 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         eulers_deg.set_size(1, 1);
         eulers_deg[0].yaw_deg = 0.0;
         // eul(nRows,nCols) = eul; %Coder doesn't like this
-        match_idx = eulers_deg.size(0) * eulers_deg.size(1) - 1;
-        for (i = 0; i <= match_idx; i++) {
+        fid = eulers_deg.size(0) * eulers_deg.size(1) - 1;
+        for (i = 0; i <= fid; i++) {
           eulInit = eulers_deg[i];
         }
         coder::repmat((const d_struct_T *)&eulInit,
-                      static_cast<double>(eul_deg.size(0)), eulers_deg);
-        i = eul_deg.size(0);
+                      static_cast<double>(pulseArray.size(0)), eulers_deg);
+        i = pulseArray.size(0);
         for (int b_i{0}; b_i < i; b_i++) {
-          if (b_i + 1 > eul_deg.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, eul_deg.size(0), h_emlrtBCI);
+          if (b_i + 1 > pulseArray.size(0)) {
+            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), h_emlrtBCI);
           }
           if (b_i + 1 > eulers_deg.size(0)) {
             rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), i_emlrtBCI);
           }
-          if (b_i + 1 > eul_deg.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, eul_deg.size(0), j_emlrtBCI);
+          if (b_i + 1 > pulseArray.size(0)) {
+            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), j_emlrtBCI);
           }
           if (b_i + 1 > eulers_deg.size(0)) {
             rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), k_emlrtBCI);
           }
-          if (b_i + 1 > eul_deg.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, eul_deg.size(0), l_emlrtBCI);
+          if (b_i + 1 > pulseArray.size(0)) {
+            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), l_emlrtBCI);
           }
           if (b_i + 1 > eulers_deg.size(0)) {
             rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), m_emlrtBCI);
           }
-          eulers_deg[b_i].yaw_deg = eul_deg[b_i];
+          eulers_deg[b_i].yaw_deg = pulseArray[b_i + pulseArray.size(0) * 18];
         }
         commandLineNums.set_size(pulseArray.size(0));
-        match_idx = pulseArray.size(0);
+        fid = pulseArray.size(0);
+        c_pulseArray.set_size(pulseArray.size(0));
         d_pulseArray.set_size(pulseArray.size(0));
         e_pulseArray.set_size(pulseArray.size(0));
-        f_pulseArray.set_size(pulseArray.size(0));
         pulseLineNums.set_size(pulseArray.size(0));
+        f_pulseArray.set_size(pulseArray.size(0));
         g_pulseArray.set_size(pulseArray.size(0));
         h_pulseArray.set_size(pulseArray.size(0));
         i_pulseArray.set_size(pulseArray.size(0));
         j_pulseArray.set_size(pulseArray.size(0));
         k_pulseArray.set_size(pulseArray.size(0));
         l_pulseArray.set_size(pulseArray.size(0));
-        m_pulseArray.set_size(pulseArray.size(0));
-        for (i = 0; i < match_idx; i++) {
+        for (i = 0; i < fid; i++) {
           commandLineNums[i] = pulseArray[i + pulseArray.size(0)];
-          d_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 2] / 1.0E+6;
-          e_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 3];
-          f_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 4];
+          c_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 2] / 1.0E+6;
+          d_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 3];
+          e_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 4];
           pulseLineNums[i] = pulseArray[i + pulseArray.size(0) * 5];
-          g_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 6];
-          h_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 7];
-          i_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 8];
-          j_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 9];
-          k_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 10];
-          l_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 11];
-          m_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 12];
+          f_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 6];
+          g_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 7];
+          h_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 8];
+          i_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 9];
+          j_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 10];
+          k_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 11];
+          l_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 12];
         }
-        PulseStruct(commandLineNums, d_pulseArray, positions, eulers_deg,
-                    e_pulseArray, f_pulseArray, pulseLineNums, g_pulseArray,
-                    h_pulseArray, i_pulseArray, j_pulseArray, k_pulseArray,
-                    l_pulseArray, m_pulseArray, pulses);
+        PulseStruct(commandLineNums, c_pulseArray, positions, eulers_deg,
+                    d_pulseArray, e_pulseArray, pulseLineNums, f_pulseArray,
+                    g_pulseArray, h_pulseArray, i_pulseArray, j_pulseArray,
+                    k_pulseArray, l_pulseArray, pulses);
         if (commandArray.size(0) != 0) {
           pulseLineNums.set_size(commandArray.size(0));
-          match_idx = commandArray.size(0);
+          fid = commandArray.size(0);
           commandLineNums.set_size(commandArray.size(0));
+          c_pulseArray.set_size(commandArray.size(0));
           d_pulseArray.set_size(commandArray.size(0));
           e_pulseArray.set_size(commandArray.size(0));
-          f_pulseArray.set_size(commandArray.size(0));
-          for (i = 0; i < match_idx; i++) {
+          for (i = 0; i < fid; i++) {
             pulseLineNums[i] = commandArray[i];
             commandLineNums[i] = commandArray[i + commandArray.size(0)];
-            d_pulseArray[i] = commandArray[i + commandArray.size(0) * 2];
+            c_pulseArray[i] = commandArray[i + commandArray.size(0) * 2];
             emptyLineCounter = commandArray[i + commandArray.size(0) * 3];
-            e_pulseArray[i] = emptyLineCounter;
-            f_pulseArray[i] = emptyLineCounter - numOfLines;
+            d_pulseArray[i] = emptyLineCounter;
+            e_pulseArray[i] = emptyLineCounter - numOfLines;
           }
-          PositionStruct(commandLineNums, d_pulseArray, e_pulseArray,
-                         f_pulseArray, positions);
+          PositionStruct(commandLineNums, c_pulseArray, d_pulseArray,
+                         e_pulseArray, positions);
         } else {
           pulseLineNums.set_size(1);
           pulseLineNums[0] = rtNaN;
