@@ -5,7 +5,7 @@
 // File: unique.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -163,7 +163,7 @@ void unique_vector(const ::coder::array<double, 1U> &a,
   }
   nb += pEnd;
   if (nb > a.size(0)) {
-    f_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    g_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (nb < 1) {
     b_i = 0;

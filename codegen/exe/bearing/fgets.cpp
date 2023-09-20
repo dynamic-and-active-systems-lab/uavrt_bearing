@@ -5,7 +5,7 @@
 // File: fgets.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -24,7 +24,7 @@
 #include <string>
 
 // Function Declarations
-static void g_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void h_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 static void rtErrorWithMessageID(const int i, const char *aFcnName,
                                  int aLineNum);
@@ -35,7 +35,7 @@ static void rtErrorWithMessageID(const int i, const char *aFcnName,
 //                int aLineNum
 // Return Type  : void
 //
-static void g_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void h_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream
@@ -94,7 +94,7 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
   f = internal::getfilestar(fileID, newLineAfterCarriageReturn);
   filestar = f;
   if (f == nullptr) {
-    rtErrorWithMessageID(i_emlrtRTEI.fName, i_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID(i_emlrtRTEI.fName, i_emlrtRTEI.lineNo);
   }
   if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
     filestar = nullptr;
@@ -113,13 +113,13 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
       readNewline = false;
       f = internal::getfilestar(fileID, newLineAfterCarriageReturn);
       if (f == nullptr) {
-        rtErrorWithMessageID(j_emlrtRTEI.fName, j_emlrtRTEI.lineNo);
+        b_rtErrorWithMessageID(j_emlrtRTEI.fName, j_emlrtRTEI.lineNo);
       } else {
         st = std::feof(f);
         reachedEndOfFile = ((int)st != 0);
       }
       if ((cOut == nullptr) && (b_line.size(1) == 0)) {
-        g_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+        h_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
       }
       if (cOut == nullptr) {
         exitg1 = 1;
@@ -217,7 +217,7 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
           f = internal::getfilestar(fileID, newLineAfterCarriageReturn);
           b_filestar = f;
           if (f == nullptr) {
-            rtErrorWithMessageID(k_emlrtRTEI.fName, k_emlrtRTEI.lineNo);
+            b_rtErrorWithMessageID(k_emlrtRTEI.fName, k_emlrtRTEI.lineNo);
           }
           if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
             b_filestar = nullptr;
@@ -234,19 +234,19 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
     } while (exitg1 == 0);
     f = internal::getfilestar(fileID, newLineAfterCarriageReturn);
     if (f == nullptr) {
-      rtErrorWithMessageID(j_emlrtRTEI.fName, j_emlrtRTEI.lineNo);
+      b_rtErrorWithMessageID(j_emlrtRTEI.fName, j_emlrtRTEI.lineNo);
     } else {
       st = std::feof(f);
       b_i = ((int)st != 0);
     }
     if (b_i == 0) {
       if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
-        b_rtErrorWithMessageID(h_emlrtRTEI.fName, h_emlrtRTEI.lineNo);
+        c_rtErrorWithMessageID(h_emlrtRTEI.fName, h_emlrtRTEI.lineNo);
       }
       f = internal::getfilestar(fileID, newLineAfterCarriageReturn);
       filestar = f;
       if (f == nullptr) {
-        rtErrorWithMessageID(i_emlrtRTEI.fName, i_emlrtRTEI.lineNo);
+        b_rtErrorWithMessageID(i_emlrtRTEI.fName, i_emlrtRTEI.lineNo);
       }
       if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
         filestar = nullptr;
@@ -262,7 +262,7 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
       }
       f = internal::getfilestar(fileID, newLineAfterCarriageReturn);
       if (f == nullptr) {
-        rtErrorWithMessageID(j_emlrtRTEI.fName, j_emlrtRTEI.lineNo);
+        b_rtErrorWithMessageID(j_emlrtRTEI.fName, j_emlrtRTEI.lineNo);
       } else {
         st = std::feof(f);
         i3 = ((int)st != 0);
@@ -272,7 +272,7 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
         f = internal::getfilestar(fileID, newLineAfterCarriageReturn);
         filestar = f;
         if (f == nullptr) {
-          rtErrorWithMessageID(k_emlrtRTEI.fName, k_emlrtRTEI.lineNo);
+          b_rtErrorWithMessageID(k_emlrtRTEI.fName, k_emlrtRTEI.lineNo);
         }
         if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
           filestar = nullptr;

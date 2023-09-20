@@ -5,7 +5,7 @@
 // File: repmat.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -32,7 +32,7 @@ void repmat(const d_struct_T a_data[], double varargin_1,
 {
   int i;
   if ((varargin_1 != varargin_1) || std::isinf(varargin_1)) {
-    y_rtErrorWithMessageID(n_emlrtRTEI.fName, n_emlrtRTEI.lineNo);
+    ab_rtErrorWithMessageID(n_emlrtRTEI.fName, n_emlrtRTEI.lineNo);
   }
   i = static_cast<int>(varargin_1);
   b.set_size(i, 1);

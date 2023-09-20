@@ -5,7 +5,7 @@
 // File: ftell.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -32,7 +32,7 @@ double b_ftell(double fileID)
   f = internal::getfilestar(fileID, a);
   filestar = f;
   if (f == nullptr) {
-    rtErrorWithMessageID(k_emlrtRTEI.fName, k_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID(k_emlrtRTEI.fName, k_emlrtRTEI.lineNo);
   }
   if ((!(fileID != 0.0)) || (!(fileID != 1.0)) || (!(fileID != 2.0))) {
     filestar = nullptr;

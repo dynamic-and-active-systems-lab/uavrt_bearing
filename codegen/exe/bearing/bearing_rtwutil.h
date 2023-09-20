@@ -5,7 +5,7 @@
 // File: bearing_rtwutil.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 #ifndef BEARING_RTWUTIL_H
@@ -22,18 +22,20 @@ struct rtBoundsCheckInfo;
 struct rtDoubleCheckInfo;
 
 // Function Declarations
+extern void ab_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+
 extern void b_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 extern void c_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 extern void d_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
-extern void f_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+extern void e_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+
+extern void g_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 extern void rtDynamicBoundsError(int aIndexValue, int aLoBound, int aHiBound,
                                  const rtBoundsCheckInfo &aInfo);
-
-extern void rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 extern void rtIntegerError(const double aInteger,
                            const rtDoubleCheckInfo &aInfo);
@@ -43,9 +45,7 @@ extern boolean_T rtIsNullOrEmptyString(const char *aString);
 extern void rtNonNegativeError(const double aPositive,
                                const rtDoubleCheckInfo &aInfo);
 
-extern void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
-
-extern void y_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+extern void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 #endif
 //

@@ -5,7 +5,7 @@
 // File: PositionStruct.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -70,9 +70,8 @@ void PositionStruct(const coder::array<double, 1U> &lat,
       "lat",            // aName
       "PositionStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Po"
-      "sitionStruct.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PositionStruct.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,               // iFirst
@@ -82,9 +81,8 @@ void PositionStruct(const coder::array<double, 1U> &lat,
       "pos",            // aName
       "PositionStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Po"
-      "sitionStruct.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PositionStruct.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,               // iFirst
@@ -94,9 +92,8 @@ void PositionStruct(const coder::array<double, 1U> &lat,
       "lon",            // aName
       "PositionStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Po"
-      "sitionStruct.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PositionStruct.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,               // iFirst
@@ -106,9 +103,8 @@ void PositionStruct(const coder::array<double, 1U> &lat,
       "pos",            // aName
       "PositionStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Po"
-      "sitionStruct.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PositionStruct.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,               // iFirst
@@ -118,9 +114,8 @@ void PositionStruct(const coder::array<double, 1U> &lat,
       "altAbs",         // aName
       "PositionStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Po"
-      "sitionStruct.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PositionStruct.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,               // iFirst
@@ -130,9 +125,8 @@ void PositionStruct(const coder::array<double, 1U> &lat,
       "pos",            // aName
       "PositionStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Po"
-      "sitionStruct.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PositionStruct.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,               // iFirst
@@ -142,9 +136,8 @@ void PositionStruct(const coder::array<double, 1U> &lat,
       "altRel",         // aName
       "PositionStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Po"
-      "sitionStruct.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PositionStruct.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,               // iFirst
@@ -154,9 +147,8 @@ void PositionStruct(const coder::array<double, 1U> &lat,
       "pos",            // aName
       "PositionStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Po"
-      "sitionStruct.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PositionStruct.m", // pName
+      0                                                 // checkKind
   };
   int ntilerows;
   boolean_T x[2];

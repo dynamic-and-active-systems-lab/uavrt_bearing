@@ -5,7 +5,7 @@
 // File: table.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -43,9 +43,9 @@ static rtBoundsCheckInfo emlrtBCI{
 static void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
                                    int aLineNum);
 
-static void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
-
 static void v_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+
+static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -70,7 +70,7 @@ static void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
 //                int aLineNum
 // Return Type  : void
 //
-static void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void v_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "All table variables must have the same number of rows.";
@@ -84,7 +84,7 @@ static void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void v_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "Row index exceeds table dimensions.";
@@ -107,16 +107,16 @@ static void v_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 // Return Type  : void
 //
 namespace coder {
-void table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
-                 const ::coder::array<cell_wrap_4, 1U> &varargin_2,
-                 const ::coder::array<double, 1U> &varargin_3,
-                 const ::coder::array<double, 1U> &varargin_4,
-                 const ::coder::array<double, 1U> &varargin_5,
-                 const ::coder::array<double, 1U> &varargin_6,
-                 const ::coder::array<double, 1U> &varargin_7,
-                 const ::coder::array<double, 1U> &varargin_8,
-                 const ::coder::array<double, 1U> &varargin_9,
-                 const ::coder::array<double, 1U> &varargin_10)
+void b_table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
+                   const ::coder::array<cell_wrap_4, 1U> &varargin_2,
+                   const ::coder::array<double, 1U> &varargin_3,
+                   const ::coder::array<double, 1U> &varargin_4,
+                   const ::coder::array<double, 1U> &varargin_5,
+                   const ::coder::array<double, 1U> &varargin_6,
+                   const ::coder::array<double, 1U> &varargin_7,
+                   const ::coder::array<double, 1U> &varargin_8,
+                   const ::coder::array<double, 1U> &varargin_9,
+                   const ::coder::array<double, 1U> &varargin_10)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       329,                     // lineNo
@@ -128,31 +128,31 @@ void table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
   arrayProps.Description.size[0] = 1;
   arrayProps.Description.size[1] = 0;
   if (varargin_2.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_3.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_4.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_5.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_6.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_7.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_8.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_9.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (varargin_10.size(0) != varargin_1.size(0)) {
-    u_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   rowDim.length = varargin_1.size(0);
   indices.set_size(1, varargin_1.size(0));
@@ -218,11 +218,11 @@ void table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
 
 //
 // Arguments    : const ::coder::array<boolean_T, 1U> &varargin_1
-//                table &b
+//                b_table &b
 // Return Type  : void
 //
-void table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
-                           table &b) const
+void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
+                             b_table &b) const
 {
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,                           // iFirst
@@ -334,7 +334,7 @@ void table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
     }
   }
   if (a__1 > rowDim.length) {
-    v_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    w_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   a__1 = varargin_1.size(0);
   nz = varargin_1[0];
@@ -575,11 +575,11 @@ void table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
 }
 
 //
-// Arguments    : const b_table &varargin_2
-//                table &t
+// Arguments    : const table &varargin_2
+//                b_table &t
 // Return Type  : void
 //
-void table::vertcat(const b_table &varargin_2, table &t) const
+void b_table::vertcat(const table &varargin_2, b_table &t) const
 {
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,                // iFirst

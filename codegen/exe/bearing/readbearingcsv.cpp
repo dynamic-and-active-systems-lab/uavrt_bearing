@@ -5,7 +5,7 @@
 // File: readbearingcsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -59,11 +59,11 @@
 // --------------------------------------------------------------------------
 //
 // Arguments    : const coder::array<char, 2U> &filePath
-//                coder::table &tableOut
+//                coder::b_table &tableOut
 // Return Type  : void
 //
 void readbearingcsv(const coder::array<char, 2U> &filePath,
-                    coder::table &tableOut)
+                    coder::b_table &tableOut)
 {
   static rtBoundsCheckInfo ab_emlrtBCI{
       -1,               // iFirst
@@ -73,9 +73,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,               // iFirst
@@ -85,9 +84,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "parentFileName", // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo bb_emlrtBCI{
       -1,               // iFirst
@@ -97,9 +95,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "parentFileName", // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,               // iFirst
@@ -109,9 +106,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "parentFileName", // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo cb_emlrtBCI{
       -1,               // iFirst
@@ -121,9 +117,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,               // iFirst
@@ -133,9 +128,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineLocs",       // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo db_emlrtBCI{
       -1,               // iFirst
@@ -145,9 +139,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "bearing",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,               // iFirst
@@ -157,9 +150,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo eb_emlrtBCI{
       -1,               // iFirst
@@ -169,9 +161,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,               // iFirst
@@ -181,9 +172,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo fb_emlrtBCI{
       -1,               // iFirst
@@ -193,9 +183,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "tau",            // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,               // iFirst
@@ -205,9 +194,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo gb_emlrtBCI{
       -1,               // iFirst
@@ -217,9 +205,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,               // iFirst
@@ -229,9 +216,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo hb_emlrtBCI{
       -1,               // iFirst
@@ -241,9 +227,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "latitude_deg",   // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,               // iFirst
@@ -253,9 +238,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo ib_emlrtBCI{
       -1,               // iFirst
@@ -265,9 +249,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo j_emlrtBCI{
       -1,               // iFirst
@@ -277,9 +260,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo jb_emlrtBCI{
       -1,               // iFirst
@@ -289,9 +271,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "longitude_deg",  // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,               // iFirst
@@ -301,9 +282,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo kb_emlrtBCI{
       -1,               // iFirst
@@ -313,9 +293,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo l_emlrtBCI{
       -1,               // iFirst
@@ -325,9 +304,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo lb_emlrtBCI{
       -1,               // iFirst
@@ -337,9 +315,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "alt_AGL_m",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,               // iFirst
@@ -349,9 +326,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo mb_emlrtBCI{
       -1,               // iFirst
@@ -361,9 +337,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo n_emlrtBCI{
       -1,               // iFirst
@@ -373,9 +348,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo nb_emlrtBCI{
       -1,               // iFirst
@@ -385,9 +359,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "alt_ASL_m",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo o_emlrtBCI{
       -1,               // iFirst
@@ -397,9 +370,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo ob_emlrtBCI{
       -1,               // iFirst
@@ -409,9 +381,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo p_emlrtBCI{
       -1,               // iFirst
@@ -421,9 +392,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo pb_emlrtBCI{
       -1,               // iFirst
@@ -433,9 +403,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "time_start_s",   // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo q_emlrtBCI{
       -1,               // iFirst
@@ -445,9 +414,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo qb_emlrtBCI{
       -1,               // iFirst
@@ -457,9 +425,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo r_emlrtBCI{
       -1,               // iFirst
@@ -469,9 +436,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo rb_emlrtBCI{
       -1,               // iFirst
@@ -481,9 +447,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "time_end_s",     // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo s_emlrtBCI{
       -1,               // iFirst
@@ -493,9 +458,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo t_emlrtBCI{
       -1,               // iFirst
@@ -505,9 +469,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo u_emlrtBCI{
       -1,               // iFirst
@@ -517,9 +480,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo v_emlrtBCI{
       -1,               // iFirst
@@ -529,9 +491,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo w_emlrtBCI{
       -1,               // iFirst
@@ -541,9 +502,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo x_emlrtBCI{
       -1,               // iFirst
@@ -553,9 +513,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "tagID",          // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtBoundsCheckInfo y_emlrtBCI{
       -1,               // iFirst
@@ -565,90 +524,80 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       "parentFileName", // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      0                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
   };
   static rtDoubleCheckInfo b_emlrtDCI{
       72,               // lineNo
       37,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static rtDoubleCheckInfo c_emlrtDCI{
       73,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static rtDoubleCheckInfo d_emlrtDCI{
       74,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static rtDoubleCheckInfo e_emlrtDCI{
       75,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static rtDoubleCheckInfo f_emlrtDCI{
       76,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static rtDoubleCheckInfo g_emlrtDCI{
       77,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static rtDoubleCheckInfo h_emlrtDCI{
       78,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static rtDoubleCheckInfo i_emlrtDCI{
       79,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static rtDoubleCheckInfo j_emlrtDCI{
       80,               // lineNo
       53,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adbearingcsv.m", // pName
-      1                 // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      1                                                 // checkKind
   };
   static const char cv[14]{'F', 'i', 'l', 'e', ' ', 'n', 'o',
                            't', ' ', 'f', 'o', 'u', 'n', 'd'};
@@ -715,7 +664,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       exitg1 = 0;
       f = coder::internal::getfilestar(static_cast<double>(b_fileid), a);
       if (f == nullptr) {
-        rtErrorWithMessageID(j_emlrtRTEI.fName, j_emlrtRTEI.lineNo);
+        b_rtErrorWithMessageID(j_emlrtRTEI.fName, j_emlrtRTEI.lineNo);
       } else {
         int st;
         st = std::feof(f);
@@ -730,7 +679,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
         if (lineStr.size(1) == 0) {
           text_len = static_cast<int>(b_i);
           if (static_cast<int>(b_i) > lineLocs.size(1)) {
-            t_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
+            u_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
           }
           match_idx = lineLocs.size(1) - 1;
           for (c_i = text_len; c_i <= match_idx; c_i++) {

@@ -5,7 +5,7 @@
 // File: readbearingcsv.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 #ifndef READBEARINGCSV_H
@@ -19,13 +19,13 @@
 
 // Type Declarations
 namespace coder {
-class table;
+class b_table;
 
 }
 
 // Function Declarations
 void readbearingcsv(const coder::array<char, 2U> &filePath,
-                    coder::table &tableOut);
+                    coder::b_table &tableOut);
 
 #endif
 //

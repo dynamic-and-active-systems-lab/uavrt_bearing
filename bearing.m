@@ -58,9 +58,32 @@ time_end_s    = max(timeVec,[],'all');
 
 sepInds = strfind(filePath, filesep);
 
-fileName = filePath(sepInds(end)+1:end);
+coder.cinclude('unistd.h');%Needed for getting fileDirectory with generated code in if statement below
 
-fileDirectory = filePath(1:sepInds(end)-1);
+if ~isempty(sepInds)
+    fileName = filePath(sepInds(end)+1:end);
+    fileDirectory = filePath(1:sepInds(end)-1);
+else
+    fileName = filePath;
+    if coder.target('MATLAB')
+        fileDirectory = pwd;
+    else
+        
+        nullVal = coder.opaque('char*', 'NULL', 'HeaderFile', 'stdio.h');
+        retVal = nullVal;
+        bufferTemplate = repmat('c', 1, 200);
+        untokenizedDir = coder.nullcopy(bufferTemplate);
+        retVal = coder.ceval('getcwd', coder.ref(untokenizedDir), 200);
+        if retVal == nullVal
+            % Do some error handling here
+            fileDirectory = '';
+            error('UAV-RT: Error determining the current working directory. Try passing the complete file path to the rotation csv file.')
+        else
+            fileDirectory = strtok(untokenizedDir, char(0));
+        end
+    end
+end
+
 
 bearingFilePath = [fileDirectory, filesep, 'bearings.csv'];
 

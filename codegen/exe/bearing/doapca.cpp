@@ -5,7 +5,7 @@
 // File: doapca.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -43,8 +43,6 @@ static void binary_expand_op(coder::array<double, 2U> &in1, double in2,
 static void emlrtDimSizeImpxCheckR2021b(const int aDim1, const int aDim2,
                                         const rtEqualityCheckInfo &aInfo);
 
-static void k_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
-
 static void l_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 static void m_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
@@ -52,6 +50,8 @@ static void m_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 static void n_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 static void o_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+
+static void p_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 static double rt_atan2d_snf(double u0, double u1);
 
@@ -160,7 +160,7 @@ static void emlrtDimSizeImpxCheckR2021b(const int aDim1, const int aDim2,
 //                int aLineNum
 // Return Type  : void
 //
-static void k_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void l_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "To RESHAPE the number of elements must not change.";
@@ -174,7 +174,7 @@ static void k_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void l_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void m_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream
@@ -191,7 +191,7 @@ static void l_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void m_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void n_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "Dimensions of arrays being concatenated are not consistent.";
@@ -205,7 +205,7 @@ static void m_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void n_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void o_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream
@@ -223,7 +223,7 @@ static void n_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void o_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void p_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream
@@ -399,9 +399,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       "curr_pulses_noisePSD", // aName
       "doapca",               // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m", // pName
-      0         // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m", // pName
+      0                                         // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,                  // iFirst
@@ -411,9 +410,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       "curr_pulses_snrdB", // aName
       "doapca",            // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m", // pName
-      0         // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m", // pName
+      0                                         // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,          // iFirst
@@ -433,9 +431,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       "angs",   // aName
       "doapca", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m", // pName
-      0         // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m", // pName
+      0                                         // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,       // iFirst
@@ -445,9 +442,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       "SdB",    // aName
       "doapca", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m", // pName
-      0         // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m", // pName
+      0                                         // checkKind
   };
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,       // iFirst
@@ -457,9 +453,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       "SdB",    // aName
       "doapca", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m", // pName
-      0         // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m", // pName
+      0                                         // checkKind
   };
   static rtEqualityCheckInfo b_emlrtECI{
       1,           // nDims
@@ -474,8 +469,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       19,       // colNo
       "doapca", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m" // pName
   };
   static rtEqualityCheckInfo d_emlrtECI{
       1,        // nDims
@@ -483,8 +477,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       40,       // colNo
       "doapca", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m" // pName
   };
   static rtEqualityCheckInfo e_emlrtECI{
       1,        // nDims
@@ -492,8 +485,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       14,       // colNo
       "doapca", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m" // pName
   };
   static rtEqualityCheckInfo emlrtECI{
       1,        // nDims
@@ -501,8 +493,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       22,       // colNo
       "doapca", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m" // pName
   };
   static rtEqualityCheckInfo f_emlrtECI{
       2,        // nDims
@@ -510,8 +501,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       14,       // colNo
       "doapca", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/do"
-      "apca.m" // pName
+      "CODE_PLAYGROUND/uavrt_bearing/doapca.m" // pName
   };
   static rtRunTimeErrorInfo ab_emlrtRTEI{
       138,                  // lineNo
@@ -581,10 +571,10 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
     maxdimlen = n;
   }
   if (pulseList.size(0) > maxdimlen) {
-    l_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    m_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (pulseList.size(0) != r.size(1)) {
-    k_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
+    l_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   curr_pulses_snrdB.set_size(pulseList.size(0));
   maxdimlen = pulseList.size(0);
@@ -604,10 +594,10 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
     maxdimlen = n;
   }
   if (pulseList.size(0) > maxdimlen) {
-    l_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    m_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (pulseList.size(0) != r1.size(1)) {
-    k_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
+    l_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   curr_pulses_noisePSD.set_size(pulseList.size(0));
   maxdimlen = pulseList.size(0);
@@ -624,13 +614,13 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
     maxdimlen = n;
   }
   if (pulseList.size(0) > maxdimlen) {
-    l_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    m_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (maxdimlen < 1) {
-    l_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    m_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (pulseList.size(0) != n) {
-    k_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
+    l_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   maxdimlen = pulseList.size(0);
   r3 = r2.reshape(maxdimlen);
@@ -656,10 +646,10 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
     maxdimlen = n;
   }
   if (pulseList.size(0) > maxdimlen) {
-    l_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    m_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (pulseList.size(0) != r4.size(1)) {
-    k_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
+    l_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   // Clear out placeholds for bad data points;
   end_tmp = pulseList.size(0) - 1;
@@ -850,7 +840,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
           times(P_all_ang_unscaled, angs);
         }
         if (P_all_ang_unscaled.size(0) != curr_pulses_snrdB.size(0)) {
-          m_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
+          n_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
         }
         Pe_star_dB.set_size(curr_pulses_snrdB.size(0), 2);
         maxdimlen = curr_pulses_snrdB.size(0);
@@ -886,9 +876,9 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
         }
         if (Pe_star_dB.size(0) != a.size(1)) {
           if ((a.size(0) == 1) && (a.size(1) == 1)) {
-            o_rtErrorWithMessageID(y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
+            p_rtErrorWithMessageID(y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
           } else {
-            n_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);
+            o_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);
           }
         }
         coder::internal::blas::mtimes(a, Pe_star_dB, Pe_dB);
@@ -900,9 +890,9 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
         }
         if (b_y.size(1) != n) {
           if (n == 1) {
-            o_rtErrorWithMessageID(y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
+            p_rtErrorWithMessageID(y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
           } else {
-            n_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);
+            o_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);
           }
         }
         n = b_y.size(1);

@@ -5,7 +5,7 @@
 // File: PulseStruct.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -76,9 +76,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,            // iFirst
@@ -88,9 +87,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo bb_emlrtBCI{
       -1,            // iFirst
@@ -100,9 +98,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pos",         // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,            // iFirst
@@ -112,9 +109,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo cb_emlrtBCI{
       -1,            // iFirst
@@ -124,9 +120,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,            // iFirst
@@ -136,9 +131,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "tagID",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo db_emlrtBCI{
       -1,            // iFirst
@@ -148,9 +142,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "euler",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,            // iFirst
@@ -160,9 +153,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,            // iFirst
@@ -172,9 +164,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "freqMHz",     // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,            // iFirst
@@ -184,9 +175,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,            // iFirst
@@ -196,9 +186,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "time",        // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,            // iFirst
@@ -208,9 +197,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo j_emlrtBCI{
       -1,            // iFirst
@@ -220,9 +208,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "timeNext",    // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,            // iFirst
@@ -232,9 +219,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo l_emlrtBCI{
       -1,            // iFirst
@@ -244,9 +230,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "snrdB",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,            // iFirst
@@ -256,9 +241,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo n_emlrtBCI{
       -1,            // iFirst
@@ -268,9 +252,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "stftMag2",    // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo o_emlrtBCI{
       -1,            // iFirst
@@ -280,9 +263,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo p_emlrtBCI{
       -1,              // iFirst
@@ -292,9 +274,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "groupSeqCount", // aName
       "PulseStruct",   // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo q_emlrtBCI{
       -1,            // iFirst
@@ -304,9 +285,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo r_emlrtBCI{
       -1,            // iFirst
@@ -316,9 +296,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "groupIndex",  // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo s_emlrtBCI{
       -1,            // iFirst
@@ -328,9 +307,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo t_emlrtBCI{
       -1,            // iFirst
@@ -340,9 +318,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "groupsnrdB",  // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo u_emlrtBCI{
       -1,            // iFirst
@@ -352,9 +329,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo v_emlrtBCI{
       -1,            // iFirst
@@ -364,9 +340,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "noisePSD",    // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo w_emlrtBCI{
       -1,             // iFirst
@@ -376,9 +351,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "detectStatus", // aName
       "PulseStruct",  // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo x_emlrtBCI{
       -1,              // iFirst
@@ -388,9 +362,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "confirmStatus", // aName
       "PulseStruct",   // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   static rtBoundsCheckInfo y_emlrtBCI{
       -1,            // iFirst
@@ -400,9 +373,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "pulse",       // aName
       "PulseStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Pu"
-      "lseStruct.m", // pName
-      0              // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
   };
   d_struct_T eulInit;
   e_struct_T pulseInit;
@@ -603,7 +575,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
         rtDynamicBoundsError(itilerow + 1, 1, detectStatus.size(0), w_emlrtBCI);
       }
       if (std::isnan(detectStatus[itilerow])) {
-        c_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+        d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
       }
       if (itilerow + 1 > pulse.size(0)) {
         rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), b_emlrtBCI);
@@ -613,7 +585,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
                              x_emlrtBCI);
       }
       if (std::isnan(confirmStatus[itilerow])) {
-        c_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+        d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
       }
       if (itilerow + 1 > pulse.size(0)) {
         rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), y_emlrtBCI);

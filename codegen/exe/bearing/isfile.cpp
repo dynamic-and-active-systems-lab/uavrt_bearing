@@ -5,7 +5,7 @@
 // File: isfile.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -20,7 +20,7 @@
 #include <string>
 
 // Function Declarations
-static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -28,7 +28,7 @@ static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 //                int aLineNum
 // Return Type  : void
 //
-static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "{0} must be text.";
@@ -61,7 +61,7 @@ boolean_T isfile(const ::coder::array<char, 2U> &fileName)
   if (cevalIsFileFolder == -1) {
     f = false;
   } else if (cevalIsFileFolder == 22) {
-    s_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    t_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   } else {
     f = (cevalIsFileFolder != 0);
   }
@@ -99,7 +99,7 @@ boolean_T isfile(const ::coder::array<char, 2U> &fileName)
       cevalIsFileFolder = coderIsFileOrFolder(&cFileName[0], 1);
       if (cevalIsFileFolder != -1) {
         if (cevalIsFileFolder == 22) {
-          s_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+          t_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
         } else {
           f = (cevalIsFileFolder != 0);
         }

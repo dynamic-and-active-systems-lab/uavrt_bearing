@@ -5,7 +5,7 @@
 // File: fileManager.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -47,9 +47,9 @@ static signed char filedata();
 
 }
 } // namespace coder
-static void e_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void f_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
-static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+static void x_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -84,7 +84,7 @@ static signed char filedata()
 //
 } // namespace internal
 } // namespace coder
-static void e_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void f_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "Invalid file identifier.  Use fopen to generate a valid file "
@@ -99,7 +99,7 @@ static void e_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+static void x_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   ((outStream << "For code generation, maximum number of open files is ") << 20)
@@ -128,23 +128,23 @@ int cfclose(double fid)
   signed char fileid;
   st = -1;
   if ((fid < 0.0) || (fid > 22.0)) {
-    rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
   }
   fileid = static_cast<signed char>(fid);
   if (fid != static_cast<signed char>(fid)) {
-    rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
   }
   if (static_cast<int>(fid) != static_cast<signed char>(fid)) {
     fileid = -1;
   }
   if (fileid < 0) {
-    rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
   }
   if (fileid >= 3) {
     f_tmp = eml_openfiles[fileid - 3];
     f = f_tmp;
     if (f_tmp == nullptr) {
-      e_rtErrorWithMessageID(f_emlrtRTEI.fName, f_emlrtRTEI.lineNo);
+      f_rtErrorWithMessageID(f_emlrtRTEI.fName, f_emlrtRTEI.lineNo);
     }
   } else if (fileid == 0) {
     f = stdin;
@@ -154,7 +154,7 @@ int cfclose(double fid)
     f = stderr;
   }
   if ((!(f != nullptr)) || (fileid < 3)) {
-    rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   cst = std::fclose(f);
   if (cst == 0) {
@@ -184,7 +184,7 @@ signed char cfopen(const ::coder::array<char, 2U> &cfilename,
   fileid = -1;
   j = filedata();
   if (j < 1) {
-    w_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    x_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   } else {
     int i;
     int loop_ub;
@@ -219,11 +219,11 @@ std::FILE *getfilestar(double fid, boolean_T &autoflush)
   std::FILE *filestar_tmp;
   signed char fileid;
   if ((fid < 0.0) || (fid > 22.0)) {
-    rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID(e_emlrtRTEI.fName, e_emlrtRTEI.lineNo);
   }
   fileid = static_cast<signed char>(fid);
   if (fid != static_cast<signed char>(fid)) {
-    rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
+    b_rtErrorWithMessageID(g_emlrtRTEI.fName, g_emlrtRTEI.lineNo);
   }
   if (static_cast<int>(fid) != static_cast<signed char>(fid)) {
     fileid = -1;
@@ -233,7 +233,7 @@ std::FILE *getfilestar(double fid, boolean_T &autoflush)
     filestar_tmp = eml_openfiles[fileid - 3];
     filestar = filestar_tmp;
     if (filestar_tmp == nullptr) {
-      e_rtErrorWithMessageID(f_emlrtRTEI.fName, f_emlrtRTEI.lineNo);
+      f_rtErrorWithMessageID(f_emlrtRTEI.fName, f_emlrtRTEI.lineNo);
     }
   } else if (fileid == 0) {
     filestar = stdin;

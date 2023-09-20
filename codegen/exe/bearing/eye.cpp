@@ -5,7 +5,7 @@
 // File: eye.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -30,7 +30,7 @@ void eye(double varargin_1, ::coder::array<double, 2U> &b_I)
   int loop_ub;
   int m_tmp_tmp_tmp;
   if ((varargin_1 != varargin_1) || std::isinf(varargin_1)) {
-    y_rtErrorWithMessageID(n_emlrtRTEI.fName, n_emlrtRTEI.lineNo);
+    ab_rtErrorWithMessageID(n_emlrtRTEI.fName, n_emlrtRTEI.lineNo);
   }
   m_tmp_tmp_tmp = static_cast<int>(varargin_1);
   b_I.set_size(m_tmp_tmp_tmp, m_tmp_tmp_tmp);

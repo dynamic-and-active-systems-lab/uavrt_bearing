@@ -5,7 +5,7 @@
 // File: table.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 #ifndef TABLE_H
@@ -21,15 +21,19 @@
 #include <cstddef>
 #include <cstdlib>
 
-// Type Declarations
-namespace coder {
-class b_table;
-
-}
-
 // Type Definitions
 namespace coder {
 class table {
+public:
+  matlab::internal::coder::tabular::b_private::varNamesDim varDim;
+  cell_6 data;
+  c_struct_T arrayProps;
+
+protected:
+  matlab::internal::coder::tabular::b_private::metaDim b_metaDim;
+};
+
+class b_table {
 public:
   void init(const ::coder::array<unsigned int, 1U> &varargin_1,
             const ::coder::array<cell_wrap_4, 1U> &varargin_2,
@@ -41,9 +45,9 @@ public:
             const ::coder::array<double, 1U> &varargin_8,
             const ::coder::array<double, 1U> &varargin_9,
             const ::coder::array<double, 1U> &varargin_10);
-  void vertcat(const b_table &varargin_2, table &t) const;
+  void vertcat(const table &varargin_2, b_table &t) const;
   void parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
-                      table &b) const;
+                      b_table &b) const;
   cell_5 data;
 
 protected:
@@ -51,16 +55,6 @@ protected:
   matlab::internal::coder::tabular::b_private::rowNamesDim rowDim;
   matlab::internal::coder::tabular::b_private::varNamesDim varDim;
   c_struct_T arrayProps;
-};
-
-class b_table {
-public:
-  matlab::internal::coder::tabular::b_private::varNamesDim varDim;
-  cell_6 data;
-  c_struct_T arrayProps;
-
-protected:
-  matlab::internal::coder::tabular::b_private::metaDim b_metaDim;
 };
 
 } // namespace coder

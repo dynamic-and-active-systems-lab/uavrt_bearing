@@ -5,7 +5,7 @@
 // File: bearing_rtwutil.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -22,10 +22,29 @@
 //                int aLineNum
 // Return Type  : void
 //
+void ab_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+{
+  std::stringstream outStream;
+  ((((outStream << "Size argument must be an integer in the range: ")
+     << MIN_int32_T)
+    << " to ")
+   << MAX_int32_T)
+      << ".";
+  outStream << "\n";
+  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
+  throw std::runtime_error(outStream.str());
+}
+
+//
+// Arguments    : const char *aFcnName
+//                int aLineNum
+// Return Type  : void
+//
 void b_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
-  outStream << "Operation is not implemented for requested file identifier.";
+  outStream << "Invalid file identifier. Use fopen to generate a valid file "
+               "identifier.";
   outStream << "\n";
   ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
   throw std::runtime_error(outStream.str());
@@ -39,7 +58,7 @@ void b_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 void c_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
-  outStream << "NaN values cannot be converted to logicals.";
+  outStream << "Operation is not implemented for requested file identifier.";
   outStream << "\n";
   ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
   throw std::runtime_error(outStream.str());
@@ -53,6 +72,20 @@ void c_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 void d_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
+  outStream << "NaN values cannot be converted to logicals.";
+  outStream << "\n";
+  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
+  throw std::runtime_error(outStream.str());
+}
+
+//
+// Arguments    : const char *aFcnName
+//                int aLineNum
+// Return Type  : void
+//
+void e_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+{
+  std::stringstream outStream;
   outStream << "fopen(\'all\') is not supported for code generation.";
   outStream << "\n";
   ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
@@ -64,7 +97,7 @@ void d_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 //                int aLineNum
 // Return Type  : void
 //
-void f_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+void g_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "Assertion failed.";
@@ -121,21 +154,6 @@ void rtDynamicBoundsError(int aIndexValue, int aLoBound, int aHiBound,
 }
 
 //
-// Arguments    : const char *aFcnName
-//                int aLineNum
-// Return Type  : void
-//
-void rtErrorWithMessageID(const char *aFcnName, int aLineNum)
-{
-  std::stringstream outStream;
-  outStream << "Invalid file identifier. Use fopen to generate a valid file "
-               "identifier.";
-  outStream << "\n";
-  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
-  throw std::runtime_error(outStream.str());
-}
-
-//
 // Arguments    : const double aInteger
 //                const rtDoubleCheckInfo &aInfo
 // Return Type  : void
@@ -183,28 +201,10 @@ void rtNonNegativeError(const double aPositive, const rtDoubleCheckInfo &aInfo)
 //                int aLineNum
 // Return Type  : void
 //
-void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 {
   std::stringstream outStream;
   outStream << "Matrix index is out of range for deletion.";
-  outStream << "\n";
-  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
-  throw std::runtime_error(outStream.str());
-}
-
-//
-// Arguments    : const char *aFcnName
-//                int aLineNum
-// Return Type  : void
-//
-void y_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
-{
-  std::stringstream outStream;
-  ((((outStream << "Size argument must be an integer in the range: ")
-     << MIN_int32_T)
-    << " to ")
-   << MAX_int32_T)
-      << ".";
   outStream << "\n";
   ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
   throw std::runtime_error(outStream.str());

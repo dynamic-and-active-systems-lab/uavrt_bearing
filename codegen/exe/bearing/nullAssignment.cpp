@@ -5,7 +5,7 @@
 // File: nullAssignment.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -58,7 +58,7 @@ void b_nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    t_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(1) == 1) {
@@ -107,7 +107,7 @@ void b_nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    f_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
+    g_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;
@@ -147,7 +147,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    t_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(1) == 1) {
@@ -194,7 +194,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    f_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
+    g_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;
@@ -238,7 +238,7 @@ void nullAssignment(::coder::array<double, 1U> &x,
     }
   }
   if (!p) {
-    t_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(s_emlrtRTEI.fName, s_emlrtRTEI.lineNo);
   }
   nxin = x.size(0);
   b.set_size(1, x.size(0));
@@ -273,7 +273,7 @@ void nullAssignment(::coder::array<double, 1U> &x,
     }
   }
   if (nxout > x.size(0)) {
-    f_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    g_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   if (nxout < 1) {
     nxout = 0;
@@ -308,7 +308,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (!p) {
-    t_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
+    u_rtErrorWithMessageID(t_emlrtRTEI.fName, t_emlrtRTEI.lineNo);
   }
   nrowx = x.size(0);
   if (idx.size(0) == 1) {
@@ -355,7 +355,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
   }
   if (nrows > x.size(0)) {
-    f_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
+    g_rtErrorWithMessageID(u_emlrtRTEI.fName, u_emlrtRTEI.lineNo);
   }
   if (nrows < 1) {
     nrows = 0;

@@ -5,7 +5,7 @@
 // File: readpulsecsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -147,9 +147,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "commaLocations", // aName
       "readpulsecsv",   // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      0                                               // checkKind
   };
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,             // iFirst
@@ -159,9 +158,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "pulseArray",   // aName
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      0                                               // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,             // iFirst
@@ -171,9 +169,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "commandArray", // aName
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      0                                               // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,             // iFirst
@@ -183,9 +180,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "lineStr",      // aName
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      0                                               // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,             // iFirst
@@ -195,9 +191,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "lineStr",      // aName
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      0                                               // checkKind
   };
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,             // iFirst
@@ -207,9 +202,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "pos_AGL_m",    // aName
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      0               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      0                                               // checkKind
   };
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,                 // iFirst
@@ -219,9 +213,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "roll",             // aName
       "EulerAngleStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
+      0                                                   // checkKind
   };
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,                 // iFirst
@@ -231,9 +224,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "eul",              // aName
       "EulerAngleStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
+      0                                                   // checkKind
   };
   static rtBoundsCheckInfo j_emlrtBCI{
       -1,                 // iFirst
@@ -243,9 +235,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "pitch",            // aName
       "EulerAngleStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
+      0                                                   // checkKind
   };
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,                 // iFirst
@@ -255,9 +246,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "eul",              // aName
       "EulerAngleStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
+      0                                                   // checkKind
   };
   static rtBoundsCheckInfo l_emlrtBCI{
       -1,                 // iFirst
@@ -267,9 +257,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "yaw",              // aName
       "EulerAngleStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
+      0                                                   // checkKind
   };
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,                 // iFirst
@@ -279,72 +268,64 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "eul",              // aName
       "EulerAngleStruct", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/Eu"
-      "lerAngleStruct.m", // pName
-      0                   // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
+      0                                                   // checkKind
   };
   static rtDoubleCheckInfo b_emlrtDCI{
       98,             // lineNo
       29,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      4               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      4                                               // checkKind
   };
   static rtDoubleCheckInfo c_emlrtDCI{
       98,             // lineNo
       29,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      1                                               // checkKind
   };
   static rtDoubleCheckInfo d_emlrtDCI{
       98,             // lineNo
       5,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      1                                               // checkKind
   };
   static rtDoubleCheckInfo e_emlrtDCI{
       99,             // lineNo
       5,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      1                                               // checkKind
   };
   static rtDoubleCheckInfo f_emlrtDCI{
       100,            // lineNo
       29,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      1                                               // checkKind
   };
   static rtDoubleCheckInfo g_emlrtDCI{
       100,            // lineNo
       5,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      1                                               // checkKind
   };
   static rtDoubleCheckInfo h_emlrtDCI{
       101,            // lineNo
       5,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m", // pName
-      1               // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      1                                               // checkKind
   };
   static rtEqualityCheckInfo b_emlrtECI{
       -1,             // nDims
@@ -352,8 +333,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       17,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m" // pName
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m" // pName
   };
   static rtEqualityCheckInfo emlrtECI{
       -1,             // nDims
@@ -361,8 +341,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       17,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/uavrt_localization_utils/re"
-      "adpulsecsv.m" // pName
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m" // pName
   };
   coder::onCleanup x;
   coder::array<d_struct_T, 2U> eulers_deg;
@@ -549,7 +528,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   commands.set_size(1, 1);
   b = coder::internal::b_strcmp(filepath);
   if (b) {
-    d_rtErrorWithMessageID(d_emlrtRTEI.fName, d_emlrtRTEI.lineNo);
+    e_rtErrorWithMessageID(d_emlrtRTEI.fName, d_emlrtRTEI.lineNo);
   } else {
     fileid = coder::internal::cfopen(filepath, "rb");
     fid = fileid;
@@ -604,7 +583,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       exitg1 = 0;
       b_x = coder::b_feof(static_cast<double>(b_fileid));
       if (std::isnan(b_x)) {
-        c_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+        d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
       }
       if (!(b_x != 0.0)) {
         coder::fgetl(static_cast<double>(b_fileid), lineStr);
@@ -676,7 +655,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       exitg1 = 0;
       b_x = coder::b_feof(static_cast<double>(fileid));
       if (std::isnan(b_x)) {
-        c_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+        d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
       }
       if (!(b_x != 0.0)) {
         creal_T commandID;
@@ -730,7 +709,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         commandID = coder::internal::str2double(b_lineStr);
         numOfLines = coder::cfseek(static_cast<double>(fileid), numOfLines);
         if (std::isnan(numOfLines)) {
-          c_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+          d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
         }
         if (!(numOfLines != 0.0)) {
           if ((commandID.re == 7.0) && (commandID.im == 0.0)) {

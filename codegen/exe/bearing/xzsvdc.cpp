@@ -5,7 +5,7 @@
 // File: xzsvdc.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 17-Aug-2023 13:24:38
+// C/C++ source code generated on  : 20-Sep-2023 13:03:40
 //
 
 // Include Files
@@ -29,26 +29,12 @@
 #include <string>
 
 // Function Declarations
-static void r_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
-
 static void rtErrorWithMessageID(const char *r, const char *aFcnName,
                                  int aLineNum);
 
-// Function Definitions
-//
-// Arguments    : const char *aFcnName
-//                int aLineNum
-// Return Type  : void
-//
-static void r_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
-{
-  std::stringstream outStream;
-  outStream << "SVD fails to converge";
-  outStream << "\n";
-  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
-  throw std::runtime_error(outStream.str());
-}
+static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
+// Function Definitions
 //
 // Arguments    : const char *r
 //                const char *aFcnName
@@ -62,6 +48,20 @@ static void rtErrorWithMessageID(const char *r, const char *aFcnName,
   ((outStream << "Domain error. To compute complex results from real x, use \'")
    << r)
       << "(complex(x))\'.";
+  outStream << "\n";
+  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
+  throw std::runtime_error(outStream.str());
+}
+
+//
+// Arguments    : const char *aFcnName
+//                int aLineNum
+// Return Type  : void
+//
+static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
+{
+  std::stringstream outStream;
+  outStream << "SVD fails to converge";
   outStream << "\n";
   ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
   throw std::runtime_error(outStream.str());
@@ -285,7 +285,7 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
     exitg1 = false;
     while ((!exitg1) && (m > 0)) {
       if (nctp1 >= 75) {
-        r_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+        s_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
       } else {
         boolean_T exitg2;
         nmq = m - 1;
