@@ -5,7 +5,7 @@
 // File: minOrMax.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 20-Sep-2023 13:03:40
+// C/C++ source code generated on  : 02-Oct-2023 13:02:17
 //
 
 #ifndef MINORMAX_H

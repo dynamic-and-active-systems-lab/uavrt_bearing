@@ -61,6 +61,7 @@ sepInds = strfind(filePath, filesep);
 coder.cinclude('unistd.h');%Needed for getting fileDirectory with generated code in if statement below
 
 if ~isempty(sepInds)
+    filePath = char(filePath);
     fileName = filePath(sepInds(end)+1:end);
     fileDirectory = filePath(1:sepInds(end)-1);
 else

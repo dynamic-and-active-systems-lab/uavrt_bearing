@@ -5,7 +5,7 @@
 // File: readbearingcsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 20-Sep-2023 13:03:40
+// C/C++ source code generated on  : 02-Oct-2023 13:02:17
 //
 
 // Include Files
@@ -68,9 +68,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo ab_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      72,               // lineNo
-      37,               // colNo
-      "lineStr",        // aName
+      73,               // lineNo
+      28,               // colNo
+      "parentFileName", // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -79,7 +79,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      87,               // lineNo
+      89,               // lineNo
       22,               // colNo
       "parentFileName", // aName
       "readbearingcsv", // fName
@@ -90,9 +90,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo bb_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      72,               // lineNo
-      9,                // colNo
-      "parentFileName", // aName
+      73,               // lineNo
+      41,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -113,8 +113,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       73,               // lineNo
-      53,               // colNo
-      "lineStr",        // aName
+      13,               // colNo
+      "parentFileName", // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -134,9 +134,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo db_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      73,               // lineNo
-      17,               // colNo
-      "bearing",        // aName
+      74,               // lineNo
+      57,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -145,9 +145,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      60,               // lineNo
-      45,               // colNo
-      "commaInds",      // aName
+      58,               // lineNo
+      28,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -157,8 +157,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       74,               // lineNo
-      53,               // colNo
-      "lineStr",        // aName
+      21,               // colNo
+      "bearing",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -168,7 +168,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       61,               // lineNo
-      41,               // colNo
+      49,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -178,9 +178,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo fb_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      74,               // lineNo
-      13,               // colNo
-      "tau",            // aName
+      75,               // lineNo
+      57,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -189,8 +189,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      61,               // lineNo
-      58,               // colNo
+      62,               // lineNo
+      45,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -201,8 +201,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       75,               // lineNo
-      53,               // colNo
-      "lineStr",        // aName
+      17,               // colNo
+      "tau",            // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -212,7 +212,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       62,               // lineNo
-      41,               // colNo
+      62,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -222,9 +222,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo hb_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      75,               // lineNo
-      22,               // colNo
-      "latitude_deg",   // aName
+      76,               // lineNo
+      57,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -233,8 +233,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      62,               // lineNo
-      58,               // colNo
+      63,               // lineNo
+      45,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -245,8 +245,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       76,               // lineNo
-      53,               // colNo
-      "lineStr",        // aName
+      26,               // colNo
+      "latitude_deg",   // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -256,7 +256,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       63,               // lineNo
-      41,               // colNo
+      62,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -266,9 +266,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo jb_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      76,               // lineNo
-      23,               // colNo
-      "longitude_deg",  // aName
+      77,               // lineNo
+      57,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -277,8 +277,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      63,               // lineNo
-      58,               // colNo
+      64,               // lineNo
+      45,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -289,8 +289,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       77,               // lineNo
-      53,               // colNo
-      "lineStr",        // aName
+      27,               // colNo
+      "longitude_deg",  // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -300,7 +300,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       64,               // lineNo
-      41,               // colNo
+      62,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -310,9 +310,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo lb_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      77,               // lineNo
-      19,               // colNo
-      "alt_AGL_m",      // aName
+      78,               // lineNo
+      57,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -321,8 +321,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      64,               // lineNo
-      58,               // colNo
+      65,               // lineNo
+      45,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -333,8 +333,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       78,               // lineNo
-      53,               // colNo
-      "lineStr",        // aName
+      23,               // colNo
+      "alt_AGL_m",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -344,7 +344,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       65,               // lineNo
-      41,               // colNo
+      62,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -354,9 +354,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo nb_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      78,               // lineNo
-      19,               // colNo
-      "alt_ASL_m",      // aName
+      79,               // lineNo
+      57,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -365,8 +365,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo o_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      65,               // lineNo
-      58,               // colNo
+      66,               // lineNo
+      45,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -377,8 +377,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       79,               // lineNo
-      53,               // colNo
-      "lineStr",        // aName
+      23,               // colNo
+      "alt_ASL_m",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -388,7 +388,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       66,               // lineNo
-      41,               // colNo
+      62,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -398,9 +398,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo pb_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      79,               // lineNo
-      22,               // colNo
-      "time_start_s",   // aName
+      80,               // lineNo
+      57,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -409,8 +409,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo q_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      66,               // lineNo
-      58,               // colNo
+      67,               // lineNo
+      45,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -421,8 +421,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       80,               // lineNo
-      53,               // colNo
-      "lineStr",        // aName
+      26,               // colNo
+      "time_start_s",   // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -432,7 +432,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       67,               // lineNo
-      41,               // colNo
+      62,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -442,9 +442,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo rb_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      80,               // lineNo
-      20,               // colNo
-      "time_end_s",     // aName
+      81,               // lineNo
+      57,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -453,9 +453,20 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo s_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      67,               // lineNo
-      58,               // colNo
+      68,               // lineNo
+      45,               // colNo
       "commaInds",      // aName
+      "readbearingcsv", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
+      0                                                 // checkKind
+  };
+  static rtBoundsCheckInfo sb_emlrtBCI{
+      -1,               // iFirst
+      -1,               // iLast
+      81,               // lineNo
+      24,               // colNo
+      "time_end_s",     // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -465,7 +476,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       68,               // lineNo
-      41,               // colNo
+      62,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -475,8 +486,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo u_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      68,               // lineNo
-      58,               // colNo
+      69,               // lineNo
+      45,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -487,7 +498,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       69,               // lineNo
-      41,               // colNo
+      62,               // colNo
       "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -497,9 +508,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo w_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      71,               // lineNo
-      60,               // colNo
-      "lineStr",        // aName
+      70,               // lineNo
+      45,               // colNo
+      "commaInds",      // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -508,9 +519,9 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   static rtBoundsCheckInfo x_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      71,               // lineNo
-      15,               // colNo
-      "tagID",          // aName
+      72,               // lineNo
+      64,               // colNo
+      "lineStr",        // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -520,80 +531,80 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       -1,               // iFirst
       -1,               // iLast
       72,               // lineNo
-      24,               // colNo
-      "parentFileName", // aName
+      19,               // colNo
+      "tagID",          // aName
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       0                                                 // checkKind
   };
   static rtDoubleCheckInfo b_emlrtDCI{
-      72,               // lineNo
-      37,               // colNo
+      73,               // lineNo
+      41,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       1                                                 // checkKind
   };
   static rtDoubleCheckInfo c_emlrtDCI{
-      73,               // lineNo
-      53,               // colNo
+      74,               // lineNo
+      57,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       1                                                 // checkKind
   };
   static rtDoubleCheckInfo d_emlrtDCI{
-      74,               // lineNo
-      53,               // colNo
+      75,               // lineNo
+      57,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       1                                                 // checkKind
   };
   static rtDoubleCheckInfo e_emlrtDCI{
-      75,               // lineNo
-      53,               // colNo
+      76,               // lineNo
+      57,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       1                                                 // checkKind
   };
   static rtDoubleCheckInfo f_emlrtDCI{
-      76,               // lineNo
-      53,               // colNo
+      77,               // lineNo
+      57,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       1                                                 // checkKind
   };
   static rtDoubleCheckInfo g_emlrtDCI{
-      77,               // lineNo
-      53,               // colNo
+      78,               // lineNo
+      57,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       1                                                 // checkKind
   };
   static rtDoubleCheckInfo h_emlrtDCI{
-      78,               // lineNo
-      53,               // colNo
+      79,               // lineNo
+      57,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       1                                                 // checkKind
   };
   static rtDoubleCheckInfo i_emlrtDCI{
-      79,               // lineNo
-      53,               // colNo
+      80,               // lineNo
+      57,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
       1                                                 // checkKind
   };
   static rtDoubleCheckInfo j_emlrtDCI{
-      80,               // lineNo
-      53,               // colNo
+      81,               // lineNo
+      57,               // colNo
       "readbearingcsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readbearingcsv.m", // pName
@@ -699,6 +710,11 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
       }
     } while (exitg1 == 0);
     x.handle_matlabCodegenDestructor();
+    tagID.set_size(lineLocs.size(1));
+    text_len = lineLocs.size(1);
+    for (i = 0; i < text_len; i++) {
+      tagID[i] = 0U;
+    }
     text_len = lineLocs.size(1);
     parentFileName.set_size(lineLocs.size(1));
     for (i = 0; i < text_len; i++) {
@@ -727,11 +743,8 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
         rtDynamicBoundsError(d_i, 0, parentFileName.size(0) - 1, c_emlrtBCI);
       }
     }
-    // while ~feof(fid)
-    i = lineLocs.size(1);
-    tagID.set_size(lineLocs.size(1));
-    parentFileName.set_size(lineLocs.size(1));
     b_bearing.set_size(lineLocs.size(1));
+    text_len = lineLocs.size(1);
     tau.set_size(lineLocs.size(1));
     latitude_deg.set_size(lineLocs.size(1));
     longitude_deg.set_size(lineLocs.size(1));
@@ -739,427 +752,444 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
     alt_ASL_m.set_size(lineLocs.size(1));
     time_start_s.set_size(lineLocs.size(1));
     time_end_s.set_size(lineLocs.size(1));
+    for (i = 0; i < text_len; i++) {
+      b_bearing[i] = 0.0;
+      tau[i] = 0.0;
+      latitude_deg[i] = 0.0;
+      longitude_deg[i] = 0.0;
+      alt_AGL_m[i] = 0.0;
+      alt_ASL_m[i] = 0.0;
+      time_start_s[i] = 0.0;
+      time_end_s[i] = 0.0;
+    }
+    // while ~feof(fid)
+    i = lineLocs.size(1);
     for (int d_i{0}; d_i < i; d_i++) {
-      creal_T b_x;
-      unsigned int u;
       if (d_i + 1 > lineLocs.size(1)) {
         rtDynamicBoundsError(d_i + 1, 1, lineLocs.size(1), d_emlrtBCI);
       }
       coder::cfseek(static_cast<double>(fileid), lineLocs[d_i]);
       coder::fgetl(static_cast<double>(fileid), lineStr);
-      if (lineStr.size(1) == 0) {
-        commaInds.set_size(1, 0);
-      } else {
-        text_len = lineStr.size(1);
-        matches.set_size(1, lineStr.size(1));
-        match_idx = 0;
-        if (lineStr.size(1) > 2147483646) {
-          coder::check_forloop_overflow_error();
-        }
-        for (c_i = 0; c_i < text_len; c_i++) {
-          if (lineStr[c_i] == ',') {
-            matches[match_idx] = c_i + 1;
-            match_idx++;
+      if (lineStr.size(1) < 1) {
+        rtDynamicBoundsError(1, 1, lineStr.size(1), e_emlrtBCI);
+      }
+      if (lineStr[0] != '#') {
+        creal_T b_x;
+        unsigned int u;
+        if (lineStr.size(1) == 0) {
+          commaInds.set_size(1, 0);
+        } else {
+          text_len = lineStr.size(1);
+          matches.set_size(1, lineStr.size(1));
+          match_idx = 0;
+          if (lineStr.size(1) > 2147483646) {
+            coder::check_forloop_overflow_error();
+          }
+          for (c_i = 0; c_i < text_len; c_i++) {
+            if (lineStr[c_i] == ',') {
+              matches[match_idx] = c_i + 1;
+              match_idx++;
+            }
+          }
+          tagID_inds.set_size(1, match_idx);
+          if (match_idx > 2147483646) {
+            coder::check_forloop_overflow_error();
+          }
+          for (c_i = 0; c_i < match_idx; c_i++) {
+            tagID_inds[c_i] = matches[c_i];
+          }
+          commaInds.set_size(1, tagID_inds.size(1));
+          text_len = tagID_inds.size(1);
+          for (c_i = 0; c_i < text_len; c_i++) {
+            commaInds[c_i] = static_cast<unsigned int>(tagID_inds[c_i]);
           }
         }
-        tagID_inds.set_size(1, match_idx);
-        if (match_idx > 2147483646) {
-          coder::check_forloop_overflow_error();
+        if (commaInds.size(1) < 1) {
+          rtDynamicBoundsError(1, 1, commaInds.size(1), f_emlrtBCI);
         }
-        for (c_i = 0; c_i < match_idx; c_i++) {
-          tagID_inds[c_i] = matches[c_i];
+        if (static_cast<int>(commaInds[0]) - 1 < 1) {
+          tagID_inds.set_size(1, 0);
+        } else {
+          text_len = static_cast<int>(commaInds[0]) - 2;
+          tagID_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            tagID_inds[c_i] = c_i + 1;
+          }
         }
-        commaInds.set_size(1, tagID_inds.size(1));
+        if (commaInds.size(1) < 1) {
+          rtDynamicBoundsError(1, 1, commaInds.size(1), g_emlrtBCI);
+        }
+        if (commaInds.size(1) < 2) {
+          rtDynamicBoundsError(2, 1, commaInds.size(1), h_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(static_cast<int>(commaInds[1]) - 1) <
+            commaInds[0] + 1U) {
+          parentFileName_inds.set_size(1, 0);
+        } else {
+          d = static_cast<double>(commaInds[0]) + 1.0;
+          text_len =
+              static_cast<int>((static_cast<double>(commaInds[1]) - 1.0) - d);
+          parentFileName_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            parentFileName_inds[c_i] = d + static_cast<double>(c_i);
+          }
+        }
+        if (commaInds.size(1) < 2) {
+          rtDynamicBoundsError(2, 1, commaInds.size(1), i_emlrtBCI);
+        }
+        if (commaInds.size(1) < 3) {
+          rtDynamicBoundsError(3, 1, commaInds.size(1), j_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(static_cast<int>(commaInds[2]) - 1) <
+            commaInds[1] + 1U) {
+          bearing_inds.set_size(1, 0);
+        } else {
+          d = static_cast<double>(commaInds[1]) + 1.0;
+          text_len =
+              static_cast<int>((static_cast<double>(commaInds[2]) - 1.0) - d);
+          bearing_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            bearing_inds[c_i] = d + static_cast<double>(c_i);
+          }
+        }
+        if (commaInds.size(1) < 3) {
+          rtDynamicBoundsError(3, 1, commaInds.size(1), k_emlrtBCI);
+        }
+        if (commaInds.size(1) < 4) {
+          rtDynamicBoundsError(4, 1, commaInds.size(1), l_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(static_cast<int>(commaInds[3]) - 1) <
+            commaInds[2] + 1U) {
+          tau_inds.set_size(1, 0);
+        } else {
+          d = static_cast<double>(commaInds[2]) + 1.0;
+          text_len =
+              static_cast<int>((static_cast<double>(commaInds[3]) - 1.0) - d);
+          tau_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            tau_inds[c_i] = d + static_cast<double>(c_i);
+          }
+        }
+        if (commaInds.size(1) < 4) {
+          rtDynamicBoundsError(4, 1, commaInds.size(1), m_emlrtBCI);
+        }
+        if (commaInds.size(1) < 5) {
+          rtDynamicBoundsError(5, 1, commaInds.size(1), n_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(static_cast<int>(commaInds[4]) - 1) <
+            commaInds[3] + 1U) {
+          lat_inds.set_size(1, 0);
+        } else {
+          d = static_cast<double>(commaInds[3]) + 1.0;
+          text_len =
+              static_cast<int>((static_cast<double>(commaInds[4]) - 1.0) - d);
+          lat_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            lat_inds[c_i] = d + static_cast<double>(c_i);
+          }
+        }
+        if (commaInds.size(1) < 5) {
+          rtDynamicBoundsError(5, 1, commaInds.size(1), o_emlrtBCI);
+        }
+        if (commaInds.size(1) < 6) {
+          rtDynamicBoundsError(6, 1, commaInds.size(1), p_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(static_cast<int>(commaInds[5]) - 1) <
+            commaInds[4] + 1U) {
+          lon_inds.set_size(1, 0);
+        } else {
+          d = static_cast<double>(commaInds[4]) + 1.0;
+          text_len =
+              static_cast<int>((static_cast<double>(commaInds[5]) - 1.0) - d);
+          lon_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            lon_inds[c_i] = d + static_cast<double>(c_i);
+          }
+        }
+        if (commaInds.size(1) < 6) {
+          rtDynamicBoundsError(6, 1, commaInds.size(1), q_emlrtBCI);
+        }
+        if (commaInds.size(1) < 7) {
+          rtDynamicBoundsError(7, 1, commaInds.size(1), r_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(static_cast<int>(commaInds[6]) - 1) <
+            commaInds[5] + 1U) {
+          alt_AGL_inds.set_size(1, 0);
+        } else {
+          d = static_cast<double>(commaInds[5]) + 1.0;
+          text_len =
+              static_cast<int>((static_cast<double>(commaInds[6]) - 1.0) - d);
+          alt_AGL_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            alt_AGL_inds[c_i] = d + static_cast<double>(c_i);
+          }
+        }
+        if (commaInds.size(1) < 7) {
+          rtDynamicBoundsError(7, 1, commaInds.size(1), s_emlrtBCI);
+        }
+        if (commaInds.size(1) < 8) {
+          rtDynamicBoundsError(8, 1, commaInds.size(1), t_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(static_cast<int>(commaInds[7]) - 1) <
+            commaInds[6] + 1U) {
+          alt_ASL_inds.set_size(1, 0);
+        } else {
+          d = static_cast<double>(commaInds[6]) + 1.0;
+          text_len =
+              static_cast<int>((static_cast<double>(commaInds[7]) - 1.0) - d);
+          alt_ASL_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            alt_ASL_inds[c_i] = d + static_cast<double>(c_i);
+          }
+        }
+        if (commaInds.size(1) < 8) {
+          rtDynamicBoundsError(8, 1, commaInds.size(1), u_emlrtBCI);
+        }
+        if (commaInds.size(1) < 9) {
+          rtDynamicBoundsError(9, 1, commaInds.size(1), v_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(static_cast<int>(commaInds[8]) - 1) <
+            commaInds[7] + 1U) {
+          time_start_inds.set_size(1, 0);
+        } else {
+          d = static_cast<double>(commaInds[7]) + 1.0;
+          text_len =
+              static_cast<int>((static_cast<double>(commaInds[8]) - 1.0) - d);
+          time_start_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            time_start_inds[c_i] = d + static_cast<double>(c_i);
+          }
+        }
+        if (commaInds.size(1) < 9) {
+          rtDynamicBoundsError(9, 1, commaInds.size(1), w_emlrtBCI);
+        }
+        if (static_cast<unsigned int>(lineStr.size(1)) < commaInds[8] + 1U) {
+          time_end_inds.set_size(1, 0);
+        } else {
+          u = commaInds[8] + 1U;
+          text_len = lineStr.size(1) - static_cast<int>(u);
+          time_end_inds.set_size(1, text_len + 1);
+          for (c_i = 0; c_i <= text_len; c_i++) {
+            time_end_inds[c_i] = u + static_cast<unsigned int>(c_i);
+          }
+        }
         text_len = tagID_inds.size(1);
         for (c_i = 0; c_i < text_len; c_i++) {
-          commaInds[c_i] = static_cast<unsigned int>(tagID_inds[c_i]);
+          i1 = tagID_inds[c_i];
+          if (i1 > lineStr.size(1)) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), x_emlrtBCI);
+          }
         }
-      }
-      if (commaInds.size(1) < 1) {
-        rtDynamicBoundsError(1, 1, commaInds.size(1), e_emlrtBCI);
-      }
-      if (static_cast<int>(commaInds[0]) - 1 < 1) {
-        tagID_inds.set_size(1, 0);
-      } else {
-        text_len = static_cast<int>(commaInds[0]) - 2;
-        tagID_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          tagID_inds[c_i] = c_i + 1;
+        b_lineStr.set_size(1, tagID_inds.size(1));
+        text_len = tagID_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[tagID_inds[c_i] - 1];
         }
-      }
-      if (commaInds.size(1) < 1) {
-        rtDynamicBoundsError(1, 1, commaInds.size(1), f_emlrtBCI);
-      }
-      if (commaInds.size(1) < 2) {
-        rtDynamicBoundsError(2, 1, commaInds.size(1), g_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(static_cast<int>(commaInds[1]) - 1) <
-          commaInds[0] + 1U) {
-        parentFileName_inds.set_size(1, 0);
-      } else {
-        d = static_cast<double>(commaInds[0]) + 1.0;
-        text_len =
-            static_cast<int>((static_cast<double>(commaInds[1]) - 1.0) - d);
-        parentFileName_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          parentFileName_inds[c_i] = d + static_cast<double>(c_i);
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > tagID.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, tagID.size(0), y_emlrtBCI);
         }
-      }
-      if (commaInds.size(1) < 2) {
-        rtDynamicBoundsError(2, 1, commaInds.size(1), h_emlrtBCI);
-      }
-      if (commaInds.size(1) < 3) {
-        rtDynamicBoundsError(3, 1, commaInds.size(1), i_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(static_cast<int>(commaInds[2]) - 1) <
-          commaInds[1] + 1U) {
-        bearing_inds.set_size(1, 0);
-      } else {
-        d = static_cast<double>(commaInds[1]) + 1.0;
-        text_len =
-            static_cast<int>((static_cast<double>(commaInds[2]) - 1.0) - d);
-        bearing_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          bearing_inds[c_i] = d + static_cast<double>(c_i);
-        }
-      }
-      if (commaInds.size(1) < 3) {
-        rtDynamicBoundsError(3, 1, commaInds.size(1), j_emlrtBCI);
-      }
-      if (commaInds.size(1) < 4) {
-        rtDynamicBoundsError(4, 1, commaInds.size(1), k_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(static_cast<int>(commaInds[3]) - 1) <
-          commaInds[2] + 1U) {
-        tau_inds.set_size(1, 0);
-      } else {
-        d = static_cast<double>(commaInds[2]) + 1.0;
-        text_len =
-            static_cast<int>((static_cast<double>(commaInds[3]) - 1.0) - d);
-        tau_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          tau_inds[c_i] = d + static_cast<double>(c_i);
-        }
-      }
-      if (commaInds.size(1) < 4) {
-        rtDynamicBoundsError(4, 1, commaInds.size(1), l_emlrtBCI);
-      }
-      if (commaInds.size(1) < 5) {
-        rtDynamicBoundsError(5, 1, commaInds.size(1), m_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(static_cast<int>(commaInds[4]) - 1) <
-          commaInds[3] + 1U) {
-        lat_inds.set_size(1, 0);
-      } else {
-        d = static_cast<double>(commaInds[3]) + 1.0;
-        text_len =
-            static_cast<int>((static_cast<double>(commaInds[4]) - 1.0) - d);
-        lat_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          lat_inds[c_i] = d + static_cast<double>(c_i);
-        }
-      }
-      if (commaInds.size(1) < 5) {
-        rtDynamicBoundsError(5, 1, commaInds.size(1), n_emlrtBCI);
-      }
-      if (commaInds.size(1) < 6) {
-        rtDynamicBoundsError(6, 1, commaInds.size(1), o_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(static_cast<int>(commaInds[5]) - 1) <
-          commaInds[4] + 1U) {
-        lon_inds.set_size(1, 0);
-      } else {
-        d = static_cast<double>(commaInds[4]) + 1.0;
-        text_len =
-            static_cast<int>((static_cast<double>(commaInds[5]) - 1.0) - d);
-        lon_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          lon_inds[c_i] = d + static_cast<double>(c_i);
-        }
-      }
-      if (commaInds.size(1) < 6) {
-        rtDynamicBoundsError(6, 1, commaInds.size(1), p_emlrtBCI);
-      }
-      if (commaInds.size(1) < 7) {
-        rtDynamicBoundsError(7, 1, commaInds.size(1), q_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(static_cast<int>(commaInds[6]) - 1) <
-          commaInds[5] + 1U) {
-        alt_AGL_inds.set_size(1, 0);
-      } else {
-        d = static_cast<double>(commaInds[5]) + 1.0;
-        text_len =
-            static_cast<int>((static_cast<double>(commaInds[6]) - 1.0) - d);
-        alt_AGL_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          alt_AGL_inds[c_i] = d + static_cast<double>(c_i);
-        }
-      }
-      if (commaInds.size(1) < 7) {
-        rtDynamicBoundsError(7, 1, commaInds.size(1), r_emlrtBCI);
-      }
-      if (commaInds.size(1) < 8) {
-        rtDynamicBoundsError(8, 1, commaInds.size(1), s_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(static_cast<int>(commaInds[7]) - 1) <
-          commaInds[6] + 1U) {
-        alt_ASL_inds.set_size(1, 0);
-      } else {
-        d = static_cast<double>(commaInds[6]) + 1.0;
-        text_len =
-            static_cast<int>((static_cast<double>(commaInds[7]) - 1.0) - d);
-        alt_ASL_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          alt_ASL_inds[c_i] = d + static_cast<double>(c_i);
-        }
-      }
-      if (commaInds.size(1) < 8) {
-        rtDynamicBoundsError(8, 1, commaInds.size(1), t_emlrtBCI);
-      }
-      if (commaInds.size(1) < 9) {
-        rtDynamicBoundsError(9, 1, commaInds.size(1), u_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(static_cast<int>(commaInds[8]) - 1) <
-          commaInds[7] + 1U) {
-        time_start_inds.set_size(1, 0);
-      } else {
-        d = static_cast<double>(commaInds[7]) + 1.0;
-        text_len =
-            static_cast<int>((static_cast<double>(commaInds[8]) - 1.0) - d);
-        time_start_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          time_start_inds[c_i] = d + static_cast<double>(c_i);
-        }
-      }
-      if (commaInds.size(1) < 9) {
-        rtDynamicBoundsError(9, 1, commaInds.size(1), v_emlrtBCI);
-      }
-      if (static_cast<unsigned int>(lineStr.size(1)) < commaInds[8] + 1U) {
-        time_end_inds.set_size(1, 0);
-      } else {
-        u = commaInds[8] + 1U;
-        text_len = lineStr.size(1) - static_cast<int>(u);
-        time_end_inds.set_size(1, text_len + 1);
-        for (c_i = 0; c_i <= text_len; c_i++) {
-          time_end_inds[c_i] = u + static_cast<unsigned int>(c_i);
-        }
-      }
-      text_len = tagID_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = tagID_inds[c_i];
-        if (i1 > lineStr.size(1)) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), w_emlrtBCI);
-        }
-      }
-      b_lineStr.set_size(1, tagID_inds.size(1));
-      text_len = tagID_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[tagID_inds[c_i] - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > tagID.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, tagID.size(0), x_emlrtBCI);
-      }
-      d = std::round(b_x.re);
-      if (d < 4.294967296E+9) {
-        if (d >= 0.0) {
-          u = static_cast<unsigned int>(d);
+        d = std::round(b_x.re);
+        if (d < 4.294967296E+9) {
+          if (d >= 0.0) {
+            u = static_cast<unsigned int>(d);
+          } else {
+            u = 0U;
+          }
+        } else if (d >= 4.294967296E+9) {
+          u = MAX_uint32_T;
         } else {
           u = 0U;
         }
-      } else if (d >= 4.294967296E+9) {
-        u = MAX_uint32_T;
-      } else {
-        u = 0U;
-      }
-      tagID[d_i] = u;
-      c_i = parentFileName.size(0) - 1;
-      if (d_i > parentFileName.size(0) - 1) {
-        rtDynamicBoundsError(d_i, 0, parentFileName.size(0) - 1, y_emlrtBCI);
-      }
-      parentFileName[d_i].f1.set_size(1, parentFileName[d_i].f1.size(1));
-      if (d_i > parentFileName.size(0) - 1) {
-        rtDynamicBoundsError(d_i, 0, parentFileName.size(0) - 1, y_emlrtBCI);
-      }
-      parentFileName[d_i].f1.set_size(parentFileName[d_i].f1.size(0),
-                                      parentFileName_inds.size(1));
-      if (d_i > parentFileName.size(0) - 1) {
-        rtDynamicBoundsError(d_i, 0, parentFileName.size(0) - 1, y_emlrtBCI);
-      }
-      text_len = parentFileName_inds.size(1);
-      for (i1 = 0; i1 < text_len; i1++) {
-        match_idx = static_cast<int>(parentFileName_inds[i1]);
-        if (parentFileName_inds[i1] != match_idx) {
-          rtIntegerError(parentFileName_inds[i1], b_emlrtDCI);
+        tagID[d_i] = u;
+        c_i = parentFileName.size(0) - 1;
+        if (d_i > parentFileName.size(0) - 1) {
+          rtDynamicBoundsError(d_i, 0, parentFileName.size(0) - 1, ab_emlrtBCI);
         }
-        if ((match_idx < 1) || (match_idx > lineStr.size(1))) {
-          rtDynamicBoundsError(match_idx, 1, lineStr.size(1), ab_emlrtBCI);
+        parentFileName[d_i].f1.set_size(1, parentFileName[d_i].f1.size(1));
+        if (d_i > parentFileName.size(0) - 1) {
+          rtDynamicBoundsError(d_i, 0, parentFileName.size(0) - 1, ab_emlrtBCI);
         }
-        if (d_i > c_i) {
-          rtDynamicBoundsError(d_i, 0, c_i, bb_emlrtBCI);
+        parentFileName[d_i].f1.set_size(parentFileName[d_i].f1.size(0),
+                                        parentFileName_inds.size(1));
+        if (d_i > parentFileName.size(0) - 1) {
+          rtDynamicBoundsError(d_i, 0, parentFileName.size(0) - 1, ab_emlrtBCI);
         }
-        parentFileName[d_i].f1[i1] = lineStr[match_idx - 1];
-      }
-      text_len = bearing_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = static_cast<int>(bearing_inds[c_i]);
-        if (bearing_inds[c_i] != i1) {
-          rtIntegerError(bearing_inds[c_i], c_emlrtDCI);
+        text_len = parentFileName_inds.size(1);
+        for (i1 = 0; i1 < text_len; i1++) {
+          match_idx = static_cast<int>(parentFileName_inds[i1]);
+          if (parentFileName_inds[i1] != match_idx) {
+            rtIntegerError(parentFileName_inds[i1], b_emlrtDCI);
+          }
+          if ((match_idx < 1) || (match_idx > lineStr.size(1))) {
+            rtDynamicBoundsError(match_idx, 1, lineStr.size(1), bb_emlrtBCI);
+          }
+          if (d_i > c_i) {
+            rtDynamicBoundsError(d_i, 0, c_i, cb_emlrtBCI);
+          }
+          parentFileName[d_i].f1[i1] = lineStr[match_idx - 1];
         }
-        if ((i1 < 1) || (i1 > lineStr.size(1))) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), cb_emlrtBCI);
+        text_len = bearing_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          i1 = static_cast<int>(bearing_inds[c_i]);
+          if (bearing_inds[c_i] != i1) {
+            rtIntegerError(bearing_inds[c_i], c_emlrtDCI);
+          }
+          if ((i1 < 1) || (i1 > lineStr.size(1))) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), db_emlrtBCI);
+          }
         }
-      }
-      b_lineStr.set_size(1, bearing_inds.size(1));
-      text_len = bearing_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[static_cast<int>(bearing_inds[c_i]) - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > b_bearing.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, b_bearing.size(0), db_emlrtBCI);
-      }
-      b_bearing[d_i] = b_x.re;
-      text_len = tau_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = static_cast<int>(tau_inds[c_i]);
-        if (tau_inds[c_i] != i1) {
-          rtIntegerError(tau_inds[c_i], d_emlrtDCI);
+        b_lineStr.set_size(1, bearing_inds.size(1));
+        text_len = bearing_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[static_cast<int>(bearing_inds[c_i]) - 1];
         }
-        if ((i1 < 1) || (i1 > lineStr.size(1))) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), eb_emlrtBCI);
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > b_bearing.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, b_bearing.size(0), eb_emlrtBCI);
         }
-      }
-      b_lineStr.set_size(1, tau_inds.size(1));
-      text_len = tau_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[static_cast<int>(tau_inds[c_i]) - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > tau.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, tau.size(0), fb_emlrtBCI);
-      }
-      tau[d_i] = b_x.re;
-      text_len = lat_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = static_cast<int>(lat_inds[c_i]);
-        if (lat_inds[c_i] != i1) {
-          rtIntegerError(lat_inds[c_i], e_emlrtDCI);
+        b_bearing[d_i] = b_x.re;
+        text_len = tau_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          i1 = static_cast<int>(tau_inds[c_i]);
+          if (tau_inds[c_i] != i1) {
+            rtIntegerError(tau_inds[c_i], d_emlrtDCI);
+          }
+          if ((i1 < 1) || (i1 > lineStr.size(1))) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), fb_emlrtBCI);
+          }
         }
-        if ((i1 < 1) || (i1 > lineStr.size(1))) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), gb_emlrtBCI);
+        b_lineStr.set_size(1, tau_inds.size(1));
+        text_len = tau_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[static_cast<int>(tau_inds[c_i]) - 1];
         }
-      }
-      b_lineStr.set_size(1, lat_inds.size(1));
-      text_len = lat_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[static_cast<int>(lat_inds[c_i]) - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > latitude_deg.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, latitude_deg.size(0), hb_emlrtBCI);
-      }
-      latitude_deg[d_i] = b_x.re;
-      text_len = lon_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = static_cast<int>(lon_inds[c_i]);
-        if (lon_inds[c_i] != i1) {
-          rtIntegerError(lon_inds[c_i], f_emlrtDCI);
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > tau.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, tau.size(0), gb_emlrtBCI);
         }
-        if ((i1 < 1) || (i1 > lineStr.size(1))) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), ib_emlrtBCI);
+        tau[d_i] = b_x.re;
+        text_len = lat_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          i1 = static_cast<int>(lat_inds[c_i]);
+          if (lat_inds[c_i] != i1) {
+            rtIntegerError(lat_inds[c_i], e_emlrtDCI);
+          }
+          if ((i1 < 1) || (i1 > lineStr.size(1))) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), hb_emlrtBCI);
+          }
         }
-      }
-      b_lineStr.set_size(1, lon_inds.size(1));
-      text_len = lon_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[static_cast<int>(lon_inds[c_i]) - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > longitude_deg.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, longitude_deg.size(0), jb_emlrtBCI);
-      }
-      longitude_deg[d_i] = b_x.re;
-      text_len = alt_AGL_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = static_cast<int>(alt_AGL_inds[c_i]);
-        if (alt_AGL_inds[c_i] != i1) {
-          rtIntegerError(alt_AGL_inds[c_i], g_emlrtDCI);
+        b_lineStr.set_size(1, lat_inds.size(1));
+        text_len = lat_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[static_cast<int>(lat_inds[c_i]) - 1];
         }
-        if ((i1 < 1) || (i1 > lineStr.size(1))) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), kb_emlrtBCI);
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > latitude_deg.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, latitude_deg.size(0), ib_emlrtBCI);
         }
-      }
-      b_lineStr.set_size(1, alt_AGL_inds.size(1));
-      text_len = alt_AGL_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[static_cast<int>(alt_AGL_inds[c_i]) - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > alt_AGL_m.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, alt_AGL_m.size(0), lb_emlrtBCI);
-      }
-      alt_AGL_m[d_i] = b_x.re;
-      text_len = alt_ASL_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = static_cast<int>(alt_ASL_inds[c_i]);
-        if (alt_ASL_inds[c_i] != i1) {
-          rtIntegerError(alt_ASL_inds[c_i], h_emlrtDCI);
+        latitude_deg[d_i] = b_x.re;
+        text_len = lon_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          i1 = static_cast<int>(lon_inds[c_i]);
+          if (lon_inds[c_i] != i1) {
+            rtIntegerError(lon_inds[c_i], f_emlrtDCI);
+          }
+          if ((i1 < 1) || (i1 > lineStr.size(1))) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), jb_emlrtBCI);
+          }
         }
-        if ((i1 < 1) || (i1 > lineStr.size(1))) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), mb_emlrtBCI);
+        b_lineStr.set_size(1, lon_inds.size(1));
+        text_len = lon_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[static_cast<int>(lon_inds[c_i]) - 1];
         }
-      }
-      b_lineStr.set_size(1, alt_ASL_inds.size(1));
-      text_len = alt_ASL_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[static_cast<int>(alt_ASL_inds[c_i]) - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > alt_ASL_m.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, alt_ASL_m.size(0), nb_emlrtBCI);
-      }
-      alt_ASL_m[d_i] = b_x.re;
-      text_len = time_start_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = static_cast<int>(time_start_inds[c_i]);
-        if (time_start_inds[c_i] != i1) {
-          rtIntegerError(time_start_inds[c_i], i_emlrtDCI);
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > longitude_deg.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, longitude_deg.size(0), kb_emlrtBCI);
         }
-        if ((i1 < 1) || (i1 > lineStr.size(1))) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), ob_emlrtBCI);
+        longitude_deg[d_i] = b_x.re;
+        text_len = alt_AGL_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          i1 = static_cast<int>(alt_AGL_inds[c_i]);
+          if (alt_AGL_inds[c_i] != i1) {
+            rtIntegerError(alt_AGL_inds[c_i], g_emlrtDCI);
+          }
+          if ((i1 < 1) || (i1 > lineStr.size(1))) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), lb_emlrtBCI);
+          }
         }
-      }
-      b_lineStr.set_size(1, time_start_inds.size(1));
-      text_len = time_start_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[static_cast<int>(time_start_inds[c_i]) - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > time_start_s.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, time_start_s.size(0), pb_emlrtBCI);
-      }
-      time_start_s[d_i] = b_x.re;
-      text_len = time_end_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        i1 = static_cast<int>(time_end_inds[c_i]);
-        if (time_end_inds[c_i] != i1) {
-          rtIntegerError(time_end_inds[c_i], j_emlrtDCI);
+        b_lineStr.set_size(1, alt_AGL_inds.size(1));
+        text_len = alt_AGL_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[static_cast<int>(alt_AGL_inds[c_i]) - 1];
         }
-        if ((i1 < 1) || (i1 > lineStr.size(1))) {
-          rtDynamicBoundsError(i1, 1, lineStr.size(1), qb_emlrtBCI);
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > alt_AGL_m.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, alt_AGL_m.size(0), mb_emlrtBCI);
         }
+        alt_AGL_m[d_i] = b_x.re;
+        text_len = alt_ASL_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          i1 = static_cast<int>(alt_ASL_inds[c_i]);
+          if (alt_ASL_inds[c_i] != i1) {
+            rtIntegerError(alt_ASL_inds[c_i], h_emlrtDCI);
+          }
+          if ((i1 < 1) || (i1 > lineStr.size(1))) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), nb_emlrtBCI);
+          }
+        }
+        b_lineStr.set_size(1, alt_ASL_inds.size(1));
+        text_len = alt_ASL_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[static_cast<int>(alt_ASL_inds[c_i]) - 1];
+        }
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > alt_ASL_m.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, alt_ASL_m.size(0), ob_emlrtBCI);
+        }
+        alt_ASL_m[d_i] = b_x.re;
+        text_len = time_start_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          i1 = static_cast<int>(time_start_inds[c_i]);
+          if (time_start_inds[c_i] != i1) {
+            rtIntegerError(time_start_inds[c_i], i_emlrtDCI);
+          }
+          if ((i1 < 1) || (i1 > lineStr.size(1))) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), pb_emlrtBCI);
+          }
+        }
+        b_lineStr.set_size(1, time_start_inds.size(1));
+        text_len = time_start_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[static_cast<int>(time_start_inds[c_i]) - 1];
+        }
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > time_start_s.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, time_start_s.size(0), qb_emlrtBCI);
+        }
+        time_start_s[d_i] = b_x.re;
+        text_len = time_end_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          i1 = static_cast<int>(time_end_inds[c_i]);
+          if (time_end_inds[c_i] != i1) {
+            rtIntegerError(time_end_inds[c_i], j_emlrtDCI);
+          }
+          if ((i1 < 1) || (i1 > lineStr.size(1))) {
+            rtDynamicBoundsError(i1, 1, lineStr.size(1), rb_emlrtBCI);
+          }
+        }
+        b_lineStr.set_size(1, time_end_inds.size(1));
+        text_len = time_end_inds.size(1);
+        for (c_i = 0; c_i < text_len; c_i++) {
+          b_lineStr[c_i] = lineStr[static_cast<int>(time_end_inds[c_i]) - 1];
+        }
+        b_x = coder::internal::str2double(b_lineStr);
+        if (d_i + 1 > time_end_s.size(0)) {
+          rtDynamicBoundsError(d_i + 1, 1, time_end_s.size(0), sb_emlrtBCI);
+        }
+        time_end_s[d_i] = b_x.re;
       }
-      b_lineStr.set_size(1, time_end_inds.size(1));
-      text_len = time_end_inds.size(1);
-      for (c_i = 0; c_i < text_len; c_i++) {
-        b_lineStr[c_i] = lineStr[static_cast<int>(time_end_inds[c_i]) - 1];
-      }
-      b_x = coder::internal::str2double(b_lineStr);
-      if (d_i + 1 > time_end_s.size(0)) {
-        rtDynamicBoundsError(d_i + 1, 1, time_end_s.size(0), rb_emlrtBCI);
-      }
-      time_end_s[d_i] = b_x.re;
       // i = i+1;
     }
   } else {

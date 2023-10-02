@@ -5,7 +5,7 @@
 // File: readpulsecsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 20-Sep-2023 13:03:40
+// C/C++ source code generated on  : 02-Oct-2023 13:02:17
 //
 
 // Include Files
@@ -140,9 +140,20 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
                   coder::array<empty, 2U> &commands)
 {
   static rtBoundsCheckInfo b_emlrtBCI{
+      -1,             // iFirst
+      -1,             // iLast
+      111,            // lineNo
+      28,             // colNo
+      "lineStr",      // aName
+      "readpulsecsv", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      0                                               // checkKind
+  };
+  static rtBoundsCheckInfo c_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      112,              // lineNo
+      113,              // lineNo
       61,               // colNo
       "commaLocations", // aName
       "readpulsecsv",   // fName
@@ -150,23 +161,12 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
       0                                               // checkKind
   };
-  static rtBoundsCheckInfo c_emlrtBCI{
-      -1,             // iFirst
-      -1,             // iLast
-      126,            // lineNo
-      28,             // colNo
-      "pulseArray",   // aName
-      "readpulsecsv", // fName
-      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
-      0                                               // checkKind
-  };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      132,            // lineNo
-      30,             // colNo
-      "commandArray", // aName
+      127,            // lineNo
+      28,             // colNo
+      "pulseArray",   // aName
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
@@ -175,9 +175,9 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      112,            // lineNo
-      41,             // colNo
-      "lineStr",      // aName
+      133,            // lineNo
+      30,             // colNo
+      "commandArray", // aName
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
       "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
@@ -186,8 +186,8 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      112,            // lineNo
-      46,             // colNo
+      113,            // lineNo
+      41,             // colNo
       "lineStr",      // aName
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -197,7 +197,18 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      243,            // lineNo
+      113,            // lineNo
+      46,             // colNo
+      "lineStr",      // aName
+      "readpulsecsv", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
+      0                                               // checkKind
+  };
+  static rtBoundsCheckInfo h_emlrtBCI{
+      -1,             // iFirst
+      -1,             // iLast
+      244,            // lineNo
       57,             // colNo
       "pos_AGL_m",    // aName
       "readpulsecsv", // fName
@@ -205,7 +216,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "CODE_PLAYGROUND/uavrt_bearing/readpulsecsv.m", // pName
       0                                               // checkKind
   };
-  static rtBoundsCheckInfo h_emlrtBCI{
+  static rtBoundsCheckInfo i_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
       56,                 // lineNo
@@ -216,7 +227,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
       0                                                   // checkKind
   };
-  static rtBoundsCheckInfo i_emlrtBCI{
+  static rtBoundsCheckInfo j_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
       56,                 // lineNo
@@ -227,7 +238,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
       0                                                   // checkKind
   };
-  static rtBoundsCheckInfo j_emlrtBCI{
+  static rtBoundsCheckInfo k_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
       57,                 // lineNo
@@ -238,7 +249,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
       0                                                   // checkKind
   };
-  static rtBoundsCheckInfo k_emlrtBCI{
+  static rtBoundsCheckInfo l_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
       57,                 // lineNo
@@ -249,7 +260,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
       0                                                   // checkKind
   };
-  static rtBoundsCheckInfo l_emlrtBCI{
+  static rtBoundsCheckInfo m_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
       58,                 // lineNo
@@ -260,7 +271,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       "CODE_PLAYGROUND/uavrt_bearing/EulerAngleStruct.m", // pName
       0                                                   // checkKind
   };
-  static rtBoundsCheckInfo m_emlrtBCI{
+  static rtBoundsCheckInfo n_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
       58,                 // lineNo
@@ -329,7 +340,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   };
   static rtEqualityCheckInfo b_emlrtECI{
       -1,             // nDims
-      132,            // lineNo
+      133,            // lineNo
       17,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -337,7 +348,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   };
   static rtEqualityCheckInfo emlrtECI{
       -1,             // nDims
-      126,            // lineNo
+      127,            // lineNo
       17,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -658,117 +669,132 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
       }
       if (!(b_x != 0.0)) {
-        creal_T commandID;
+        boolean_T guard1{false};
         coder::fgetl(static_cast<double>(fileid), lineStr);
-        if (lineStr.size(1) == 0) {
-          commaLocations.set_size(1, 0);
-        } else {
-          fid = lineStr.size(1);
-          matches.set_size(1, lineStr.size(1));
-          match_idx = 0;
-          if (lineStr.size(1) > 2147483646) {
-            coder::check_forloop_overflow_error();
-          }
-          for (int b_i{0}; b_i < fid; b_i++) {
-            if (lineStr[b_i] == ',') {
-              matches[match_idx] = b_i + 1;
-              match_idx++;
-            }
-          }
-          match_out.set_size(1, match_idx);
-          if (match_idx > 2147483646) {
-            coder::check_forloop_overflow_error();
-          }
-          for (int b_i{0}; b_i < match_idx; b_i++) {
-            match_out[b_i] = matches[b_i];
-          }
-          commaLocations.set_size(1, match_out.size(1));
-          fid = match_out.size(1);
-          for (i = 0; i < fid; i++) {
-            commaLocations[i] = static_cast<unsigned int>(match_out[i]);
-          }
+        if (lineStr.size(1) < 1) {
+          rtDynamicBoundsError(1, 1, lineStr.size(1), b_emlrtBCI);
         }
-        if (commaLocations.size(1) < 1) {
-          rtDynamicBoundsError(1, 1, commaLocations.size(1), b_emlrtBCI);
-        }
-        fid = static_cast<int>(commaLocations[0]) - 1;
-        if (fid < 1) {
-          fid = 0;
-        } else {
-          if (lineStr.size(1) < 1) {
-            rtDynamicBoundsError(1, 1, lineStr.size(1), e_emlrtBCI);
-          }
-          if (fid > lineStr.size(1)) {
-            rtDynamicBoundsError(fid, 1, lineStr.size(1), f_emlrtBCI);
-          }
-        }
-        b_lineStr.set_size(1, fid);
-        for (i = 0; i < fid; i++) {
-          b_lineStr[i] = lineStr[i];
-        }
-        commandID = coder::internal::str2double(b_lineStr);
-        numOfLines = coder::cfseek(static_cast<double>(fileid), numOfLines);
-        if (std::isnan(numOfLines)) {
-          d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
-        }
-        if (!(numOfLines != 0.0)) {
-          if ((commandID.re == 7.0) && (commandID.im == 0.0)) {
-            int lineStr_size[2];
-            int tmp_size[2];
-            b = ((static_cast<int>(dataInd) < 1) ||
-                 (static_cast<int>(dataInd) > pulseArray.size(0)));
-            if (b) {
-              rtDynamicBoundsError(static_cast<int>(dataInd), 1,
-                                   pulseArray.size(0), c_emlrtBCI);
-            }
-            coder::b_fscanf(static_cast<double>(fileid), tmp_data, tmp_size);
-            lineStr_size[0] = 1;
-            lineStr_size[1] = 20;
-            rtSubAssignSizeCheck(lineStr_size[0], tmp_size[0], emlrtECI);
-            for (i = 0; i < 20; i++) {
-              pulseArray[(static_cast<int>(dataInd) + pulseArray.size(0) * i) -
-                         1] = tmp_data[i];
-            }
-            coder::fgetl(static_cast<double>(fileid), c_fid);
-            pulseLineNums[static_cast<int>(dataInd) - 1] = emptyLineCounter;
-            dataInd++;
-          } else if (((commandID.re == 10.0) && (commandID.im == 0.0)) ||
-                     ((commandID.re == 11.0) && (commandID.im == 0.0))) {
-            int lineStr_size[2];
-            int tmp_size[2];
-            b = ((static_cast<int>(commandInd) < 1) ||
-                 (static_cast<int>(commandInd) > commandArray.size(0)));
-            if (b) {
-              rtDynamicBoundsError(static_cast<int>(commandInd), 1,
-                                   commandArray.size(0), d_emlrtBCI);
-            }
-            coder::c_fscanf(static_cast<double>(fileid), b_tmp_data, tmp_size);
-            lineStr_size[0] = 1;
-            lineStr_size[1] = 4;
-            rtSubAssignSizeCheck(lineStr_size[0], tmp_size[0], b_emlrtECI);
-            commandArray[static_cast<int>(commandInd) - 1] = b_tmp_data[0];
-            commandArray[(static_cast<int>(commandInd) + commandArray.size(0)) -
-                         1] = b_tmp_data[1];
-            commandArray[(static_cast<int>(commandInd) +
-                          commandArray.size(0) * 2) -
-                         1] = b_tmp_data[2];
-            commandArray[(static_cast<int>(commandInd) +
-                          commandArray.size(0) * 3) -
-                         1] = b_tmp_data[3];
-            commandLineNums[static_cast<int>(commandInd) - 1] =
-                emptyLineCounter;
-            commandInd++;
+        guard1 = false;
+        if (lineStr[0] != '#') {
+          creal_T commandID;
+          if (lineStr.size(1) == 0) {
+            commaLocations.set_size(1, 0);
           } else {
-            coder::b_fgets(static_cast<double>(fileid), b_fid);
-            //  Discard if not commandID 7, 10, or 11
+            fid = lineStr.size(1);
+            matches.set_size(1, lineStr.size(1));
+            match_idx = 0;
+            if (lineStr.size(1) > 2147483646) {
+              coder::check_forloop_overflow_error();
+            }
+            for (int b_i{0}; b_i < fid; b_i++) {
+              if (lineStr[b_i] == ',') {
+                matches[match_idx] = b_i + 1;
+                match_idx++;
+              }
+            }
+            match_out.set_size(1, match_idx);
+            if (match_idx > 2147483646) {
+              coder::check_forloop_overflow_error();
+            }
+            for (int b_i{0}; b_i < match_idx; b_i++) {
+              match_out[b_i] = matches[b_i];
+            }
+            commaLocations.set_size(1, match_out.size(1));
+            fid = match_out.size(1);
+            for (i = 0; i < fid; i++) {
+              commaLocations[i] = static_cast<unsigned int>(match_out[i]);
+            }
           }
+          if (commaLocations.size(1) < 1) {
+            rtDynamicBoundsError(1, 1, commaLocations.size(1), c_emlrtBCI);
+          }
+          fid = static_cast<int>(commaLocations[0]) - 1;
+          if (fid < 1) {
+            fid = 0;
+          } else {
+            if (lineStr.size(1) < 1) {
+              rtDynamicBoundsError(1, 1, lineStr.size(1), f_emlrtBCI);
+            }
+            if (fid > lineStr.size(1)) {
+              rtDynamicBoundsError(fid, 1, lineStr.size(1), g_emlrtBCI);
+            }
+          }
+          b_lineStr.set_size(1, fid);
+          for (i = 0; i < fid; i++) {
+            b_lineStr[i] = lineStr[i];
+          }
+          commandID = coder::internal::str2double(b_lineStr);
+          numOfLines = coder::cfseek(static_cast<double>(fileid), numOfLines);
+          if (std::isnan(numOfLines)) {
+            d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
+          }
+          if (!(numOfLines != 0.0)) {
+            if ((commandID.re == 7.0) && (commandID.im == 0.0)) {
+              int lineStr_size[2];
+              int tmp_size[2];
+              b = ((static_cast<int>(dataInd) < 1) ||
+                   (static_cast<int>(dataInd) > pulseArray.size(0)));
+              if (b) {
+                rtDynamicBoundsError(static_cast<int>(dataInd), 1,
+                                     pulseArray.size(0), d_emlrtBCI);
+              }
+              coder::b_fscanf(static_cast<double>(fileid), tmp_data, tmp_size);
+              lineStr_size[0] = 1;
+              lineStr_size[1] = 20;
+              rtSubAssignSizeCheck(lineStr_size[0], tmp_size[0], emlrtECI);
+              for (i = 0; i < 20; i++) {
+                pulseArray[(static_cast<int>(dataInd) +
+                            pulseArray.size(0) * i) -
+                           1] = tmp_data[i];
+              }
+              coder::fgetl(static_cast<double>(fileid), c_fid);
+              pulseLineNums[static_cast<int>(dataInd) - 1] = emptyLineCounter;
+              dataInd++;
+            } else if (((commandID.re == 10.0) && (commandID.im == 0.0)) ||
+                       ((commandID.re == 11.0) && (commandID.im == 0.0))) {
+              int lineStr_size[2];
+              int tmp_size[2];
+              b = ((static_cast<int>(commandInd) < 1) ||
+                   (static_cast<int>(commandInd) > commandArray.size(0)));
+              if (b) {
+                rtDynamicBoundsError(static_cast<int>(commandInd), 1,
+                                     commandArray.size(0), e_emlrtBCI);
+              }
+              coder::c_fscanf(static_cast<double>(fileid), b_tmp_data,
+                              tmp_size);
+              lineStr_size[0] = 1;
+              lineStr_size[1] = 4;
+              rtSubAssignSizeCheck(lineStr_size[0], tmp_size[0], b_emlrtECI);
+              commandArray[static_cast<int>(commandInd) - 1] = b_tmp_data[0];
+              commandArray[(static_cast<int>(commandInd) +
+                            commandArray.size(0)) -
+                           1] = b_tmp_data[1];
+              commandArray[(static_cast<int>(commandInd) +
+                            commandArray.size(0) * 2) -
+                           1] = b_tmp_data[2];
+              commandArray[(static_cast<int>(commandInd) +
+                            commandArray.size(0) * 3) -
+                           1] = b_tmp_data[3];
+              commandLineNums[static_cast<int>(commandInd) - 1] =
+                  emptyLineCounter;
+              commandInd++;
+            } else {
+              coder::b_fgets(static_cast<double>(fileid), b_fid);
+              //  Discard if not commandID 7, 10, or 11
+            }
+            guard1 = true;
+          } else {
+            std::printf("UAV-RT: Error with file rewind");
+            std::fflush(stdout);
+            coder::internal::cfclose(static_cast<double>(fileid));
+            exitg1 = 1;
+          }
+        } else {
+          guard1 = true;
+        }
+        if (guard1) {
           emptyLineCounter++;
           numOfLines = coder::b_ftell(static_cast<double>(fileid));
-        } else {
-          std::printf("UAV-RT: Error with file rewind");
-          std::fflush(stdout);
-          coder::internal::cfclose(static_cast<double>(fileid));
-          exitg1 = 1;
         }
       } else {
         fid = static_cast<int>(static_cast<double>(pulseArray.size(0)) -
@@ -862,7 +888,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         //  pitch_deg = eul_deg(:,2);
         //  roll_deg = eul_deg(:,3);
         if (pulseArray.size(0) < 1) {
-          rtDynamicBoundsError(1, 1, pulseArray.size(0), g_emlrtBCI);
+          rtDynamicBoundsError(1, 1, pulseArray.size(0), h_emlrtBCI);
         }
         numOfLines -= pulseArray[pulseArray.size(0) * 15];
         commandLineNums.set_size(pulseArray.size(0));
@@ -913,22 +939,22 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         i = pulseArray.size(0);
         for (int b_i{0}; b_i < i; b_i++) {
           if (b_i + 1 > pulseArray.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), h_emlrtBCI);
+            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), i_emlrtBCI);
           }
           if (b_i + 1 > eulers_deg.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), i_emlrtBCI);
+            rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), j_emlrtBCI);
           }
           if (b_i + 1 > pulseArray.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), j_emlrtBCI);
+            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), k_emlrtBCI);
           }
           if (b_i + 1 > eulers_deg.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), k_emlrtBCI);
+            rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), l_emlrtBCI);
           }
           if (b_i + 1 > pulseArray.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), l_emlrtBCI);
+            rtDynamicBoundsError(b_i + 1, 1, pulseArray.size(0), m_emlrtBCI);
           }
           if (b_i + 1 > eulers_deg.size(0)) {
-            rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), m_emlrtBCI);
+            rtDynamicBoundsError(b_i + 1, 1, eulers_deg.size(0), n_emlrtBCI);
           }
           eulers_deg[b_i].yaw_deg = pulseArray[b_i + pulseArray.size(0) * 18];
         }

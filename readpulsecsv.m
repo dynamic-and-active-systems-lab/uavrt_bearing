@@ -108,6 +108,7 @@ else
 
     while ~feof(fid)
         lineStr = fgetl(fid);
+        if ~strcmp(lineStr(1),'#')
         commaLocations = strfind(lineStr,',');
         commandID = str2double( lineStr(1 : (commaLocations(1)-1) ));
 
@@ -140,10 +141,10 @@ else
             fclose(fid);
             return
         end
-
+        end
         currLineNum = currLineNum + 1;
         currentLineFilePosition = ftell(fid);
-
+        
 
     end
 

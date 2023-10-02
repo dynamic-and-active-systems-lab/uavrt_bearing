@@ -5,7 +5,7 @@
 // File: bearing.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 20-Sep-2023 13:03:40
+// C/C++ source code generated on  : 02-Oct-2023 13:02:17
 //
 
 // Include Files
@@ -109,7 +109,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,                       // iFirst
       -1,                       // iLast
-      159,                      // lineNo
+      160,                      // lineNo
       85,                       // colNo
       "tableIn.parentFileName", // aName
       "bearing",                // fName
@@ -120,7 +120,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,                     // iFirst
       -1,                     // iLast
-      159,                    // lineNo
+      160,                    // lineNo
       30,                     // colNo
       "alreadyInBearingList", // aName
       "bearing",              // fName
@@ -131,7 +131,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      194,              // lineNo
+      195,              // lineNo
       50,               // colNo
       "tableOut.tagID", // aName
       "bearing",        // fName
@@ -142,7 +142,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,                        // iFirst
       -1,                        // iLast
-      195,                       // lineNo
+      196,                       // lineNo
       59,                        // colNo
       "tableOut.parentFileName", // aName
       "bearing",                 // fName
@@ -153,7 +153,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,                 // iFirst
       -1,                 // iLast
-      196,                // lineNo
+      197,                // lineNo
       52,                 // colNo
       "tableOut.bearing", // aName
       "bearing",          // fName
@@ -164,7 +164,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      197,            // lineNo
+      198,            // lineNo
       48,             // colNo
       "tableOut.tau", // aName
       "bearing",      // fName
@@ -175,7 +175,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,                      // iFirst
       -1,                      // iLast
-      198,                     // lineNo
+      199,                     // lineNo
       57,                      // colNo
       "tableOut.latitude_deg", // aName
       "bearing",               // fName
@@ -186,7 +186,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo j_emlrtBCI{
       -1,                       // iFirst
       -1,                       // iLast
-      199,                      // lineNo
+      200,                      // lineNo
       58,                       // colNo
       "tableOut.longitude_deg", // aName
       "bearing",                // fName
@@ -197,7 +197,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,                   // iFirst
       -1,                   // iLast
-      200,                  // lineNo
+      201,                  // lineNo
       54,                   // colNo
       "tableOut.alt_AGL_m", // aName
       "bearing",            // fName
@@ -208,7 +208,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo l_emlrtBCI{
       -1,                   // iFirst
       -1,                   // iLast
-      201,                  // lineNo
+      202,                  // lineNo
       54,                   // colNo
       "tableOut.alt_ASL_m", // aName
       "bearing",            // fName
@@ -219,7 +219,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,                      // iFirst
       -1,                      // iLast
-      202,                     // lineNo
+      203,                     // lineNo
       57,                      // colNo
       "tableOut.time_start_s", // aName
       "bearing",               // fName
@@ -230,7 +230,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo n_emlrtBCI{
       -1,                    // iFirst
       -1,                    // iLast
-      203,                   // lineNo
+      204,                   // lineNo
       55,                    // colNo
       "tableOut.time_end_s", // aName
       "bearing",             // fName
@@ -241,7 +241,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo o_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      65,         // lineNo
+      66,         // lineNo
       30,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -252,7 +252,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo p_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      65,         // lineNo
+      66,         // lineNo
       32,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -263,7 +263,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo q_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      64,         // lineNo
+      65,         // lineNo
       25,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -274,7 +274,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo r_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      64,         // lineNo
+      65,         // lineNo
       40,         // colNo
       "filePath", // aName
       "bearing",  // fName
