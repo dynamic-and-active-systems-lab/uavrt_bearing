@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: strcmp.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef STRCMP_H
@@ -20,7 +20,7 @@
 // Function Declarations
 namespace coder {
 namespace internal {
-boolean_T b_strcmp(const ::coder::array<char, 2U> &a);
+boolean_T b_strcmp(const array<char, 2U> &a);
 
 }
 } // namespace coder

@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: _coder_bearing_api.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -19,7 +19,7 @@ emlrtCTX emlrtRootTLSGlobal{nullptr};
 emlrtContext emlrtContextGlobal{
     true,                                                 // bFirstTime
     false,                                                // bInitialized
-    131642U,                                              // fVersionInfo
+    131643U,                                              // fVersionInfo
     nullptr,                                              // fErrorFunction
     "bearing",                                            // fFunctionName
     nullptr,                                              // fRTCallStack
@@ -33,7 +33,7 @@ static void b_emlrt_marshallIn(const emlrtStack &sp, const mxArray *src,
                                const emlrtMsgIdentifier *msgId,
                                coder::array<char_T, 2U> &ret);
 
-static void emlrt_marshallIn(const emlrtStack &sp, const mxArray *filePath,
+static void emlrt_marshallIn(const emlrtStack &sp, const mxArray *b_nullptr,
                              const char_T *identifier,
                              coder::array<char_T, 2U> &y);
 
@@ -67,12 +67,12 @@ static void b_emlrt_marshallIn(const emlrtStack &sp, const mxArray *src,
 
 //
 // Arguments    : const emlrtStack &sp
-//                const mxArray *filePath
+//                const mxArray *b_nullptr
 //                const char_T *identifier
 //                coder::array<char_T, 2U> &y
 // Return Type  : void
 //
-static void emlrt_marshallIn(const emlrtStack &sp, const mxArray *filePath,
+static void emlrt_marshallIn(const emlrtStack &sp, const mxArray *b_nullptr,
                              const char_T *identifier,
                              coder::array<char_T, 2U> &y)
 {
@@ -80,8 +80,8 @@ static void emlrt_marshallIn(const emlrtStack &sp, const mxArray *filePath,
   thisId.fIdentifier = const_cast<const char_T *>(identifier);
   thisId.fParent = nullptr;
   thisId.bParentIsCell = false;
-  emlrt_marshallIn(sp, emlrtAlias(filePath), &thisId, y);
-  emlrtDestroyArray(&filePath);
+  emlrt_marshallIn(sp, emlrtAlias(b_nullptr), &thisId, y);
+  emlrtDestroyArray(&b_nullptr);
 }
 
 //

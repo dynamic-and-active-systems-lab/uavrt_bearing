@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: sprintf.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -20,13 +20,12 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<char, 2U> &varargin_1
-//                ::coder::array<char, 2U> &str
+// Arguments    : const array<char, 2U> &varargin_1
+//                array<char, 2U> &str
 // Return Type  : void
 //
 namespace coder {
-void b_sprintf(const ::coder::array<char, 2U> &varargin_1,
-               ::coder::array<char, 2U> &str)
+void b_sprintf(const array<char, 2U> &varargin_1, array<char, 2U> &str)
 {
   array<char, 2U> b_varargin_1;
   array<char, 2U> c_varargin_1;

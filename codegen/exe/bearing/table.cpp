@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: table.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -33,14 +33,14 @@ static rtBoundsCheckInfo emlrtBCI{
     29,                           // colNo
     "",                           // aName
     "tabularDimension/setLabels", // fName
-    "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/tabular/"
+    "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/tabular/"
     "+matlab/+internal/+coder/+tabular/+private/tabularDimen"
     "sion.m", // pName
     0         // checkKind
 };
 
 // Function Declarations
-static void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
+static void c_rtErrorWithMessageID(const char *r, const char *aFcnName,
                                    int aLineNum);
 
 static void v_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
@@ -54,12 +54,12 @@ static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 //                int aLineNum
 // Return Type  : void
 //
-static void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
+static void c_rtErrorWithMessageID(const char *r, const char *aFcnName,
                                    int aLineNum)
 {
   std::stringstream outStream;
   ((outStream << "Concatenating the table variable \'") << r)
-      << "\' using VERTCAT resulted in a variable of the wrong length.";
+      << "\' using vertcat resulted in a variable of the wrong length.";
   outStream << "\n";
   ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
   throw std::runtime_error(outStream.str());
@@ -94,29 +94,26 @@ static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 }
 
 //
-// Arguments    : const ::coder::array<unsigned int, 1U> &varargin_1
-//                const ::coder::array<cell_wrap_4, 1U> &varargin_2
-//                const ::coder::array<double, 1U> &varargin_3
-//                const ::coder::array<double, 1U> &varargin_4
-//                const ::coder::array<double, 1U> &varargin_5
-//                const ::coder::array<double, 1U> &varargin_6
-//                const ::coder::array<double, 1U> &varargin_7
-//                const ::coder::array<double, 1U> &varargin_8
-//                const ::coder::array<double, 1U> &varargin_9
-//                const ::coder::array<double, 1U> &varargin_10
+// Arguments    : const array<unsigned int, 1U> &varargin_1
+//                const array<cell_wrap_4, 1U> &varargin_2
+//                const array<double, 1U> &varargin_3
+//                const array<double, 1U> &varargin_4
+//                const array<double, 1U> &varargin_5
+//                const array<double, 1U> &varargin_6
+//                const array<double, 1U> &varargin_7
+//                const array<double, 1U> &varargin_8
+//                const array<double, 1U> &varargin_9
+//                const array<double, 1U> &varargin_10
 // Return Type  : void
 //
 namespace coder {
-void b_table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
-                   const ::coder::array<cell_wrap_4, 1U> &varargin_2,
-                   const ::coder::array<double, 1U> &varargin_3,
-                   const ::coder::array<double, 1U> &varargin_4,
-                   const ::coder::array<double, 1U> &varargin_5,
-                   const ::coder::array<double, 1U> &varargin_6,
-                   const ::coder::array<double, 1U> &varargin_7,
-                   const ::coder::array<double, 1U> &varargin_8,
-                   const ::coder::array<double, 1U> &varargin_9,
-                   const ::coder::array<double, 1U> &varargin_10)
+void b_table::init(
+    const array<unsigned int, 1U> &varargin_1,
+    const array<cell_wrap_4, 1U> &varargin_2,
+    const array<double, 1U> &varargin_3, const array<double, 1U> &varargin_4,
+    const array<double, 1U> &varargin_5, const array<double, 1U> &varargin_6,
+    const array<double, 1U> &varargin_7, const array<double, 1U> &varargin_8,
+    const array<double, 1U> &varargin_9, const array<double, 1U> &varargin_10)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       329,                     // lineNo
@@ -125,6 +122,12 @@ void b_table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
   array<unsigned int, 2U> indices;
   int b_i;
   int i;
+  for (i = 0; i < 10; i++) {
+    varDim.descrs[i].f1.size[0] = 0;
+    varDim.descrs[i].f1.size[1] = 0;
+    varDim.units[i].f1.size[0] = 0;
+    varDim.units[i].f1.size[1] = 0;
+  }
   arrayProps.Description.size[0] = 1;
   arrayProps.Description.size[1] = 0;
   if (varargin_2.size(0) != varargin_1.size(0)) {
@@ -217,11 +220,11 @@ void b_table::init(const ::coder::array<unsigned int, 1U> &varargin_1,
 }
 
 //
-// Arguments    : const ::coder::array<boolean_T, 1U> &varargin_1
+// Arguments    : const array<boolean_T, 1U> &varargin_1
 //                b_table &b
 // Return Type  : void
 //
-void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
+void b_table::parenReference(const array<boolean_T, 1U> &varargin_1,
                              b_table &b) const
 {
   static rtBoundsCheckInfo b_emlrtBCI{
@@ -231,7 +234,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       36,                           // colNo
       "",                           // aName
       "tabularDimension/subs2inds", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/+tabular/+private/tabularDimen"
       "sion.m", // pName
       0         // checkKind
@@ -243,7 +246,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       31,                       // colNo
       "",                       // aName
       "tabular/parenReference", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/parenReference.m", // pName
       0                                                             // checkKind
   };
@@ -254,7 +257,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       33,                       // colNo
       "",                       // aName
       "tabular/parenReference", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/parenReference.m", // pName
       0                                                             // checkKind
   };
@@ -265,7 +268,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       71,                       // colNo
       "",                       // aName
       "tabular/parenReference", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/parenReference.m", // pName
       0                                                             // checkKind
   };
@@ -276,7 +279,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       53,                       // colNo
       "",                       // aName
       "tabular/parenReference", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/parenReference.m", // pName
       0                                                             // checkKind
   };
@@ -287,7 +290,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       41,                       // colNo
       "",                       // aName
       "tabular/parenReference", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/parenReference.m", // pName
       0                                                             // checkKind
   };
@@ -298,7 +301,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       25,                       // colNo
       "",                       // aName
       "tabular/parenReference", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/parenReference.m", // pName
       0                                                             // checkKind
   };
@@ -308,7 +311,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
   };
   array<unsigned int, 2U> indices;
   array<int, 1U> ii;
-  int a__1;
+  int a__2;
   int b_i;
   int i;
   int k;
@@ -317,7 +320,7 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
   if (varargin_1.size(0) > 2147483646) {
     check_forloop_overflow_error();
   }
-  a__1 = 0;
+  a__2 = 0;
   i = varargin_1.size(0);
   b_i = 0;
   exitg1 = false;
@@ -327,18 +330,18 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       rtDynamicBoundsError(nz, 1, varargin_1.size(0), b_emlrtBCI);
     }
     if (varargin_1[nz - 1]) {
-      a__1 = nz;
+      a__2 = nz;
       exitg1 = true;
     } else {
       b_i++;
     }
   }
-  if (a__1 > rowDim.length) {
+  if (a__2 > rowDim.length) {
     w_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
-  a__1 = varargin_1.size(0);
+  a__2 = varargin_1.size(0);
   nz = varargin_1[0];
-  for (k = 2; k <= a__1; k++) {
+  for (k = 2; k <= a__2; k++) {
     nz += varargin_1[k - 1];
   }
   b.rowDim.length = nz;
@@ -372,21 +375,21 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
     b.varDim.hasContinuity = true;
   }
   k = varargin_1.size(0) - 1;
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f1.set_size(a__1);
-  a__1 = 0;
+  b.data.f1.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f1.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f1.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f1[a__1] = data.f1[b_i];
-      a__1++;
+      b.data.f1[a__2] = data.f1[b_i];
+      a__2++;
     }
   }
   eml_find(varargin_1, ii);
@@ -401,10 +404,10 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
     if (b_i + 1 > ii.size(0)) {
       rtDynamicBoundsError(b_i + 1, 1, ii.size(0), e_emlrtBCI);
     }
-    a__1 = ii[b_i] - 1;
-    b_b = ((a__1 < 0) || (a__1 > data.f2.size(0) - 1));
+    a__2 = ii[b_i] - 1;
+    b_b = ((a__2 < 0) || (a__2 > data.f2.size(0) - 1));
     if (b_b) {
-      rtDynamicBoundsError(a__1, 0, data.f2.size(0) - 1, f_emlrtBCI);
+      rtDynamicBoundsError(a__2, 0, data.f2.size(0) - 1, f_emlrtBCI);
     }
     if (b_i > b.data.f2.size(0) - 1) {
       rtDynamicBoundsError(b_i, 0, b.data.f2.size(0) - 1, d_emlrtBCI);
@@ -431,143 +434,143 @@ void b_table::parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
       if (b_i > b.data.f2.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, b.data.f2.size(0) - 1, h_emlrtBCI);
       }
-      b.data.f2[b_i].f1[i1] = data.f2[a__1].f1[i1];
+      b.data.f2[b_i].f1[i1] = data.f2[a__2].f1[i1];
     }
   }
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f3.set_size(a__1);
-  a__1 = 0;
+  b.data.f3.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f3.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f3.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f3[a__1] = data.f3[b_i];
-      a__1++;
+      b.data.f3[a__2] = data.f3[b_i];
+      a__2++;
     }
   }
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f4.set_size(a__1);
-  a__1 = 0;
+  b.data.f4.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f4.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f4.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f4[a__1] = data.f4[b_i];
-      a__1++;
+      b.data.f4[a__2] = data.f4[b_i];
+      a__2++;
     }
   }
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f5.set_size(a__1);
-  a__1 = 0;
+  b.data.f5.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f5.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f5.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f5[a__1] = data.f5[b_i];
-      a__1++;
+      b.data.f5[a__2] = data.f5[b_i];
+      a__2++;
     }
   }
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f6.set_size(a__1);
-  a__1 = 0;
+  b.data.f6.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f6.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f6.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f6[a__1] = data.f6[b_i];
-      a__1++;
+      b.data.f6[a__2] = data.f6[b_i];
+      a__2++;
     }
   }
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f7.set_size(a__1);
-  a__1 = 0;
+  b.data.f7.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f7.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f7.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f7[a__1] = data.f7[b_i];
-      a__1++;
+      b.data.f7[a__2] = data.f7[b_i];
+      a__2++;
     }
   }
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f8.set_size(a__1);
-  a__1 = 0;
+  b.data.f8.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f8.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f8.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f8[a__1] = data.f8[b_i];
-      a__1++;
+      b.data.f8[a__2] = data.f8[b_i];
+      a__2++;
     }
   }
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f9.set_size(a__1);
-  a__1 = 0;
+  b.data.f9.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f9.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f9.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f9[a__1] = data.f9[b_i];
-      a__1++;
+      b.data.f9[a__2] = data.f9[b_i];
+      a__2++;
     }
   }
-  a__1 = 0;
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
-      a__1++;
+      a__2++;
     }
   }
-  b.data.f10.set_size(a__1);
-  a__1 = 0;
+  b.data.f10.set_size(a__2);
+  a__2 = 0;
   for (b_i = 0; b_i <= k; b_i++) {
     if (varargin_1[b_i]) {
       if (b_i > data.f10.size(0) - 1) {
         rtDynamicBoundsError(b_i, 0, data.f10.size(0) - 1, c_emlrtBCI);
       }
-      b.data.f10[a__1] = data.f10[b_i];
-      a__1++;
+      b.data.f10[a__2] = data.f10[b_i];
+      a__2++;
     }
   }
   b.b_metaDim = b_metaDim;
@@ -588,7 +591,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
       35,                // colNo
       "",                // aName
       "tabular/vertcat", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
       0                                                      // checkKind
   };
@@ -599,7 +602,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
       62,                // colNo
       "",                // aName
       "tabular/vertcat", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
       0                                                      // checkKind
   };
@@ -610,7 +613,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
       53,                // colNo
       "",                // aName
       "tabular/vertcat", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
       0                                                      // checkKind
   };
@@ -621,7 +624,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
       25,                // colNo
       "",                // aName
       "tabular/vertcat", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
       0                                                      // checkKind
   };
@@ -629,7 +632,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
       364,               // lineNo
       35,                // colNo
       "tabular/vertcat", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
       1                                                      // checkKind
   };
@@ -637,7 +640,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
       364,               // lineNo
       25,                // colNo
       "tabular/vertcat", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/@tabular/vertcat.m", // pName
       1                                                      // checkKind
   };
@@ -645,7 +648,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
       229,                          // lineNo
       35,                           // colNo
       "tabularDimension/setLabels", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/matlab/datatypes/codegen/"
+      "/Applications/MATLAB_R2023b.app/toolbox/matlab/datatypes/codegen/"
       "tabular/+matlab/+internal/+coder/+tabular/+private/tabularDimen"
       "sion.m", // pName
       1         // checkKind
@@ -671,7 +674,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f1[data.f1.size(0)] = varargin_2.data.f1;
   if (static_cast<unsigned int>(t.data.f1.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("tagID", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    c_rtErrorWithMessageID("tagID", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f2.set_size(data.f1.size(0) + 1);
   i = data.f2.size(0);
@@ -756,7 +759,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f3[data.f3.size(0)] = varargin_2.data.f3;
   if (static_cast<unsigned int>(t.data.f3.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("bearing", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    c_rtErrorWithMessageID("bearing", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f4.set_size(data.f4.size(0) + 1);
   loop_ub = data.f4.size(0);
@@ -766,7 +769,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f4[data.f4.size(0)] = varargin_2.data.f4;
   if (static_cast<unsigned int>(t.data.f4.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("tau", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    c_rtErrorWithMessageID("tau", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f5.set_size(data.f5.size(0) + 1);
   loop_ub = data.f5.size(0);
@@ -776,7 +779,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f5[data.f5.size(0)] = varargin_2.data.f5;
   if (static_cast<unsigned int>(t.data.f5.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("latitude_deg", v_emlrtRTEI.fName,
+    c_rtErrorWithMessageID("latitude_deg", v_emlrtRTEI.fName,
                            v_emlrtRTEI.lineNo);
   }
   t.data.f6.set_size(data.f6.size(0) + 1);
@@ -787,7 +790,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f6[data.f6.size(0)] = varargin_2.data.f6;
   if (static_cast<unsigned int>(t.data.f6.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("longitude_deg", v_emlrtRTEI.fName,
+    c_rtErrorWithMessageID("longitude_deg", v_emlrtRTEI.fName,
                            v_emlrtRTEI.lineNo);
   }
   t.data.f7.set_size(data.f7.size(0) + 1);
@@ -798,7 +801,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f7[data.f7.size(0)] = varargin_2.data.f7;
   if (static_cast<unsigned int>(t.data.f7.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("alt_AGL_m", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    c_rtErrorWithMessageID("alt_AGL_m", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f8.set_size(data.f8.size(0) + 1);
   loop_ub = data.f8.size(0);
@@ -808,7 +811,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f8[data.f8.size(0)] = varargin_2.data.f8;
   if (static_cast<unsigned int>(t.data.f8.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("alt_ASL_m", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    c_rtErrorWithMessageID("alt_ASL_m", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.data.f9.set_size(data.f9.size(0) + 1);
   loop_ub = data.f9.size(0);
@@ -818,7 +821,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f9[data.f9.size(0)] = varargin_2.data.f9;
   if (static_cast<unsigned int>(t.data.f9.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("time_start_s", v_emlrtRTEI.fName,
+    c_rtErrorWithMessageID("time_start_s", v_emlrtRTEI.fName,
                            v_emlrtRTEI.lineNo);
   }
   t.data.f10.set_size(data.f10.size(0) + 1);
@@ -829,7 +832,7 @@ void b_table::vertcat(const table &varargin_2, b_table &t) const
   t.data.f10[data.f10.size(0)] = varargin_2.data.f10;
   if (static_cast<unsigned int>(t.data.f10.size(0)) !=
       static_cast<unsigned int>(data.f1.size(0)) + 1U) {
-    b_rtErrorWithMessageID("time_end_s", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
+    c_rtErrorWithMessageID("time_end_s", v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }
   t.b_metaDim = b_metaDim;
   t.rowDim.length = static_cast<double>(data.f1.size(0)) + 1.0;

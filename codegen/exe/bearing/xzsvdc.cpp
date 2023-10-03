@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: xzsvdc.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -29,8 +29,8 @@
 #include <string>
 
 // Function Declarations
-static void rtErrorWithMessageID(const char *r, const char *aFcnName,
-                                 int aLineNum);
+static void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
+                                   int aLineNum);
 
 static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
@@ -41,8 +41,8 @@ static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 //                int aLineNum
 // Return Type  : void
 //
-static void rtErrorWithMessageID(const char *r, const char *aFcnName,
-                                 int aLineNum)
+static void b_rtErrorWithMessageID(const char *r, const char *aFcnName,
+                                   int aLineNum)
 {
   std::stringstream outStream;
   ((outStream << "Domain error. To compute complex results from real x, use \'")
@@ -68,8 +68,8 @@ static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 }
 
 //
-// Arguments    : ::coder::array<double, 2U> &A
-//                ::coder::array<double, 2U> &U
+// Arguments    : array<double, 2U> &A
+//                array<double, 2U> &U
 //                double S_data[]
 //                double V[4]
 // Return Type  : int
@@ -77,8 +77,8 @@ static void s_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 namespace coder {
 namespace internal {
 namespace reflapack {
-int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
-           double S_data[], double V[4])
+int xzsvdc(array<double, 2U> &A, array<double, 2U> &U, double S_data[],
+           double V[4])
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       269,     // lineNo
@@ -98,17 +98,17 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
   int ns;
   int qp1;
   n = A.size(0);
-  ns = A.size(0) + 1;
-  if (ns > 2) {
-    ns = 2;
+  if (A.size(0) + 1 <= 2) {
+    ns = A.size(0);
+  } else {
+    ns = 1;
   }
   S_size = A.size(0);
   if (S_size > 2) {
     S_size = 2;
   }
-  if (ns - 1 >= 0) {
-    std::memset(&s_data[0], 0, static_cast<unsigned int>(ns) * sizeof(double));
-  }
+  std::memset(&s_data[0], 0,
+              static_cast<unsigned int>(ns + 1) * sizeof(double));
   e[0] = 0.0;
   e[1] = 0.0;
   U.set_size(A.size(0), A.size(0));
@@ -116,8 +116,10 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
   for (qp1 = 0; qp1 < ns; qp1++) {
     U[qp1] = 0.0;
   }
+  V[0] = 0.0;
   V[1] = 0.0;
   V[2] = 0.0;
+  V[3] = 0.0;
   if (A.size(0) == 0) {
     V[0] = 1.0;
     V[3] = 1.0;
@@ -272,7 +274,8 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
         nrm = rt / e[0];
         e[0] = rt;
         s_data[1] *= nrm;
-        blas::xscal(nrm, V, 3);
+        V[2] *= nrm;
+        V[3] *= nrm;
       }
     }
     nct = m;
@@ -379,8 +382,8 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
           if ((b != 0.0) || (nrm != 0.0)) {
             rt = b * b + nrm;
             if (rt < 0.0) {
-              rtErrorWithMessageID("sqrt", w_emlrtRTEI.fName,
-                                   w_emlrtRTEI.lineNo);
+              b_rtErrorWithMessageID("sqrt", w_emlrtRTEI.fName,
+                                     w_emlrtRTEI.lineNo);
             }
             rt = std::sqrt(rt);
             if (b < 0.0) {
@@ -416,7 +419,7 @@ int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
         default:
           if (s_data[ii] < 0.0) {
             s_data[ii] = -s_data[ii];
-            blas::xscal(-1.0, V, (ii << 1) + 1);
+            blas::xscal(V, (ii << 1) + 1);
           }
           while ((ii + 1 < nct) && (s_data[0] < s_data[1])) {
             rt = s_data[0];

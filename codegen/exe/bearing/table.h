@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: table.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef TABLE_H
@@ -35,19 +35,16 @@ protected:
 
 class b_table {
 public:
-  void init(const ::coder::array<unsigned int, 1U> &varargin_1,
-            const ::coder::array<cell_wrap_4, 1U> &varargin_2,
-            const ::coder::array<double, 1U> &varargin_3,
-            const ::coder::array<double, 1U> &varargin_4,
-            const ::coder::array<double, 1U> &varargin_5,
-            const ::coder::array<double, 1U> &varargin_6,
-            const ::coder::array<double, 1U> &varargin_7,
-            const ::coder::array<double, 1U> &varargin_8,
-            const ::coder::array<double, 1U> &varargin_9,
-            const ::coder::array<double, 1U> &varargin_10);
+  void
+  init(const array<unsigned int, 1U> &varargin_1,
+       const array<cell_wrap_4, 1U> &varargin_2,
+       const array<double, 1U> &varargin_3, const array<double, 1U> &varargin_4,
+       const array<double, 1U> &varargin_5, const array<double, 1U> &varargin_6,
+       const array<double, 1U> &varargin_7, const array<double, 1U> &varargin_8,
+       const array<double, 1U> &varargin_9,
+       const array<double, 1U> &varargin_10);
   void vertcat(const table &varargin_2, b_table &t) const;
-  void parenReference(const ::coder::array<boolean_T, 1U> &varargin_1,
-                      b_table &b) const;
+  void parenReference(const array<boolean_T, 1U> &varargin_1, b_table &b) const;
   cell_5 data;
 
 protected:

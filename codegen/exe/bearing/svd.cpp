@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: svd.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -18,15 +18,15 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<double, 2U> &A
-//                ::coder::array<double, 2U> &U
-//                ::coder::array<double, 2U> &S
+// Arguments    : const array<double, 2U> &A
+//                array<double, 2U> &U
+//                array<double, 2U> &S
 //                double V[4]
 // Return Type  : void
 //
 namespace coder {
-void svd(const ::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
-         ::coder::array<double, 2U> &S, double V[4])
+void svd(const array<double, 2U> &A, array<double, 2U> &U, array<double, 2U> &S,
+         double V[4])
 {
   array<double, 2U> U1;
   array<double, 2U> r;

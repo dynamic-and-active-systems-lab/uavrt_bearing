@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: sum.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef SUM_H
@@ -19,7 +19,7 @@
 
 // Function Declarations
 namespace coder {
-double sum(const ::coder::array<double, 1U> &x);
+double sum(const array<double, 1U> &x);
 
 }
 

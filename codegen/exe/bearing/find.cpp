@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: find.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -19,13 +19,12 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<boolean_T, 1U> &x
-//                ::coder::array<int, 1U> &i
+// Arguments    : const array<boolean_T, 1U> &x
+//                array<int, 1U> &i
 // Return Type  : void
 //
 namespace coder {
-void eml_find(const ::coder::array<boolean_T, 1U> &x,
-              ::coder::array<int, 1U> &i)
+void eml_find(const array<boolean_T, 1U> &x, array<int, 1U> &i)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       392,                 // lineNo

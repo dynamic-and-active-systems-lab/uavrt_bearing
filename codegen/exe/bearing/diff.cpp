@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: diff.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -41,12 +41,12 @@ static void r_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 }
 
 //
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &y
+// Arguments    : const array<double, 1U> &x
+//                array<double, 1U> &y
 // Return Type  : void
 //
 namespace coder {
-void diff(const ::coder::array<double, 1U> &x, ::coder::array<double, 1U> &y)
+void diff(const array<double, 1U> &x, array<double, 1U> &y)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       51,    // lineNo

@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: fgets.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -66,11 +66,11 @@ static void rtErrorWithMessageID(const int i, const char *aFcnName,
 
 //
 // Arguments    : double fileID
-//                ::coder::array<char, 2U> &b_line
+//                array<char, 2U> &b_line
 // Return Type  : void
 //
 namespace coder {
-void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
+void b_fgets(double fileID, array<char, 2U> &b_line)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       124,     // lineNo
@@ -197,13 +197,9 @@ void b_fgets(double fileID, ::coder::array<char, 2U> &b_line)
         }
         if ((carriageReturnAt == 0) || newLineAfterCarriageReturn ||
             fileEndAfterCarriageReturn) {
-          if (idx + 1 < 1) {
-            i = 0;
-          } else {
-            i = idx + 1;
-          }
+          i = idx + 1;
           i1 = b_line.size(1);
-          b_line.set_size(b_line.size(0), b_line.size(1) + i);
+          b_line.set_size(b_line.size(0), (b_line.size(1) + idx) + 1);
           for (int i2{0}; i2 < i; i2++) {
             b_line[i1 + i2] = ReadBuff[i2];
           }

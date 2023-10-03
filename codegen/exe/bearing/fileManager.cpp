@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: fileManager.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -166,12 +166,11 @@ int cfclose(double fid)
 }
 
 //
-// Arguments    : const ::coder::array<char, 2U> &cfilename
+// Arguments    : const array<char, 2U> &cfilename
 //                const char *cpermission
 // Return Type  : signed char
 //
-signed char cfopen(const ::coder::array<char, 2U> &cfilename,
-                   const char *cpermission)
+signed char cfopen(const array<char, 2U> &cfilename, const char *cpermission)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       111,     // lineNo

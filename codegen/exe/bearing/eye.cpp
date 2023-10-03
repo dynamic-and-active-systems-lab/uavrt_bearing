@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: eye.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -21,11 +21,11 @@
 // Function Definitions
 //
 // Arguments    : double varargin_1
-//                ::coder::array<double, 2U> &b_I
+//                array<double, 2U> &b_I
 // Return Type  : void
 //
 namespace coder {
-void eye(double varargin_1, ::coder::array<double, 2U> &b_I)
+void eye(double varargin_1, array<double, 2U> &b_I)
 {
   int loop_ub;
   int m_tmp_tmp_tmp;

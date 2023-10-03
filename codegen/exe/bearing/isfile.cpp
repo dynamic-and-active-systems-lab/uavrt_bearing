@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: isfile.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -38,11 +38,11 @@ static void t_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 }
 
 //
-// Arguments    : const ::coder::array<char, 2U> &fileName
+// Arguments    : const array<char, 2U> &fileName
 // Return Type  : boolean_T
 //
 namespace coder {
-boolean_T isfile(const ::coder::array<char, 2U> &fileName)
+boolean_T isfile(const array<char, 2U> &fileName)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       65,                                 // lineNo

@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: unique.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -20,13 +20,12 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<double, 1U> &a
-//                ::coder::array<double, 1U> &b
+// Arguments    : const array<double, 1U> &a
+//                array<double, 1U> &b
 // Return Type  : void
 //
 namespace coder {
-void unique_vector(const ::coder::array<double, 1U> &a,
-                   ::coder::array<double, 1U> &b)
+void unique_vector(const array<double, 1U> &a, array<double, 1U> &b)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       241,            // lineNo
@@ -161,7 +160,9 @@ void unique_vector(const ::coder::array<double, 1U> &a,
   for (j = 0; j < pEnd; j++) {
     b[nb + j] = b[q + j];
   }
-  nb += pEnd;
+  if (pEnd - 1 >= 0) {
+    nb += pEnd;
+  }
   if (nb > a.size(0)) {
     g_rtErrorWithMessageID(v_emlrtRTEI.fName, v_emlrtRTEI.lineNo);
   }

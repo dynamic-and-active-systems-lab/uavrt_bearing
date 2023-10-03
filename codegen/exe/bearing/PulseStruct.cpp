@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: PulseStruct.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -524,11 +524,11 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
     // pulse(nRows,nCols) = pulse; %Coder doesn't like this
     pulse.set_size(pos.size(0), 1);
     ntilerows = pos.size(0);
-    for (int itilerow{0}; itilerow < ntilerows; itilerow++) {
-      pulse[itilerow] = pulseInit;
-    }
     if (pos.size(0) > 2147483646) {
       coder::check_forloop_overflow_error();
+    }
+    for (int itilerow{0}; itilerow < ntilerows; itilerow++) {
+      pulse[itilerow] = pulseInit;
     }
     ntilerows = pos.size(0);
     for (int itilerow{0}; itilerow < ntilerows; itilerow++) {

@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: xswap.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef XSWAP_H
@@ -23,7 +23,7 @@ namespace internal {
 namespace blas {
 void xswap(double x[4]);
 
-void xswap(int n, ::coder::array<double, 2U> &x, int iy0);
+void xswap(int n, array<double, 2U> &x, int iy0);
 
 } // namespace blas
 } // namespace internal

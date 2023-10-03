@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: xaxpy.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -18,14 +18,14 @@
 // Arguments    : int n
 //                double a
 //                int ix0
-//                ::coder::array<double, 2U> &y
+//                array<double, 2U> &y
 //                int iy0
 // Return Type  : void
 //
 namespace coder {
 namespace internal {
 namespace blas {
-void xaxpy(int n, double a, int ix0, ::coder::array<double, 2U> &y, int iy0)
+void xaxpy(int n, double a, int ix0, array<double, 2U> &y, int iy0)
 {
   if ((n >= 1) && (!(a == 0.0))) {
     int i;

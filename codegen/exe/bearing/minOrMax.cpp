@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: minOrMax.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -45,13 +45,13 @@ static void q_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 }
 
 //
-// Arguments    : const ::coder::array<double, 1U> &x
+// Arguments    : const array<double, 1U> &x
 //                int &idx
 // Return Type  : double
 //
 namespace coder {
 namespace internal {
-double maximum(const ::coder::array<double, 1U> &x, int &idx)
+double maximum(const array<double, 1U> &x, int &idx)
 {
   double ex;
   int last;
@@ -115,10 +115,10 @@ double maximum(const ::coder::array<double, 1U> &x, int &idx)
 }
 
 //
-// Arguments    : const ::coder::array<double, 2U> &x
+// Arguments    : const array<double, 2U> &x
 // Return Type  : double
 //
-double maximum(const ::coder::array<double, 2U> &x)
+double maximum(const array<double, 2U> &x)
 {
   double ex;
   int last;
@@ -178,10 +178,10 @@ double maximum(const ::coder::array<double, 2U> &x)
 }
 
 //
-// Arguments    : const ::coder::array<double, 1U> &x
+// Arguments    : const array<double, 1U> &x
 // Return Type  : double
 //
-double minimum(const ::coder::array<double, 1U> &x)
+double minimum(const array<double, 1U> &x)
 {
   double ex;
   int last;
@@ -241,10 +241,10 @@ double minimum(const ::coder::array<double, 1U> &x)
 }
 
 //
-// Arguments    : const ::coder::array<double, 2U> &x
+// Arguments    : const array<double, 2U> &x
 // Return Type  : double
 //
-double minimum(const ::coder::array<double, 2U> &x)
+double minimum(const array<double, 2U> &x)
 {
   double ex;
   int last;

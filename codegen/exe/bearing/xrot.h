@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: xrot.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef XROT_H
@@ -23,8 +23,7 @@ namespace internal {
 namespace blas {
 void xrot(double x[4], int iy0, double c, double s);
 
-void xrot(int n, ::coder::array<double, 2U> &x, int ix0, int iy0, double c,
-          double s);
+void xrot(int n, array<double, 2U> &x, int ix0, int iy0, double c, double s);
 
 } // namespace blas
 } // namespace internal

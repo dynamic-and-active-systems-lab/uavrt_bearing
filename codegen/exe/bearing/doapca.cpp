@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: doapca.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -421,7 +421,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       8,           // colNo
       "",          // aName
       "wrapTo2Pi", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/shared/maputils/wrapTo2Pi.m", // pName
+      "/Applications/MATLAB_R2023b.app/toolbox/shared/maputils/wrapTo2Pi.m", // pName
       0 // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
@@ -431,7 +431,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       5,           // colNo
       "",          // aName
       "wrapTo360", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/shared/maputils/wrapTo360.m", // pName
+      "/Applications/MATLAB_R2023b.app/toolbox/shared/maputils/wrapTo360.m", // pName
       0 // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
@@ -480,14 +480,14 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       17,          // lineNo
       8,           // colNo
       "wrapTo2Pi", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/shared/maputils/wrapTo2Pi.m" // pName
+      "/Applications/MATLAB_R2023b.app/toolbox/shared/maputils/wrapTo2Pi.m" // pName
   };
   static rtEqualityCheckInfo d_emlrtECI{
       1,           // nDims
       17,          // lineNo
       5,           // colNo
       "wrapTo360", // fName
-      "/Applications/MATLAB_R2023a.app/toolbox/shared/maputils/wrapTo360.m" // pName
+      "/Applications/MATLAB_R2023b.app/toolbox/shared/maputils/wrapTo360.m" // pName
   };
   static rtEqualityCheckInfo e_emlrtECI{
       1,        // nDims
@@ -575,9 +575,9 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
   int maxdimlen;
   int nx;
   boolean_T b;
-  boolean_T guard1{false};
+  boolean_T guard1;
   boolean_T rEQ0;
-  coder::internal::horzcatStructList(pulseList, r);
+  coder::internal::b_horzcatStructList(pulseList, r);
   maxdimlen = 1;
   if (r.size(1) > 1) {
     maxdimlen = r.size(1);
@@ -593,14 +593,14 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
     l_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   curr_pulses_snrdB.set_size(pulseList.size(0));
-  nx = pulseList.size(0);
+  maxdimlen = pulseList.size(0);
   curr_pulses_snrLin.set_size(pulseList.size(0));
-  for (int i{0}; i < nx; i++) {
+  for (int i{0}; i < maxdimlen; i++) {
     totalSweptAngle = r[i];
     curr_pulses_snrdB[i] = totalSweptAngle;
     curr_pulses_snrLin[i] = rt_powd_snf(10.0, totalSweptAngle / 10.0);
   }
-  coder::internal::b_horzcatStructList(pulseList, r1);
+  coder::internal::c_horzcatStructList(pulseList, r1);
   maxdimlen = 1;
   if (r1.size(1) > 1) {
     maxdimlen = r1.size(1);
@@ -616,8 +616,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
     l_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
   curr_pulses_noisePSD.set_size(pulseList.size(0));
-  nx = pulseList.size(0);
-  for (int i{0}; i < nx; i++) {
+  maxdimlen = pulseList.size(0);
+  for (int i{0}; i < maxdimlen; i++) {
     curr_pulses_noisePSD[i] = r1[i];
   }
   coder::internal::horzcatStructList(pulseList, r2);
@@ -640,19 +640,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
   }
   maxdimlen = pulseList.size(0);
   r3 = r2.reshape(maxdimlen);
-  maxdimlen = r3.size(0);
-  if (r3.size(0) == 0) {
-    nx = 0;
-  } else {
-    nx = r3.size(0);
-  }
-  r4.set_size(1, nx);
-  if (r3.size(0) > 2147483646) {
-    coder::check_forloop_overflow_error();
-  }
-  for (int i{0}; i < maxdimlen; i++) {
-    r4[i] = r3[i].yaw_deg;
-  }
+  coder::internal::horzcatStructList(r3, r4);
   maxdimlen = 1;
   if (r4.size(1) > 1) {
     maxdimlen = r4.size(1);
@@ -667,7 +655,7 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
   if (pulseList.size(0) != r4.size(1)) {
     l_rtErrorWithMessageID(w_emlrtRTEI.fName, w_emlrtRTEI.lineNo);
   }
-  coder::internal::c_horzcatStructList(pulseList, r5);
+  coder::internal::d_horzcatStructList(pulseList, r5);
   maxdimlen = 1;
   if (r5.size(1) > 1) {
     maxdimlen = r5.size(1);
@@ -684,24 +672,24 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
   }
   // Clear out placeholds for bad data points;
   end_tmp = pulseList.size(0) - 1;
-  for (int i{0}; i <= end_tmp; i++) {
-    if (r1[i] == -9999.0) {
-      if (i > end_tmp) {
-        rtDynamicBoundsError(i, 0, end_tmp, b_emlrtBCI);
+  for (maxdimlen = 0; maxdimlen <= end_tmp; maxdimlen++) {
+    if (r1[maxdimlen] == -9999.0) {
+      if (maxdimlen > end_tmp) {
+        rtDynamicBoundsError(maxdimlen, 0, end_tmp, b_emlrtBCI);
       }
-      curr_pulses_noisePSD[i] = rtNaN;
+      curr_pulses_noisePSD[maxdimlen] = rtNaN;
     }
   }
-  for (int i{0}; i <= end_tmp; i++) {
-    if (r[i] == -9999.0) {
-      if (i > end_tmp) {
-        rtDynamicBoundsError(i, 0, end_tmp, c_emlrtBCI);
+  for (maxdimlen = 0; maxdimlen <= end_tmp; maxdimlen++) {
+    if (r[maxdimlen] == -9999.0) {
+      if (maxdimlen > end_tmp) {
+        rtDynamicBoundsError(maxdimlen, 0, end_tmp, c_emlrtBCI);
       }
-      curr_pulses_snrdB[i] = rtNaN;
+      curr_pulses_snrdB[maxdimlen] = rtNaN;
     }
   }
-  nx = curr_pulses_snrdB.size(0);
-  for (int i{0}; i < nx; i++) {
+  maxdimlen = curr_pulses_snrdB.size(0);
+  for (int i{0}; i < maxdimlen; i++) {
     totalSweptAngle = curr_pulses_snrdB[i] / 10.0;
     curr_pulses_snrdB[i] = rt_powd_snf(10.0, totalSweptAngle);
   }
@@ -713,8 +701,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
                                 curr_pulses_snrdB.size(0), emlrtECI);
   }
   if (curr_pulses_noisePSD.size(0) == curr_pulses_snrdB.size(0)) {
-    nx = curr_pulses_noisePSD.size(0);
-    for (int i{0}; i < nx; i++) {
+    maxdimlen = curr_pulses_noisePSD.size(0);
+    for (int i{0}; i < maxdimlen; i++) {
       curr_pulses_noisePSD[i] = curr_pulses_noisePSD[i] * curr_pulses_snrdB[i];
     }
   } else {
@@ -724,8 +712,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
   DOA = rtNaN;
   tau = rtNaN;
   positiveInput.set_size(curr_pulses_snrLin.size(0));
-  nx = curr_pulses_snrLin.size(0);
-  for (int i{0}; i < nx; i++) {
+  maxdimlen = curr_pulses_snrLin.size(0);
+  for (int i{0}; i < maxdimlen; i++) {
     positiveInput[i] = (curr_pulses_snrLin[i] < 0.0);
   }
   rEQ0 = coder::any(positiveInput);
@@ -742,8 +730,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       curr_pulses_snrdB[maxdimlen] = std::abs(curr_pulses_snrLin[maxdimlen]);
     }
     positiveInput.set_size(curr_pulses_snrdB.size(0));
-    nx = curr_pulses_snrdB.size(0);
-    for (int i{0}; i < nx; i++) {
+    maxdimlen = curr_pulses_snrdB.size(0);
+    for (int i{0}; i < maxdimlen; i++) {
       positiveInput[i] = (curr_pulses_snrdB[i] == rtInf);
     }
     rEQ0 = coder::any(positiveInput);
@@ -755,8 +743,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       // P_all_ang_unscaled = (curr_pulses_snrLin./min(curr_pulses_snrLin));
       totalSweptAngle = coder::internal::minimum(curr_pulses_noisePSD);
       P_all_ang_unscaled.set_size(curr_pulses_noisePSD.size(0));
-      nx = curr_pulses_noisePSD.size(0);
-      for (int i{0}; i < nx; i++) {
+      maxdimlen = curr_pulses_noisePSD.size(0);
+      for (int i{0}; i < maxdimlen; i++) {
         P_all_ang_unscaled[i] = curr_pulses_noisePSD[i] / totalSweptAngle;
       }
       if (b) {
@@ -764,13 +752,13 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
                                     b_emlrtECI);
       }
       angs.set_size(pulseList.size(0));
-      nx = pulseList.size(0);
-      for (int i{0}; i < nx; i++) {
+      maxdimlen = pulseList.size(0);
+      for (int i{0}; i < maxdimlen; i++) {
         angs[i] = (r4[i] + r5[i]) * 3.1415926535897931 / 180.0;
       }
       positiveInput.set_size(angs.size(0));
-      nx = angs.size(0);
-      for (int i{0}; i < nx; i++) {
+      maxdimlen = angs.size(0);
+      for (int i{0}; i < maxdimlen; i++) {
         positiveInput[i] = (angs[i] > 0.0);
         totalSweptAngle = angs[i];
         if (std::isnan(totalSweptAngle) || std::isinf(totalSweptAngle)) {
@@ -794,8 +782,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
         angs[i] = varargout_1;
       }
       r6.set_size(angs.size(0));
-      nx = angs.size(0);
-      for (int i{0}; i < nx; i++) {
+      maxdimlen = angs.size(0);
+      for (int i{0}; i < maxdimlen; i++) {
         r6[i] = (angs[i] == 0.0);
       }
       if (b) {
@@ -804,26 +792,26 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       }
       if (r6.size(0) == positiveInput.size(0)) {
         r7.set_size(r6.size(0));
-        nx = r6.size(0);
-        for (int i{0}; i < nx; i++) {
+        maxdimlen = r6.size(0);
+        for (int i{0}; i < maxdimlen; i++) {
           r7[i] = (r6[i] && positiveInput[i]);
         }
       } else {
         b_and(r7, r6, positiveInput);
       }
       nx = r7.size(0) - 1;
-      for (int i{0}; i <= nx; i++) {
-        if (r7[i]) {
-          if (i > end_tmp) {
-            rtDynamicBoundsError(i, 0, end_tmp, d_emlrtBCI);
+      for (maxdimlen = 0; maxdimlen <= nx; maxdimlen++) {
+        if (r7[maxdimlen]) {
+          if (maxdimlen > end_tmp) {
+            rtDynamicBoundsError(maxdimlen, 0, end_tmp, d_emlrtBCI);
           }
-          angs[i] = 6.2831853071795862;
+          angs[maxdimlen] = 6.2831853071795862;
         }
       }
       positiveInput.set_size(pulseList.size(0));
-      nx = pulseList.size(0);
+      maxdimlen = pulseList.size(0);
       curr_pulses_snrdB.set_size(pulseList.size(0));
-      for (int i{0}; i < nx; i++) {
+      for (int i{0}; i < maxdimlen; i++) {
         totalSweptAngle = r4[i];
         positiveInput[i] = (totalSweptAngle > 0.0);
         if (std::isnan(totalSweptAngle) || std::isinf(totalSweptAngle)) {
@@ -841,8 +829,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
         curr_pulses_snrdB[i] = varargout_1;
       }
       r6.set_size(curr_pulses_snrdB.size(0));
-      nx = curr_pulses_snrdB.size(0);
-      for (int i{0}; i < nx; i++) {
+      maxdimlen = curr_pulses_snrdB.size(0);
+      for (int i{0}; i < maxdimlen; i++) {
         r6[i] = (curr_pulses_snrdB[i] == 0.0);
       }
       if (b) {
@@ -851,20 +839,20 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       }
       if (r6.size(0) == positiveInput.size(0)) {
         r8.set_size(r6.size(0));
-        nx = r6.size(0);
-        for (int i{0}; i < nx; i++) {
+        maxdimlen = r6.size(0);
+        for (int i{0}; i < maxdimlen; i++) {
           r8[i] = (r6[i] && positiveInput[i]);
         }
       } else {
         b_and(r8, r6, positiveInput);
       }
       nx = r8.size(0) - 1;
-      for (int i{0}; i <= nx; i++) {
-        if (r8[i]) {
-          if (i > end_tmp) {
-            rtDynamicBoundsError(i, 0, end_tmp, e_emlrtBCI);
+      for (maxdimlen = 0; maxdimlen <= nx; maxdimlen++) {
+        if (r8[maxdimlen]) {
+          if (maxdimlen > end_tmp) {
+            rtDynamicBoundsError(maxdimlen, 0, end_tmp, e_emlrtBCI);
           }
-          curr_pulses_snrdB[i] = 360.0;
+          curr_pulses_snrdB[maxdimlen] = 360.0;
         }
       }
       coder::internal::sort(curr_pulses_snrdB);
@@ -888,8 +876,8 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
       } else {
         double Pavg[2];
         curr_pulses_snrdB.set_size(angs.size(0));
-        nx = angs.size(0);
-        for (int i{0}; i < nx; i++) {
+        maxdimlen = angs.size(0);
+        for (int i{0}; i < maxdimlen; i++) {
           curr_pulses_snrdB[i] = angs[i];
         }
         nx = angs.size(0);
@@ -916,16 +904,16 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
         }
         if (P_all_ang_unscaled.size(0) == curr_pulses_snrdB.size(0)) {
           curr_pulses_snrdB.set_size(P_all_ang_unscaled.size(0));
-          nx = P_all_ang_unscaled.size(0);
-          for (int i{0}; i < nx; i++) {
+          maxdimlen = P_all_ang_unscaled.size(0);
+          for (int i{0}; i < maxdimlen; i++) {
             curr_pulses_snrdB[i] = P_all_ang_unscaled[i] * curr_pulses_snrdB[i];
           }
         } else {
           b_times(curr_pulses_snrdB, P_all_ang_unscaled);
         }
         if (P_all_ang_unscaled.size(0) == angs.size(0)) {
-          nx = P_all_ang_unscaled.size(0);
-          for (int i{0}; i < nx; i++) {
+          maxdimlen = P_all_ang_unscaled.size(0);
+          for (int i{0}; i < maxdimlen; i++) {
             P_all_ang_unscaled[i] = P_all_ang_unscaled[i] * angs[i];
           }
         } else {
@@ -935,12 +923,12 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
           n_rtErrorWithMessageID(x_emlrtRTEI.fName, x_emlrtRTEI.lineNo);
         }
         Pe_star_dB.set_size(curr_pulses_snrdB.size(0), 2);
-        nx = curr_pulses_snrdB.size(0);
-        for (int i{0}; i < nx; i++) {
+        maxdimlen = curr_pulses_snrdB.size(0);
+        for (int i{0}; i < maxdimlen; i++) {
           Pe_star_dB[i] = curr_pulses_snrdB[i];
         }
-        nx = P_all_ang_unscaled.size(0);
-        for (int i{0}; i < nx; i++) {
+        maxdimlen = P_all_ang_unscaled.size(0);
+        for (int i{0}; i < maxdimlen; i++) {
           Pe_star_dB[i + Pe_star_dB.size(0)] = P_all_ang_unscaled[i];
         }
         nx = Pe_star_dB.size(0);
@@ -948,27 +936,23 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
           nx = 2;
         }
         if (Pe_star_dB.size(0) == 0) {
-          maxdimlen = 0;
-        } else {
-          maxdimlen = nx;
+          nx = 0;
         }
-        coder::eye(static_cast<double>(maxdimlen), a);
-        totalSweptAngle = 1.0 / static_cast<double>(maxdimlen);
-        if ((a.size(0) != maxdimlen) &&
-            ((a.size(0) != 1) && (maxdimlen != 1))) {
-          emlrtDimSizeImpxCheckR2021b(a.size(0), maxdimlen, g_emlrtECI);
+        coder::eye(static_cast<double>(nx), a);
+        totalSweptAngle = 1.0 / static_cast<double>(nx);
+        if ((a.size(0) != nx) && ((a.size(0) != 1) && (nx != 1))) {
+          emlrtDimSizeImpxCheckR2021b(a.size(0), nx, g_emlrtECI);
         }
-        if ((a.size(1) != maxdimlen) &&
-            ((a.size(1) != 1) && (maxdimlen != 1))) {
-          emlrtDimSizeImpxCheckR2021b(a.size(1), maxdimlen, h_emlrtECI);
+        if ((a.size(1) != nx) && ((a.size(1) != 1) && (nx != 1))) {
+          emlrtDimSizeImpxCheckR2021b(a.size(1), nx, h_emlrtECI);
         }
-        if ((a.size(0) == maxdimlen) && (a.size(1) == maxdimlen)) {
-          nx = a.size(0) * a.size(1);
-          for (int i{0}; i < nx; i++) {
+        if ((a.size(0) == nx) && (a.size(1) == nx)) {
+          maxdimlen = a.size(0) * a.size(1);
+          for (int i{0}; i < maxdimlen; i++) {
             a[i] = a[i] - totalSweptAngle;
           }
         } else {
-          binary_expand_op(a, totalSweptAngle, maxdimlen);
+          binary_expand_op(a, totalSweptAngle, nx);
         }
         if (Pe_star_dB.size(0) != a.size(1)) {
           if ((a.size(0) == 1) && (a.size(1) == 1)) {
@@ -979,13 +963,13 @@ double doapca(const coder::array<e_struct_T, 1U> &pulseList, double &tau)
         }
         coder::internal::blas::mtimes(a, Pe_star_dB, Pe_dB);
         y.set_size(2, Pe_star_dB.size(0));
-        nx = Pe_star_dB.size(0);
-        for (int i{0}; i < nx; i++) {
+        maxdimlen = Pe_star_dB.size(0);
+        for (int i{0}; i < maxdimlen; i++) {
           y[2 * i] = totalSweptAngle * Pe_star_dB[i];
           y[2 * i + 1] = totalSweptAngle * Pe_star_dB[i + Pe_star_dB.size(0)];
         }
-        if (y.size(1) != maxdimlen) {
-          if (maxdimlen == 1) {
+        if (y.size(1) != nx) {
+          if (nx == 1) {
             p_rtErrorWithMessageID(y_emlrtRTEI.fName, y_emlrtRTEI.lineNo);
           } else {
             o_rtErrorWithMessageID(ab_emlrtRTEI.fName, ab_emlrtRTEI.lineNo);

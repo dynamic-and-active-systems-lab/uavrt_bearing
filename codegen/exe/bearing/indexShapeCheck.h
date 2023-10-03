@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: indexShapeCheck.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef INDEXSHAPECHECK_H

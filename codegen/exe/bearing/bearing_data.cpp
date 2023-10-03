@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: bearing_data.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -23,6 +23,16 @@ rtRunTimeErrorInfo b_emlrtRTEI{
     48,       // lineNo
     "fprintf" // fName
 };
+
+rtDoubleCheckInfo
+    emlrtDCI{
+        12,       // lineNo
+        20,       // colNo
+        "blanks", // fName
+        "/Applications/MATLAB_R2023b.app/toolbox/eml/lib/matlab/strfun/"
+        "blanks.m", // pName
+        4           // checkKind
+    };
 
 rtRunTimeErrorInfo c_emlrtRTEI{
     13,              // lineNo
@@ -43,16 +53,6 @@ rtRunTimeErrorInfo i_emlrtRTEI{
     494,          // lineNo
     "getFileStar" // fName
 };
-
-rtDoubleCheckInfo
-    emlrtDCI{
-        12,       // lineNo
-        20,       // colNo
-        "blanks", // fName
-        "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/strfun/"
-        "blanks.m", // pName
-        4           // checkKind
-    };
 
 rtRunTimeErrorInfo j_emlrtRTEI{
     24,    // lineNo

@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: median.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -18,11 +18,11 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<double, 2U> &x
+// Arguments    : const array<double, 2U> &x
 // Return Type  : double
 //
 namespace coder {
-double median(const ::coder::array<double, 2U> &x)
+double median(const array<double, 2U> &x)
 {
   array<double, 1U> a__4;
   double y;

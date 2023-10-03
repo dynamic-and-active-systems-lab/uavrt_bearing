@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: unique.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef UNIQUE_H
@@ -19,8 +19,7 @@
 
 // Function Declarations
 namespace coder {
-void unique_vector(const ::coder::array<double, 1U> &a,
-                   ::coder::array<double, 1U> &b);
+void unique_vector(const array<double, 1U> &a, array<double, 1U> &b);
 
 }
 

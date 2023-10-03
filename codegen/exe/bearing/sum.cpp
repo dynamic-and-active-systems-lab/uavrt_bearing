@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: sum.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -15,11 +15,11 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<double, 1U> &x
+// Arguments    : const array<double, 1U> &x
 // Return Type  : double
 //
 namespace coder {
-double sum(const ::coder::array<double, 1U> &x)
+double sum(const array<double, 1U> &x)
 {
   double y;
   if (x.size(0) == 0) {

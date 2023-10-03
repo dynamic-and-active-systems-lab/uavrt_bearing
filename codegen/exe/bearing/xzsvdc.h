@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: xzsvdc.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef XZSVDC_H
@@ -21,8 +21,8 @@
 namespace coder {
 namespace internal {
 namespace reflapack {
-int xzsvdc(::coder::array<double, 2U> &A, ::coder::array<double, 2U> &U,
-           double S_data[], double V[4]);
+int xzsvdc(array<double, 2U> &A, array<double, 2U> &U, double S_data[],
+           double V[4]);
 
 }
 } // namespace internal

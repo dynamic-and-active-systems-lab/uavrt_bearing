@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: bearing_data.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef BEARING_DATA_H
@@ -21,11 +21,11 @@
 // Variable Declarations
 extern rtRunTimeErrorInfo emlrtRTEI;
 extern rtRunTimeErrorInfo b_emlrtRTEI;
+extern rtDoubleCheckInfo emlrtDCI;
 extern rtRunTimeErrorInfo c_emlrtRTEI;
 extern rtRunTimeErrorInfo d_emlrtRTEI;
 extern rtRunTimeErrorInfo h_emlrtRTEI;
 extern rtRunTimeErrorInfo i_emlrtRTEI;
-extern rtDoubleCheckInfo emlrtDCI;
 extern rtRunTimeErrorInfo j_emlrtRTEI;
 extern rtRunTimeErrorInfo k_emlrtRTEI;
 extern rtRunTimeErrorInfo n_emlrtRTEI;

@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: xdotc.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef XDOTC_H
@@ -21,8 +21,8 @@
 namespace coder {
 namespace internal {
 namespace blas {
-double xdotc(int n, const ::coder::array<double, 2U> &x, int ix0,
-             const ::coder::array<double, 2U> &y, int iy0);
+double xdotc(int n, const array<double, 2U> &x, int ix0,
+             const array<double, 2U> &y, int iy0);
 
 }
 } // namespace internal

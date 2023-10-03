@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: fgetl.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -17,11 +17,11 @@
 // Function Definitions
 //
 // Arguments    : double fileID
-//                ::coder::array<char, 2U> &out
+//                array<char, 2U> &out
 // Return Type  : void
 //
 namespace coder {
-void fgetl(double fileID, ::coder::array<char, 2U> &out)
+void fgetl(double fileID, array<char, 2U> &out)
 {
   b_fgets(fileID, out);
   if (out.size(1) != 0) {
@@ -30,38 +30,26 @@ void fgetl(double fileID, ::coder::array<char, 2U> &out)
     if (c == '\n') {
       if ((out.size(1) > 1) && (out[out.size(1) - 2] == '\r')) {
         int loop_ub;
-        if (out.size(1) - 2 < 1) {
-          loop_ub = 0;
-        } else {
-          loop_ub = out.size(1) - 2;
-        }
+        loop_ub = out.size(1) - 2;
         for (int i{0}; i < loop_ub; i++) {
           out[i] = out[i];
         }
-        out.set_size(1, loop_ub);
+        out.set_size(1, out.size(1) - 2);
       } else {
         int loop_ub;
-        if (out.size(1) - 1 < 1) {
-          loop_ub = 0;
-        } else {
-          loop_ub = out.size(1) - 1;
-        }
+        loop_ub = out.size(1) - 1;
         for (int i{0}; i < loop_ub; i++) {
           out[i] = out[i];
         }
-        out.set_size(1, loop_ub);
+        out.set_size(1, out.size(1) - 1);
       }
     } else if (c == '\r') {
       int loop_ub;
-      if (out.size(1) - 1 < 1) {
-        loop_ub = 0;
-      } else {
-        loop_ub = out.size(1) - 1;
-      }
+      loop_ub = out.size(1) - 1;
       for (int i{0}; i < loop_ub; i++) {
         out[i] = out[i];
       }
-      out.set_size(1, loop_ub);
+      out.set_size(1, out.size(1) - 1);
     }
   }
 }

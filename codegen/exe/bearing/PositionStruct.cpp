@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: PositionStruct.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -180,14 +180,14 @@ void PositionStruct(const coder::array<double, 1U> &lat,
     // pos(nRows,nCols) = pos; %Coder doesn't like this
     pos.set_size(lat.size(0), 1);
     ntilerows = lat.size(0);
+    if (lat.size(0) > 2147483646) {
+      coder::check_forloop_overflow_error();
+    }
     for (int itilerow{0}; itilerow < ntilerows; itilerow++) {
       pos[itilerow].latitude_deg = 0.0;
       pos[itilerow].longitude_deg = 0.0;
       pos[itilerow].absolute_altitude_m = 0.0;
       pos[itilerow].relative_altitude_m = 0.0;
-    }
-    if (lat.size(0) > 2147483646) {
-      coder::check_forloop_overflow_error();
     }
     ntilerows = lat.size(0);
     for (int itilerow{0}; itilerow < ntilerows; itilerow++) {

@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: nullAssignment.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -30,14 +30,13 @@ static rtRunTimeErrorInfo u_emlrtRTEI{
 
 // Function Definitions
 //
-// Arguments    : ::coder::array<double, 2U> &x
-//                const ::coder::array<int, 2U> &idx
+// Arguments    : array<double, 2U> &x
+//                const array<int, 2U> &idx
 // Return Type  : void
 //
 namespace coder {
 namespace internal {
-void b_nullAssignment(::coder::array<double, 2U> &x,
-                      const ::coder::array<int, 2U> &idx)
+void b_nullAssignment(array<double, 2U> &x, const array<int, 2U> &idx)
 {
   array<boolean_T, 2U> b;
   int k;
@@ -121,12 +120,11 @@ void b_nullAssignment(::coder::array<double, 2U> &x,
 }
 
 //
-// Arguments    : ::coder::array<double, 2U> &x
-//                const ::coder::array<int, 2U> &idx
+// Arguments    : array<double, 2U> &x
+//                const array<int, 2U> &idx
 // Return Type  : void
 //
-void nullAssignment(::coder::array<double, 2U> &x,
-                    const ::coder::array<int, 2U> &idx)
+void nullAssignment(array<double, 2U> &x, const array<int, 2U> &idx)
 {
   array<boolean_T, 2U> b;
   int i;
@@ -208,12 +206,11 @@ void nullAssignment(::coder::array<double, 2U> &x,
 }
 
 //
-// Arguments    : ::coder::array<double, 1U> &x
-//                const ::coder::array<int, 2U> &idx
+// Arguments    : array<double, 1U> &x
+//                const array<int, 2U> &idx
 // Return Type  : void
 //
-void nullAssignment(::coder::array<double, 1U> &x,
-                    const ::coder::array<int, 2U> &idx)
+void nullAssignment(array<double, 1U> &x, const array<int, 2U> &idx)
 {
   static rtRunTimeErrorInfo v_emlrtRTEI{
       181,                     // lineNo
@@ -282,12 +279,11 @@ void nullAssignment(::coder::array<double, 1U> &x,
 }
 
 //
-// Arguments    : ::coder::array<double, 2U> &x
-//                const ::coder::array<int, 1U> &idx
+// Arguments    : array<double, 2U> &x
+//                const array<int, 1U> &idx
 // Return Type  : void
 //
-void nullAssignment(::coder::array<double, 2U> &x,
-                    const ::coder::array<int, 1U> &idx)
+void nullAssignment(array<double, 2U> &x, const array<int, 1U> &idx)
 {
   array<boolean_T, 2U> b;
   int i;

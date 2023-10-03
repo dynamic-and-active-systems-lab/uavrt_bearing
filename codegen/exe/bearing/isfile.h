@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: isfile.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef ISFILE_H
@@ -19,7 +19,7 @@
 
 // Function Declarations
 namespace coder {
-boolean_T isfile(const ::coder::array<char, 2U> &fileName);
+boolean_T isfile(const array<char, 2U> &fileName);
 
 }
 

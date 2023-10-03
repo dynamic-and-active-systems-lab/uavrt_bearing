@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: any1.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -16,11 +16,11 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<boolean_T, 1U> &x
+// Arguments    : const array<boolean_T, 1U> &x
 // Return Type  : boolean_T
 //
 namespace coder {
-boolean_T any(const ::coder::array<boolean_T, 1U> &x)
+boolean_T any(const array<boolean_T, 1U> &x)
 {
   int ix;
   boolean_T exitg1;

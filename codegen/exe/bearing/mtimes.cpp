@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: mtimes.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -16,16 +16,16 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<double, 2U> &A
-//                const ::coder::array<double, 2U> &B
-//                ::coder::array<double, 2U> &C
+// Arguments    : const array<double, 2U> &A
+//                const array<double, 2U> &B
+//                array<double, 2U> &C
 // Return Type  : void
 //
 namespace coder {
 namespace internal {
 namespace blas {
-void mtimes(const ::coder::array<double, 2U> &A,
-            const ::coder::array<double, 2U> &B, ::coder::array<double, 2U> &C)
+void mtimes(const array<double, 2U> &A, const array<double, 2U> &B,
+            array<double, 2U> &C)
 {
   int inner;
   int mc;
@@ -68,11 +68,11 @@ void mtimes(const ::coder::array<double, 2U> &A,
 }
 
 //
-// Arguments    : const ::coder::array<double, 2U> &A
+// Arguments    : const array<double, 2U> &A
 //                double C[2]
 // Return Type  : void
 //
-void mtimes(const ::coder::array<double, 2U> &A, double C[2])
+void mtimes(const array<double, 2U> &A, double C[2])
 {
   int inner;
   inner = A.size(1);

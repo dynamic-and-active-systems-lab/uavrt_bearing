@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: eye.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef EYE_H
@@ -19,7 +19,7 @@
 
 // Function Declarations
 namespace coder {
-void eye(double varargin_1, ::coder::array<double, 2U> &b_I);
+void eye(double varargin_1, array<double, 2U> &b_I);
 
 }
 

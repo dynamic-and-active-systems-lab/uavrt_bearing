@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: readpulsecsv.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -671,7 +671,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         d_rtErrorWithMessageID(c_emlrtRTEI.fName, c_emlrtRTEI.lineNo);
       }
       if (!(b_x != 0.0)) {
-        boolean_T guard1{false};
+        boolean_T guard1;
         coder::fgetl(static_cast<double>(fileid), lineStr);
         if (lineStr.size(1) < 1) {
           rtDynamicBoundsError(1, 1, lineStr.size(1), b_emlrtBCI);

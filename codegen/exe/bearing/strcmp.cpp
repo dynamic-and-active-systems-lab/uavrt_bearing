@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: strcmp.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -15,12 +15,12 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<char, 2U> &a
+// Arguments    : const array<char, 2U> &a
 // Return Type  : boolean_T
 //
 namespace coder {
 namespace internal {
-boolean_T b_strcmp(const ::coder::array<char, 2U> &a)
+boolean_T b_strcmp(const array<char, 2U> &a)
 {
   static const char cv[3]{'a', 'l', 'l'};
   boolean_T b_bool;

@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: repmat.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -23,12 +23,12 @@
 //
 // Arguments    : const d_struct_T a_data[]
 //                double varargin_1
-//                ::coder::array<d_struct_T, 2U> &b
+//                array<d_struct_T, 2U> &b
 // Return Type  : void
 //
 namespace coder {
 void repmat(const d_struct_T a_data[], double varargin_1,
-            ::coder::array<d_struct_T, 2U> &b)
+            array<d_struct_T, 2U> &b)
 {
   int i;
   if ((varargin_1 != varargin_1) || std::isinf(varargin_1)) {
@@ -36,11 +36,11 @@ void repmat(const d_struct_T a_data[], double varargin_1,
   }
   i = static_cast<int>(varargin_1);
   b.set_size(i, 1);
-  for (int itilerow{0}; itilerow < i; itilerow++) {
-    b[itilerow] = a_data[0];
-  }
   if (static_cast<int>(varargin_1) > 2147483646) {
     check_forloop_overflow_error();
+  }
+  for (int itilerow{0}; itilerow < i; itilerow++) {
+    b[itilerow] = a_data[0];
   }
 }
 

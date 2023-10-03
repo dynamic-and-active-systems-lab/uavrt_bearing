@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: xscal.cpp
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 // Include Files
@@ -18,14 +18,14 @@
 //
 // Arguments    : int n
 //                double a
-//                ::coder::array<double, 2U> &x
+//                array<double, 2U> &x
 //                int ix0
 // Return Type  : void
 //
 namespace coder {
 namespace internal {
 namespace blas {
-void xscal(int n, double a, ::coder::array<double, 2U> &x, int ix0)
+void xscal(int n, double a, array<double, 2U> &x, int ix0)
 {
   int b;
   b = (ix0 + n) - 1;
@@ -38,12 +38,11 @@ void xscal(int n, double a, ::coder::array<double, 2U> &x, int ix0)
 }
 
 //
-// Arguments    : double a
-//                double x[4]
+// Arguments    : double x[4]
 //                int ix0
 // Return Type  : void
 //
-void xscal(double a, double x[4], int ix0)
+void xscal(double x[4], int ix0)
 {
   int b;
   b = ix0 + 1;
@@ -51,7 +50,7 @@ void xscal(double a, double x[4], int ix0)
     check_forloop_overflow_error();
   }
   for (int k{ix0}; k <= b; k++) {
-    x[k - 1] *= a;
+    x[k - 1] = -x[k - 1];
   }
 }
 

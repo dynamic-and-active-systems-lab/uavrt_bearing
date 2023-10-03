@@ -4,8 +4,8 @@
 // government, commercial, or other organizational use.
 // File: any1.h
 //
-// MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 03-Oct-2023 08:03:05
+// MATLAB Coder version            : 23.2
+// C/C++ source code generated on  : 03-Oct-2023 13:40:05
 //
 
 #ifndef ANY1_H
@@ -19,7 +19,7 @@
 
 // Function Declarations
 namespace coder {
-boolean_T any(const ::coder::array<boolean_T, 1U> &x);
+boolean_T any(const array<boolean_T, 1U> &x);
 
 }
 
