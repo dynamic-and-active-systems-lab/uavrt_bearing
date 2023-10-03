@@ -5,7 +5,7 @@
 // File: PulseStruct.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 // Include Files
@@ -49,6 +49,7 @@
 //                const coder::array<double, 1U> &noisePSD
 //                const coder::array<double, 1U> &detectStatus
 //                const coder::array<double, 1U> &confirmStatus
+//                const coder::array<double, 1U> &antennaOffset
 //                coder::array<e_struct_T, 2U> &pulse
 // Return Type  : void
 //
@@ -66,12 +67,13 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
                  const coder::array<double, 1U> &noisePSD,
                  const coder::array<double, 1U> &detectStatus,
                  const coder::array<double, 1U> &confirmStatus,
+                 const coder::array<double, 1U> &antennaOffset,
                  coder::array<e_struct_T, 2U> &pulse)
 {
   static rtBoundsCheckInfo ab_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      113,           // lineNo
+      116,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -82,7 +84,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      111,           // lineNo
+      114,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -93,7 +95,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo bb_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      113,           // lineNo
+      116,           // lineNo
       13,            // colNo
       "pos",         // aName
       "PulseStruct", // fName
@@ -104,7 +106,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      101,           // lineNo
+      104,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -115,7 +117,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo cb_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      114,           // lineNo
+      117,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -126,7 +128,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      101,           // lineNo
+      104,           // lineNo
       39,            // colNo
       "tagID",       // aName
       "PulseStruct", // fName
@@ -137,7 +139,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo db_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      114,           // lineNo
+      117,           // lineNo
       13,            // colNo
       "euler",       // aName
       "PulseStruct", // fName
@@ -148,7 +150,18 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      102,           // lineNo
+      105,           // lineNo
+      19,            // colNo
+      "pulse",       // aName
+      "PulseStruct", // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
+  };
+  static rtBoundsCheckInfo eb_emlrtBCI{
+      -1,            // iFirst
+      -1,            // iLast
+      118,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -159,7 +172,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      102,           // lineNo
+      105,           // lineNo
       43,            // colNo
       "freqMHz",     // aName
       "PulseStruct", // fName
@@ -167,10 +180,21 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
       "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
       0                                              // checkKind
   };
+  static rtBoundsCheckInfo fb_emlrtBCI{
+      -1,              // iFirst
+      -1,              // iLast
+      118,             // lineNo
+      55,              // colNo
+      "antennaOffset", // aName
+      "PulseStruct",   // fName
+      "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
+      "CODE_PLAYGROUND/uavrt_bearing/PulseStruct.m", // pName
+      0                                              // checkKind
+  };
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      103,           // lineNo
+      106,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -181,7 +205,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      103,           // lineNo
+      106,           // lineNo
       40,            // colNo
       "time",        // aName
       "PulseStruct", // fName
@@ -192,7 +216,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      104,           // lineNo
+      107,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -203,7 +227,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo j_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      104,           // lineNo
+      107,           // lineNo
       44,            // colNo
       "timeNext",    // aName
       "PulseStruct", // fName
@@ -214,7 +238,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      105,           // lineNo
+      108,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -225,7 +249,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo l_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      105,           // lineNo
+      108,           // lineNo
       41,            // colNo
       "snrdB",       // aName
       "PulseStruct", // fName
@@ -236,7 +260,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      106,           // lineNo
+      109,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -247,7 +271,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo n_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      106,           // lineNo
+      109,           // lineNo
       47,            // colNo
       "stftMag2",    // aName
       "PulseStruct", // fName
@@ -258,7 +282,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo o_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      107,           // lineNo
+      110,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -269,7 +293,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo p_emlrtBCI{
       -1,              // iFirst
       -1,              // iLast
-      107,             // lineNo
+      110,             // lineNo
       57,              // colNo
       "groupSeqCount", // aName
       "PulseStruct",   // fName
@@ -280,7 +304,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo q_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      108,           // lineNo
+      111,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -291,7 +315,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo r_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      108,           // lineNo
+      111,           // lineNo
       51,            // colNo
       "groupIndex",  // aName
       "PulseStruct", // fName
@@ -302,7 +326,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo s_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      109,           // lineNo
+      112,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -313,7 +337,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo t_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      109,           // lineNo
+      112,           // lineNo
       51,            // colNo
       "groupsnrdB",  // aName
       "PulseStruct", // fName
@@ -324,7 +348,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo u_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      110,           // lineNo
+      113,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -335,7 +359,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo v_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      110,           // lineNo
+      113,           // lineNo
       47,            // colNo
       "noisePSD",    // aName
       "PulseStruct", // fName
@@ -346,7 +370,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo w_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      111,            // lineNo
+      114,            // lineNo
       61,             // colNo
       "detectStatus", // aName
       "PulseStruct",  // fName
@@ -357,7 +381,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo x_emlrtBCI{
       -1,              // iFirst
       -1,              // iLast
-      112,             // lineNo
+      115,             // lineNo
       62,              // colNo
       "confirmStatus", // aName
       "PulseStruct",   // fName
@@ -368,7 +392,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   static rtBoundsCheckInfo y_emlrtBCI{
       -1,            // iFirst
       -1,            // iLast
-      112,           // lineNo
+      115,           // lineNo
       19,            // colNo
       "pulse",       // aName
       "PulseStruct", // fName
@@ -466,6 +490,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
   pulseInit.time = 0.0;
   pulseInit.snrdB = 0.0;
   pulseInit.noisePSD = 0.0;
+  pulseInit.antennaOffset = 0.0;
   pulse.set_size(1, 1);
   pulse[0] = pulseInit;
   x[0] = ((pos.size(0) == freqMHz.size(0)) || (pos.size(0) == tagID.size(0)) ||
@@ -478,7 +503,8 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
           (pos.size(0) == noisePSD.size(0)) ||
           (pos.size(0) == detectStatus.size(0)) ||
           (pos.size(0) == detectStatus.size(0)) ||
-          (pos.size(0) == confirmStatus.size(0)));
+          (pos.size(0) == confirmStatus.size(0)) ||
+          (pos.size(0) == antennaOffset.size(0)));
   x[1] = true;
   y = true;
   ntilerows = 0;
@@ -620,6 +646,14 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
         rtDynamicBoundsError(itilerow + 1, 1, euler.size(0), db_emlrtBCI);
       }
       pulse[itilerow].euler.data[0] = euler[itilerow];
+      if (itilerow + 1 > pulse.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, pulse.size(0), eb_emlrtBCI);
+      }
+      if (itilerow + 1 > antennaOffset.size(0)) {
+        rtDynamicBoundsError(itilerow + 1, 1, antennaOffset.size(0),
+                             fb_emlrtBCI);
+      }
+      pulse[itilerow].antennaOffset = antennaOffset[itilerow];
     }
   }
 }

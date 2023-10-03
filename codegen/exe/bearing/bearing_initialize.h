@@ -5,7 +5,7 @@
 // File: bearing_initialize.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 #ifndef BEARING_INITIALIZE_H

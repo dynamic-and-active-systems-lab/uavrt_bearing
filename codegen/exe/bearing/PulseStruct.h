@@ -5,7 +5,7 @@
 // File: PulseStruct.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 #ifndef PULSESTRUCT_H
@@ -33,6 +33,7 @@ void PulseStruct(const coder::array<double, 1U> &tagID,
                  const coder::array<double, 1U> &noisePSD,
                  const coder::array<double, 1U> &detectStatus,
                  const coder::array<double, 1U> &confirmStatus,
+                 const coder::array<double, 1U> &antennaOffset,
                  coder::array<e_struct_T, 2U> &pulse);
 
 #endif

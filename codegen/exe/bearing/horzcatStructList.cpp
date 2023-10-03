@@ -5,7 +5,7 @@
 // File: horzcatStructList.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 // Include Files
@@ -24,6 +24,56 @@
 //
 namespace coder {
 namespace internal {
+void b_horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
+                         ::coder::array<double, 2U> &result)
+{
+  int i;
+  int n;
+  n = structure.size(0);
+  if (structure.size(0) == 0) {
+    i = 0;
+  } else {
+    i = structure.size(0);
+  }
+  result.set_size(1, i);
+  if (structure.size(0) > 2147483646) {
+    check_forloop_overflow_error();
+  }
+  for (i = 0; i < n; i++) {
+    result[i] = structure[i].noisePSD;
+  }
+}
+
+//
+// Arguments    : const ::coder::array<e_struct_T, 1U> &structure
+//                ::coder::array<double, 2U> &result
+// Return Type  : void
+//
+void c_horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
+                         ::coder::array<double, 2U> &result)
+{
+  int i;
+  int n;
+  n = structure.size(0);
+  if (structure.size(0) == 0) {
+    i = 0;
+  } else {
+    i = structure.size(0);
+  }
+  result.set_size(1, i);
+  if (structure.size(0) > 2147483646) {
+    check_forloop_overflow_error();
+  }
+  for (i = 0; i < n; i++) {
+    result[i] = structure[i].antennaOffset;
+  }
+}
+
+//
+// Arguments    : const ::coder::array<e_struct_T, 1U> &structure
+//                ::coder::array<double, 2U> &result
+// Return Type  : void
+//
 void horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
                        ::coder::array<double, 2U> &result)
 {
@@ -40,7 +90,7 @@ void horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
     check_forloop_overflow_error();
   }
   for (i = 0; i < n; i++) {
-    result[i] = structure[i].noisePSD;
+    result[i] = structure[i].snrdB;
   }
 }
 

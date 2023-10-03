@@ -32,12 +32,16 @@ function [DOA, tau] = doapca(pulseList,scale)
 numPulses = numel(pulseList(:));
 
 curr_pulses_snrdB  = reshape([pulseList(:).snrdB],numPulses,1);
+
 curr_pulses_snrLin = 10.^(curr_pulses_snrdB/10);
 
 curr_pulses_noisePSD = reshape([pulseList(:).noisePSD],numPulses,1);
 
 curr_eulers = reshape([pulseList(:).euler],numPulses,1);
+
 curr_yaws   = reshape([curr_eulers(:).yaw_deg],numPulses,1);
+
+curr_antennaOffsets = reshape([pulseList(:).antennaOffset],numPulses,1);
 
 %Clear out placeholds for bad data points;
 curr_pulses_noisePSD(curr_pulses_noisePSD == -9999) = NaN;
@@ -69,7 +73,7 @@ else
 end
 
 
-angs = curr_yaws*pi/180;
+angs = wrapTo2Pi( (curr_yaws + curr_antennaOffsets)*pi/180 ) ;
 
 sortedAngsDeg = sort(wrapTo360(curr_yaws));
 
@@ -104,7 +108,7 @@ else
     DOA_calc = atan2(wp(2),wp(1));
 end
 
-DOA = 180/pi*DOA_calc;
+DOA = wrapTo360( 180/pi * DOA_calc );
 
 % %% Now fit the kappa value for the vonMises Distribution
 % kappaVec = 0:0.001:20;

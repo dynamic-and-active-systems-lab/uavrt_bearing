@@ -5,7 +5,7 @@
 // File: bearing_internal_types.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 #ifndef BEARING_INTERNAL_TYPES_H
@@ -104,6 +104,7 @@ struct e_struct_T {
   double noisePSD;
   coder::bounded_array<struct_T, 1U, 2U> position;
   coder::bounded_array<d_struct_T, 1U, 2U> euler;
+  double antennaOffset;
 };
 
 class empty {};

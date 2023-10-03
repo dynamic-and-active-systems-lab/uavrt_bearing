@@ -5,7 +5,7 @@
 // File: mtimes.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 // Include Files
@@ -64,6 +64,28 @@ void mtimes(const ::coder::array<double, 2U> &A,
         C[b_i] = C[b_i] + A[aoffset + i] * bkj;
       }
     }
+  }
+}
+
+//
+// Arguments    : const ::coder::array<double, 2U> &A
+//                double C[2]
+// Return Type  : void
+//
+void mtimes(const ::coder::array<double, 2U> &A, double C[2])
+{
+  int inner;
+  inner = A.size(1);
+  C[0] = 0.0;
+  C[1] = 0.0;
+  if (A.size(1) > 2147483646) {
+    check_forloop_overflow_error();
+  }
+  for (int k{0}; k < inner; k++) {
+    int aoffset;
+    aoffset = k << 1;
+    C[0] += A[aoffset];
+    C[1] += A[aoffset + 1];
   }
 }
 

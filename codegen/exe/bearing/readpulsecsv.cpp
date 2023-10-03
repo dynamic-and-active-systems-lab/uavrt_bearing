@@ -5,7 +5,7 @@
 // File: readpulsecsv.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 // Include Files
@@ -142,7 +142,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo b_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      111,            // lineNo
+      113,            // lineNo
       28,             // colNo
       "lineStr",      // aName
       "readpulsecsv", // fName
@@ -153,7 +153,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,               // iFirst
       -1,               // iLast
-      113,              // lineNo
+      115,              // lineNo
       61,               // colNo
       "commaLocations", // aName
       "readpulsecsv",   // fName
@@ -164,7 +164,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      127,            // lineNo
+      129,            // lineNo
       28,             // colNo
       "pulseArray",   // aName
       "readpulsecsv", // fName
@@ -175,7 +175,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo e_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      133,            // lineNo
+      135,            // lineNo
       30,             // colNo
       "commandArray", // aName
       "readpulsecsv", // fName
@@ -186,7 +186,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      113,            // lineNo
+      115,            // lineNo
       41,             // colNo
       "lineStr",      // aName
       "readpulsecsv", // fName
@@ -197,7 +197,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo g_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      113,            // lineNo
+      115,            // lineNo
       46,             // colNo
       "lineStr",      // aName
       "readpulsecsv", // fName
@@ -208,7 +208,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   static rtBoundsCheckInfo h_emlrtBCI{
       -1,             // iFirst
       -1,             // iLast
-      244,            // lineNo
+      250,            // lineNo
       57,             // colNo
       "pos_AGL_m",    // aName
       "readpulsecsv", // fName
@@ -283,7 +283,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       0                                                   // checkKind
   };
   static rtDoubleCheckInfo b_emlrtDCI{
-      98,             // lineNo
+      100,            // lineNo
       29,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -291,7 +291,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       4                                               // checkKind
   };
   static rtDoubleCheckInfo c_emlrtDCI{
-      98,             // lineNo
+      100,            // lineNo
       29,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -299,7 +299,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       1                                               // checkKind
   };
   static rtDoubleCheckInfo d_emlrtDCI{
-      98,             // lineNo
+      100,            // lineNo
       5,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -307,7 +307,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       1                                               // checkKind
   };
   static rtDoubleCheckInfo e_emlrtDCI{
-      99,             // lineNo
+      101,            // lineNo
       5,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -315,7 +315,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       1                                               // checkKind
   };
   static rtDoubleCheckInfo f_emlrtDCI{
-      100,            // lineNo
+      102,            // lineNo
       29,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -323,7 +323,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       1                                               // checkKind
   };
   static rtDoubleCheckInfo g_emlrtDCI{
-      100,            // lineNo
+      102,            // lineNo
       5,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -331,7 +331,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       1                                               // checkKind
   };
   static rtDoubleCheckInfo h_emlrtDCI{
-      101,            // lineNo
+      103,            // lineNo
       5,              // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -340,7 +340,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   };
   static rtEqualityCheckInfo b_emlrtECI{
       -1,             // nDims
-      133,            // lineNo
+      135,            // lineNo
       17,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -348,7 +348,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   };
   static rtEqualityCheckInfo emlrtECI{
       -1,             // nDims
-      127,            // lineNo
+      129,            // lineNo
       17,             // colNo
       "readpulsecsv", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
@@ -370,6 +370,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   coder::array<double, 1U> j_pulseArray;
   coder::array<double, 1U> k_pulseArray;
   coder::array<double, 1U> l_pulseArray;
+  coder::array<double, 1U> m_pulseArray;
   coder::array<double, 1U> pulseLineNums;
   coder::array<unsigned int, 2U> commaLocations;
   coder::array<int, 2U> match_out;
@@ -385,7 +386,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   d_struct_T eulInit;
   e_struct_T pulseInit;
   struct_T posInit;
-  double tmp_data[20];
+  double tmp_data[21];
   double b_tmp_data[4];
   int fid;
   signed char fileid;
@@ -485,6 +486,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
   pulseInit.time = 0.0;
   pulseInit.snrdB = 0.0;
   pulseInit.noisePSD = 0.0;
+  pulseInit.antennaOffset = 0.0;
   pulses.set_size(1, 1);
   pulses[0] = pulseInit;
   // COMMANDSTRUCT Generates a command structure
@@ -619,11 +621,11 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
       rtIntegerError(numOfLines, c_emlrtDCI);
     }
     fid = static_cast<int>(numOfLines);
-    pulseArray.set_size(static_cast<int>(numOfLines), 20);
+    pulseArray.set_size(static_cast<int>(numOfLines), 21);
     if (numOfLines != static_cast<int>(numOfLines)) {
       rtIntegerError(numOfLines, d_emlrtDCI);
     }
-    match_idx = static_cast<int>(numOfLines) * 20;
+    match_idx = static_cast<int>(numOfLines) * 21;
     for (i = 0; i < match_idx; i++) {
       pulseArray[i] = 0.0;
     }
@@ -740,9 +742,9 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
               }
               coder::b_fscanf(static_cast<double>(fileid), tmp_data, tmp_size);
               lineStr_size[0] = 1;
-              lineStr_size[1] = 20;
+              lineStr_size[1] = 21;
               rtSubAssignSizeCheck(lineStr_size[0], tmp_size[0], emlrtECI);
-              for (i = 0; i < 20; i++) {
+              for (i = 0; i < 21; i++) {
                 pulseArray[(static_cast<int>(dataInd) +
                             pulseArray.size(0) * i) -
                            1] = tmp_data[i];
@@ -971,6 +973,7 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
         j_pulseArray.set_size(pulseArray.size(0));
         k_pulseArray.set_size(pulseArray.size(0));
         l_pulseArray.set_size(pulseArray.size(0));
+        m_pulseArray.set_size(pulseArray.size(0));
         for (i = 0; i < fid; i++) {
           commandLineNums[i] = pulseArray[i + pulseArray.size(0)];
           c_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 2] / 1.0E+6;
@@ -984,11 +987,12 @@ void readpulsecsv(const coder::array<char, 2U> &filepath,
           j_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 10];
           k_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 11];
           l_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 12];
+          m_pulseArray[i] = pulseArray[i + pulseArray.size(0) * 20];
         }
         PulseStruct(commandLineNums, c_pulseArray, positions, eulers_deg,
                     d_pulseArray, e_pulseArray, pulseLineNums, f_pulseArray,
                     g_pulseArray, h_pulseArray, i_pulseArray, j_pulseArray,
-                    k_pulseArray, l_pulseArray, pulses);
+                    k_pulseArray, l_pulseArray, m_pulseArray, pulses);
         if (commandArray.size(0) != 0) {
           pulseLineNums.set_size(commandArray.size(0));
           fid = commandArray.size(0);

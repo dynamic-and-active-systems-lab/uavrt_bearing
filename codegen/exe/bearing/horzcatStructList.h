@@ -5,7 +5,7 @@
 // File: horzcatStructList.h
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 #ifndef HORZCATSTRUCTLIST_H
@@ -21,6 +21,12 @@
 // Function Declarations
 namespace coder {
 namespace internal {
+void b_horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
+                         ::coder::array<double, 2U> &result);
+
+void c_horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
+                         ::coder::array<double, 2U> &result);
+
 void horzcatStructList(const ::coder::array<e_struct_T, 1U> &structure,
                        ::coder::array<double, 2U> &result);
 

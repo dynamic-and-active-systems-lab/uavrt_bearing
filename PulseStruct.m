@@ -1,4 +1,4 @@
-function pulse = PulseStruct(tagID, freqMHz, pos, euler, time, timeNext, snrdB, stftMag2, groupSeqCount, groupIndex, groupsnrdB, noisePSD,detectStatus , confirmStatus)
+function pulse = PulseStruct(tagID, freqMHz, pos, euler, time, timeNext, snrdB, stftMag2, groupSeqCount, groupIndex, groupsnrdB, noisePSD,detectStatus , confirmStatus, antennaOffset)
 %PULSESTRUCT Generates a Pulse structure
 %   This function generates a standard pulse structure with the
 %   following fields:
@@ -43,12 +43,13 @@ localGroupSNRdB = 0;
 localNoisePSD = 0;
 localDetectionStatus = false;
 localConfirmationStatus = false;
+localAntennaOffset = 0;
 
 localFreqMHz  = 0;
 localTagID  = 0;
 
-if nargin ~= 0 & nargin ~= 14
-    fprintf('UAV-RT: Input to ReceivedPulse class must either be empty of contain 14 inputs. ')
+if nargin ~= 0 & nargin ~= 15
+    fprintf('UAV-RT: Input to ReceivedPulse class must either be empty of contain 15 inputs. ')
     return
 end
 
@@ -66,6 +67,7 @@ pulseInit.detectStatus = localDetectionStatus;
 pulseInit.confirmStatus = localConfirmationStatus;
 pulseInit.position = localPosition;
 pulseInit.euler    = localEuler;
+pulseInit.antennaOffset = localAntennaOffset;
 
 
 
@@ -86,7 +88,8 @@ if nargin > 0
             (size(pos) ==  size(noisePSD)) | ...
             (size(pos) ==  size(detectStatus)) | ...
             (size(pos) ==  size(detectStatus)) | ...
-            (size(pos) ==  size(confirmStatus)))
+            (size(pos) ==  size(confirmStatus)) | ...
+            (size(pos) ==  size(antennaOffset)))
         fprintf('UAV-RT: All inputs must be the same size. ')
         return
     end
@@ -112,6 +115,7 @@ if nargin > 0
             pulse(i,j).confirmStatus = logical(confirmStatus(i,j));
             pulse(i,j).position = pos(i,j);
             pulse(i,j).euler    = euler(i,j);
+            pulse(i,j).antennaOffset  = antennaOffset(i,j);
            
         end
     end

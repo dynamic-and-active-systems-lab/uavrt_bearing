@@ -5,7 +5,7 @@
 // File: nullAssignment.cpp
 //
 // MATLAB Coder version            : 5.6
-// C/C++ source code generated on  : 02-Oct-2023 13:02:17
+// C/C++ source code generated on  : 03-Oct-2023 08:03:05
 //
 
 // Include Files
@@ -153,7 +153,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
   if (idx.size(1) == 1) {
     nrows = x.size(0) - 1;
     k = idx[0];
-    for (int j{0}; j < 20; j++) {
+    for (int j{0}; j < 21; j++) {
       for (i = k; i <= nrows; i++) {
         x[(i + x.size(0) * j) - 1] = x[i + x.size(0) * j];
       }
@@ -186,7 +186,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
     for (k = 0; k < nrowx; k++) {
       if ((k + 1 > b.size(1)) || (!b[k])) {
-        for (int j{0}; j < 20; j++) {
+        for (int j{0}; j < 21; j++) {
           x[i + x.size(0) * j] = x[k + x.size(0) * j];
         }
         i++;
@@ -199,12 +199,12 @@ void nullAssignment(::coder::array<double, 2U> &x,
   if (nrows < 1) {
     nrows = 0;
   }
-  for (k = 0; k < 20; k++) {
+  for (k = 0; k < 21; k++) {
     for (i = 0; i < nrows; i++) {
       x[i + nrows * k] = x[i + x.size(0) * k];
     }
   }
-  x.set_size(nrows, 20);
+  x.set_size(nrows, 21);
 }
 
 //
@@ -314,7 +314,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
   if (idx.size(0) == 1) {
     nrows = x.size(0) - 1;
     k = idx[0];
-    for (int j{0}; j < 20; j++) {
+    for (int j{0}; j < 21; j++) {
       for (i = k; i <= nrows; i++) {
         x[(i + x.size(0) * j) - 1] = x[i + x.size(0) * j];
       }
@@ -347,7 +347,7 @@ void nullAssignment(::coder::array<double, 2U> &x,
     }
     for (k = 0; k < nrowx; k++) {
       if ((k + 1 > b.size(1)) || (!b[k])) {
-        for (int j{0}; j < 20; j++) {
+        for (int j{0}; j < 21; j++) {
           x[i + x.size(0) * j] = x[k + x.size(0) * j];
         }
         i++;
@@ -360,12 +360,12 @@ void nullAssignment(::coder::array<double, 2U> &x,
   if (nrows < 1) {
     nrows = 0;
   }
-  for (k = 0; k < 20; k++) {
+  for (k = 0; k < 21; k++) {
     for (i = 0; i < nrows; i++) {
       x[i + nrows * k] = x[i + x.size(0) * k];
     }
   }
-  x.set_size(nrows, 20);
+  x.set_size(nrows, 21);
 }
 
 } // namespace internal
