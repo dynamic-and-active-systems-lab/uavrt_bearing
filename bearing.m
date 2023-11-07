@@ -1,4 +1,4 @@
-function [bearing] = bearing(filePath)
+function [bearing_deg] = bearing(filePath)
 %BEARING generates bearing estimates from pulse files
 %   This function generates bearing estimates from pulses within a pulse
 %   file provided by the file path. If a bearing.csv file doesn't exists in

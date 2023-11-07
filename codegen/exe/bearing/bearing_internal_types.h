@@ -5,7 +5,7 @@
 // File: bearing_internal_types.h
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 #ifndef BEARING_INTERNAL_TYPES_H
@@ -55,13 +55,13 @@ struct rtEqualityCheckInfo {
   const char *pName;
 };
 
-struct cell_wrap_4 {
+struct cell_wrap_2 {
   coder::array<char, 2U> f1;
 };
 
-struct cell_5 {
+struct cell_18 {
   coder::array<unsigned int, 1U> f1;
-  coder::array<cell_wrap_4, 1U> f2;
+  coder::array<cell_wrap_2, 1U> f2;
   coder::array<double, 1U> f3;
   coder::array<double, 1U> f4;
   coder::array<double, 1U> f5;
@@ -72,9 +72,9 @@ struct cell_5 {
   coder::array<double, 1U> f10;
 };
 
-struct cell_6 {
+struct cell_19 {
   unsigned int f1;
-  cell_wrap_4 f2[1];
+  cell_wrap_2 f2[1];
   double f3;
   double f4;
   double f5;
@@ -85,7 +85,7 @@ struct cell_6 {
   double f10;
 };
 
-struct cell_wrap_3 {
+struct cell_wrap_17 {
   coder::empty_bounded_array<char, 2U> f1;
 };
 

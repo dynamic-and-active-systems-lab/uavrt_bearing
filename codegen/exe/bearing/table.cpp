@@ -5,7 +5,7 @@
 // File: table.cpp
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 // Include Files
@@ -95,7 +95,7 @@ static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 
 //
 // Arguments    : const array<unsigned int, 1U> &varargin_1
-//                const array<cell_wrap_4, 1U> &varargin_2
+//                const array<cell_wrap_2, 1U> &varargin_2
 //                const array<double, 1U> &varargin_3
 //                const array<double, 1U> &varargin_4
 //                const array<double, 1U> &varargin_5
@@ -109,7 +109,7 @@ static void w_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
 namespace coder {
 void b_table::init(
     const array<unsigned int, 1U> &varargin_1,
-    const array<cell_wrap_4, 1U> &varargin_2,
+    const array<cell_wrap_2, 1U> &varargin_2,
     const array<double, 1U> &varargin_3, const array<double, 1U> &varargin_4,
     const array<double, 1U> &varargin_5, const array<double, 1U> &varargin_6,
     const array<double, 1U> &varargin_7, const array<double, 1U> &varargin_8,

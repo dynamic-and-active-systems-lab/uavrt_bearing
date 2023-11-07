@@ -5,7 +5,7 @@
 // File: fscanf.cpp
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 // Include Files
@@ -17,7 +17,7 @@
 #include <cstring>
 
 // Type Definitions
-struct cell_10 {
+struct cell_5 {
   int f1;
   int f2;
   int f3;
@@ -44,20 +44,20 @@ struct cell_10 {
 
 // Function Declarations
 namespace coder {
-static int b_callCeval(std::FILE *filestar, cell_10 &outCell);
+static int b_callCeval(std::FILE *filestar, cell_5 &outCell);
 
-static int callCeval(std::FILE *filestar, cell_10 &outCell);
+static int callCeval(std::FILE *filestar, cell_5 &outCell);
 
 } // namespace coder
 
 // Function Definitions
 //
 // Arguments    : std::FILE *filestar
-//                cell_10 &outCell
+//                cell_5 &outCell
 // Return Type  : int
 //
 namespace coder {
-static int b_callCeval(std::FILE *filestar, cell_10 &outCell)
+static int b_callCeval(std::FILE *filestar, cell_5 &outCell)
 {
   static const char b_cfmt[80]{"%d,%d,%d,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%d,%d,"
                                "%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf\n"};
@@ -79,10 +79,10 @@ static int b_callCeval(std::FILE *filestar, cell_10 &outCell)
 
 //
 // Arguments    : std::FILE *filestar
-//                cell_10 &outCell
+//                cell_5 &outCell
 // Return Type  : int
 //
-static int callCeval(std::FILE *filestar, cell_10 &outCell)
+static int callCeval(std::FILE *filestar, cell_5 &outCell)
 {
   int numRead;
   outCell.f22 = -1;
@@ -110,7 +110,7 @@ static int callCeval(std::FILE *filestar, cell_10 &outCell)
 void b_fscanf(double fileID, double A_data[], int A_size[2])
 {
   std::FILE *f;
-  cell_10 tmpOut;
+  cell_5 tmpOut;
   double bigA[21];
   int numRead;
   int numWrittenTotal;

@@ -5,39 +5,18 @@
 // File: str2double.cpp
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 // Include Files
 #include "str2double.h"
+#include "bearing_data.h"
+#include "bearing_rtwutil.h"
 #include "bearing_types.h"
 #include "eml_int_forloop_overflow_check.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include <cstdio>
-#include <sstream>
-#include <stdexcept>
-#include <string>
-
-// Variable Definitions
-static rtRunTimeErrorInfo l_emlrtRTEI{
-    15,                     // lineNo
-    "assertSupportedString" // fName
-};
-
-static const boolean_T bv[128]{
-    false, false, false, false, false, false, false, false, false, true,  true,
-    true,  true,  true,  false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, true,  true,  true,  true,  true,
-    false, false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false};
 
 // Function Declarations
 namespace coder {
@@ -69,7 +48,6 @@ static int readfloat(array<char, 2U> &s1, const array<char, 2U> &s, int &k,
 
 } // namespace internal
 } // namespace coder
-static void y_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 // Function Definitions
 //
@@ -548,29 +526,9 @@ static int readfloat(array<char, 2U> &s1, const array<char, 2U> &s, int &k,
 }
 
 //
-// Arguments    : const char *aFcnName
-//                int aLineNum
-// Return Type  : void
-//
-} // namespace internal
-} // namespace coder
-static void y_rtErrorWithMessageID(const char *aFcnName, int aLineNum)
-{
-  std::stringstream outStream;
-  ((outStream << "This input can only contain characters in the range 0 to ")
-   << 127)
-      << ".";
-  outStream << "\n";
-  ((((outStream << "Error in ") << aFcnName) << " (line ") << aLineNum) << ")";
-  throw std::runtime_error(outStream.str());
-}
-
-//
 // Arguments    : const array<char, 2U> &s
 // Return Type  : creal_T
 //
-namespace coder {
-namespace internal {
 creal_T str2double(const array<char, 2U> &s)
 {
   array<char, 2U> s1;

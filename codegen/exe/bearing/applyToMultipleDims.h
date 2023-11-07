@@ -2,32 +2,32 @@
 // Academic License - for use in teaching, academic research, and meeting
 // course requirements at degree granting institutions only.  Not for
 // government, commercial, or other organizational use.
-// File: PositionStruct.h
+// File: applyToMultipleDims.h
 //
 // MATLAB Coder version            : 23.2
 // C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
-#ifndef POSITIONSTRUCT_H
-#define POSITIONSTRUCT_H
+#ifndef APPLYTOMULTIPLEDIMS_H
+#define APPLYTOMULTIPLEDIMS_H
 
 // Include Files
-#include "bearing_internal_types.h"
 #include "rtwtypes.h"
 #include "coder_array.h"
 #include <cstddef>
 #include <cstdlib>
 
 // Function Declarations
-void PositionStruct(const coder::array<double, 1U> &lat,
-                    const coder::array<double, 1U> &lon,
-                    const coder::array<double, 1U> &altAbs,
-                    const coder::array<double, 1U> &altRel,
-                    coder::array<struct_T, 2U> &pos);
+namespace coder {
+namespace internal {
+double applyToMultipleDims(const array<double, 2U> &x);
+
+}
+} // namespace coder
 
 #endif
 //
-// File trailer for PositionStruct.h
+// File trailer for applyToMultipleDims.h
 //
 // [EOF]
 //

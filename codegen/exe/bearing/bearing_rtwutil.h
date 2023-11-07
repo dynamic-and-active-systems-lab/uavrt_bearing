@@ -5,7 +5,7 @@
 // File: bearing_rtwutil.h
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 #ifndef BEARING_RTWUTIL_H
@@ -46,6 +46,8 @@ extern void rtNonNegativeError(const double aPositive,
                                const rtDoubleCheckInfo &aInfo);
 
 extern void u_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
+
+extern void y_rtErrorWithMessageID(const char *aFcnName, int aLineNum);
 
 #endif
 //

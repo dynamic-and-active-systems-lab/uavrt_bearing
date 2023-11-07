@@ -5,7 +5,7 @@
 // File: readbearingcsv.cpp
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 // Include Files
@@ -614,7 +614,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
                            't', ' ', 'f', 'o', 'u', 'n', 'd'};
   std::FILE *f;
   coder::onCleanup x;
-  coder::array<cell_wrap_4, 1U> parentFileName;
+  coder::array<cell_wrap_2, 1U> parentFileName;
   coder::array<double, 2U> alt_AGL_inds;
   coder::array<double, 2U> alt_ASL_inds;
   coder::array<double, 2U> bearing_inds;
@@ -639,7 +639,7 @@ void readbearingcsv(const coder::array<char, 2U> &filePath,
   coder::array<unsigned int, 1U> tagID;
   coder::array<char, 2U> b_lineStr;
   coder::array<char, 2U> lineStr;
-  cell_wrap_4 r;
+  cell_wrap_2 r;
   int i;
   signed char fileid;
   boolean_T a;

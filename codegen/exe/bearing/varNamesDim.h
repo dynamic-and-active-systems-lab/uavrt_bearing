@@ -5,7 +5,7 @@
 // File: varNamesDim.h
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 #ifndef VARNAMESDIM_H
@@ -27,8 +27,8 @@ namespace b_private {
 class varNamesDim {
 public:
   static void createLike(varNamesDim &newobj);
-  cell_wrap_3 descrs[10];
-  cell_wrap_3 units[10];
+  cell_wrap_17 descrs[10];
+  cell_wrap_17 units[10];
   Continuity continuity[10];
   boolean_T hasDescrs;
   boolean_T hasUnits;

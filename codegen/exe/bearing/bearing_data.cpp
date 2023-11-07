@@ -5,7 +5,7 @@
 // File: bearing_data.cpp
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 // Include Files
@@ -64,6 +64,11 @@ rtRunTimeErrorInfo k_emlrtRTEI{
     "getFileStar" // fName
 };
 
+rtRunTimeErrorInfo l_emlrtRTEI{
+    15,                     // lineNo
+    "assertSupportedString" // fName
+};
+
 rtRunTimeErrorInfo n_emlrtRTEI{
     58,                  // lineNo
     "assertValidSizeArg" // fName
@@ -73,6 +78,20 @@ rtRunTimeErrorInfo s_emlrtRTEI{
     85,               // lineNo
     "validate_inputs" // fName
 };
+
+const boolean_T bv[128]{
+    false, false, false, false, false, false, false, false, false, true,  true,
+    true,  true,  true,  false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, true,  true,  true,  true,  true,
+    false, false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false};
 
 boolean_T isInitialized_bearing{false};
 

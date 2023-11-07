@@ -5,7 +5,7 @@
 // File: _coder_bearing_api.cpp
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 // Include Files
@@ -126,15 +126,15 @@ void bearing_api(const mxArray *prhs, const mxArray **plhs)
       nullptr, // tls
       nullptr  // prev
   };
-  real_T b_bearing;
+  real_T bearing_deg;
   st.tls = emlrtRootTLSGlobal;
   emlrtHeapReferenceStackEnterFcnR2012b(&st);
   // Marshall function inputs
   emlrt_marshallIn(st, emlrtAliasP(prhs), "filePath", filePath);
   // Invoke the target function
-  b_bearing = bearing(filePath);
+  bearing_deg = bearing(filePath);
   // Marshall function outputs
-  *plhs = emlrt_marshallOut(b_bearing);
+  *plhs = emlrt_marshallOut(bearing_deg);
   emlrtHeapReferenceStackLeaveFcnR2012b(&st);
 }
 

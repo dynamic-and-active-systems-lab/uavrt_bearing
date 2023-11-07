@@ -5,7 +5,7 @@
 // File: _coder_bearing_info.h
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 #ifndef _CODER_BEARING_INFO_H

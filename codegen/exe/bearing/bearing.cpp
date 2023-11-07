@@ -5,11 +5,12 @@
 // File: bearing.cpp
 //
 // MATLAB Coder version            : 23.2
-// C/C++ source code generated on  : 03-Oct-2023 13:40:05
+// C/C++ source code generated on  : 07-Nov-2023 14:21:19
 //
 
 // Include Files
 #include "bearing.h"
+#include "applyToMultipleDims.h"
 #include "bearing_data.h"
 #include "bearing_initialize.h"
 #include "bearing_internal_types.h"
@@ -18,6 +19,7 @@
 #include "doapca.h"
 #include "eml_int_forloop_overflow_check.h"
 #include "fileManager.h"
+#include "fileparts.h"
 #include "horzcatStructList.h"
 #include "indexShapeCheck.h"
 #include "isfile.h"
@@ -26,7 +28,6 @@
 #include "readbearingcsv.h"
 #include "readpulsecsv.h"
 #include "rt_nonfinite.h"
-#include "sort.h"
 #include "sprintf.h"
 #include "table.h"
 #include "varNamesDim.h"
@@ -126,139 +127,139 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo c_emlrtBCI{
       -1,                       // iFirst
       -1,                       // iLast
-      162,                      // lineNo
+      74,                       // lineNo
       85,                       // colNo
       "tableIn.parentFileName", // aName
-      "bearing",                // fName
+      "writeToBearingFile",     // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo d_emlrtBCI{
       -1,                     // iFirst
       -1,                     // iLast
-      162,                    // lineNo
+      74,                     // lineNo
       30,                     // colNo
       "alreadyInBearingList", // aName
-      "bearing",              // fName
+      "writeToBearingFile",   // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo e_emlrtBCI{
-      -1,               // iFirst
-      -1,               // iLast
-      197,              // lineNo
-      50,               // colNo
-      "tableOut.tagID", // aName
-      "bearing",        // fName
+      -1,                   // iFirst
+      -1,                   // iLast
+      109,                  // lineNo
+      50,                   // colNo
+      "tableOut.tagID",     // aName
+      "writeToBearingFile", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo f_emlrtBCI{
       -1,                        // iFirst
       -1,                        // iLast
-      198,                       // lineNo
+      110,                       // lineNo
       59,                        // colNo
       "tableOut.parentFileName", // aName
-      "bearing",                 // fName
+      "writeToBearingFile",      // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo g_emlrtBCI{
-      -1,                 // iFirst
-      -1,                 // iLast
-      199,                // lineNo
-      52,                 // colNo
-      "tableOut.bearing", // aName
-      "bearing",          // fName
+      -1,                   // iFirst
+      -1,                   // iLast
+      111,                  // lineNo
+      52,                   // colNo
+      "tableOut.bearing",   // aName
+      "writeToBearingFile", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo h_emlrtBCI{
-      -1,             // iFirst
-      -1,             // iLast
-      200,            // lineNo
-      48,             // colNo
-      "tableOut.tau", // aName
-      "bearing",      // fName
+      -1,                   // iFirst
+      -1,                   // iLast
+      112,                  // lineNo
+      48,                   // colNo
+      "tableOut.tau",       // aName
+      "writeToBearingFile", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo i_emlrtBCI{
       -1,                      // iFirst
       -1,                      // iLast
-      201,                     // lineNo
+      113,                     // lineNo
       57,                      // colNo
       "tableOut.latitude_deg", // aName
-      "bearing",               // fName
+      "writeToBearingFile",    // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo j_emlrtBCI{
       -1,                       // iFirst
       -1,                       // iLast
-      202,                      // lineNo
+      114,                      // lineNo
       58,                       // colNo
       "tableOut.longitude_deg", // aName
-      "bearing",                // fName
+      "writeToBearingFile",     // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo k_emlrtBCI{
       -1,                   // iFirst
       -1,                   // iLast
-      203,                  // lineNo
+      115,                  // lineNo
       54,                   // colNo
       "tableOut.alt_AGL_m", // aName
-      "bearing",            // fName
+      "writeToBearingFile", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo l_emlrtBCI{
       -1,                   // iFirst
       -1,                   // iLast
-      204,                  // lineNo
+      116,                  // lineNo
       54,                   // colNo
       "tableOut.alt_ASL_m", // aName
-      "bearing",            // fName
+      "writeToBearingFile", // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo m_emlrtBCI{
       -1,                      // iFirst
       -1,                      // iLast
-      205,                     // lineNo
+      117,                     // lineNo
       57,                      // colNo
       "tableOut.time_start_s", // aName
-      "bearing",               // fName
+      "writeToBearingFile",    // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo n_emlrtBCI{
       -1,                    // iFirst
       -1,                    // iLast
-      206,                   // lineNo
+      118,                   // lineNo
       55,                    // colNo
       "tableOut.time_end_s", // aName
-      "bearing",             // fName
+      "writeToBearingFile",  // fName
       "/Users/mshafer/Library/CloudStorage/OneDrive-NorthernArizonaUniversity/"
-      "CODE_PLAYGROUND/uavrt_bearing/bearing.m", // pName
-      0                                          // checkKind
+      "CODE_PLAYGROUND/uavrt_bearing/writeToBearingFile.m", // pName
+      0                                                     // checkKind
   };
   static rtBoundsCheckInfo o_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      67,         // lineNo
+      64,         // lineNo
       30,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -269,7 +270,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo p_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      67,         // lineNo
+      64,         // lineNo
       32,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -280,7 +281,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo q_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      66,         // lineNo
+      63,         // lineNo
       25,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -291,7 +292,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   static rtBoundsCheckInfo r_emlrtBCI{
       -1,         // iFirst
       -1,         // iLast
-      66,         // lineNo
+      63,         // lineNo
       40,         // colNo
       "filePath", // aName
       "bearing",  // fName
@@ -355,12 +356,12 @@ double bearing(const coder::array<char, 2U> &filePath)
   coder::array<struct_T, 1U> b_posVec;
   coder::array<double, 2U> tagIDs;
   coder::array<double, 2U> varargin_1;
-  coder::array<double, 1U> x;
   coder::array<int, 2U> match_out;
   coder::array<int, 2U> matches;
   coder::array<char, 2U> b_status2;
   coder::array<char, 2U> bearingFilePath;
   coder::array<char, 2U> fileDirectory;
+  coder::array<char, 2U> newbearingFilePath;
   coder::array<char, 2U> status1;
   coder::array<char, 2U> tempBearingFilePath;
   coder::array<char, 2U> wdTemp;
@@ -369,16 +370,16 @@ double bearing(const coder::array<char, 2U> &filePath)
   double M;
   double alt_AGL_m;
   double alt_ASL_m;
-  double b_bearing;
-  double d;
+  double bearing_deg;
+  double latitude_deg;
   double longitude_deg;
-  double mtmp;
+  double tau;
   double time_end_s;
   double time_start_s;
   int iv[2];
   int iv1[2];
-  int ftmp;
-  int i;
+  int b_i;
+  int match_idx;
   int text_len;
   unsigned int u;
   char msg2[85];
@@ -401,45 +402,15 @@ double bearing(const coder::array<char, 2U> &filePath)
   b_pulseStructVec = pulseStructVec.reshape(text_len);
   coder::internal::horzcatStructList(b_pulseStructVec, tagIDs);
   // Define so coder knows types.
-  if (tagIDs.size(1) == 0) {
-    M = rtNaN;
-  } else {
-    x.set_size(tagIDs.size(1));
-    text_len = tagIDs.size(1);
-    for (i = 0; i < text_len; i++) {
-      x[i] = tagIDs[i];
-    }
-    coder::internal::sort(x);
-    M = x[0];
-    text_len = 1;
-    mtmp = x[0];
-    ftmp = 1;
-    i = x.size(0);
-    for (int k{0}; k <= i - 2; k++) {
-      d = x[k + 1];
-      if (d == mtmp) {
-        ftmp++;
-      } else {
-        if (ftmp > text_len) {
-          M = mtmp;
-          text_len = ftmp;
-        }
-        mtmp = d;
-        ftmp = 1;
-      }
-    }
-    if (ftmp > text_len) {
-      M = mtmp;
-    }
-  }
-  d = std::round(M);
-  if (d < 4.294967296E+9) {
-    if (d >= 0.0) {
-      u = static_cast<unsigned int>(d);
+  M = coder::internal::applyToMultipleDims(tagIDs);
+  M = std::round(M);
+  if (M < 4.294967296E+9) {
+    if (M >= 0.0) {
+      u = static_cast<unsigned int>(M);
     } else {
       u = 0U;
     }
-  } else if (d >= 4.294967296E+9) {
+  } else if (M >= 4.294967296E+9) {
     u = MAX_uint32_T;
   } else {
     u = 0U;
@@ -450,25 +421,25 @@ double bearing(const coder::array<char, 2U> &filePath)
   iv1[0] = (*(int(*)[2])pulseStructVec.size())[0];
   iv1[1] = (*(int(*)[2])pulseStructVec.size())[1];
   coder::internal::indexShapeCheck(iv1, iv);
-  ftmp = tagIDs.size(1) - 1;
+  match_idx = tagIDs.size(1) - 1;
   text_len = 0;
-  for (int k{0}; k <= ftmp; k++) {
-    if (!(tagIDs[k] != u)) {
+  for (int i{0}; i <= match_idx; i++) {
+    if (!(tagIDs[i] != u)) {
       text_len++;
     }
   }
   c_pulseStructVec.set_size(text_len);
   text_len = 0;
-  for (int k{0}; k <= ftmp; k++) {
-    if (!(tagIDs[k] != u)) {
-      if (k > pulseStructVec.size(0) - 1) {
-        rtDynamicBoundsError(k, 0, pulseStructVec.size(0) - 1, b_emlrtBCI);
+  for (int i{0}; i <= match_idx; i++) {
+    if (!(tagIDs[i] != u)) {
+      if (i > pulseStructVec.size(0) - 1) {
+        rtDynamicBoundsError(i, 0, pulseStructVec.size(0) - 1, b_emlrtBCI);
       }
-      c_pulseStructVec[text_len] = pulseStructVec[k];
+      c_pulseStructVec[text_len] = pulseStructVec[i];
       text_len++;
     }
   }
-  b_bearing = doapca(c_pulseStructVec, M);
+  bearing_deg = doapca(c_pulseStructVec, tau);
   //  if any(tagIDs ~= tagIDs(1))
   //      fprintf('UAV-RT: All tags in pulse list file path must have the same
   //      tag ID integer') bearing = NaN; return
@@ -480,7 +451,7 @@ double bearing(const coder::array<char, 2U> &filePath)
   text_len = posVec.size(0) * posVec.size(1);
   b_posVec = posVec.reshape(text_len);
   coder::internal::horzcatStructList(b_posVec, varargin_1);
-  mtmp = coder::median(varargin_1);
+  latitude_deg = coder::median(varargin_1);
   b_posVec = posVec.reshape(text_len);
   coder::internal::b_horzcatStructList(b_posVec, varargin_1);
   longitude_deg = coder::median(varargin_1);
@@ -503,58 +474,55 @@ double bearing(const coder::array<char, 2U> &filePath)
   } else {
     text_len = filePath.size(1);
     matches.set_size(1, filePath.size(1));
-    ftmp = 0;
+    match_idx = 0;
     if (filePath.size(1) > 2147483646) {
       coder::check_forloop_overflow_error();
     }
-    for (int k{0}; k < text_len; k++) {
-      if (filePath[k] == pattern) {
-        matches[ftmp] = k + 1;
-        ftmp++;
+    for (int i{0}; i < text_len; i++) {
+      if (filePath[i] == pattern) {
+        matches[match_idx] = i + 1;
+        match_idx++;
       }
     }
-    match_out.set_size(1, ftmp);
-    if (ftmp > 2147483646) {
+    match_out.set_size(1, match_idx);
+    if (match_idx > 2147483646) {
       coder::check_forloop_overflow_error();
     }
-    for (int k{0}; k < ftmp; k++) {
-      match_out[k] = matches[k];
+    for (int i{0}; i < match_idx; i++) {
+      match_out[i] = matches[i];
     }
     tagIDs.set_size(1, match_out.size(1));
     text_len = match_out.size(1);
-    for (i = 0; i < text_len; i++) {
-      tagIDs[i] = match_out[i];
+    for (b_i = 0; b_i < text_len; b_i++) {
+      tagIDs[b_i] = match_out[b_i];
     }
   }
-  // No longer needed. pwd supported for code generation in R2023b
-  // coder.cinclude('unistd.h');%Needed for getting fileDirectory with generated
-  // code in if statement below
   if (tagIDs.size(1) != 0) {
-    d = tagIDs[tagIDs.size(1) - 1];
-    if (static_cast<unsigned int>(d) + 1U >
+    M = tagIDs[tagIDs.size(1) - 1];
+    if (static_cast<unsigned int>(M) + 1U >
         static_cast<unsigned int>(filePath.size(1))) {
-      i = 0;
-      ftmp = 0;
+      b_i = 0;
+      match_idx = 0;
     } else {
-      if ((static_cast<int>(static_cast<unsigned int>(d) + 1U) < 1) ||
-          (static_cast<int>(static_cast<unsigned int>(d) + 1U) >
+      if ((static_cast<int>(static_cast<unsigned int>(M) + 1U) < 1) ||
+          (static_cast<int>(static_cast<unsigned int>(M) + 1U) >
            filePath.size(1))) {
         rtDynamicBoundsError(
-            static_cast<int>(static_cast<unsigned int>(d) + 1U), 1,
+            static_cast<int>(static_cast<unsigned int>(M) + 1U), 1,
             filePath.size(1), q_emlrtBCI);
       }
-      i = static_cast<int>(static_cast<unsigned int>(d));
+      b_i = static_cast<int>(static_cast<unsigned int>(M));
       if (filePath.size(1) < 1) {
         rtDynamicBoundsError(filePath.size(1), 1, filePath.size(1), r_emlrtBCI);
       }
-      ftmp = filePath.size(1);
+      match_idx = filePath.size(1);
     }
-    text_len = ftmp - i;
+    text_len = match_idx - b_i;
     tableTemp.data.f2[0].f1.set_size(1, text_len);
-    for (ftmp = 0; ftmp < text_len; ftmp++) {
-      tableTemp.data.f2[0].f1[ftmp] = filePath[i + ftmp];
+    for (match_idx = 0; match_idx < text_len; match_idx++) {
+      tableTemp.data.f2[0].f1[match_idx] = filePath[b_i + match_idx];
     }
-    text_len = static_cast<int>(d) - 1;
+    text_len = static_cast<int>(M) - 1;
     if (text_len < 1) {
       text_len = 0;
     } else {
@@ -566,14 +534,14 @@ double bearing(const coder::array<char, 2U> &filePath)
       }
     }
     fileDirectory.set_size(1, text_len);
-    for (i = 0; i < text_len; i++) {
-      fileDirectory[i] = filePath[i];
+    for (b_i = 0; b_i < text_len; b_i++) {
+      fileDirectory[b_i] = filePath[b_i];
     }
   } else {
     tableTemp.data.f2[0].f1.set_size(1, filePath.size(1));
     text_len = filePath.size(1);
-    for (i = 0; i < text_len; i++) {
-      tableTemp.data.f2[0].f1[i] = filePath[i];
+    for (b_i = 0; b_i < text_len; b_i++) {
+      tableTemp.data.f2[0].f1[b_i] = filePath[b_i];
     }
     text_len = coderGetLenghtOfCwd();
     if (text_len == -2) {
@@ -591,55 +559,38 @@ double bearing(const coder::array<char, 2U> &filePath)
       text_len = 0;
     }
     fileDirectory.set_size(1, text_len);
-    for (i = 0; i < text_len; i++) {
-      fileDirectory[i] = wdTemp[i];
+    for (b_i = 0; b_i < text_len; b_i++) {
+      fileDirectory[b_i] = wdTemp[b_i];
     }
-    //  if coder.target('MATLAB')
-    //      fileDirectory = pwd;
-    //  else
-    //
-    //      nullVal = coder.opaque('char*', 'NULL', 'HeaderFile', 'stdio.h');
-    //      retVal = nullVal;
-    //      bufferTemplate = repmat('c', 1, 200);
-    //      untokenizedDir = coder.nullcopy(bufferTemplate);
-    //      retVal = coder.ceval('getcwd', coder.ref(untokenizedDir), 200);
-    //      if retVal == nullVal
-    //          % Do some error handling here
-    //          fileDirectory = '';
-    //          error('UAV-RT: Error determining the current working directory.
-    //          Try passing the complete file path to the rotation csv file.')
-    //      else
-    //          fileDirectory = strtok(untokenizedDir, char(0));
-    //      end
-    //  end
   }
   bearingFileAlreadyExists = coderIsPC();
   bearingFilePath.set_size(1, fileDirectory.size(1) + 13);
   text_len = fileDirectory.size(1);
-  for (i = 0; i < text_len; i++) {
-    bearingFilePath[i] = fileDirectory[i];
+  for (b_i = 0; b_i < text_len; b_i++) {
+    bearingFilePath[b_i] = fileDirectory[b_i];
   }
   if (bearingFileAlreadyExists) {
     bearingFilePath[fileDirectory.size(1)] = '\\';
   } else {
     bearingFilePath[fileDirectory.size(1)] = '/';
   }
-  for (i = 0; i < 12; i++) {
-    bearingFilePath[(i + fileDirectory.size(1)) + 1] = cv[i];
+  for (b_i = 0; b_i < 12; b_i++) {
+    bearingFilePath[(b_i + fileDirectory.size(1)) + 1] = cv[b_i];
   }
+  coder::fileparts(bearingFilePath, fileDirectory, wdTemp, newbearingFilePath);
   bearingFileAlreadyExists = coderIsPC();
   tempBearingFilePath.set_size(1, fileDirectory.size(1) + 18);
   text_len = fileDirectory.size(1);
-  for (i = 0; i < text_len; i++) {
-    tempBearingFilePath[i] = fileDirectory[i];
+  for (b_i = 0; b_i < text_len; b_i++) {
+    tempBearingFilePath[b_i] = fileDirectory[b_i];
   }
   if (bearingFileAlreadyExists) {
     tempBearingFilePath[fileDirectory.size(1)] = '\\';
   } else {
     tempBearingFilePath[fileDirectory.size(1)] = '/';
   }
-  for (i = 0; i < 17; i++) {
-    tempBearingFilePath[(i + fileDirectory.size(1)) + 1] = cv1[i];
+  for (b_i = 0; b_i < 17; b_i++) {
+    tempBearingFilePath[(b_i + fileDirectory.size(1)) + 1] = cv1[b_i];
   }
   bearingFileAlreadyExists = coder::isfile(bearingFilePath);
   tempbearingFileAlreadyExists = coder::isfile(tempBearingFilePath);
@@ -668,45 +619,46 @@ double bearing(const coder::array<char, 2U> &filePath)
     // Logical vector - true for all entries with the same parent file as
     // filepath
     alreadyInBearingList.set_size(tableIn.data.f1.size(0));
-    i = tableIn.data.f1.size(0);
-    for (int k{0}; k < i; k++) {
-      if (k > tableIn.data.f2.size(0) - 1) {
-        rtDynamicBoundsError(k, 0, tableIn.data.f2.size(0) - 1, c_emlrtBCI);
+    b_i = tableIn.data.f1.size(0);
+    for (int i{0}; i < b_i; i++) {
+      if (i > tableIn.data.f2.size(0) - 1) {
+        rtDynamicBoundsError(i, 0, tableIn.data.f2.size(0) - 1, c_emlrtBCI);
       }
-      if (k + 1 > alreadyInBearingList.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, alreadyInBearingList.size(0),
+      if (i + 1 > alreadyInBearingList.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, alreadyInBearingList.size(0),
                              d_emlrtBCI);
       }
-      alreadyInBearingList[k] = false;
-      text_len = tableIn.data.f2[k].f1.size(1);
+      alreadyInBearingList[i] = false;
+      text_len = tableIn.data.f2[i].f1.size(1);
       bearingFileAlreadyExists = (tableTemp.data.f2[0].f1.size(1) == 0);
-      if (bearingFileAlreadyExists && (tableIn.data.f2[k].f1.size(1) == 0)) {
-        if (k + 1 > alreadyInBearingList.size(0)) {
-          rtDynamicBoundsError(k + 1, 1, alreadyInBearingList.size(0),
+      if (bearingFileAlreadyExists && (tableIn.data.f2[i].f1.size(1) == 0)) {
+        if (i + 1 > alreadyInBearingList.size(0)) {
+          rtDynamicBoundsError(i + 1, 1, alreadyInBearingList.size(0),
                                d_emlrtBCI);
         }
-        alreadyInBearingList[k] = true;
+        alreadyInBearingList[i] = true;
       } else if (tableTemp.data.f2[0].f1.size(1) ==
-                 tableIn.data.f2[k].f1.size(1)) {
+                 tableIn.data.f2[i].f1.size(1)) {
         if (text_len > 2147483646) {
           coder::check_forloop_overflow_error();
         }
-        ftmp = 0;
+        match_idx = 0;
         int exitg1;
         do {
           exitg1 = 0;
-          if (ftmp <= text_len - 1) {
-            if (tableTemp.data.f2[0].f1[ftmp] != tableIn.data.f2[k].f1[ftmp]) {
+          if (match_idx <= text_len - 1) {
+            if (tableTemp.data.f2[0].f1[match_idx] !=
+                tableIn.data.f2[i].f1[match_idx]) {
               exitg1 = 1;
             } else {
-              ftmp++;
+              match_idx++;
             }
           } else {
-            if (k + 1 > alreadyInBearingList.size(0)) {
-              rtDynamicBoundsError(k + 1, 1, alreadyInBearingList.size(0),
+            if (i + 1 > alreadyInBearingList.size(0)) {
+              rtDynamicBoundsError(i + 1, 1, alreadyInBearingList.size(0),
                                    d_emlrtBCI);
             }
-            alreadyInBearingList[k] = true;
+            alreadyInBearingList[i] = true;
             exitg1 = 1;
           }
         } while (exitg1 == 0);
@@ -719,9 +671,9 @@ double bearing(const coder::array<char, 2U> &filePath)
     coder::matlab::internal::coder::tabular::b_private::varNamesDim::createLike(
         tableTemp.varDim);
     tableTemp.data.f1 = u;
-    tableTemp.data.f3 = b_bearing;
-    tableTemp.data.f4 = M;
-    tableTemp.data.f5 = mtmp;
+    tableTemp.data.f3 = bearing_deg;
+    tableTemp.data.f4 = tau;
+    tableTemp.data.f5 = latitude_deg;
     tableTemp.data.f6 = longitude_deg;
     tableTemp.data.f7 = alt_AGL_m;
     tableTemp.data.f8 = alt_ASL_m;
@@ -732,8 +684,8 @@ double bearing(const coder::array<char, 2U> &filePath)
     // Append false so we don't delete the entry we just added
     b_alreadyInBearingList.set_size(alreadyInBearingList.size(0) + 1);
     text_len = alreadyInBearingList.size(0);
-    for (i = 0; i < text_len; i++) {
-      b_alreadyInBearingList[i] = !alreadyInBearingList[i];
+    for (b_i = 0; b_i < text_len; b_i++) {
+      b_alreadyInBearingList[b_i] = !alreadyInBearingList[b_i];
     }
     b_alreadyInBearingList[alreadyInBearingList.size(0)] = true;
     tableOut.parenReference(b_alreadyInBearingList, tableIn);
@@ -744,57 +696,57 @@ double bearing(const coder::array<char, 2U> &filePath)
     // We use a temp file so that if there is an error or system shutdown
     // during the write, we don't lose the original file.
     status0 = coder::internal::cfopen(tempBearingFilePath, "wb");
-    i = tableIn.data.f1.size(0);
-    for (int k{0}; k < i; k++) {
-      if (k + 1 > tableIn.data.f1.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f1.size(0), e_emlrtBCI);
+    b_i = tableIn.data.f1.size(0);
+    for (int i{0}; i < b_i; i++) {
+      if (i + 1 > tableIn.data.f1.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f1.size(0), e_emlrtBCI);
       }
-      if (k > tableIn.data.f2.size(0) - 1) {
-        rtDynamicBoundsError(k, 0, tableIn.data.f2.size(0) - 1, f_emlrtBCI);
+      if (i > tableIn.data.f2.size(0) - 1) {
+        rtDynamicBoundsError(i, 0, tableIn.data.f2.size(0) - 1, f_emlrtBCI);
       }
-      if (k + 1 > tableIn.data.f3.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f3.size(0), g_emlrtBCI);
+      if (i + 1 > tableIn.data.f3.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f3.size(0), g_emlrtBCI);
       }
-      if (k + 1 > tableIn.data.f4.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f4.size(0), h_emlrtBCI);
+      if (i + 1 > tableIn.data.f4.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f4.size(0), h_emlrtBCI);
       }
-      if (k + 1 > tableIn.data.f5.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f5.size(0), i_emlrtBCI);
+      if (i + 1 > tableIn.data.f5.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f5.size(0), i_emlrtBCI);
       }
-      if (k + 1 > tableIn.data.f6.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f6.size(0), j_emlrtBCI);
+      if (i + 1 > tableIn.data.f6.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f6.size(0), j_emlrtBCI);
       }
-      if (k + 1 > tableIn.data.f7.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f7.size(0), k_emlrtBCI);
+      if (i + 1 > tableIn.data.f7.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f7.size(0), k_emlrtBCI);
       }
-      if (k + 1 > tableIn.data.f8.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f8.size(0), l_emlrtBCI);
+      if (i + 1 > tableIn.data.f8.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f8.size(0), l_emlrtBCI);
       }
-      if (k + 1 > tableIn.data.f9.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f9.size(0), m_emlrtBCI);
+      if (i + 1 > tableIn.data.f9.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f9.size(0), m_emlrtBCI);
       }
-      if (k + 1 > tableIn.data.f10.size(0)) {
-        rtDynamicBoundsError(k + 1, 1, tableIn.data.f10.size(0), n_emlrtBCI);
+      if (i + 1 > tableIn.data.f10.size(0)) {
+        rtDynamicBoundsError(i + 1, 1, tableIn.data.f10.size(0), n_emlrtBCI);
       }
       if (status0 == 0) {
         c_rtErrorWithMessageID(b_emlrtRTEI.fName, b_emlrtRTEI.lineNo);
       }
-      wdTemp.set_size(1, tableIn.data.f2[k].f1.size(1) + 1);
-      text_len = tableIn.data.f2[k].f1.size(1);
-      for (ftmp = 0; ftmp < text_len; ftmp++) {
-        wdTemp[ftmp] = tableIn.data.f2[k].f1[ftmp];
+      wdTemp.set_size(1, tableIn.data.f2[i].f1.size(1) + 1);
+      text_len = tableIn.data.f2[i].f1.size(1);
+      for (match_idx = 0; match_idx < text_len; match_idx++) {
+        wdTemp[match_idx] = tableIn.data.f2[i].f1[match_idx];
       }
-      wdTemp[tableIn.data.f2[k].f1.size(1)] = '\x00';
+      wdTemp[tableIn.data.f2[i].f1.size(1)] = '\x00';
       f = coder::internal::getfilestar(static_cast<double>(status0),
                                        bearingFileAlreadyExists);
       if (f == nullptr) {
         b_rtErrorWithMessageID(emlrtRTEI.fName, emlrtRTEI.lineNo);
       } else {
-        std::fprintf(f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", tableIn.data.f1[k],
-                     &wdTemp[0], tableIn.data.f3[k], tableIn.data.f4[k],
-                     tableIn.data.f5[k], tableIn.data.f6[k], tableIn.data.f7[k],
-                     tableIn.data.f8[k], tableIn.data.f9[k],
-                     tableIn.data.f10[k]);
+        std::fprintf(f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", tableIn.data.f1[i],
+                     &wdTemp[0], tableIn.data.f3[i], tableIn.data.f4[i],
+                     tableIn.data.f5[i], tableIn.data.f6[i], tableIn.data.f7[i],
+                     tableIn.data.f8[i], tableIn.data.f9[i],
+                     tableIn.data.f10[i]);
         if (bearingFileAlreadyExists) {
           std::fflush(f);
         }
@@ -819,9 +771,9 @@ double bearing(const coder::array<char, 2U> &filePath)
     // figure out why this was happening (only occured on Linux - not
     // Mac), but assumed it was related to the intermittent rename errors
     // I was getting on the Mac with the rename operation.
-    coder::b_sprintf(bearingFilePath, fileDirectory);
+    coder::b_sprintf(bearingFilePath, newbearingFilePath);
     // fprintf('attempting to delete original bearing file...\n')
-    status0 = remove(&fileDirectory[0]);
+    status0 = remove(&newbearingFilePath[0]);
     if (status0 != 0) {
       perror(&msg1[0]);
     }
@@ -859,7 +811,7 @@ double bearing(const coder::array<char, 2U> &filePath)
     // string fprintf('%s\n', newTempFilePath) Line below will intermittently
     // cause a runtime error. status2 = coder.ceval('rename',
     // coder.ref(tempBearingFilePath) , coder.ref(bearingFilePath));
-    status2 = rename(&wdTemp[0], &fileDirectory[0]);
+    status2 = rename(&wdTemp[0], &newbearingFilePath[0]);
     if (status2 != 0) {
       perror(&msg2[0]);
     }
@@ -901,8 +853,8 @@ double bearing(const coder::array<char, 2U> &filePath)
     }
     wdTemp.set_size(1, tableTemp.data.f2[0].f1.size(1) + 1);
     text_len = tableTemp.data.f2[0].f1.size(1);
-    for (i = 0; i < text_len; i++) {
-      wdTemp[i] = tableTemp.data.f2[0].f1[i];
+    for (b_i = 0; b_i < text_len; b_i++) {
+      wdTemp[b_i] = tableTemp.data.f2[0].f1[b_i];
     }
     wdTemp[tableTemp.data.f2[0].f1.size(1)] = '\x00';
     f = coder::internal::getfilestar(static_cast<double>(status0),
@@ -911,8 +863,8 @@ double bearing(const coder::array<char, 2U> &filePath)
       b_rtErrorWithMessageID(emlrtRTEI.fName, emlrtRTEI.lineNo);
     } else {
       std::fprintf(f, "%u,%s,%f,%f,%f,%f,%f,%f,%f,%f\n", u, &wdTemp[0],
-                   b_bearing, M, mtmp, longitude_deg, alt_AGL_m, alt_ASL_m,
-                   time_start_s, time_end_s);
+                   bearing_deg, tau, latitude_deg, longitude_deg, alt_AGL_m,
+                   alt_ASL_m, time_start_s, time_end_s);
       if (bearingFileAlreadyExists) {
         std::fflush(f);
       }
@@ -923,7 +875,7 @@ double bearing(const coder::array<char, 2U> &filePath)
       perror(&msg4[0]);
     }
   }
-  return b_bearing;
+  return bearing_deg;
 }
 
 //
