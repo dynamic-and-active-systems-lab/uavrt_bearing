@@ -1,4 +1,4 @@
-function [bearing_deg] = bearing(filePath)
+function [bearing_deg] = bearing(filePath,writeBearingFile)
 %BEARING generates bearing estimates from pulse files
 %   This function generates bearing estimates from pulses within a pulse
 %   file provided by the file path. If a bearing.csv file doesn't exists in
@@ -26,16 +26,19 @@ function [bearing_deg] = bearing(filePath)
 %coder.cinclude('stdio.h');%Needed for remove and move file commands
 coder.cinclude('cstdio');%Needed for remove and move file commands
 
-[pulseStructVec, ~] = readpulsecsv(filePath);
+%[pulseStructVec, ~] = readpulsecsv(filePath);
+[pulseTable, ~] = readpulsecsvtable(filePath);
 
-tagIDs   = [pulseStructVec(:).tagID];
+pulseTable = transmittingFilter(pulseTable);
+
+tagIDs   = pulseTable.tagID;
 
 tagID = uint32(0);%Define so coder knows types. 
 tagID = uint32(mode(tagIDs, 'all')); %In case some other tags' pulses got into the dataset somehow. 
-otherTagPulseInds = (tagIDs ~= tagID);
-pulseStructVec = pulseStructVec(~otherTagPulseInds);
+% otherTagPulseInds = (tagIDs ~= tagID);
+% pulseTable = pulseTable(~otherTagPulseInds,:);
 
-[bearing_deg, tau] = doapca(pulseStructVec,'linear');
+[bearing_deg, tau] = doapca(pulseTable,'linear');
 
 % if any(tagIDs ~= tagIDs(1))
 %     fprintf('UAV-RT: All tags in pulse list file path must have the same tag ID integer')
@@ -45,14 +48,14 @@ pulseStructVec = pulseStructVec(~otherTagPulseInds);
 %     tagID = tagIDs(1);
 % end
 
-posVec  = [pulseStructVec(:).position];
+%posVec  = [pulseTable.position];
 
-timeVec = [pulseStructVec(:).time];
+timeVec = [pulseTable.time];
 
-latitude_deg  = median([posVec(:).latitude_deg],'all');
-longitude_deg = median([posVec(:).longitude_deg],'all');
-alt_AGL_m     = median([posVec(:).relative_altitude_m],'all');
-alt_ASL_m     = median([posVec(:).absolute_altitude_m],'all');
+latitude_deg  = median([pulseTable.lat],'all');
+longitude_deg = median([pulseTable.lon],'all');
+alt_AGL_m     = median([pulseTable.pos_AGL_m],'all');
+alt_ASL_m     = median([pulseTable.pos_ASL_m],'all');
 time_start_s  = min(timeVec,[],'all');
 time_end_s    = max(timeVec,[],'all');
 
@@ -68,7 +71,6 @@ else
 end
 
 bearingFilePath = [fileDirectory, filesep, 'bearings.csv'];
-
 status = writeToBearingFile(bearingFilePath, fileName, tagID, bearing_deg, tau, latitude_deg, longitude_deg, alt_AGL_m, alt_ASL_m, time_start_s, time_end_s);
 
 end

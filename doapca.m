@@ -1,4 +1,4 @@
-function [DOA, tau] = doapca(pulseList,scale)
+function [DOA, tau] = doapca(pulseTable, scale)
 %DOAPCA developes a bearing estimate for a series of received radio pulses
 %based on the principle component analysis method.
 %   This function conducts a principle component analysis type bearing
@@ -29,19 +29,33 @@ function [DOA, tau] = doapca(pulseList,scale)
 %--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 
-numPulses = numel(pulseList(:));
+% numPulses = numel(pulseList(:));
+% 
+% curr_pulses_snrdB  = reshape([pulseList(:).snrdB],numPulses,1);
+% 
+% curr_pulses_snrLin = 10.^(curr_pulses_snrdB/10);
+% 
+% curr_pulses_noisePSD = reshape([pulseList(:).noisePSD],numPulses,1);
+% 
+% % curr_eulers = reshape([pulseList(:).euler],numPulses,1);
+% % 
+% % curr_yaws   = reshape([curr_eulers(:).yaw_deg],numPulses,1);
+% 
+% curr_yaws   = reshape([pulseList(:).yaw_deg],numPulses,1);
+% 
+% curr_antennaOffsets = reshape([pulseList(:).antennaOffset],numPulses,1);
 
-curr_pulses_snrdB  = reshape([pulseList(:).snrdB],numPulses,1);
+nunPulses = size(pulseTable,1);
+
+curr_pulses_snrdB = pulseTable.snrdB;
 
 curr_pulses_snrLin = 10.^(curr_pulses_snrdB/10);
 
-curr_pulses_noisePSD = reshape([pulseList(:).noisePSD],numPulses,1);
+curr_pulses_noisePSD = pulseTable.noisePSD;
 
-curr_eulers = reshape([pulseList(:).euler],numPulses,1);
+curr_yaws = pulseTable.yaw_deg;
 
-curr_yaws   = reshape([curr_eulers(:).yaw_deg],numPulses,1);
-
-curr_antennaOffsets = reshape([pulseList(:).antennaOffset],numPulses,1);
+curr_antennaOffsets = pulseTable.ant_off;
 
 %Clear out placeholds for bad data points;
 curr_pulses_noisePSD(curr_pulses_noisePSD == -9999) = NaN;
@@ -107,6 +121,7 @@ else
     
     DOA_calc = atan2(wp(2),wp(1));
 end
+
 
 DOA = wrapTo360( 180/pi * DOA_calc );
 
